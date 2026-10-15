@@ -1,0 +1,111 @@
+{
+  "tests": 27,
+  "failures": 0,
+  "errors": 0,
+  "successful": true,
+  "seconds": 14.722351973000514,
+  "utc": "2026-10-15T09:37:38Z",
+  "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "python_sat": "1.8.dev30",
+  "source_sha256": {
+    "__init__.py": "9c4775364484bcf8b84574c47fd35aecf23b0126bb8e3e3eb2aa0064889a2ef3",
+    "__main__.py": "ecf1f17ff7a6bb5e38c8575c26ef43c14627ba11aad5b82590769848b1766ce1",
+    "compiler.py": "b866d3278abbb51fb7bd5cbbcf44fc3e2e94aa94ea7de1def1c5eff5c3d66d95",
+    "complete_query.py": "4e9bf3b1c954a9e07ab571ebc43d431e75efbd7ab1939584923f5a6242da3a71",
+    "eager.py": "4ff66d575e4bbb3074338a006dc6f464e34bd293a8a56bf4d037bb48335a053b",
+    "generators.py": "a4312de8a37a9ba52b513284cac70f0f6f393f2de0464ddd952bd94c03e8a41d",
+    "graph_solver.py": "c5c9ecba12b4bac20a57109d85c2e4dce50d5e15cb50eb4d44fe8775fc435180",
+    "litmus.py": "622ab7e71a5c7811141e106fac1930e714e204137cea8ca19b13ba0691d3059a",
+    "model.py": "ab02593c2bb90ba120dd7ae98a09c950747352d83c6a98e2f2c3a9c058d6e2b3",
+    "oracle.py": "ecc1a6b018237f0c3996fe973f2f2b9c543d0021a895239d0246965a384c72ea",
+    "owned_dag.py": "df33738c4698dcdef1bbeaa2e9564c5e04cacd1d9cd3a938943122a889f95e26",
+    "propagation.py": "4d13411068af5cb66c2f914d632b6488d86777acdb2bf640b8ca4d4d3c3ba9f8",
+    "ra.py": "8e0776d0e6600b2af2dbe35476c82f7e70f801905499d28657bc54aa5eb58715",
+    "ra_cli.py": "e164000db95b2d0fc11d2e55beebe007918f3b9c7f95aec5bee8badc0f7c50a6",
+    "ra_frontier.py": "568219f10e93689a2c27ad6913183d53037c767146e28f6733bfd072e920f23e",
+    "ra_grid.py": "135881898a8f0956192144d3f87529280f5637bd1cd74c9db2bf7576180b56f6",
+    "ra_oracle.py": "d8f848879eccb4c6f9dd9c8d289a97c348990ac0f776e2f9b3aee6418e69ff84",
+    "ra_order_sat.py": "1fe34e72f742ee3700f6a0588079edcd3a3d72cc60c14e22b9af2e354b48b318",
+    "ra_schedule.py": "9cca412bcd2bfcdd138b197ed3472d249df5d3f896418d2ffe87d71b7020354e",
+    "recognize.py": "da7e484c46384fae50d91bee0fb2455b249e531a3a52d4ccfbc553d95415e2fb",
+    "regular_monitor.py": "9de2bc75312f752969f7fc1739abe7381fd89ab3ada4ed0072ff853f7b8c180f",
+    "summary.py": "58fec285b760ae8d6549ab537255c3aa55181e4e71fe940614867283eeb7b6e0"
+  },
+  "test_sha256": {
+    "test_correctness.py": "422d5e214a4eeb327b7046580ee7008cf7e47d27ff81d66a8a143468113cffc2",
+    "test_litmus.py": "2a9b3502bf1f57b329bec52ea8e961fc0a6e108bff953098cf52597b1e6fdfb0",
+    "test_optimizations.py": "14459fe6410f3146d681d4553c1dca6a699c353e0b052112a90e315a1cc6682e",
+    "test_ra_construction.py": "1edeb7908afcd33d5f47cc65e574484934e9cdaf133a23b4fff4ac45d9d2b0c0"
+  },
+  "ra_exhaustive_partial_assignments": 2187,
+  "ra_random_mixed_inputs": 40,
+  "independent_oracle": "Dense hb/eco relation definition, no compiler/recognizer reuse",
+  "cli_smoke": [
+    {
+      "arguments": [
+        "--size",
+        "3",
+        "--dimacs",
+        "<temporary-file>",
+        "--registry",
+        "<temporary-file>"
+      ],
+      "status": "SAT"
+    },
+    {
+      "arguments": [
+        "--size",
+        "3",
+        "--assume",
+        "-13"
+      ],
+      "status": "UNSAT"
+    },
+    {
+      "arguments": [
+        "--family",
+        "pipeline",
+        "--size",
+        "1"
+      ],
+      "status": "SAT"
+    },
+    {
+      "arguments": [
+        "--family",
+        "pipeline",
+        "--size",
+        "1",
+        "--algorithm",
+        "dynamic"
+      ],
+      "status": "OUTSIDE_CERTIFICATE"
+    },
+    {
+      "arguments": [
+        "--size",
+        "2",
+        "--states",
+        "1"
+      ],
+      "status": "UNKNOWN"
+    }
+  ],
+  "cpu_model": "General Purpose Processor",
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "memory": {
+    "MemTotal": "31498544 kB",
+    "MemAvailable": "30746168 kB",
+    "SwapTotal": "0 kB"
+  }
+}

@@ -18,8 +18,8 @@ constructs summaries for regular relation constraints and certified sparse final
 CO successors. The [RC11 release/acquire instance and lower bound](docs/RA_PIPELINE_PROOF.zh.txt)
 prove a finite-value pipeline instance with unresolved cross-phase CO and a
 necessary boundary for deterministic history summaries. These are mathematical
-proof drafts, not proof-assistant certifications; the new compiler and RA instance
-are **not implemented** by the current prototype.
+proof drafts, not proof-assistant certifications. The subsequent RA implementation
+is documented in [construction algorithms](docs/CONSTRUCTION_ALGORITHMS.zh.txt).
 
 The subsequent [relational recognition theorem](docs/RELATIONAL_RECOGNITION.zh.txt)
 replaces the fixed protocol template with a checkable relation kernel, causal
@@ -28,10 +28,63 @@ synchronization networks. The [bounded-history comparison](docs/BOUNDED_HISTORY_
 also proves that the same RA family has exponentially many states at a fixed
 CO-first cut but a polynomial exact support graph under a different decision
 schedule. [Theory delivery](docs/THEORY_DELIVERY.zh.txt) states the precise
-algorithm contract and remaining scope limits. These additions are proofs only;
-the implementation and recorded experiments retain their earlier scope.
+algorithm contract and remaining scope limits. Earlier TSO experiments retain
+their original scope; new RA experiments are recorded separately below.
 
-## Run
+## RA construction algorithms
+
+[Construction results](CONSTRUCTION_RESULTS.zh.txt) report the new server runs.
+The separate RA entry point supports fixed atomic release/acquire events, with
+no RMW, fences, SC operations, nonatomics or dynamic addresses:
+
+```sh
+python -m wmcheck.ra_cli --family producers --size 32
+python -m wmcheck.ra_cli --family producers --size 32 --dimacs ra.cnf --registry variables.json
+python -m wmcheck.ra_cli --family pipeline --size 1
+python -m wmcheck.ra_cli --input ra-instance.json --algorithm frontier
+```
+
+- A checked pure producer/reader structure selects a dynamic ownership DAG,
+  generated directly without enumerating complete histories. Two producers and
+  one reader thread additionally use range labels; with a fixed number of reads,
+  construction, storage, support CNF and complete queries are quadratic in the
+  number of writes. Other pure configurations use explicit dynamic labels.
+- The general fixed-event RA backend selects one final RF/CO-successor candidate
+  at a time, maintains joint regular-relation product summaries, and forgets only
+  after all candidate incident edges have been processed. The implementation
+  includes the permanent relation recognizer and ordered-source-chain rule.
+- Incremental transitive closure and paired rotation acceptance reduce product
+  matrix costs. They preserve exact common-witness semantics; the backend still
+  has potentially exponential state growth and explicit resource limits.
+- All original RF/CO bits remain queryable, including recognized constants.
+  Unsupported specialization is `OUTSIDE_CERTIFICATE`; resource exhaustion is
+  `UNKNOWN`. Completed graphs return all forced original literals without
+  completion search. Neither branch is a general RC11/CAT implementation.
+
+New tests use an independent dense RA oracle, exhaustive small partial
+assignments, source/value variants and an RA-valid non-SC execution. The SAT
+comparison exploits the same producer structure and answers complete queries
+by incremental countermodel search, rather than comparing only raw SAT UP.
+
+```sh
+python experiments/construction_validate.py
+python experiments/construction_suite.py --suite final --out results/construction/final
+python experiments/construction_suite.py --suite cnf --out results/construction/cnf_final
+python experiments/construction_suite.py --suite frontier-small --out results/construction/frontier_final
+python experiments/construction_suite.py --suite frontier-scale --repeats 1 --jobs 2 --out results/construction/frontier_scale
+python experiments/construction_analyze.py
+```
+
+Final timing campaigns use isolated processes, one pinned worker and three
+repetitions; parallel frontier probes are reported separately. They follow a
+cost audit removing linear membership lookups from shared variable access and
+gate construction. Initial campaigns remain as exploratory raw records, not
+final performance evidence. Initial CNF runs also used unnecessary root search;
+the final CNF campaign uses exact support propagation, charged to setup, before
+native unit-propagation queries. Original-variable UP completeness is separately
+checked using the pure unit-propagation reference implementation.
+
+## Run the legacy TSO entry point
 
 Python 3.10 or later:
 
@@ -50,7 +103,7 @@ semantics. Merely placing a certificate name in its metadata does not prove
 equivalence to unrestricted TSO. `wmcheck.recognize.recognize` checks the actual
 protocol trace structure before applying the semantic reduction.
 
-## What is implemented
+## Legacy TSO implementation
 
 - Typed `rf` filters (`all`, `ext`, `none`), per-address total `co`, and `fr`
   derived from the **full** `rf`, for multiple acyclicity graphs.
@@ -73,12 +126,12 @@ protocol trace structure before applying the semantic reduction.
 - An independent full-graph oracle, a conventional binary-rank SAT encoding,
   no-history-merging and weak-propagation ablations.
 
-The compiler enumerates choices **within each block**, then merges boundary
+The legacy compiler enumerates choices **within each block**, then merges boundary
 states. It does not enumerate complete histories for the bounded-block protocol
 family. For single-block public litmus tests, the block is the entire small
 test; those runs demonstrate semantics, not scalable history compression.
 
-## Experiments
+## Legacy TSO experiments
 
 ```sh
 python experiments/validate.py

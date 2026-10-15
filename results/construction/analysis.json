@@ -1,0 +1,7999 @@
+{
+  "records": 315,
+  "completed_records": 281,
+  "statuses": {
+    "UNKNOWN": 34,
+    "ok": 281
+  },
+  "complete_query_evaluations": 17984,
+  "identical_query_sets": 10,
+  "cross_method_sets": 10,
+  "mismatches": [],
+  "environments": {
+    "cnf": {
+      "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "jobs": 1,
+      "isolated_timing": true,
+      "cpu": 0,
+      "memory_limit_gib": 3,
+      "timeout_seconds": 100,
+      "compile_limits": {
+        "seconds": 60,
+        "states": 100000,
+        "edges": 300000
+      },
+      "seed": 20261015,
+      "suite": "cnf"
+    },
+    "cnf_final": {
+      "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "jobs": 1,
+      "isolated_timing": true,
+      "cpu": 0,
+      "memory_limit_gib": 3,
+      "timeout_seconds": 100,
+      "compile_limits": {
+        "seconds": 60,
+        "states": 100000,
+        "edges": 300000
+      },
+      "seed": 20261015,
+      "suite": "cnf"
+    },
+    "final": {
+      "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "jobs": 1,
+      "isolated_timing": true,
+      "cpu": 0,
+      "memory_limit_gib": 3,
+      "timeout_seconds": 100,
+      "compile_limits": {
+        "seconds": 60,
+        "states": 100000,
+        "edges": 300000
+      },
+      "seed": 20261015,
+      "suite": "final"
+    },
+    "frontier_final": {
+      "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "jobs": 1,
+      "isolated_timing": true,
+      "cpu": 0,
+      "memory_limit_gib": 3,
+      "timeout_seconds": 100,
+      "compile_limits": {
+        "seconds": 60,
+        "states": 100000,
+        "edges": 300000
+      },
+      "seed": 20261015,
+      "suite": "frontier-small"
+    },
+    "frontier_pilot": {
+      "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "jobs": 2,
+      "isolated_timing": false,
+      "cpu": 0,
+      "memory_limit_gib": 3,
+      "timeout_seconds": 100,
+      "compile_limits": {
+        "seconds": 60,
+        "states": 100000,
+        "edges": 300000
+      },
+      "seed": 20261015,
+      "suite": "frontier"
+    },
+    "frontier_scale": {
+      "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "jobs": 2,
+      "isolated_timing": false,
+      "cpu": 0,
+      "memory_limit_gib": 3,
+      "timeout_seconds": 100,
+      "compile_limits": {
+        "seconds": 60,
+        "states": 100000,
+        "edges": 300000
+      },
+      "seed": 20261015,
+      "suite": "frontier-scale"
+    },
+    "frontier_serial": {
+      "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "jobs": 1,
+      "isolated_timing": true,
+      "cpu": 0,
+      "memory_limit_gib": 3,
+      "timeout_seconds": 100,
+      "compile_limits": {
+        "seconds": 60,
+        "states": 100000,
+        "edges": 300000
+      },
+      "seed": 20261015,
+      "suite": "frontier-small"
+    },
+    "large": {
+      "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "jobs": 1,
+      "isolated_timing": true,
+      "cpu": 0,
+      "memory_limit_gib": 3,
+      "timeout_seconds": 100,
+      "compile_limits": {
+        "seconds": 60,
+        "states": 100000,
+        "edges": 300000
+      },
+      "seed": 20261015,
+      "suite": "large"
+    },
+    "main": {
+      "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "jobs": 1,
+      "isolated_timing": true,
+      "cpu": 0,
+      "memory_limit_gib": 3,
+      "timeout_seconds": 100,
+      "compile_limits": {
+        "seconds": 60,
+        "states": 100000,
+        "edges": 300000
+      },
+      "seed": 20261015,
+      "suite": "main"
+    },
+    "range": {
+      "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "jobs": 1,
+      "isolated_timing": true,
+      "cpu": 0,
+      "memory_limit_gib": 3,
+      "timeout_seconds": 100,
+      "compile_limits": {
+        "seconds": 60,
+        "states": 100000,
+        "edges": 300000
+      },
+      "seed": 20261015,
+      "suite": "range"
+    }
+  },
+  "aggregates": [
+    {
+      "campaign": "cnf",
+      "family": "producers",
+      "n": 8,
+      "method": "dynamic-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.008864938999977312,
+        "min": 0.00867238399996495,
+        "max": 0.009198426999773801
+      },
+      "setup_seconds": {
+        "median": 0.003647836000254756,
+        "min": 0.003638494999904651,
+        "max": 0.003719436999745085
+      },
+      "complete_query_seconds": {
+        "median": 0.011642178000329295,
+        "min": 0.011613482999109692,
+        "max": 0.011976291999872046
+      },
+      "first_complete_total_seconds": {
+        "median": 0.012515754000105517,
+        "min": 0.012334650000411784,
+        "max": 0.01293655499966917
+      },
+      "states": {
+        "median": 434,
+        "min": 434,
+        "max": 434
+      },
+      "transitions": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "label_literals": {
+        "median": 7920,
+        "min": 7920,
+        "max": 7920
+      },
+      "unique_label_literals": {
+        "median": 1160,
+        "min": 1160,
+        "max": 1160
+      },
+      "clauses": {
+        "median": 8845,
+        "min": 8845,
+        "max": 8845
+      },
+      "cnf_variables": {
+        "median": 4519,
+        "min": 4519,
+        "max": 4519
+      },
+      "max_layer_states": {
+        "median": 46,
+        "min": 46,
+        "max": 46
+      },
+      "peak_rss_kib": {
+        "median": 27452,
+        "min": 27412,
+        "max": 27792
+      },
+      "elapsed_seconds": {
+        "median": 0.029822901999978058,
+        "min": 0.029377831999681803,
+        "max": 0.0306774430000587
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.024116916998991655
+    },
+    {
+      "campaign": "cnf",
+      "family": "producers",
+      "n": 8,
+      "method": "grid-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.011755006999919715,
+        "min": 0.011647803999949247,
+        "max": 0.011756437000258302
+      },
+      "setup_seconds": {
+        "median": 0.005712335000225721,
+        "min": 0.005707204000373167,
+        "max": 0.005844087999776093
+      },
+      "complete_query_seconds": {
+        "median": 0.012493274998178094,
+        "min": 0.012460632999591326,
+        "max": 0.01328950999868539
+      },
+      "first_complete_total_seconds": {
+        "median": 0.017483212000570347,
+        "min": 0.017369469000186655,
+        "max": 0.017615535999539134
+      },
+      "states": {
+        "median": 434,
+        "min": 434,
+        "max": 434
+      },
+      "transitions": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "label_descriptors": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "clauses": {
+        "median": 15289,
+        "min": 15289,
+        "max": 15289
+      },
+      "cnf_variables": {
+        "median": 4428,
+        "min": 4428,
+        "max": 4428
+      },
+      "max_layer_states": {
+        "median": 46,
+        "min": 46,
+        "max": 46
+      },
+      "peak_rss_kib": {
+        "median": 28540,
+        "min": 28524,
+        "max": 28728
+      },
+      "elapsed_seconds": {
+        "median": 0.035762072000125045,
+        "min": 0.03536160399971777,
+        "max": 0.03643122899984519
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.030059727999287134
+    },
+    {
+      "campaign": "cnf",
+      "family": "producers",
+      "n": 32,
+      "method": "dynamic-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.2939726670001619,
+        "min": 0.2895570530004079,
+        "max": 0.29744039800016253
+      },
+      "setup_seconds": {
+        "median": 0.071449723999649,
+        "min": 0.07128732999990461,
+        "max": 0.07461113799990926
+      },
+      "complete_query_seconds": {
+        "median": 0.23992635299964604,
+        "min": 0.2395688709989372,
+        "max": 0.2692140029989787
+      },
+      "first_complete_total_seconds": {
+        "median": 0.36528789700014386,
+        "min": 0.3610342480001236,
+        "max": 0.37208177700040324
+      },
+      "states": {
+        "median": 6338,
+        "min": 6338,
+        "max": 6338
+      },
+      "transitions": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "label_literals": {
+        "median": 470976,
+        "min": 470976,
+        "max": 470976
+      },
+      "unique_label_literals": {
+        "median": 43040,
+        "min": 43040,
+        "max": 43040
+      },
+      "clauses": {
+        "median": 161365,
+        "min": 161365,
+        "max": 161365
+      },
+      "cnf_variables": {
+        "median": 68767,
+        "min": 68767,
+        "max": 68767
+      },
+      "max_layer_states": {
+        "median": 190,
+        "min": 190,
+        "max": 190
+      },
+      "peak_rss_kib": {
+        "median": 78524,
+        "min": 78304,
+        "max": 78648
+      },
+      "elapsed_seconds": {
+        "median": 0.6599157099999502,
+        "min": 0.6552976909997597,
+        "max": 0.6966934659999424
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.6048288679990037
+    },
+    {
+      "campaign": "cnf",
+      "family": "producers",
+      "n": 32,
+      "method": "grid-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.19928208500004985,
+        "min": 0.19775522100007947,
+        "max": 0.20232421799983058
+      },
+      "setup_seconds": {
+        "median": 0.09510418099989693,
+        "min": 0.0937403779998931,
+        "max": 0.10041558499960956
+      },
+      "complete_query_seconds": {
+        "median": 0.25008039500244195,
+        "min": 0.24672521200045594,
+        "max": 0.30379903099947114
+      },
+      "first_complete_total_seconds": {
+        "median": 0.29748394099942743,
+        "min": 0.2915495799998098,
+        "max": 0.29975831199953973
+      },
+      "states": {
+        "median": 6338,
+        "min": 6338,
+        "max": 6338
+      },
+      "transitions": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "label_descriptors": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "clauses": {
+        "median": 240385,
+        "min": 240385,
+        "max": 240385
+      },
+      "cnf_variables": {
+        "median": 68484,
+        "min": 68484,
+        "max": 68484
+      },
+      "max_layer_states": {
+        "median": 190,
+        "min": 190,
+        "max": 190
+      },
+      "peak_rss_kib": {
+        "median": 85268,
+        "min": 84992,
+        "max": 85280
+      },
+      "elapsed_seconds": {
+        "median": 0.6049943359998906,
+        "min": 0.5942130220000763,
+        "max": 0.6608739129997048
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.5497780650021014
+    },
+    {
+      "campaign": "cnf",
+      "family": "producers",
+      "n": 128,
+      "method": "dynamic-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 26.902776084999914,
+        "min": 26.84244160399976,
+        "max": 27.18987442999969
+      },
+      "setup_seconds": {
+        "median": 2.017673092000223,
+        "min": 2.0115086269997846,
+        "max": 2.03911419699989
+      },
+      "complete_query_seconds": {
+        "median": 6.695763481998256,
+        "min": 6.69479180700273,
+        "max": 6.7051380219995735
+      },
+      "first_complete_total_seconds": {
+        "median": 28.92053075900003,
+        "min": 28.85406581399957,
+        "max": 29.2290990599995
+      },
+      "states": {
+        "median": 99074,
+        "min": 99074,
+        "max": 99074
+      },
+      "transitions": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "label_literals": {
+        "median": 29556480,
+        "min": 29556480,
+        "max": 29556480
+      },
+      "unique_label_literals": {
+        "median": 2261120,
+        "min": 2261120,
+        "max": 2261120
+      },
+      "clauses": {
+        "median": 4135285,
+        "min": 4135285,
+        "max": 4135285
+      },
+      "cnf_variables": {
+        "median": 1086079,
+        "min": 1086079,
+        "max": 1086079
+      },
+      "max_layer_states": {
+        "median": 766,
+        "min": 766,
+        "max": 766
+      },
+      "peak_rss_kib": {
+        "median": 1193108,
+        "min": 1192860,
+        "max": 1193316
+      },
+      "elapsed_seconds": {
+        "median": 36.44871830400007,
+        "min": 36.36360582899988,
+        "max": 36.74151834400027
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 35.61621265899839
+    },
+    {
+      "campaign": "cnf",
+      "family": "producers",
+      "n": 128,
+      "method": "grid-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 4.1178410780003105,
+        "min": 4.108602589999919,
+        "max": 4.126438050999695
+      },
+      "setup_seconds": {
+        "median": 1.5740555990000757,
+        "min": 1.5709450059998744,
+        "max": 1.6038981429996966
+      },
+      "complete_query_seconds": {
+        "median": 5.780695698999807,
+        "min": 5.692354531000092,
+        "max": 5.86957022200113
+      },
+      "first_complete_total_seconds": {
+        "median": 5.692452600000706,
+        "min": 5.680118079999829,
+        "max": 5.730891686999257
+      },
+      "states": {
+        "median": 99074,
+        "min": 99074,
+        "max": 99074
+      },
+      "transitions": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "label_descriptors": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "clauses": {
+        "median": 3824929,
+        "min": 3824929,
+        "max": 3824929
+      },
+      "cnf_variables": {
+        "median": 1085028,
+        "min": 1085028,
+        "max": 1085028
+      },
+      "max_layer_states": {
+        "median": 766,
+        "min": 766,
+        "max": 766
+      },
+      "peak_rss_kib": {
+        "median": 981356,
+        "min": 981272,
+        "max": 981412
+      },
+      "elapsed_seconds": {
+        "median": 12.40966589699974,
+        "min": 12.271128952999788,
+        "max": 12.456533220999972
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 11.511031892999199
+    },
+    {
+      "campaign": "cnf_final",
+      "family": "producers",
+      "n": 8,
+      "method": "dynamic-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.008458498999971198,
+        "min": 0.008417527999881713,
+        "max": 0.008490601000175957
+      },
+      "setup_seconds": {
+        "median": 0.0037231080000310612,
+        "min": 0.003715166999882058,
+        "max": 0.003808420000041224
+      },
+      "complete_query_seconds": {
+        "median": 0.011621494000792154,
+        "min": 0.011611463000917865,
+        "max": 0.012164285999006097
+      },
+      "first_complete_total_seconds": {
+        "median": 0.012220558000080928,
+        "min": 0.012155726999935723,
+        "max": 0.012281679999887274
+      },
+      "states": {
+        "median": 434,
+        "min": 434,
+        "max": 434
+      },
+      "transitions": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "label_literals": {
+        "median": 7920,
+        "min": 7920,
+        "max": 7920
+      },
+      "unique_label_literals": {
+        "median": 1160,
+        "min": 1160,
+        "max": 1160
+      },
+      "clauses": {
+        "median": 8845,
+        "min": 8845,
+        "max": 8845
+      },
+      "cnf_variables": {
+        "median": 4519,
+        "min": 4519,
+        "max": 4519
+      },
+      "max_layer_states": {
+        "median": 46,
+        "min": 46,
+        "max": 46
+      },
+      "peak_rss_kib": {
+        "median": 27632,
+        "min": 27488,
+        "max": 27836
+      },
+      "elapsed_seconds": {
+        "median": 0.02931737000017165,
+        "min": 0.029286989999945945,
+        "max": 0.030188342000201374
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.02382726200085017
+    },
+    {
+      "campaign": "cnf_final",
+      "family": "producers",
+      "n": 8,
+      "method": "grid-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.01228123000009873,
+        "min": 0.012154357000326854,
+        "max": 0.012363671000457543
+      },
+      "setup_seconds": {
+        "median": 0.005731825000111712,
+        "min": 0.005691603999821382,
+        "max": 0.005797945999802323
+      },
+      "complete_query_seconds": {
+        "median": 0.01233725400061303,
+        "min": 0.012267869999959657,
+        "max": 0.012356632000319223
+      },
+      "first_complete_total_seconds": {
+        "median": 0.018027914999947825,
+        "min": 0.01796944399984568,
+        "max": 0.01807056600046053
+      },
+      "states": {
+        "median": 434,
+        "min": 434,
+        "max": 434
+      },
+      "transitions": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "label_descriptors": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "clauses": {
+        "median": 15289,
+        "min": 15289,
+        "max": 15289
+      },
+      "cnf_variables": {
+        "median": 4428,
+        "min": 4428,
+        "max": 4428
+      },
+      "max_layer_states": {
+        "median": 46,
+        "min": 46,
+        "max": 46
+      },
+      "peak_rss_kib": {
+        "median": 28772,
+        "min": 28640,
+        "max": 28784
+      },
+      "elapsed_seconds": {
+        "median": 0.03576863299986144,
+        "min": 0.0357374019999952,
+        "max": 0.03594954699974551
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.030369687000529666
+    },
+    {
+      "campaign": "cnf_final",
+      "family": "producers",
+      "n": 32,
+      "method": "dynamic-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.2216013910001493,
+        "min": 0.21895455899993976,
+        "max": 0.22238717299978816
+      },
+      "setup_seconds": {
+        "median": 0.07299602000011873,
+        "min": 0.0717747519997829,
+        "max": 0.0737288779996561
+      },
+      "complete_query_seconds": {
+        "median": 0.24121461000095223,
+        "min": 0.23595385399903535,
+        "max": 0.25065024799869207
+      },
+      "first_complete_total_seconds": {
+        "median": 0.2934039730002951,
+        "min": 0.2919792990001042,
+        "max": 0.29614578199925745
+      },
+      "states": {
+        "median": 6338,
+        "min": 6338,
+        "max": 6338
+      },
+      "transitions": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "label_literals": {
+        "median": 470976,
+        "min": 470976,
+        "max": 470976
+      },
+      "unique_label_literals": {
+        "median": 43040,
+        "min": 43040,
+        "max": 43040
+      },
+      "clauses": {
+        "median": 161365,
+        "min": 161365,
+        "max": 161365
+      },
+      "cnf_variables": {
+        "median": 68767,
+        "min": 68767,
+        "max": 68767
+      },
+      "max_layer_states": {
+        "median": 190,
+        "min": 190,
+        "max": 190
+      },
+      "peak_rss_kib": {
+        "median": 78552,
+        "min": 78536,
+        "max": 78864
+      },
+      "elapsed_seconds": {
+        "median": 0.5905842550000671,
+        "min": 0.5860098360003576,
+        "max": 0.5976075720000154
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.5345907530008844
+    },
+    {
+      "campaign": "cnf_final",
+      "family": "producers",
+      "n": 32,
+      "method": "grid-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.20709843200029354,
+        "min": 0.20450599199966746,
+        "max": 0.207129934999557
+      },
+      "setup_seconds": {
+        "median": 0.09279231800019261,
+        "min": 0.09224675500036028,
+        "max": 0.09310564599991267
+      },
+      "complete_query_seconds": {
+        "median": 0.2535469330014166,
+        "min": 0.2507939740007714,
+        "max": 0.25676923599849033
+      },
+      "first_complete_total_seconds": {
+        "median": 0.2994346109999242,
+        "min": 0.2973564309995709,
+        "max": 0.3002568100005192
+      },
+      "states": {
+        "median": 6338,
+        "min": 6338,
+        "max": 6338
+      },
+      "transitions": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "label_descriptors": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "clauses": {
+        "median": 240385,
+        "min": 240385,
+        "max": 240385
+      },
+      "cnf_variables": {
+        "median": 68484,
+        "min": 68484,
+        "max": 68484
+      },
+      "max_layer_states": {
+        "median": 190,
+        "min": 190,
+        "max": 190
+      },
+      "peak_rss_kib": {
+        "median": 85300,
+        "min": 85064,
+        "max": 85500
+      },
+      "elapsed_seconds": {
+        "median": 0.6084933759998421,
+        "min": 0.6063203460003024,
+        "max": 0.6097879479998483
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.5529236230013339
+    },
+    {
+      "campaign": "cnf_final",
+      "family": "producers",
+      "n": 128,
+      "method": "dynamic-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 9.16330739299974,
+        "min": 9.115945298999577,
+        "max": 9.26772403799987
+      },
+      "setup_seconds": {
+        "median": 2.032413968000128,
+        "min": 1.9962771370001064,
+        "max": 2.054223223000008
+      },
+      "complete_query_seconds": {
+        "median": 6.726034685003015,
+        "min": 6.705982315000256,
+        "max": 6.732472998002777
+      },
+      "first_complete_total_seconds": {
+        "median": 11.170276564999767,
+        "min": 11.159667351999815,
+        "max": 11.300221987999976
+      },
+      "states": {
+        "median": 99074,
+        "min": 99074,
+        "max": 99074
+      },
+      "transitions": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "label_literals": {
+        "median": 29556480,
+        "min": 29556480,
+        "max": 29556480
+      },
+      "unique_label_literals": {
+        "median": 2261120,
+        "min": 2261120,
+        "max": 2261120
+      },
+      "clauses": {
+        "median": 4135285,
+        "min": 4135285,
+        "max": 4135285
+      },
+      "cnf_variables": {
+        "median": 1086079,
+        "min": 1086079,
+        "max": 1086079
+      },
+      "max_layer_states": {
+        "median": 766,
+        "min": 766,
+        "max": 766
+      },
+      "peak_rss_kib": {
+        "median": 1193164,
+        "min": 1192972,
+        "max": 1193164
+      },
+      "elapsed_seconds": {
+        "median": 18.700257571999828,
+        "min": 18.69561150899972,
+        "max": 18.824474006999935
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 17.8962032070026
+    },
+    {
+      "campaign": "cnf_final",
+      "family": "producers",
+      "n": 128,
+      "method": "grid-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 4.187587801000518,
+        "min": 4.174000251000052,
+        "max": 4.205387193000206
+      },
+      "setup_seconds": {
+        "median": 1.5738106060002792,
+        "min": 1.5734533980003107,
+        "max": 1.5795743819999188
+      },
+      "complete_query_seconds": {
+        "median": 5.745954629000153,
+        "min": 5.712598459999299,
+        "max": 5.746193208999102
+      },
+      "first_complete_total_seconds": {
+        "median": 5.76162909300092,
+        "min": 5.74837160000061,
+        "max": 5.78551651800035
+      },
+      "states": {
+        "median": 99074,
+        "min": 99074,
+        "max": 99074
+      },
+      "transitions": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "label_descriptors": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "clauses": {
+        "median": 3824929,
+        "min": 3824929,
+        "max": 3824929
+      },
+      "cnf_variables": {
+        "median": 1085028,
+        "min": 1085028,
+        "max": 1085028
+      },
+      "max_layer_states": {
+        "median": 766,
+        "min": 766,
+        "max": 766
+      },
+      "peak_rss_kib": {
+        "median": 981424,
+        "min": 981148,
+        "max": 981528
+      },
+      "elapsed_seconds": {
+        "median": 12.394437677000042,
+        "min": 12.378825839000001,
+        "max": 12.437573043999691
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 11.493765486000484
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 2,
+      "method": "co-first",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0002835459999914747,
+        "min": 0.0002749360000962042,
+        "max": 0.00028539699997054413
+      },
+      "setup_seconds": {
+        "median": 4.26510000579583e-05,
+        "min": 3.848100004688604e-05,
+        "max": 5.3621000006387476e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0012335490009718342,
+        "min": 0.0012218869997013826,
+        "max": 0.0012479790020734072
+      },
+      "first_complete_total_seconds": {
+        "median": 0.00036326899999039597,
+        "min": 0.0003537279999363818,
+        "max": 0.0003770670000449172
+      },
+      "states": {
+        "median": 55,
+        "min": 55,
+        "max": 55
+      },
+      "transitions": {
+        "median": 90,
+        "min": 90,
+        "max": 90
+      },
+      "label_literals": {
+        "median": 396,
+        "min": 396,
+        "max": 396
+      },
+      "unique_label_literals": {
+        "median": 92,
+        "min": 92,
+        "max": 92
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_layer_states": {
+        "median": 24,
+        "min": 24,
+        "max": 24
+      },
+      "peak_rss_kib": {
+        "median": 24324,
+        "min": 24084,
+        "max": 24340
+      },
+      "elapsed_seconds": {
+        "median": 0.003468452000106481,
+        "min": 0.0033427479997953924,
+        "max": 0.003645145000064076
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.001549934999729885
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 2,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.00028043699967383873,
+        "min": 0.00026365599978817045,
+        "max": 0.0003028770001947123
+      },
+      "setup_seconds": {
+        "median": 3.334099983476335e-05,
+        "min": 3.207100007784902e-05,
+        "max": 3.384100000403123e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0010490140011825133,
+        "min": 0.0009885819999908563,
+        "max": 0.0010714560021369834
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0003482279994386772,
+        "min": 0.0003252470000916219,
+        "max": 0.00036236900041330955
+      },
+      "states": {
+        "median": 38,
+        "min": 38,
+        "max": 38
+      },
+      "transitions": {
+        "median": 69,
+        "min": 69,
+        "max": 69
+      },
+      "label_literals": {
+        "median": 156,
+        "min": 156,
+        "max": 156
+      },
+      "unique_label_literals": {
+        "median": 50,
+        "min": 50,
+        "max": 50
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_layer_states": {
+        "median": 10,
+        "min": 10,
+        "max": 10
+      },
+      "peak_rss_kib": {
+        "median": 24676,
+        "min": 24020,
+        "max": 24684
+      },
+      "elapsed_seconds": {
+        "median": 0.003198285000053147,
+        "min": 0.0031747940001878305,
+        "max": 0.0032177160001083394
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.001346511000974715
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 2,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0001281830000152695,
+        "min": 0.00012786300021616626,
+        "max": 0.00013134299979356
+      },
+      "setup_seconds": {
+        "median": 9.549999958835542e-06,
+        "min": 9.469999895372894e-06,
+        "max": 1.0119999842572724e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0024466869999741903,
+        "min": 0.0024058770013652975,
+        "max": 0.002447857998049585
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0001992140000766085,
+        "min": 0.00019720399996003835,
+        "max": 0.00020546399946397287
+      },
+      "states": {
+        "median": 38,
+        "min": 38,
+        "max": 38
+      },
+      "transitions": {
+        "median": 69,
+        "min": 69,
+        "max": 69
+      },
+      "label_descriptors": {
+        "median": 69,
+        "min": 69,
+        "max": 69
+      },
+      "max_layer_states": {
+        "median": 10,
+        "min": 10,
+        "max": 10
+      },
+      "peak_rss_kib": {
+        "median": 24312,
+        "min": 24132,
+        "max": 24344
+      },
+      "elapsed_seconds": {
+        "median": 0.00454326699991725,
+        "min": 0.0043961530000160565,
+        "max": 0.0046034780002628395
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.00258559099802369
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 2,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 4.9652000143396435e-05,
+        "min": 4.79209998047736e-05,
+        "max": 5.144199985807063e-05
+      },
+      "setup_seconds": {
+        "median": 0.00012132300025768927,
+        "min": 0.00010914199992839713,
+        "max": 0.00012356299976090668
+      },
+      "complete_query_seconds": {
+        "median": 0.0022913450011401437,
+        "min": 0.0022523539996655018,
+        "max": 0.0023530760008725338
+      },
+      "first_complete_total_seconds": {
+        "median": 0.00022956700058784918,
+        "min": 0.00021387499964475865,
+        "max": 0.0002315459996680147
+      },
+      "clauses": {
+        "median": 36,
+        "min": 36,
+        "max": 36
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "peak_rss_kib": {
+        "median": 24448,
+        "min": 24420,
+        "max": 24492
+      },
+      "elapsed_seconds": {
+        "median": 0.004362502999811113,
+        "min": 0.004137418000027537,
+        "max": 0.004533206999894901
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.0024484080008733144
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 2,
+      "method": "unfold",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0005478230000335316,
+        "min": 0.0005306920002112747,
+        "max": 0.0005581729997174989
+      },
+      "setup_seconds": {
+        "median": 7.637199996679556e-05,
+        "min": 7.594200042149168e-05,
+        "max": 7.663199994567549e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.002123678998032119,
+        "min": 0.002119410999966931,
+        "max": 0.002144720999240235
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0006774260000383947,
+        "min": 0.0006543060003423307,
+        "max": 0.0006859169998278958
+      },
+      "states": {
+        "median": 182,
+        "min": 182,
+        "max": 182
+      },
+      "transitions": {
+        "median": 181,
+        "min": 181,
+        "max": 181
+      },
+      "label_literals": {
+        "median": 460,
+        "min": 460,
+        "max": 460
+      },
+      "unique_label_literals": {
+        "median": 50,
+        "min": 50,
+        "max": 50
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_layer_states": {
+        "median": 60,
+        "min": 60,
+        "max": 60
+      },
+      "peak_rss_kib": {
+        "median": 24160,
+        "min": 24104,
+        "max": 24532
+      },
+      "elapsed_seconds": {
+        "median": 0.0046443790001831076,
+        "min": 0.004579296999963844,
+        "max": 0.004674530000102095
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.0027535260001059214
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 4,
+      "method": "co-first",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.009229428000253392,
+        "min": 0.008993910999834043,
+        "max": 0.00940763100015829
+      },
+      "setup_seconds": {
+        "median": 0.0011172059998898476,
+        "min": 0.0011102660000688047,
+        "max": 0.0011214760002076218
+      },
+      "complete_query_seconds": {
+        "median": 0.02596441100058655,
+        "min": 0.02478417200018157,
+        "max": 0.02615866499763797
+      },
+      "first_complete_total_seconds": {
+        "median": 0.010921848000180034,
+        "min": 0.01067330999967453,
+        "max": 0.011123071000383788
+      },
+      "states": {
+        "median": 1191,
+        "min": 1191,
+        "max": 1191
+      },
+      "transitions": {
+        "median": 3150,
+        "min": 3150,
+        "max": 3150
+      },
+      "label_literals": {
+        "median": 27160,
+        "min": 27160,
+        "max": 27160
+      },
+      "unique_label_literals": {
+        "median": 2648,
+        "min": 2648,
+        "max": 2648
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 52,
+        "min": 52,
+        "max": 52
+      },
+      "max_layer_states": {
+        "median": 560,
+        "min": 560,
+        "max": 560
+      },
+      "peak_rss_kib": {
+        "median": 26504,
+        "min": 26196,
+        "max": 26840
+      },
+      "elapsed_seconds": {
+        "median": 0.039118219999636494,
+        "min": 0.03750484299962409,
+        "max": 0.039147690999925544
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.03649351800095246
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 4,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0008959609999692475,
+        "min": 0.0008952209996095917,
+        "max": 0.0009155009997812158
+      },
+      "setup_seconds": {
+        "median": 9.341199984191917e-05,
+        "min": 9.331199998996453e-05,
+        "max": 9.55320001594373e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0029620210020766535,
+        "min": 0.0029270070003803994,
+        "max": 0.002975819997573126
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0010595949997878051,
+        "min": 0.0010569649994067731,
+        "max": 0.001077523999811092
+      },
+      "states": {
+        "median": 122,
+        "min": 122,
+        "max": 122
+      },
+      "transitions": {
+        "median": 269,
+        "min": 269,
+        "max": 269
+      },
+      "label_literals": {
+        "median": 1080,
+        "min": 1080,
+        "max": 1080
+      },
+      "unique_label_literals": {
+        "median": 228,
+        "min": 228,
+        "max": 228
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 52,
+        "min": 52,
+        "max": 52
+      },
+      "max_layer_states": {
+        "median": 22,
+        "min": 22,
+        "max": 22
+      },
+      "peak_rss_kib": {
+        "median": 24680,
+        "min": 24640,
+        "max": 24680
+      },
+      "elapsed_seconds": {
+        "median": 0.006849711000086245,
+        "min": 0.006690637999781757,
+        "max": 0.008081299999957992
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.003950654001528164
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 4,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0004256900001564645,
+        "min": 0.00042174000009254087,
+        "max": 0.0004260400000930531
+      },
+      "setup_seconds": {
+        "median": 1.2761000107275322e-05,
+        "min": 1.2519999927462777e-05,
+        "max": 1.3029999990976648e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.007363184997757344,
+        "min": 0.00733566500048255,
+        "max": 0.007414154997604783
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0006087940000725212,
+        "min": 0.0006062239999664598,
+        "max": 0.0006306960003712447
+      },
+      "states": {
+        "median": 122,
+        "min": 122,
+        "max": 122
+      },
+      "transitions": {
+        "median": 269,
+        "min": 269,
+        "max": 269
+      },
+      "label_descriptors": {
+        "median": 269,
+        "min": 269,
+        "max": 269
+      },
+      "max_layer_states": {
+        "median": 22,
+        "min": 22,
+        "max": 22
+      },
+      "peak_rss_kib": {
+        "median": 24712,
+        "min": 24648,
+        "max": 24712
+      },
+      "elapsed_seconds": {
+        "median": 0.010698122000121657,
+        "min": 0.010611509999762347,
+        "max": 0.010726311999860627
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.007801904997904785
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 4,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0001226629997290729,
+        "min": 0.0001177130002361082,
+        "max": 0.00014172300006976002
+      },
+      "setup_seconds": {
+        "median": 0.0002484859996911837,
+        "min": 0.00024682599996594945,
+        "max": 0.00025212600030499743
+      },
+      "complete_query_seconds": {
+        "median": 0.006834248998984549,
+        "min": 0.006701134001104947,
+        "max": 0.006946605002212891
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0005250419999356382,
+        "min": 0.0005165130005480023,
+        "max": 0.0005465029994411452
+      },
+      "clauses": {
+        "median": 158,
+        "min": 158,
+        "max": 158
+      },
+      "cnf_variables": {
+        "median": 52,
+        "min": 52,
+        "max": 52
+      },
+      "peak_rss_kib": {
+        "median": 24600,
+        "min": 24368,
+        "max": 24684
+      },
+      "elapsed_seconds": {
+        "median": 0.009969974999876285,
+        "min": 0.009915532999912102,
+        "max": 0.010876005999762128
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.007203737998679571
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 4,
+      "method": "unfold",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.02609260400004132,
+        "min": 0.025975121000101353,
+        "max": 0.026167565999912767
+      },
+      "setup_seconds": {
+        "median": 0.0020368579998830683,
+        "min": 0.002003586999762774,
+        "max": 0.002038017999893782
+      },
+      "complete_query_seconds": {
+        "median": 0.06440301699876727,
+        "min": 0.06262328399861872,
+        "max": 0.06660084800068944
+      },
+      "first_complete_total_seconds": {
+        "median": 0.029603426999528892,
+        "min": 0.029398411999864038,
+        "max": 0.029656767999767908
+      },
+      "states": {
+        "median": 8052,
+        "min": 8052,
+        "max": 8052
+      },
+      "transitions": {
+        "median": 8051,
+        "min": 8051,
+        "max": 8051
+      },
+      "label_literals": {
+        "median": 35798,
+        "min": 35798,
+        "max": 35798
+      },
+      "unique_label_literals": {
+        "median": 228,
+        "min": 228,
+        "max": 228
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 52,
+        "min": 52,
+        "max": 52
+      },
+      "max_layer_states": {
+        "median": 2520,
+        "min": 2520,
+        "max": 2520
+      },
+      "peak_rss_kib": {
+        "median": 28012,
+        "min": 27860,
+        "max": 28036
+      },
+      "elapsed_seconds": {
+        "median": 0.09549845700030346,
+        "min": 0.09368670399999246,
+        "max": 0.097690498999782
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.09257416999844281
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 6,
+      "method": "co-first",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.320174113000121,
+        "min": 0.30599566900036734,
+        "max": 0.3206955850000668
+      },
+      "setup_seconds": {
+        "median": 0.030008336000264535,
+        "min": 0.02914818599992941,
+        "max": 0.030092517999946722
+      },
+      "complete_query_seconds": {
+        "median": 0.6461857549998058,
+        "min": 0.6309366120003688,
+        "max": 0.647716080002283
+      },
+      "first_complete_total_seconds": {
+        "median": 0.3654174180001064,
+        "min": 0.3528815720005696,
+        "max": 0.3659192590002931
+      },
+      "states": {
+        "median": 23101,
+        "min": 23101,
+        "max": 23101
+      },
+      "transitions": {
+        "median": 84084,
+        "min": 84084,
+        "max": 84084
+      },
+      "label_literals": {
+        "median": 1069992,
+        "min": 1069992,
+        "max": 1069992
+      },
+      "unique_label_literals": {
+        "median": 72360,
+        "min": 72360,
+        "max": 72360
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 102,
+        "min": 102,
+        "max": 102
+      },
+      "max_layer_states": {
+        "median": 11088,
+        "min": 11088,
+        "max": 11088
+      },
+      "peak_rss_kib": {
+        "median": 87244,
+        "min": 87216,
+        "max": 87328
+      },
+      "elapsed_seconds": {
+        "median": 0.9908273709997957,
+        "min": 0.9903772209995623,
+        "max": 1.006123099999968
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.9822739420001199
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 6,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.002049928999895201,
+        "min": 0.0020278980000512092,
+        "max": 0.002062199000192777
+      },
+      "setup_seconds": {
+        "median": 0.0002344960003028973,
+        "min": 0.000228145000164659,
+        "max": 0.00024645599978612154
+      },
+      "complete_query_seconds": {
+        "median": 0.006496703000721027,
+        "min": 0.006014940999193641,
+        "max": 0.006587047998436901
+      },
+      "first_complete_total_seconds": {
+        "median": 0.002412636999906681,
+        "min": 0.00240613799996936,
+        "max": 0.002442829000301572
+      },
+      "states": {
+        "median": 254,
+        "min": 254,
+        "max": 254
+      },
+      "transitions": {
+        "median": 597,
+        "min": 597,
+        "max": 597
+      },
+      "label_literals": {
+        "median": 3444,
+        "min": 3444,
+        "max": 3444
+      },
+      "unique_label_literals": {
+        "median": 582,
+        "min": 582,
+        "max": 582
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 102,
+        "min": 102,
+        "max": 102
+      },
+      "max_layer_states": {
+        "median": 34,
+        "min": 34,
+        "max": 34
+      },
+      "peak_rss_kib": {
+        "median": 24976,
+        "min": 24928,
+        "max": 25128
+      },
+      "elapsed_seconds": {
+        "median": 0.012903162999919005,
+        "min": 0.012463554000078148,
+        "max": 0.013033957000061491
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.008774777000780887
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 6,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0008188490000975435,
+        "min": 0.000803719000032288,
+        "max": 0.0008196600001610932
+      },
+      "setup_seconds": {
+        "median": 1.819099998101592e-05,
+        "min": 1.717000031931093e-05,
+        "max": 1.8820999684976414e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.015105548000065028,
+        "min": 0.014758574999632401,
+        "max": 0.015670999000576558
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0011887670002579398,
+        "min": 0.0011878479999722913,
+        "max": 0.0012561210000967549
+      },
+      "states": {
+        "median": 254,
+        "min": 254,
+        "max": 254
+      },
+      "transitions": {
+        "median": 597,
+        "min": 597,
+        "max": 597
+      },
+      "label_descriptors": {
+        "median": 597,
+        "min": 597,
+        "max": 597
+      },
+      "max_layer_states": {
+        "median": 34,
+        "min": 34,
+        "max": 34
+      },
+      "peak_rss_kib": {
+        "median": 25096,
+        "min": 24896,
+        "max": 25104
+      },
+      "elapsed_seconds": {
+        "median": 0.020251315999757935,
+        "min": 0.01979165600005217,
+        "max": 0.020746338000208198
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.015943399000207137
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 6,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0003156580000904796,
+        "min": 0.0002712569998948311,
+        "max": 0.00031597699990015826
+      },
+      "setup_seconds": {
+        "median": 0.0005121919998600788,
+        "min": 0.0005036319998907857,
+        "max": 0.0005156429997441592
+      },
+      "complete_query_seconds": {
+        "median": 0.01713724200044453,
+        "min": 0.016967627997928503,
+        "max": 0.017226572999788914
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0011460470000201894,
+        "min": 0.0011345879993314156,
+        "max": 0.0011636569997790502
+      },
+      "clauses": {
+        "median": 368,
+        "min": 368,
+        "max": 368
+      },
+      "cnf_variables": {
+        "median": 102,
+        "min": 102,
+        "max": 102
+      },
+      "peak_rss_kib": {
+        "median": 25056,
+        "min": 25024,
+        "max": 25176
+      },
+      "elapsed_seconds": {
+        "median": 0.021648988999913854,
+        "min": 0.021500736999769288,
+        "max": 0.021805932999996003
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.017956851000235474
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 6,
+      "method": "unfold",
+      "repetitions": 3,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 3
+      },
+      "failures": [
+        {
+          "path": "final/0011.json",
+          "stage": "compile",
+          "reason": "Scheduling graph state/edge limit"
+        },
+        {
+          "path": "final/0051.json",
+          "stage": "compile",
+          "reason": "Scheduling graph state/edge limit"
+        },
+        {
+          "path": "final/0053.json",
+          "stage": "compile",
+          "reason": "Scheduling graph state/edge limit"
+        }
+      ]
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 8,
+      "method": "co-first",
+      "repetitions": 3,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 3
+      },
+      "failures": [
+        {
+          "path": "final/0047.json",
+          "stage": "compile",
+          "reason": "CO-first construction limit"
+        },
+        {
+          "path": "final/0055.json",
+          "stage": "compile",
+          "reason": "CO-first construction limit"
+        },
+        {
+          "path": "final/0079.json",
+          "stage": "compile",
+          "reason": "CO-first construction limit"
+        }
+      ]
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 8,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0037810789999639383,
+        "min": 0.0037573380000139878,
+        "max": 0.0038679310000588885
+      },
+      "setup_seconds": {
+        "median": 0.0007270770001923665,
+        "min": 0.0007174870002017997,
+        "max": 0.0007333670000662096
+      },
+      "complete_query_seconds": {
+        "median": 0.010020186001838738,
+        "min": 0.010008586000367359,
+        "max": 0.01037399499955427
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0047422419997928955,
+        "min": 0.004719630000181496,
+        "max": 0.004830963000131305
+      },
+      "states": {
+        "median": 434,
+        "min": 434,
+        "max": 434
+      },
+      "transitions": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "label_literals": {
+        "median": 7920,
+        "min": 7920,
+        "max": 7920
+      },
+      "unique_label_literals": {
+        "median": 1160,
+        "min": 1160,
+        "max": 1160
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 168,
+        "min": 168,
+        "max": 168
+      },
+      "max_layer_states": {
+        "median": 46,
+        "min": 46,
+        "max": 46
+      },
+      "peak_rss_kib": {
+        "median": 25436,
+        "min": 25232,
+        "max": 25628
+      },
+      "elapsed_seconds": {
+        "median": 0.019889947999672586,
+        "min": 0.019844006999846897,
+        "max": 0.020235577000221383
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.014621484001963836
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 8,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0013967830000183312,
+        "min": 0.0013895730003241624,
+        "max": 0.0014048829998500878
+      },
+      "setup_seconds": {
+        "median": 2.0591000065905973e-05,
+        "min": 2.0540999685181305e-05,
+        "max": 2.2029999854566995e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.024592525000571186,
+        "min": 0.024064187002295512,
+        "max": 0.025500120002106996
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0020194479998281167,
+        "min": 0.0020179680000183,
+        "max": 0.002079647999835288
+      },
+      "states": {
+        "median": 434,
+        "min": 434,
+        "max": 434
+      },
+      "transitions": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "label_descriptors": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "max_layer_states": {
+        "median": 46,
+        "min": 46,
+        "max": 46
+      },
+      "peak_rss_kib": {
+        "median": 25540,
+        "min": 25304,
+        "max": 25548
+      },
+      "elapsed_seconds": {
+        "median": 0.03184668899984899,
+        "min": 0.03132687699962844,
+        "max": 0.03310432900025262
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.02600263900058053
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 8,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0004442200001903984,
+        "min": 0.00043408000010458636,
+        "max": 0.0004631609999705688
+      },
+      "setup_seconds": {
+        "median": 0.000890131000232941,
+        "min": 0.0008830609999677108,
+        "max": 0.0009523819999230909
+      },
+      "complete_query_seconds": {
+        "median": 0.03192272100068294,
+        "min": 0.03069970200112948,
+        "max": 0.03330588900053044
+      },
+      "first_complete_total_seconds": {
+        "median": 0.001920866000091337,
+        "min": 0.0018576940001366893,
+        "max": 0.001992005999909452
+      },
+      "clauses": {
+        "median": 666,
+        "min": 666,
+        "max": 666
+      },
+      "cnf_variables": {
+        "median": 168,
+        "min": 168,
+        "max": 168
+      },
+      "peak_rss_kib": {
+        "median": 25152,
+        "min": 25100,
+        "max": 25416
+      },
+      "elapsed_seconds": {
+        "median": 0.038725070000054984,
+        "min": 0.03740473900006691,
+        "max": 0.04014144400025543
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.03327601300088645
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 16,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.01909217999991597,
+        "min": 0.01891971499981082,
+        "max": 0.019153519999690616
+      },
+      "setup_seconds": {
+        "median": 0.001747720999901503,
+        "min": 0.0017240500001207693,
+        "max": 0.001757151000219892
+      },
+      "complete_query_seconds": {
+        "median": 0.036306536999290984,
+        "min": 0.03565621099960481,
+        "max": 0.036334615998384834
+      },
+      "first_complete_total_seconds": {
+        "median": 0.021698151000236976,
+        "min": 0.02154709600017668,
+        "max": 0.021798691999720177
+      },
+      "states": {
+        "median": 1634,
+        "min": 1634,
+        "max": 1634
+      },
+      "transitions": {
+        "median": 4157,
+        "min": 4157,
+        "max": 4157
+      },
+      "label_literals": {
+        "median": 60384,
+        "min": 60384,
+        "max": 60384
+      },
+      "unique_label_literals": {
+        "median": 6672,
+        "min": 6672,
+        "max": 6672
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 592,
+        "min": 592,
+        "max": 592
+      },
+      "max_layer_states": {
+        "median": 94,
+        "min": 94,
+        "max": 94
+      },
+      "peak_rss_kib": {
+        "median": 28556,
+        "min": 28308,
+        "max": 28632
+      },
+      "elapsed_seconds": {
+        "median": 0.07176237800013041,
+        "min": 0.0714068900001621,
+        "max": 0.07235140300008425
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.05701148199841555
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 16,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.005585721999977977,
+        "min": 0.005516249000265816,
+        "max": 0.005595151999841619
+      },
+      "setup_seconds": {
+        "median": 6.124099991211551e-05,
+        "min": 5.292100013321033e-05,
+        "max": 6.535200009238906e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.08863955699962389,
+        "min": 0.0885605880039293,
+        "max": 0.08864897400007976
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0079732280000826,
+        "min": 0.007856704000460013,
+        "max": 0.00800716799994916
+      },
+      "states": {
+        "median": 1634,
+        "min": 1634,
+        "max": 1634
+      },
+      "transitions": {
+        "median": 4157,
+        "min": 4157,
+        "max": 4157
+      },
+      "label_descriptors": {
+        "median": 4157,
+        "min": 4157,
+        "max": 4157
+      },
+      "max_layer_states": {
+        "median": 94,
+        "min": 94,
+        "max": 94
+      },
+      "peak_rss_kib": {
+        "median": 28096,
+        "min": 28068,
+        "max": 28096
+      },
+      "elapsed_seconds": {
+        "median": 0.10977375199991002,
+        "min": 0.1094261540001753,
+        "max": 0.1099717669999336
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.0942211579999821
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 16,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0016679989998920064,
+        "min": 0.0016358180000679567,
+        "max": 0.0017611509997550456
+      },
+      "setup_seconds": {
+        "median": 0.004304462000163767,
+        "min": 0.0042464299999664945,
+        "max": 0.0043599320001703745
+      },
+      "complete_query_seconds": {
+        "median": 0.17741094799976054,
+        "min": 0.17698054300171862,
+        "max": 0.18286556599969117
+      },
+      "first_complete_total_seconds": {
+        "median": 0.009546573999614338,
+        "min": 0.009508463000202028,
+        "max": 0.009697337000034167
+      },
+      "clauses": {
+        "median": 2738,
+        "min": 2738,
+        "max": 2738
+      },
+      "cnf_variables": {
+        "median": 592,
+        "min": 592,
+        "max": 592
+      },
+      "peak_rss_kib": {
+        "median": 27372,
+        "min": 27352,
+        "max": 27452
+      },
+      "elapsed_seconds": {
+        "median": 0.1985503409996454,
+        "min": 0.19816907299991726,
+        "max": 0.20413080200023614
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.18335122799999226
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 32,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.1113169690001996,
+        "min": 0.1106121620000522,
+        "max": 0.11618498400002863
+      },
+      "setup_seconds": {
+        "median": 0.01347695799995563,
+        "min": 0.01321403099973395,
+        "max": 0.013664891000189527
+      },
+      "complete_query_seconds": {
+        "median": 0.14397702700080117,
+        "min": 0.14233244900106,
+        "max": 0.1656896229992526
+      },
+      "first_complete_total_seconds": {
+        "median": 0.12818221599991375,
+        "min": 0.12769969500004663,
+        "max": 0.1341612860001078
+      },
+      "states": {
+        "median": 6338,
+        "min": 6338,
+        "max": 6338
+      },
+      "transitions": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "label_literals": {
+        "median": 470976,
+        "min": 470976,
+        "max": 470976
+      },
+      "unique_label_literals": {
+        "median": 43040,
+        "min": 43040,
+        "max": 43040
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 2208,
+        "min": 2208,
+        "max": 2208
+      },
+      "max_layer_states": {
+        "median": 190,
+        "min": 190,
+        "max": 190
+      },
+      "peak_rss_kib": {
+        "median": 37844,
+        "min": 37744,
+        "max": 37872
+      },
+      "elapsed_seconds": {
+        "median": 0.3168443049999041,
+        "min": 0.31439123700010896,
+        "max": 0.34697785399976055
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.26850802700073473
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 32,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.020802200000161974,
+        "min": 0.02079373900005521,
+        "max": 0.02111875599985069
+      },
+      "setup_seconds": {
+        "median": 0.00023428499980582274,
+        "min": 0.00022630500006926013,
+        "max": 0.0002483349999238271
+      },
+      "complete_query_seconds": {
+        "median": 0.32552913100107617,
+        "min": 0.3230177609984821,
+        "max": 0.3259058019993972
+      },
+      "first_complete_total_seconds": {
+        "median": 0.03004054700022607,
+        "min": 0.02999943400027405,
+        "max": 0.030420463999689673
+      },
+      "states": {
+        "median": 6338,
+        "min": 6338,
+        "max": 6338
+      },
+      "transitions": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "label_descriptors": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "max_layer_states": {
+        "median": 190,
+        "min": 190,
+        "max": 190
+      },
+      "peak_rss_kib": {
+        "median": 35028,
+        "min": 34648,
+        "max": 35036
+      },
+      "elapsed_seconds": {
+        "median": 0.39385841600005733,
+        "min": 0.39159984299976713,
+        "max": 0.3949224120001418
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.3468821720007327
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 32,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0066795579996323795,
+        "min": 0.006591225000192935,
+        "max": 0.006873811000332353
+      },
+      "setup_seconds": {
+        "median": 0.027384714000163513,
+        "min": 0.027071117000105005,
+        "max": 0.027793514000222785
+      },
+      "complete_query_seconds": {
+        "median": 1.4837045990007027,
+        "min": 1.4705187049971755,
+        "max": 1.4846524699973997
+      },
+      "first_complete_total_seconds": {
+        "median": 0.05591107700001885,
+        "min": 0.05502621400000862,
+        "max": 0.056795715000134805
+      },
+      "clauses": {
+        "median": 11106,
+        "min": 11106,
+        "max": 11106
+      },
+      "cnf_variables": {
+        "median": 2208,
+        "min": 2208,
+        "max": 2208
+      },
+      "peak_rss_kib": {
+        "median": 33740,
+        "min": 33312,
+        "max": 33740
+      },
+      "elapsed_seconds": {
+        "median": 1.565765387999818,
+        "min": 1.5521528670001317,
+        "max": 1.5674010759998964
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 1.5177688710004986
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 64,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.7413190710003619,
+        "min": 0.7385706319996643,
+        "max": 0.7434907920001024
+      },
+      "setup_seconds": {
+        "median": 0.06718477300000814,
+        "min": 0.06639607200031605,
+        "max": 0.07046039800025028
+      },
+      "complete_query_seconds": {
+        "median": 0.5981752660013626,
+        "min": 0.5979019999981574,
+        "max": 0.6132969950012921
+      },
+      "first_complete_total_seconds": {
+        "median": 0.8264293740003268,
+        "min": 0.8214862959998754,
+        "max": 0.8274674190006408
+      },
+      "states": {
+        "median": 24962,
+        "min": 24962,
+        "max": 24962
+      },
+      "transitions": {
+        "median": 65789,
+        "min": 65789,
+        "max": 65789
+      },
+      "label_literals": {
+        "median": 3719040,
+        "min": 3719040,
+        "max": 3719040
+      },
+      "unique_label_literals": {
+        "median": 303168,
+        "min": 303168,
+        "max": 303168
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 8512,
+        "min": 8512,
+        "max": 8512
+      },
+      "max_layer_states": {
+        "median": 382,
+        "min": 382,
+        "max": 382
+      },
+      "peak_rss_kib": {
+        "median": 72496,
+        "min": 72416,
+        "max": 72772
+      },
+      "elapsed_seconds": {
+        "median": 1.5786424509997232,
+        "min": 1.5735526959997514,
+        "max": 1.594132504999834
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 1.4099547350019748
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 64,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.09100471099964125,
+        "min": 0.0906228519997967,
+        "max": 0.09499828500020158
+      },
+      "setup_seconds": {
+        "median": 0.0007780680002724694,
+        "min": 0.0007759380000607052,
+        "max": 0.0008020690002012998
+      },
+      "complete_query_seconds": {
+        "median": 1.240102881002258,
+        "min": 1.2315445100020952,
+        "max": 1.2407228740025857
+      },
+      "first_complete_total_seconds": {
+        "median": 0.1278833989999839,
+        "min": 0.12719948200037834,
+        "max": 0.13140936200034048
+      },
+      "states": {
+        "median": 24962,
+        "min": 24962,
+        "max": 24962
+      },
+      "transitions": {
+        "median": 65789,
+        "min": 65789,
+        "max": 65789
+      },
+      "label_descriptors": {
+        "median": 65789,
+        "min": 65789,
+        "max": 65789
+      },
+      "max_layer_states": {
+        "median": 382,
+        "min": 382,
+        "max": 382
+      },
+      "peak_rss_kib": {
+        "median": 55272,
+        "min": 55004,
+        "max": 55324
+      },
+      "elapsed_seconds": {
+        "median": 1.499301813999864,
+        "min": 1.4927347890002238,
+        "max": 1.503823230999842
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 1.33188353000196
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 64,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.02554777000023023,
+        "min": 0.025532860000112123,
+        "max": 0.025709844999710185
+      },
+      "setup_seconds": {
+        "median": 0.20181617799971718,
+        "min": 0.198428229000001,
+        "max": 0.20243995300006645
+      },
+      "complete_query_seconds": {
+        "median": 15.696896358000231,
+        "min": 15.539330082997367,
+        "max": 15.746322216001772
+      },
+      "first_complete_total_seconds": {
+        "median": 0.39492348100020536,
+        "min": 0.3884261080002034,
+        "max": 0.39502053299929685
+      },
+      "clauses": {
+        "median": 44738,
+        "min": 44738,
+        "max": 44738
+      },
+      "cnf_variables": {
+        "median": 8512,
+        "min": 8512,
+        "max": 8512
+      },
+      "peak_rss_kib": {
+        "median": 50968,
+        "min": 50360,
+        "max": 51000
+      },
+      "elapsed_seconds": {
+        "median": 16.093389907000073,
+        "min": 15.935601485000007,
+        "max": 16.14340524399995
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 15.924422380999658
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 128,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 5.5942442959999426,
+        "min": 5.547212357999797,
+        "max": 5.613177181000083
+      },
+      "setup_seconds": {
+        "median": 0.45740432200000214,
+        "min": 0.4422213739999279,
+        "max": 0.4595022109997444
+      },
+      "complete_query_seconds": {
+        "median": 3.384890368001379,
+        "min": 3.316110133001075,
+        "max": 3.434325180001906
+      },
+      "first_complete_total_seconds": {
+        "median": 6.129971639999894,
+        "min": 6.096613643999717,
+        "max": 6.162589178000417
+      },
+      "states": {
+        "median": 99074,
+        "min": 99074,
+        "max": 99074
+      },
+      "transitions": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "label_literals": {
+        "median": 29556480,
+        "min": 29556480,
+        "max": 29556480
+      },
+      "unique_label_literals": {
+        "median": 2261120,
+        "min": 2261120,
+        "max": 2261120
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 33408,
+        "min": 33408,
+        "max": 33408
+      },
+      "max_layer_states": {
+        "median": 766,
+        "min": 766,
+        "max": 766
+      },
+      "peak_rss_kib": {
+        "median": 248968,
+        "min": 248564,
+        "max": 248992
+      },
+      "elapsed_seconds": {
+        "median": 10.089449583999794,
+        "min": 9.961640065999745,
+        "max": 10.110709813000085
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 9.455471871001464
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 128,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.39246724299982816,
+        "min": 0.39245555300021806,
+        "max": 0.3925079850000657
+      },
+      "setup_seconds": {
+        "median": 0.0032298959999934596,
+        "min": 0.0032065049999800976,
+        "max": 0.0032965679997687403
+      },
+      "complete_query_seconds": {
+        "median": 4.970418322001024,
+        "min": 4.909040899999127,
+        "max": 5.151623952999671
+      },
+      "first_complete_total_seconds": {
+        "median": 0.5407615720000649,
+        "min": 0.5393515490000027,
+        "max": 0.5454265319995102
+      },
+      "states": {
+        "median": 99074,
+        "min": 99074,
+        "max": 99074
+      },
+      "transitions": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "label_descriptors": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "max_layer_states": {
+        "median": 766,
+        "min": 766,
+        "max": 766
+      },
+      "peak_rss_kib": {
+        "median": 144116,
+        "min": 144088,
+        "max": 144120
+      },
+      "elapsed_seconds": {
+        "median": 6.005494491000263,
+        "min": 5.93378283400034,
+        "max": 6.183597479999662
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 5.366103771001235
+    },
+    {
+      "campaign": "final",
+      "family": "producers",
+      "n": 128,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 3
+      },
+      "failures": [
+        {
+          "path": "final/0062.json",
+          "stage": "queries",
+          "reason": "wall_timeout_100s"
+        },
+        {
+          "path": "final/0067.json",
+          "stage": "queries",
+          "reason": "wall_timeout_100s"
+        },
+        {
+          "path": "final/0074.json",
+          "stage": "queries",
+          "reason": "wall_timeout_100s"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_final",
+      "family": "pipeline",
+      "n": 1,
+      "method": "frontier",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.275405934000446,
+        "min": 0.2729044449997673,
+        "max": 0.2843709239996315
+      },
+      "setup_seconds": {
+        "median": 0.00031734699950902723,
+        "min": 0.00031679800031270133,
+        "max": 0.0003239779998693848
+      },
+      "complete_query_seconds": {
+        "median": 0.006109563997597434,
+        "min": 0.005965459997241851,
+        "max": 0.006205215996487823
+      },
+      "first_complete_total_seconds": {
+        "median": 0.2759109860007811,
+        "min": 0.2734087759990871,
+        "max": 0.28487267600030464
+      },
+      "states": {
+        "median": 1185,
+        "min": 1185,
+        "max": 1185
+      },
+      "transitions": {
+        "median": 1208,
+        "min": 1208,
+        "max": 1208
+      },
+      "label_literals": {
+        "median": 229,
+        "min": 229,
+        "max": 229
+      },
+      "unique_label_literals": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 14,
+        "min": 14,
+        "max": 14
+      },
+      "max_interface": {
+        "median": 9,
+        "min": 9,
+        "max": 9
+      },
+      "max_layer_states": {
+        "median": 100,
+        "min": 100,
+        "max": 100
+      },
+      "peak_rss_kib": {
+        "median": 26300,
+        "min": 26036,
+        "max": 26592
+      },
+      "elapsed_seconds": {
+        "median": 0.2831013149998398,
+        "min": 0.2815581380000367,
+        "max": 0.29197968400058016
+      },
+      "query_count": 64,
+      "sat_queries": 30,
+      "total_compile_setup_64queries": 0.28169537199755723
+    },
+    {
+      "campaign": "frontier_final",
+      "family": "pipeline",
+      "n": 1,
+      "method": "frontier-dfa",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.9312896769997678,
+        "min": 0.9263466909997078,
+        "max": 0.9353833139994094
+      },
+      "setup_seconds": {
+        "median": 0.00036097800057177665,
+        "min": 0.0003600090003601508,
+        "max": 0.0004712209993158467
+      },
+      "complete_query_seconds": {
+        "median": 0.006558744995345478,
+        "min": 0.006359499998325191,
+        "max": 0.006588385004761221
+      },
+      "first_complete_total_seconds": {
+        "median": 0.9318495410007017,
+        "min": 0.9269019040002604,
+        "max": 0.936100800998247
+      },
+      "states": {
+        "median": 1251,
+        "min": 1251,
+        "max": 1251
+      },
+      "transitions": {
+        "median": 1266,
+        "min": 1266,
+        "max": 1266
+      },
+      "label_literals": {
+        "median": 236,
+        "min": 236,
+        "max": 236
+      },
+      "unique_label_literals": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 14,
+        "min": 14,
+        "max": 14
+      },
+      "max_interface": {
+        "median": 9,
+        "min": 9,
+        "max": 9
+      },
+      "max_layer_states": {
+        "median": 100,
+        "min": 100,
+        "max": 100
+      },
+      "peak_rss_kib": {
+        "median": 37356,
+        "min": 37216,
+        "max": 37456
+      },
+      "elapsed_seconds": {
+        "median": 0.9392737850002959,
+        "min": 0.9341474240000025,
+        "max": 0.9438874039997245
+      },
+      "query_count": 64,
+      "sat_queries": 30,
+      "total_compile_setup_64queries": 0.9382380710048892
+    },
+    {
+      "campaign": "frontier_final",
+      "family": "pipeline",
+      "n": 1,
+      "method": "frontier-full",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.564273633999619,
+        "min": 0.555243881000024,
+        "max": 0.5664678759994786
+      },
+      "setup_seconds": {
+        "median": 0.0003405389998079045,
+        "min": 0.0003262780001023202,
+        "max": 0.0003559080005288706
+      },
+      "complete_query_seconds": {
+        "median": 0.00603692200002115,
+        "min": 0.006031693001204985,
+        "max": 0.006121495000115829
+      },
+      "first_complete_total_seconds": {
+        "median": 0.5648243760006153,
+        "min": 0.5557664939997267,
+        "max": 0.5669990589994995
+      },
+      "states": {
+        "median": 1185,
+        "min": 1185,
+        "max": 1185
+      },
+      "transitions": {
+        "median": 1208,
+        "min": 1208,
+        "max": 1208
+      },
+      "label_literals": {
+        "median": 229,
+        "min": 229,
+        "max": 229
+      },
+      "unique_label_literals": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 14,
+        "min": 14,
+        "max": 14
+      },
+      "max_interface": {
+        "median": 9,
+        "min": 9,
+        "max": 9
+      },
+      "max_layer_states": {
+        "median": 100,
+        "min": 100,
+        "max": 100
+      },
+      "peak_rss_kib": {
+        "median": 26424,
+        "min": 26148,
+        "max": 26428
+      },
+      "elapsed_seconds": {
+        "median": 0.5719901559996288,
+        "min": 0.5627133279995178,
+        "max": 0.5744526839998798
+      },
+      "query_count": 64,
+      "sat_queries": 30,
+      "total_compile_setup_64queries": 0.5706612350013529
+    },
+    {
+      "campaign": "frontier_final",
+      "family": "producers",
+      "n": 1,
+      "method": "frontier",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.02166294000016933,
+        "min": 0.021588629000689252,
+        "max": 0.022526130999722227
+      },
+      "setup_seconds": {
+        "median": 5.8710999837785494e-05,
+        "min": 5.84720000915695e-05,
+        "max": 6.0740999288100284e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.002010226000493276,
+        "min": 0.0019663069979287684,
+        "max": 0.00206726900250942
+      },
+      "first_complete_total_seconds": {
+        "median": 0.02177113199923042,
+        "min": 0.02169445099934819,
+        "max": 0.022629133999544138
+      },
+      "states": {
+        "median": 200,
+        "min": 200,
+        "max": 200
+      },
+      "transitions": {
+        "median": 218,
+        "min": 218,
+        "max": 218
+      },
+      "label_literals": {
+        "median": 106,
+        "min": 106,
+        "max": 106
+      },
+      "unique_label_literals": {
+        "median": 12,
+        "min": 12,
+        "max": 12
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_interface": {
+        "median": 5,
+        "min": 5,
+        "max": 5
+      },
+      "max_layer_states": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "peak_rss_kib": {
+        "median": 24976,
+        "min": 24808,
+        "max": 25052
+      },
+      "elapsed_seconds": {
+        "median": 0.0252780270002404,
+        "min": 0.02520199400078127,
+        "max": 0.026319489999877987
+      },
+      "query_count": 64,
+      "sat_queries": 62,
+      "total_compile_setup_64queries": 0.023687957997935882
+    },
+    {
+      "campaign": "frontier_final",
+      "family": "producers",
+      "n": 1,
+      "method": "frontier-dfa",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.14895025199984957,
+        "min": 0.1483554180003921,
+        "max": 0.14901084400025866
+      },
+      "setup_seconds": {
+        "median": 6.97819996275939e-05,
+        "min": 6.6841999796452e-05,
+        "max": 7.062200074869907e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0020282070008761366,
+        "min": 0.001993215004404192,
+        "max": 0.0020592489981936524
+      },
+      "first_complete_total_seconds": {
+        "median": 0.1490710059988487,
+        "min": 0.14847818100133736,
+        "max": 0.14912230699974316
+      },
+      "states": {
+        "median": 200,
+        "min": 200,
+        "max": 200
+      },
+      "transitions": {
+        "median": 218,
+        "min": 218,
+        "max": 218
+      },
+      "label_literals": {
+        "median": 106,
+        "min": 106,
+        "max": 106
+      },
+      "unique_label_literals": {
+        "median": 12,
+        "min": 12,
+        "max": 12
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_interface": {
+        "median": 5,
+        "min": 5,
+        "max": 5
+      },
+      "max_layer_states": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "peak_rss_kib": {
+        "median": 37240,
+        "min": 37080,
+        "max": 37484
+      },
+      "elapsed_seconds": {
+        "median": 0.15268149999974412,
+        "min": 0.15233172100033698,
+        "max": 0.15268362999995588
+      },
+      "query_count": 64,
+      "sat_queries": 62,
+      "total_compile_setup_64queries": 0.1510709010044593
+    },
+    {
+      "campaign": "frontier_final",
+      "family": "producers",
+      "n": 1,
+      "method": "frontier-full",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.03513818899955368,
+        "min": 0.03490242299994861,
+        "max": 0.035345683999366884
+      },
+      "setup_seconds": {
+        "median": 5.949100068391999e-05,
+        "min": 5.906200021854602e-05,
+        "max": 6.135100011306349e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0020303179990150966,
+        "min": 0.0020284490046833525,
+        "max": 0.002082929005155165
+      },
+      "first_complete_total_seconds": {
+        "median": 0.035242121999544906,
+        "min": 0.03501642500032176,
+        "max": 0.03545553600088169
+      },
+      "states": {
+        "median": 200,
+        "min": 200,
+        "max": 200
+      },
+      "transitions": {
+        "median": 218,
+        "min": 218,
+        "max": 218
+      },
+      "label_literals": {
+        "median": 106,
+        "min": 106,
+        "max": 106
+      },
+      "unique_label_literals": {
+        "median": 12,
+        "min": 12,
+        "max": 12
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_interface": {
+        "median": 5,
+        "min": 5,
+        "max": 5
+      },
+      "max_layer_states": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "peak_rss_kib": {
+        "median": 25108,
+        "min": 24968,
+        "max": 25204
+      },
+      "elapsed_seconds": {
+        "median": 0.039163553999969736,
+        "min": 0.039064872000381,
+        "max": 0.039243475000148464
+      },
+      "query_count": 64,
+      "sat_queries": 62,
+      "total_compile_setup_64queries": 0.03722756899878732
+    },
+    {
+      "campaign": "frontier_final",
+      "family": "producers",
+      "n": 2,
+      "method": "frontier",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 3.5291750590004085,
+        "min": 3.5235248449998835,
+        "max": 3.5396248039996863
+      },
+      "setup_seconds": {
+        "median": 0.009112294999795267,
+        "min": 0.009086893999665335,
+        "max": 0.009144855999693391
+      },
+      "complete_query_seconds": {
+        "median": 0.18412719199750427,
+        "min": 0.18388416699781374,
+        "max": 0.18463250499826245
+      },
+      "first_complete_total_seconds": {
+        "median": 3.541617371999564,
+        "min": 3.536047480999514,
+        "max": 3.5521459589990627
+      },
+      "states": {
+        "median": 20034,
+        "min": 20034,
+        "max": 20034
+      },
+      "transitions": {
+        "median": 21389,
+        "min": 21389,
+        "max": 21389
+      },
+      "label_literals": {
+        "median": 12681,
+        "min": 12681,
+        "max": 12681
+      },
+      "unique_label_literals": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_interface": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_layer_states": {
+        "median": 2700,
+        "min": 2700,
+        "max": 2700
+      },
+      "peak_rss_kib": {
+        "median": 48464,
+        "min": 48428,
+        "max": 48576
+      },
+      "elapsed_seconds": {
+        "median": 3.7257387030003883,
+        "min": 3.7194932659995175,
+        "max": 3.735680916999627
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 3.7229198589984662
+    },
+    {
+      "campaign": "frontier_final",
+      "family": "producers",
+      "n": 2,
+      "method": "frontier-dfa",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 8.94437633400048,
+        "min": 8.89051134500005,
+        "max": 8.953999362000104
+      },
+      "setup_seconds": {
+        "median": 0.007877586000176962,
+        "min": 0.007522986999902059,
+        "max": 0.00825441500001034
+      },
+      "complete_query_seconds": {
+        "median": 0.17843468499904702,
+        "min": 0.17782742399958806,
+        "max": 0.18023184799858427
+      },
+      "first_complete_total_seconds": {
+        "median": 8.955292121000639,
+        "min": 8.902267921999737,
+        "max": 8.965305818999695
+      },
+      "states": {
+        "median": 20176,
+        "min": 20176,
+        "max": 20176
+      },
+      "transitions": {
+        "median": 21457,
+        "min": 21457,
+        "max": 21457
+      },
+      "label_literals": {
+        "median": 12748,
+        "min": 12748,
+        "max": 12748
+      },
+      "unique_label_literals": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_interface": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_layer_states": {
+        "median": 2700,
+        "min": 2700,
+        "max": 2700
+      },
+      "peak_rss_kib": {
+        "median": 74340,
+        "min": 74288,
+        "max": 74544
+      },
+      "elapsed_seconds": {
+        "median": 9.1360775739995,
+        "min": 9.081257501999971,
+        "max": 9.143871887999921
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 9.132131168998967
+    },
+    {
+      "campaign": "frontier_final",
+      "family": "producers",
+      "n": 2,
+      "method": "frontier-full",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 6.635136828999748,
+        "min": 6.562010435000047,
+        "max": 6.655827216999569
+      },
+      "setup_seconds": {
+        "median": 0.009067064000191749,
+        "min": 0.008922979999624658,
+        "max": 0.009094865000406571
+      },
+      "complete_query_seconds": {
+        "median": 0.18568289699851448,
+        "min": 0.18477063800037286,
+        "max": 0.19409514600829425
+      },
+      "first_complete_total_seconds": {
+        "median": 6.647724816999471,
+        "min": 6.57430250499965,
+        "max": 6.668501505999302
+      },
+      "states": {
+        "median": 20034,
+        "min": 20034,
+        "max": 20034
+      },
+      "transitions": {
+        "median": 21389,
+        "min": 21389,
+        "max": 21389
+      },
+      "label_literals": {
+        "median": 12681,
+        "min": 12681,
+        "max": 12681
+      },
+      "unique_label_literals": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_interface": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_layer_states": {
+        "median": 2700,
+        "min": 2700,
+        "max": 2700
+      },
+      "peak_rss_kib": {
+        "median": 48128,
+        "min": 48024,
+        "max": 48336
+      },
+      "elapsed_seconds": {
+        "median": 6.832709917000102,
+        "min": 6.7586247600002025,
+        "max": 6.86191709600007
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 6.829914590998669
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "pipeline",
+      "n": 1,
+      "method": "frontier",
+      "repetitions": 1,
+      "completed": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.8547102859999995,
+        "min": 0.8547102859999995,
+        "max": 0.8547102859999995
+      },
+      "setup_seconds": {
+        "median": 0.00036835900004916766,
+        "min": 0.00036835900004916766,
+        "max": 0.00036835900004916766
+      },
+      "complete_query_seconds": {
+        "median": 0.006251936002172442,
+        "min": 0.006251936002172442,
+        "max": 0.006251936002172442
+      },
+      "first_complete_total_seconds": {
+        "median": 0.8552873490000366,
+        "min": 0.8552873490000366,
+        "max": 0.8552873490000366
+      },
+      "states": {
+        "median": 1251,
+        "min": 1251,
+        "max": 1251
+      },
+      "transitions": {
+        "median": 1266,
+        "min": 1266,
+        "max": 1266
+      },
+      "label_literals": {
+        "median": 236,
+        "min": 236,
+        "max": 236
+      },
+      "unique_label_literals": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 14,
+        "min": 14,
+        "max": 14
+      },
+      "max_interface": {
+        "median": 9,
+        "min": 9,
+        "max": 9
+      },
+      "max_layer_states": {
+        "median": 100,
+        "min": 100,
+        "max": 100
+      },
+      "peak_rss_kib": {
+        "median": 36964,
+        "min": 36964,
+        "max": 36964
+      },
+      "elapsed_seconds": {
+        "median": 0.8626882739999928,
+        "min": 0.8626882739999928,
+        "max": 0.8626882739999928
+      },
+      "query_count": 64,
+      "sat_queries": 30,
+      "total_compile_setup_64queries": 0.8613305810022212
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "pipeline",
+      "n": 1,
+      "method": "frontier-full",
+      "repetitions": 1,
+      "completed": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 2.1373573240000496,
+        "min": 2.1373573240000496,
+        "max": 2.1373573240000496
+      },
+      "setup_seconds": {
+        "median": 0.0004012599999896338,
+        "min": 0.0004012599999896338,
+        "max": 0.0004012599999896338
+      },
+      "complete_query_seconds": {
+        "median": 0.006286179000653647,
+        "min": 0.006286179000653647,
+        "max": 0.006286179000653647
+      },
+      "first_complete_total_seconds": {
+        "median": 2.1379498190001414,
+        "min": 2.1379498190001414,
+        "max": 2.1379498190001414
+      },
+      "states": {
+        "median": 1251,
+        "min": 1251,
+        "max": 1251
+      },
+      "transitions": {
+        "median": 1266,
+        "min": 1266,
+        "max": 1266
+      },
+      "label_literals": {
+        "median": 236,
+        "min": 236,
+        "max": 236
+      },
+      "unique_label_literals": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 14,
+        "min": 14,
+        "max": 14
+      },
+      "max_interface": {
+        "median": 9,
+        "min": 9,
+        "max": 9
+      },
+      "max_layer_states": {
+        "median": 100,
+        "min": 100,
+        "max": 100
+      },
+      "peak_rss_kib": {
+        "median": 36892,
+        "min": 36892,
+        "max": 36892
+      },
+      "elapsed_seconds": {
+        "median": 2.1449619229999826,
+        "min": 2.1449619229999826,
+        "max": 2.1449619229999826
+      },
+      "query_count": 64,
+      "sat_queries": 30,
+      "total_compile_setup_64queries": 2.144044763000693
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "pipeline",
+      "n": 2,
+      "method": "frontier",
+      "repetitions": 1,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 1
+      },
+      "failures": [
+        {
+          "path": "frontier_pilot/0005.json",
+          "stage": "compile",
+          "reason": "Frontier compile time limit"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "pipeline",
+      "n": 2,
+      "method": "frontier-full",
+      "repetitions": 1,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 1
+      },
+      "failures": [
+        {
+          "path": "frontier_pilot/0008.json",
+          "stage": "compile",
+          "reason": "Frontier compile time limit"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "pipeline",
+      "n": 3,
+      "method": "frontier",
+      "repetitions": 1,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 1
+      },
+      "failures": [
+        {
+          "path": "frontier_pilot/0001.json",
+          "stage": "compile",
+          "reason": "Frontier compile time limit"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "pipeline",
+      "n": 3,
+      "method": "frontier-full",
+      "repetitions": 1,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 1
+      },
+      "failures": [
+        {
+          "path": "frontier_pilot/0010.json",
+          "stage": "compile",
+          "reason": "Frontier compile time limit"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "producers",
+      "n": 1,
+      "method": "dynamic",
+      "repetitions": 1,
+      "completed": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 8.240100009970774e-05,
+        "min": 8.240100009970774e-05,
+        "max": 8.240100009970774e-05
+      },
+      "setup_seconds": {
+        "median": 1.6820999917399604e-05,
+        "min": 1.6820999917399604e-05,
+        "max": 1.6820999917399604e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0004419009992489009,
+        "min": 0.0004419009992489009,
+        "max": 0.0004419009992489009
+      },
+      "first_complete_total_seconds": {
+        "median": 0.00012142199989284563,
+        "min": 0.00012142199989284563,
+        "max": 0.00012142199989284563
+      },
+      "states": {
+        "median": 14,
+        "min": 14,
+        "max": 14
+      },
+      "transitions": {
+        "median": 17,
+        "min": 17,
+        "max": 17
+      },
+      "label_literals": {
+        "median": 24,
+        "min": 24,
+        "max": 24
+      },
+      "unique_label_literals": {
+        "median": 12,
+        "min": 12,
+        "max": 12
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "peak_rss_kib": {
+        "median": 24064,
+        "min": 24064,
+        "max": 24064
+      },
+      "elapsed_seconds": {
+        "median": 0.0020252570000138803,
+        "min": 0.0020252570000138803,
+        "max": 0.0020252570000138803
+      },
+      "query_count": 64,
+      "sat_queries": 62,
+      "total_compile_setup_64queries": 0.0005411229992660083
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "producers",
+      "n": 1,
+      "method": "frontier",
+      "repetitions": 1,
+      "completed": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.14357463900000766,
+        "min": 0.14357463900000766,
+        "max": 0.14357463900000766
+      },
+      "setup_seconds": {
+        "median": 6.574200006070896e-05,
+        "min": 6.574200006070896e-05,
+        "max": 6.574200006070896e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0019978269988314423,
+        "min": 0.0019978269988314423,
+        "max": 0.0019978269988314423
+      },
+      "first_complete_total_seconds": {
+        "median": 0.1436918130000322,
+        "min": 0.1436918130000322,
+        "max": 0.1436918130000322
+      },
+      "states": {
+        "median": 200,
+        "min": 200,
+        "max": 200
+      },
+      "transitions": {
+        "median": 218,
+        "min": 218,
+        "max": 218
+      },
+      "label_literals": {
+        "median": 106,
+        "min": 106,
+        "max": 106
+      },
+      "unique_label_literals": {
+        "median": 12,
+        "min": 12,
+        "max": 12
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_interface": {
+        "median": 5,
+        "min": 5,
+        "max": 5
+      },
+      "max_layer_states": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "peak_rss_kib": {
+        "median": 36988,
+        "min": 36988,
+        "max": 36988
+      },
+      "elapsed_seconds": {
+        "median": 0.14713499300000876,
+        "min": 0.14713499300000876,
+        "max": 0.14713499300000876
+      },
+      "query_count": 64,
+      "sat_queries": 62,
+      "total_compile_setup_64queries": 0.14563820799889982
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "producers",
+      "n": 1,
+      "method": "frontier-full",
+      "repetitions": 1,
+      "completed": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.1895017500000904,
+        "min": 0.1895017500000904,
+        "max": 0.1895017500000904
+      },
+      "setup_seconds": {
+        "median": 6.963099986023735e-05,
+        "min": 6.963099986023735e-05,
+        "max": 6.963099986023735e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.001992816999745628,
+        "min": 0.001992816999745628,
+        "max": 0.001992816999745628
+      },
+      "first_complete_total_seconds": {
+        "median": 0.18961637200004589,
+        "min": 0.18961637200004589,
+        "max": 0.18961637200004589
+      },
+      "states": {
+        "median": 200,
+        "min": 200,
+        "max": 200
+      },
+      "transitions": {
+        "median": 218,
+        "min": 218,
+        "max": 218
+      },
+      "label_literals": {
+        "median": 106,
+        "min": 106,
+        "max": 106
+      },
+      "unique_label_literals": {
+        "median": 12,
+        "min": 12,
+        "max": 12
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_interface": {
+        "median": 5,
+        "min": 5,
+        "max": 5
+      },
+      "max_layer_states": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "peak_rss_kib": {
+        "median": 37100,
+        "min": 37100,
+        "max": 37100
+      },
+      "elapsed_seconds": {
+        "median": 0.19318950699994275,
+        "min": 0.19318950699994275,
+        "max": 0.19318950699994275
+      },
+      "query_count": 64,
+      "sat_queries": 62,
+      "total_compile_setup_64queries": 0.19156419799969626
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "producers",
+      "n": 2,
+      "method": "dynamic",
+      "repetitions": 1,
+      "completed": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.00023055600013321964,
+        "min": 0.00023055600013321964,
+        "max": 0.00023055600013321964
+      },
+      "setup_seconds": {
+        "median": 3.432099993005977e-05,
+        "min": 3.432099993005977e-05,
+        "max": 3.432099993005977e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.001040395998643362,
+        "min": 0.001040395998643362,
+        "max": 0.001040395998643362
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0002913979999448202,
+        "min": 0.0002913979999448202,
+        "max": 0.0002913979999448202
+      },
+      "states": {
+        "median": 38,
+        "min": 38,
+        "max": 38
+      },
+      "transitions": {
+        "median": 69,
+        "min": 69,
+        "max": 69
+      },
+      "label_literals": {
+        "median": 156,
+        "min": 156,
+        "max": 156
+      },
+      "unique_label_literals": {
+        "median": 50,
+        "min": 50,
+        "max": 50
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_layer_states": {
+        "median": 10,
+        "min": 10,
+        "max": 10
+      },
+      "peak_rss_kib": {
+        "median": 24072,
+        "min": 24072,
+        "max": 24072
+      },
+      "elapsed_seconds": {
+        "median": 0.0031019739999464946,
+        "min": 0.0031019739999464946,
+        "max": 0.0031019739999464946
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.0013052729987066414
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "producers",
+      "n": 2,
+      "method": "frontier",
+      "repetitions": 1,
+      "completed": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 8.011639309999964,
+        "min": 8.011639309999964,
+        "max": 8.011639309999964
+      },
+      "setup_seconds": {
+        "median": 0.007502466999994795,
+        "min": 0.007502466999994795,
+        "max": 0.007502466999994795
+      },
+      "complete_query_seconds": {
+        "median": 0.17531302600059462,
+        "min": 0.17531302600059462,
+        "max": 0.17531302600059462
+      },
+      "first_complete_total_seconds": {
+        "median": 8.022482265999997,
+        "min": 8.022482265999997,
+        "max": 8.022482265999997
+      },
+      "states": {
+        "median": 20176,
+        "min": 20176,
+        "max": 20176
+      },
+      "transitions": {
+        "median": 21457,
+        "min": 21457,
+        "max": 21457
+      },
+      "label_literals": {
+        "median": 12748,
+        "min": 12748,
+        "max": 12748
+      },
+      "unique_label_literals": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_interface": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_layer_states": {
+        "median": 2700,
+        "min": 2700,
+        "max": 2700
+      },
+      "peak_rss_kib": {
+        "median": 73456,
+        "min": 73456,
+        "max": 73456
+      },
+      "elapsed_seconds": {
+        "median": 8.198080208000192,
+        "min": 8.198080208000192,
+        "max": 8.198080208000192
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 8.194454803000554
+    },
+    {
+      "campaign": "frontier_pilot",
+      "family": "producers",
+      "n": 2,
+      "method": "frontier-full",
+      "repetitions": 1,
+      "completed": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 20.318168761999914,
+        "min": 20.318168761999914,
+        "max": 20.318168761999914
+      },
+      "setup_seconds": {
+        "median": 0.007728930999974182,
+        "min": 0.007728930999974182,
+        "max": 0.007728930999974182
+      },
+      "complete_query_seconds": {
+        "median": 0.18295759599914163,
+        "min": 0.18295759599914163,
+        "max": 0.18295759599914163
+      },
+      "first_complete_total_seconds": {
+        "median": 20.329420295999853,
+        "min": 20.329420295999853,
+        "max": 20.329420295999853
+      },
+      "states": {
+        "median": 20176,
+        "min": 20176,
+        "max": 20176
+      },
+      "transitions": {
+        "median": 21457,
+        "min": 21457,
+        "max": 21457
+      },
+      "label_literals": {
+        "median": 12748,
+        "min": 12748,
+        "max": 12748
+      },
+      "unique_label_literals": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_interface": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_layer_states": {
+        "median": 2700,
+        "min": 2700,
+        "max": 2700
+      },
+      "peak_rss_kib": {
+        "median": 73404,
+        "min": 73404,
+        "max": 73404
+      },
+      "elapsed_seconds": {
+        "median": 20.512421743999994,
+        "min": 20.512421743999994,
+        "max": 20.512421743999994
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 20.50885528899903
+    },
+    {
+      "campaign": "frontier_scale",
+      "family": "pipeline",
+      "n": 2,
+      "method": "frontier",
+      "repetitions": 1,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 1
+      },
+      "failures": [
+        {
+          "path": "frontier_scale/0001.json",
+          "stage": "compile",
+          "reason": "Frontier state/edge limit"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_scale",
+      "family": "pipeline",
+      "n": 2,
+      "method": "frontier-dfa",
+      "repetitions": 1,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 1
+      },
+      "failures": [
+        {
+          "path": "frontier_scale/0000.json",
+          "stage": "compile",
+          "reason": "Frontier compile time limit"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_scale",
+      "family": "pipeline",
+      "n": 2,
+      "method": "frontier-full",
+      "repetitions": 1,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 1
+      },
+      "failures": [
+        {
+          "path": "frontier_scale/0005.json",
+          "stage": "compile",
+          "reason": "Frontier compile time limit"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_scale",
+      "family": "pipeline",
+      "n": 3,
+      "method": "frontier",
+      "repetitions": 1,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 1
+      },
+      "failures": [
+        {
+          "path": "frontier_scale/0003.json",
+          "stage": "compile",
+          "reason": "Frontier compile time limit"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_scale",
+      "family": "pipeline",
+      "n": 3,
+      "method": "frontier-dfa",
+      "repetitions": 1,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 1
+      },
+      "failures": [
+        {
+          "path": "frontier_scale/0004.json",
+          "stage": "compile",
+          "reason": "Frontier compile time limit"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_scale",
+      "family": "pipeline",
+      "n": 3,
+      "method": "frontier-full",
+      "repetitions": 1,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 1
+      },
+      "failures": [
+        {
+          "path": "frontier_scale/0002.json",
+          "stage": "compile",
+          "reason": "Frontier compile time limit"
+        }
+      ]
+    },
+    {
+      "campaign": "frontier_serial",
+      "family": "pipeline",
+      "n": 1,
+      "method": "frontier",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.27962615300020843,
+        "min": 0.2775288130001172,
+        "max": 0.28606787699982306
+      },
+      "setup_seconds": {
+        "median": 0.00031323699977292563,
+        "min": 0.0003131479998046416,
+        "max": 0.0003205880002496997
+      },
+      "complete_query_seconds": {
+        "median": 0.006240287001219258,
+        "min": 0.005969842002741643,
+        "max": 0.006510764003451186
+      },
+      "first_complete_total_seconds": {
+        "median": 0.2801283060002788,
+        "min": 0.27806759499981126,
+        "max": 0.2865759300002537
+      },
+      "states": {
+        "median": 1185,
+        "min": 1185,
+        "max": 1185
+      },
+      "transitions": {
+        "median": 1208,
+        "min": 1208,
+        "max": 1208
+      },
+      "label_literals": {
+        "median": 229,
+        "min": 229,
+        "max": 229
+      },
+      "unique_label_literals": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 14,
+        "min": 14,
+        "max": 14
+      },
+      "max_interface": {
+        "median": 9,
+        "min": 9,
+        "max": 9
+      },
+      "max_layer_states": {
+        "median": 100,
+        "min": 100,
+        "max": 100
+      },
+      "peak_rss_kib": {
+        "median": 26296,
+        "min": 26112,
+        "max": 26348
+      },
+      "elapsed_seconds": {
+        "median": 0.28692466400025296,
+        "min": 0.2853178760001356,
+        "max": 0.29359073500017985
+      },
+      "query_count": 64,
+      "sat_queries": 30,
+      "total_compile_setup_64queries": 0.2859091430027547
+    },
+    {
+      "campaign": "frontier_serial",
+      "family": "pipeline",
+      "n": 1,
+      "method": "frontier-dfa",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.9352054149999276,
+        "min": 0.9351449730002059,
+        "max": 0.9358570330000475
+      },
+      "setup_seconds": {
+        "median": 0.0003749889997379796,
+        "min": 0.00036289799982114346,
+        "max": 0.00040792999971017707
+      },
+      "complete_query_seconds": {
+        "median": 0.006434373000956839,
+        "min": 0.006384730002082506,
+        "max": 0.006642668001404672
+      },
+      "first_complete_total_seconds": {
+        "median": 0.9358302999999069,
+        "min": 0.9357125659998928,
+        "max": 0.9364344860000529
+      },
+      "states": {
+        "median": 1251,
+        "min": 1251,
+        "max": 1251
+      },
+      "transitions": {
+        "median": 1266,
+        "min": 1266,
+        "max": 1266
+      },
+      "label_literals": {
+        "median": 236,
+        "min": 236,
+        "max": 236
+      },
+      "unique_label_literals": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 14,
+        "min": 14,
+        "max": 14
+      },
+      "max_interface": {
+        "median": 9,
+        "min": 9,
+        "max": 9
+      },
+      "max_layer_states": {
+        "median": 100,
+        "min": 100,
+        "max": 100
+      },
+      "peak_rss_kib": {
+        "median": 37228,
+        "min": 37160,
+        "max": 37464
+      },
+      "elapsed_seconds": {
+        "median": 0.9432148450000568,
+        "min": 0.9429244369998742,
+        "max": 0.9438551319999533
+      },
+      "query_count": 64,
+      "sat_queries": 30,
+      "total_compile_setup_64queries": 0.9422560130010424
+    },
+    {
+      "campaign": "frontier_serial",
+      "family": "pipeline",
+      "n": 1,
+      "method": "frontier-full",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.5599747520000165,
+        "min": 0.5593969490000745,
+        "max": 0.5601590199999009
+      },
+      "setup_seconds": {
+        "median": 0.00033347799990224303,
+        "min": 0.0003281480003352044,
+        "max": 0.0003554689997145033
+      },
+      "complete_query_seconds": {
+        "median": 0.0061248560000422,
+        "min": 0.006118512001194176,
+        "max": 0.006237587999748939
+      },
+      "first_complete_total_seconds": {
+        "median": 0.560490705000575,
+        "min": 0.5599245019998307,
+        "max": 0.5607260539995877
+      },
+      "states": {
+        "median": 1185,
+        "min": 1185,
+        "max": 1185
+      },
+      "transitions": {
+        "median": 1208,
+        "min": 1208,
+        "max": 1208
+      },
+      "label_literals": {
+        "median": 229,
+        "min": 229,
+        "max": 229
+      },
+      "unique_label_literals": {
+        "median": 20,
+        "min": 20,
+        "max": 20
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 14,
+        "min": 14,
+        "max": 14
+      },
+      "max_interface": {
+        "median": 9,
+        "min": 9,
+        "max": 9
+      },
+      "max_layer_states": {
+        "median": 100,
+        "min": 100,
+        "max": 100
+      },
+      "peak_rss_kib": {
+        "median": 26240,
+        "min": 26188,
+        "max": 26320
+      },
+      "elapsed_seconds": {
+        "median": 0.5674793180000961,
+        "min": 0.5669411679996301,
+        "max": 0.5675825950002036
+      },
+      "query_count": 64,
+      "sat_queries": 30,
+      "total_compile_setup_64queries": 0.5664277560003939
+    },
+    {
+      "campaign": "frontier_serial",
+      "family": "producers",
+      "n": 1,
+      "method": "frontier",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.021713925000312884,
+        "min": 0.02167805099998077,
+        "max": 0.021839716999693337
+      },
+      "setup_seconds": {
+        "median": 6.005100021866383e-05,
+        "min": 5.810099992231699e-05,
+        "max": 6.714199980706326e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.002019446999383945,
+        "min": 0.0019760159993893467,
+        "max": 0.0020785099995919154
+      },
+      "first_complete_total_seconds": {
+        "median": 0.02182200700008252,
+        "min": 0.021782654000162438,
+        "max": 0.021950110999569006
+      },
+      "states": {
+        "median": 200,
+        "min": 200,
+        "max": 200
+      },
+      "transitions": {
+        "median": 218,
+        "min": 218,
+        "max": 218
+      },
+      "label_literals": {
+        "median": 106,
+        "min": 106,
+        "max": 106
+      },
+      "unique_label_literals": {
+        "median": 12,
+        "min": 12,
+        "max": 12
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_interface": {
+        "median": 5,
+        "min": 5,
+        "max": 5
+      },
+      "max_layer_states": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "peak_rss_kib": {
+        "median": 24976,
+        "min": 24576,
+        "max": 25180
+      },
+      "elapsed_seconds": {
+        "median": 0.025365530000271974,
+        "min": 0.025271659000281943,
+        "max": 0.028063460999874223
+      },
+      "query_count": 64,
+      "sat_queries": 62,
+      "total_compile_setup_64queries": 0.023850535999827116
+    },
+    {
+      "campaign": "frontier_serial",
+      "family": "producers",
+      "n": 1,
+      "method": "frontier-dfa",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.14954776500007938,
+        "min": 0.14875365700027032,
+        "max": 0.1511608709997745
+      },
+      "setup_seconds": {
+        "median": 6.87110000399116e-05,
+        "min": 6.845200005045626e-05,
+        "max": 7.104199994500959e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0020341990002634702,
+        "min": 0.001976337999167299,
+        "max": 0.002099386999361741
+      },
+      "first_complete_total_seconds": {
+        "median": 0.149673028000052,
+        "min": 0.14887465000037992,
+        "max": 0.1512782029999471
+      },
+      "states": {
+        "median": 200,
+        "min": 200,
+        "max": 200
+      },
+      "transitions": {
+        "median": 218,
+        "min": 218,
+        "max": 218
+      },
+      "label_literals": {
+        "median": 106,
+        "min": 106,
+        "max": 106
+      },
+      "unique_label_literals": {
+        "median": 12,
+        "min": 12,
+        "max": 12
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_interface": {
+        "median": 5,
+        "min": 5,
+        "max": 5
+      },
+      "max_layer_states": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "peak_rss_kib": {
+        "median": 37104,
+        "min": 37096,
+        "max": 37336
+      },
+      "elapsed_seconds": {
+        "median": 0.15405196099982277,
+        "min": 0.15242758299973502,
+        "max": 0.1587052089998906
+      },
+      "query_count": 64,
+      "sat_queries": 62,
+      "total_compile_setup_64queries": 0.15171819399938613
+    },
+    {
+      "campaign": "frontier_serial",
+      "family": "producers",
+      "n": 1,
+      "method": "frontier-full",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0351977899999838,
+        "min": 0.03491783299978124,
+        "max": 0.03520466999998462
+      },
+      "setup_seconds": {
+        "median": 5.994100001771585e-05,
+        "min": 5.873099962627748e-05,
+        "max": 6.0012000176357105e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.002025999000579759,
+        "min": 0.0020035049983562203,
+        "max": 0.002126701003362541
+      },
+      "first_complete_total_seconds": {
+        "median": 0.03530855299959512,
+        "min": 0.03502238500004751,
+        "max": 0.03531030300018756
+      },
+      "states": {
+        "median": 200,
+        "min": 200,
+        "max": 200
+      },
+      "transitions": {
+        "median": 218,
+        "min": 218,
+        "max": 218
+      },
+      "label_literals": {
+        "median": 106,
+        "min": 106,
+        "max": 106
+      },
+      "unique_label_literals": {
+        "median": 12,
+        "min": 12,
+        "max": 12
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_interface": {
+        "median": 5,
+        "min": 5,
+        "max": 5
+      },
+      "max_layer_states": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "peak_rss_kib": {
+        "median": 24912,
+        "min": 24848,
+        "max": 25116
+      },
+      "elapsed_seconds": {
+        "median": 0.03873094399978072,
+        "min": 0.03842767600008301,
+        "max": 0.03881770499992854
+      },
+      "query_count": 64,
+      "sat_queries": 62,
+      "total_compile_setup_64queries": 0.03729068100074073
+    },
+    {
+      "campaign": "frontier_serial",
+      "family": "producers",
+      "n": 2,
+      "method": "frontier",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 3.530863052999848,
+        "min": 3.5222127890001502,
+        "max": 3.5683363210000607
+      },
+      "setup_seconds": {
+        "median": 0.009427423000033741,
+        "min": 0.00921935799988205,
+        "max": 0.009779181999874709
+      },
+      "complete_query_seconds": {
+        "median": 0.1847493479995137,
+        "min": 0.18416334199946505,
+        "max": 0.18583730399859633
+      },
+      "first_complete_total_seconds": {
+        "median": 3.544125246999556,
+        "min": 3.534843908000312,
+        "max": 3.581098622999889
+      },
+      "states": {
+        "median": 20034,
+        "min": 20034,
+        "max": 20034
+      },
+      "transitions": {
+        "median": 21389,
+        "min": 21389,
+        "max": 21389
+      },
+      "label_literals": {
+        "median": 12681,
+        "min": 12681,
+        "max": 12681
+      },
+      "unique_label_literals": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_interface": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_layer_states": {
+        "median": 2700,
+        "min": 2700,
+        "max": 2700
+      },
+      "peak_rss_kib": {
+        "median": 48448,
+        "min": 48444,
+        "max": 48472
+      },
+      "elapsed_seconds": {
+        "median": 3.7277567969999836,
+        "min": 3.7202449599999454,
+        "max": 3.7653333080002085
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 3.724805576999188
+    },
+    {
+      "campaign": "frontier_serial",
+      "family": "producers",
+      "n": 2,
+      "method": "frontier-dfa",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 8.866732765000052,
+        "min": 8.862023962999956,
+        "max": 8.98500743700015
+      },
+      "setup_seconds": {
+        "median": 0.007835595999949874,
+        "min": 0.007544798999788327,
+        "max": 0.008198024000193982
+      },
+      "complete_query_seconds": {
+        "median": 0.17795461700006854,
+        "min": 0.17702372500025376,
+        "max": 0.18029861100148992
+      },
+      "first_complete_total_seconds": {
+        "median": 8.877694454999983,
+        "min": 8.87312500600001,
+        "max": 8.99659574100042
+      },
+      "states": {
+        "median": 20176,
+        "min": 20176,
+        "max": 20176
+      },
+      "transitions": {
+        "median": 21457,
+        "min": 21457,
+        "max": 21457
+      },
+      "label_literals": {
+        "median": 12748,
+        "min": 12748,
+        "max": 12748
+      },
+      "unique_label_literals": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_interface": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_layer_states": {
+        "median": 2700,
+        "min": 2700,
+        "max": 2700
+      },
+      "peak_rss_kib": {
+        "median": 74268,
+        "min": 74192,
+        "max": 74268
+      },
+      "elapsed_seconds": {
+        "median": 9.058728663000238,
+        "min": 9.051093513000069,
+        "max": 9.175272513999971
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 9.05457617500133
+    },
+    {
+      "campaign": "frontier_serial",
+      "family": "producers",
+      "n": 2,
+      "method": "frontier-full",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 6.580978137999864,
+        "min": 6.558801992000099,
+        "max": 6.6210853779998615
+      },
+      "setup_seconds": {
+        "median": 0.009435813999971288,
+        "min": 0.0090107139999418,
+        "max": 0.00949362499977724
+      },
+      "complete_query_seconds": {
+        "median": 0.1837911120010176,
+        "min": 0.1823850000018865,
+        "max": 0.18469233100177007
+      },
+      "first_complete_total_seconds": {
+        "median": 6.59390050499951,
+        "min": 6.571688898000048,
+        "max": 6.633460731999548
+      },
+      "states": {
+        "median": 20034,
+        "min": 20034,
+        "max": 20034
+      },
+      "transitions": {
+        "median": 21389,
+        "min": 21389,
+        "max": 21389
+      },
+      "label_literals": {
+        "median": 12681,
+        "min": 12681,
+        "max": 12681
+      },
+      "unique_label_literals": {
+        "median": 30,
+        "min": 30,
+        "max": 30
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_interface": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "max_layer_states": {
+        "median": 2700,
+        "min": 2700,
+        "max": 2700
+      },
+      "peak_rss_kib": {
+        "median": 48144,
+        "min": 47940,
+        "max": 48384
+      },
+      "elapsed_seconds": {
+        "median": 6.778006885000195,
+        "min": 6.754831256000216,
+        "max": 6.815403641000103
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 6.775164094001411
+    },
+    {
+      "campaign": "large",
+      "family": "producers",
+      "n": 16,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.024021667999932106,
+        "min": 0.023776300000008632,
+        "max": 0.024115087000154745
+      },
+      "setup_seconds": {
+        "median": 0.0016737490000195976,
+        "min": 0.0016600900000867114,
+        "max": 0.0016907600002014078
+      },
+      "complete_query_seconds": {
+        "median": 0.035681205001310445,
+        "min": 0.03540158599798815,
+        "max": 0.037044391002382326
+      },
+      "first_complete_total_seconds": {
+        "median": 0.026546899000095436,
+        "min": 0.026324649999878602,
+        "max": 0.026703288000589964
+      },
+      "states": {
+        "median": 1634,
+        "min": 1634,
+        "max": 1634
+      },
+      "transitions": {
+        "median": 4157,
+        "min": 4157,
+        "max": 4157
+      },
+      "label_literals": {
+        "median": 60384,
+        "min": 60384,
+        "max": 60384
+      },
+      "unique_label_literals": {
+        "median": 6672,
+        "min": 6672,
+        "max": 6672
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 592,
+        "min": 592,
+        "max": 592
+      },
+      "max_layer_states": {
+        "median": 94,
+        "min": 94,
+        "max": 94
+      },
+      "peak_rss_kib": {
+        "median": 28516,
+        "min": 28404,
+        "max": 28764
+      },
+      "elapsed_seconds": {
+        "median": 0.07620779399985622,
+        "min": 0.07587398499981646,
+        "max": 0.07836110500011273
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.06136296300132926
+    },
+    {
+      "campaign": "large",
+      "family": "producers",
+      "n": 16,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0020324980000623327,
+        "min": 0.002007357999900705,
+        "max": 0.002035718000115594
+      },
+      "setup_seconds": {
+        "median": 0.004287630999897374,
+        "min": 0.004277149999779795,
+        "max": 0.004391663999967932
+      },
+      "complete_query_seconds": {
+        "median": 0.17841481499999645,
+        "min": 0.1780683550005051,
+        "max": 0.18094218900023407
+      },
+      "first_complete_total_seconds": {
+        "median": 0.009856671999841637,
+        "min": 0.009800989999803278,
+        "max": 0.010131398999874364
+      },
+      "clauses": {
+        "median": 2738,
+        "min": 2738,
+        "max": 2738
+      },
+      "cnf_variables": {
+        "median": 592,
+        "min": 592,
+        "max": 592
+      },
+      "peak_rss_kib": {
+        "median": 27344,
+        "min": 27280,
+        "max": 27424
+      },
+      "elapsed_seconds": {
+        "median": 0.19977355199989688,
+        "min": 0.19961030800004664,
+        "max": 0.20245531099999425
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.18469932299967695
+    },
+    {
+      "campaign": "large",
+      "family": "producers",
+      "n": 32,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.1789970859999812,
+        "min": 0.1778860539998277,
+        "max": 0.1826629199999843
+      },
+      "setup_seconds": {
+        "median": 0.013128348999998707,
+        "min": 0.013122831000146107,
+        "max": 0.015262029000041366
+      },
+      "complete_query_seconds": {
+        "median": 0.1442041939981209,
+        "min": 0.14203940800075543,
+        "max": 0.14502484199965693
+      },
+      "first_complete_total_seconds": {
+        "median": 0.1967577379996328,
+        "min": 0.1956343200001811,
+        "max": 0.19928554199987047
+      },
+      "states": {
+        "median": 6338,
+        "min": 6338,
+        "max": 6338
+      },
+      "transitions": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "label_literals": {
+        "median": 470976,
+        "min": 470976,
+        "max": 470976
+      },
+      "unique_label_literals": {
+        "median": 43040,
+        "min": 43040,
+        "max": 43040
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 2208,
+        "min": 2208,
+        "max": 2208
+      },
+      "max_layer_states": {
+        "median": 190,
+        "min": 190,
+        "max": 190
+      },
+      "peak_rss_kib": {
+        "median": 37876,
+        "min": 37740,
+        "max": 37908
+      },
+      "elapsed_seconds": {
+        "median": 0.38668593600004897,
+        "min": 0.38207166200004394,
+        "max": 0.3880821239999932
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.338172924999526
+    },
+    {
+      "campaign": "large",
+      "family": "producers",
+      "n": 32,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.009636967000005825,
+        "min": 0.009549704000164638,
+        "max": 0.009909604000313266
+      },
+      "setup_seconds": {
+        "median": 0.028067301000191947,
+        "min": 0.026948043999709625,
+        "max": 0.02944499299974268
+      },
+      "complete_query_seconds": {
+        "median": 1.4760181590036154,
+        "min": 1.4703760010002043,
+        "max": 1.5346667710000474
+      },
+      "first_complete_total_seconds": {
+        "median": 0.05993140200052949,
+        "min": 0.05782461099988723,
+        "max": 0.06242693899957885
+      },
+      "clauses": {
+        "median": 11106,
+        "min": 11106,
+        "max": 11106
+      },
+      "cnf_variables": {
+        "median": 2208,
+        "min": 2208,
+        "max": 2208
+      },
+      "peak_rss_kib": {
+        "median": 33032,
+        "min": 32916,
+        "max": 33120
+      },
+      "elapsed_seconds": {
+        "median": 1.5602387429998998,
+        "min": 1.5558923910002704,
+        "max": 1.622114209999836
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 1.5126031700033309
+    },
+    {
+      "campaign": "large",
+      "family": "producers",
+      "n": 64,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 1.917553947000215,
+        "min": 1.8945401989999482,
+        "max": 1.9831814780000059
+      },
+      "setup_seconds": {
+        "median": 0.06904328699965845,
+        "min": 0.06777997399990454,
+        "max": 0.07151499299970965
+      },
+      "complete_query_seconds": {
+        "median": 0.6176628460016218,
+        "min": 0.6158223289985472,
+        "max": 0.6200461929993253
+      },
+      "first_complete_total_seconds": {
+        "median": 2.00254391999988,
+        "min": 1.978217068999811,
+        "max": 2.071217518999674
+      },
+      "states": {
+        "median": 24962,
+        "min": 24962,
+        "max": 24962
+      },
+      "transitions": {
+        "median": 65789,
+        "min": 65789,
+        "max": 65789
+      },
+      "label_literals": {
+        "median": 3719040,
+        "min": 3719040,
+        "max": 3719040
+      },
+      "unique_label_literals": {
+        "median": 303168,
+        "min": 303168,
+        "max": 303168
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 8512,
+        "min": 8512,
+        "max": 8512
+      },
+      "max_layer_states": {
+        "median": 382,
+        "min": 382,
+        "max": 382
+      },
+      "peak_rss_kib": {
+        "median": 72272,
+        "min": 72176,
+        "max": 72396
+      },
+      "elapsed_seconds": {
+        "median": 2.7745930720002434,
+        "min": 2.754257895000137,
+        "max": 2.842543124999793
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 2.6024195629984206
+    },
+    {
+      "campaign": "large",
+      "family": "producers",
+      "n": 64,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.051296377000198845,
+        "min": 0.051173225000184175,
+        "max": 0.052273431000003256
+      },
+      "setup_seconds": {
+        "median": 0.20195003299977543,
+        "min": 0.1989976239999578,
+        "max": 0.20431171800009906
+      },
+      "complete_query_seconds": {
+        "median": 15.716335137000897,
+        "min": 15.669952219000152,
+        "max": 15.741098118000536
+      },
+      "first_complete_total_seconds": {
+        "median": 0.4198749429997406,
+        "min": 0.4166350769996825,
+        "max": 0.4241399620004813
+      },
+      "clauses": {
+        "median": 44738,
+        "min": 44738,
+        "max": 44738
+      },
+      "cnf_variables": {
+        "median": 8512,
+        "min": 8512,
+        "max": 8512
+      },
+      "peak_rss_kib": {
+        "median": 50508,
+        "min": 49952,
+        "max": 50564
+      },
+      "elapsed_seconds": {
+        "median": 16.138757160000296,
+        "min": 16.089436629000147,
+        "max": 16.16424784999981
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 15.971943232001195
+    },
+    {
+      "campaign": "large",
+      "family": "producers",
+      "n": 128,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 23.920321855999646,
+        "min": 23.612782398000036,
+        "max": 24.86714979999988
+      },
+      "setup_seconds": {
+        "median": 0.45177879300013046,
+        "min": 0.4403779549998035,
+        "max": 0.5045150649998504
+      },
+      "complete_query_seconds": {
+        "median": 3.2590749580017473,
+        "min": 3.257217149998951,
+        "max": 3.268631885002833
+      },
+      "first_complete_total_seconds": {
+        "median": 24.45145640699957,
+        "min": 24.20617591600012,
+        "max": 25.4080802819999
+      },
+      "states": {
+        "median": 99074,
+        "min": 99074,
+        "max": 99074
+      },
+      "transitions": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "label_literals": {
+        "median": 29556480,
+        "min": 29556480,
+        "max": 29556480
+      },
+      "unique_label_literals": {
+        "median": 2261120,
+        "min": 2261120,
+        "max": 2261120
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 33408,
+        "min": 33408,
+        "max": 33408
+      },
+      "max_layer_states": {
+        "median": 766,
+        "min": 766,
+        "max": 766
+      },
+      "peak_rss_kib": {
+        "median": 248544,
+        "min": 248416,
+        "max": 248628
+      },
+      "elapsed_seconds": {
+        "median": 28.26551394900025,
+        "min": 28.017807178999647,
+        "max": 29.214167996000015
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 27.629331696002282
+    },
+    {
+      "campaign": "large",
+      "family": "producers",
+      "n": 128,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 3
+      },
+      "failures": [
+        {
+          "path": "large/0014.json",
+          "stage": "queries",
+          "reason": "wall_timeout_100s"
+        },
+        {
+          "path": "large/0016.json",
+          "stage": "queries",
+          "reason": "wall_timeout_100s"
+        },
+        {
+          "path": "large/0022.json",
+          "stage": "queries",
+          "reason": "wall_timeout_100s"
+        }
+      ]
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 2,
+      "method": "co-first",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0002429250000659522,
+        "min": 0.00024274599991258583,
+        "max": 0.0002450160000080359
+      },
+      "setup_seconds": {
+        "median": 3.8610000046901405e-05,
+        "min": 3.833100004158041e-05,
+        "max": 3.872100000990031e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.001272381000489986,
+        "min": 0.0012335600008555048,
+        "max": 0.001289611000174773
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0003136979998998868,
+        "min": 0.0003136860000267916,
+        "max": 0.0003188070002124732
+      },
+      "states": {
+        "median": 55,
+        "min": 55,
+        "max": 55
+      },
+      "transitions": {
+        "median": 90,
+        "min": 90,
+        "max": 90
+      },
+      "label_literals": {
+        "median": 396,
+        "min": 396,
+        "max": 396
+      },
+      "unique_label_literals": {
+        "median": 92,
+        "min": 92,
+        "max": 92
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_layer_states": {
+        "median": 24,
+        "min": 24,
+        "max": 24
+      },
+      "peak_rss_kib": {
+        "median": 23956,
+        "min": 23888,
+        "max": 24168
+      },
+      "elapsed_seconds": {
+        "median": 0.0032763770000201475,
+        "min": 0.003268157999855248,
+        "max": 0.0033312790001218673
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.0015560070005449234
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 2,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0002348450000226876,
+        "min": 0.000231746000054045,
+        "max": 0.00023541500013379846
+      },
+      "setup_seconds": {
+        "median": 3.530100002535619e-05,
+        "min": 3.382999989298696e-05,
+        "max": 3.576100016289274e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0010553949996392475,
+        "min": 0.0010049720003735274,
+        "max": 0.0010586949997559714
+      },
+      "first_complete_total_seconds": {
+        "median": 0.00030081700015216484,
+        "min": 0.0002919359999395965,
+        "max": 0.0003035070001260465
+      },
+      "states": {
+        "median": 38,
+        "min": 38,
+        "max": 38
+      },
+      "transitions": {
+        "median": 69,
+        "min": 69,
+        "max": 69
+      },
+      "label_literals": {
+        "median": 156,
+        "min": 156,
+        "max": 156
+      },
+      "unique_label_literals": {
+        "median": 50,
+        "min": 50,
+        "max": 50
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_layer_states": {
+        "median": 10,
+        "min": 10,
+        "max": 10
+      },
+      "peak_rss_kib": {
+        "median": 24092,
+        "min": 23808,
+        "max": 24104
+      },
+      "elapsed_seconds": {
+        "median": 0.0032385869999416173,
+        "min": 0.0031722449998596858,
+        "max": 0.003509233000158929
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.0013261109997984022
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 2,
+      "method": "dynamic-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0005561130001296988,
+        "min": 0.0005434920001334831,
+        "max": 0.0005585139999766398
+      },
+      "setup_seconds": {
+        "median": 0.0005961140000181331,
+        "min": 0.0005807439999898634,
+        "max": 0.0006216340000264609
+      },
+      "complete_query_seconds": {
+        "median": 0.0008155390003139473,
+        "min": 0.0008132999998906598,
+        "max": 0.0008537209992027783
+      },
+      "first_complete_total_seconds": {
+        "median": 0.001158517000021675,
+        "min": 0.001155178999852069,
+        "max": 0.0011713960000179213
+      },
+      "states": {
+        "median": 38,
+        "min": 38,
+        "max": 38
+      },
+      "transitions": {
+        "median": 69,
+        "min": 69,
+        "max": 69
+      },
+      "label_literals": {
+        "median": 156,
+        "min": 156,
+        "max": 156
+      },
+      "unique_label_literals": {
+        "median": 50,
+        "min": 50,
+        "max": 50
+      },
+      "clauses": {
+        "median": 595,
+        "min": 595,
+        "max": 595
+      },
+      "cnf_variables": {
+        "median": 337,
+        "min": 337,
+        "max": 337
+      },
+      "max_layer_states": {
+        "median": 10,
+        "min": 10,
+        "max": 10
+      },
+      "peak_rss_kib": {
+        "median": 24508,
+        "min": 24388,
+        "max": 24620
+      },
+      "elapsed_seconds": {
+        "median": 0.003390138999975534,
+        "min": 0.0033713490001900936,
+        "max": 0.0034221099999740545
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.0019806650004738913
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 2,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 5.0590999990163255e-05,
+        "min": 4.774100011672999e-05,
+        "max": 5.785200005448132e-05
+      },
+      "setup_seconds": {
+        "median": 0.00010728300003393088,
+        "min": 0.0001056129999597033,
+        "max": 0.00010907199998655415
+      },
+      "complete_query_seconds": {
+        "median": 0.002199829998517089,
+        "min": 0.002188911999155607,
+        "max": 0.0022463830002834584
+      },
+      "first_complete_total_seconds": {
+        "median": 0.00022110600002633873,
+        "min": 0.00021340500006772345,
+        "max": 0.0002259260002119845
+      },
+      "clauses": {
+        "median": 36,
+        "min": 36,
+        "max": 36
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "peak_rss_kib": {
+        "median": 24352,
+        "min": 24316,
+        "max": 24440
+      },
+      "elapsed_seconds": {
+        "median": 0.004093837000027634,
+        "min": 0.00405211500014957,
+        "max": 0.004279971999949339
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.002356642998620373
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 2,
+      "method": "unfold",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0005459330000121554,
+        "min": 0.0005304230001001997,
+        "max": 0.0005574439999236347
+      },
+      "setup_seconds": {
+        "median": 5.920200010223198e-05,
+        "min": 5.860099986421119e-05,
+        "max": 5.928099994889635e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0020786789991689147,
+        "min": 0.002059249000467389,
+        "max": 0.002130130000296049
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0006569949998720404,
+        "min": 0.0006385750000390544,
+        "max": 0.000666688000137583
+      },
+      "states": {
+        "median": 182,
+        "min": 182,
+        "max": 182
+      },
+      "transitions": {
+        "median": 181,
+        "min": 181,
+        "max": 181
+      },
+      "label_literals": {
+        "median": 460,
+        "min": 460,
+        "max": 460
+      },
+      "unique_label_literals": {
+        "median": 50,
+        "min": 50,
+        "max": 50
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 18,
+        "min": 18,
+        "max": 18
+      },
+      "max_layer_states": {
+        "median": 60,
+        "min": 60,
+        "max": 60
+      },
+      "peak_rss_kib": {
+        "median": 24016,
+        "min": 23924,
+        "max": 24188
+      },
+      "elapsed_seconds": {
+        "median": 0.0044870059998629586,
+        "min": 0.004446954999821173,
+        "max": 0.004581098000016937
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.0026832129990452813
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 4,
+      "method": "co-first",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.009069573000033415,
+        "min": 0.00906321399997978,
+        "max": 0.009407561999978498
+      },
+      "setup_seconds": {
+        "median": 0.0011398459998872568,
+        "min": 0.0011161560000800819,
+        "max": 0.0011403170001358376
+      },
+      "complete_query_seconds": {
+        "median": 0.025983352000594095,
+        "min": 0.025878150999233185,
+        "max": 0.02632309299951885
+      },
+      "first_complete_total_seconds": {
+        "median": 0.010790964000307213,
+        "min": 0.010763563999944381,
+        "max": 0.011140821999788386
+      },
+      "states": {
+        "median": 1191,
+        "min": 1191,
+        "max": 1191
+      },
+      "transitions": {
+        "median": 3150,
+        "min": 3150,
+        "max": 3150
+      },
+      "label_literals": {
+        "median": 27160,
+        "min": 27160,
+        "max": 27160
+      },
+      "unique_label_literals": {
+        "median": 2648,
+        "min": 2648,
+        "max": 2648
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 52,
+        "min": 52,
+        "max": 52
+      },
+      "max_layer_states": {
+        "median": 560,
+        "min": 560,
+        "max": 560
+      },
+      "peak_rss_kib": {
+        "median": 26420,
+        "min": 26288,
+        "max": 26456
+      },
+      "elapsed_seconds": {
+        "median": 0.03914073200007806,
+        "min": 0.038708821999989595,
+        "max": 0.039224763999982315
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.03650246299957871
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 4,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0009020709999276733,
+        "min": 0.0008877899999788497,
+        "max": 0.0009103710001454601
+      },
+      "setup_seconds": {
+        "median": 0.00013042299997323425,
+        "min": 0.00012316300012571446,
+        "max": 0.0001326130000052217
+      },
+      "complete_query_seconds": {
+        "median": 0.0030363809987647983,
+        "min": 0.0029819609999321983,
+        "max": 0.0030846129998280958
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0011020950000784069,
+        "min": 0.0010894550000557501,
+        "max": 0.0011142050002490578
+      },
+      "states": {
+        "median": 122,
+        "min": 122,
+        "max": 122
+      },
+      "transitions": {
+        "median": 269,
+        "min": 269,
+        "max": 269
+      },
+      "label_literals": {
+        "median": 1080,
+        "min": 1080,
+        "max": 1080
+      },
+      "unique_label_literals": {
+        "median": 228,
+        "min": 228,
+        "max": 228
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 52,
+        "min": 52,
+        "max": 52
+      },
+      "max_layer_states": {
+        "median": 22,
+        "min": 22,
+        "max": 22
+      },
+      "peak_rss_kib": {
+        "median": 24424,
+        "min": 24304,
+        "max": 24428
+      },
+      "elapsed_seconds": {
+        "median": 0.006713928999943164,
+        "min": 0.006709007999916139,
+        "max": 0.006851811999922575
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.00407936499891548
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 4,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.00013052300005256257,
+        "min": 0.00012864300015280605,
+        "max": 0.00013778400011688063
+      },
+      "setup_seconds": {
+        "median": 0.00026785599993672804,
+        "min": 0.0002578060000359983,
+        "max": 0.00026888700017480005
+      },
+      "complete_query_seconds": {
+        "median": 0.0068709210008819355,
+        "min": 0.006732000000511107,
+        "max": 0.006922762999465704
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0005454340002870595,
+        "min": 0.0005328720001216425,
+        "max": 0.0005527440000605566
+      },
+      "clauses": {
+        "median": 158,
+        "min": 158,
+        "max": 158
+      },
+      "cnf_variables": {
+        "median": 52,
+        "min": 52,
+        "max": 52
+      },
+      "peak_rss_kib": {
+        "median": 24304,
+        "min": 24204,
+        "max": 24464
+      },
+      "elapsed_seconds": {
+        "median": 0.00970019900000807,
+        "min": 0.009647147000123368,
+        "max": 0.009904433999963658
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.007259250000970496
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 4,
+      "method": "unfold",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.02701541700002963,
+        "min": 0.026998807000154557,
+        "max": 0.02725297199981469
+      },
+      "setup_seconds": {
+        "median": 0.0019989980000900687,
+        "min": 0.001998677000074167,
+        "max": 0.002019027999949685
+      },
+      "complete_query_seconds": {
+        "median": 0.06441080899958251,
+        "min": 0.06033812299983765,
+        "max": 0.06579418299929785
+      },
+      "first_complete_total_seconds": {
+        "median": 0.030505680000260327,
+        "min": 0.03039286800026275,
+        "max": 0.03067376399985733
+      },
+      "states": {
+        "median": 8052,
+        "min": 8052,
+        "max": 8052
+      },
+      "transitions": {
+        "median": 8051,
+        "min": 8051,
+        "max": 8051
+      },
+      "label_literals": {
+        "median": 35798,
+        "min": 35798,
+        "max": 35798
+      },
+      "unique_label_literals": {
+        "median": 228,
+        "min": 228,
+        "max": 228
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 52,
+        "min": 52,
+        "max": 52
+      },
+      "max_layer_states": {
+        "median": 2520,
+        "min": 2520,
+        "max": 2520
+      },
+      "peak_rss_kib": {
+        "median": 27700,
+        "min": 27596,
+        "max": 28156
+      },
+      "elapsed_seconds": {
+        "median": 0.09636089200012066,
+        "min": 0.09230753499991806,
+        "max": 0.09812093300001834
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.09340829299981124
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 6,
+      "method": "co-first",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.3012785820001227,
+        "min": 0.3008436520001396,
+        "max": 0.3033392309998817
+      },
+      "setup_seconds": {
+        "median": 0.02943967399983194,
+        "min": 0.028880901000093218,
+        "max": 0.0301848809999683
+      },
+      "complete_query_seconds": {
+        "median": 0.6506309370008694,
+        "min": 0.6327417790002983,
+        "max": 0.6527433890000793
+      },
+      "first_complete_total_seconds": {
+        "median": 0.3475117319999299,
+        "min": 0.34655880000013894,
+        "max": 0.3485826469998301
+      },
+      "states": {
+        "median": 23101,
+        "min": 23101,
+        "max": 23101
+      },
+      "transitions": {
+        "median": 84084,
+        "min": 84084,
+        "max": 84084
+      },
+      "label_literals": {
+        "median": 1069992,
+        "min": 1069992,
+        "max": 1069992
+      },
+      "unique_label_literals": {
+        "median": 72360,
+        "min": 72360,
+        "max": 72360
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 102,
+        "min": 102,
+        "max": 102
+      },
+      "max_layer_states": {
+        "median": 11088,
+        "min": 11088,
+        "max": 11088
+      },
+      "peak_rss_kib": {
+        "median": 87008,
+        "min": 86800,
+        "max": 87152
+      },
+      "elapsed_seconds": {
+        "median": 0.9905358080000042,
+        "min": 0.9740523200000553,
+        "max": 0.9912913460000254
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.9816594700009773
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 6,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.002134570999942298,
+        "min": 0.0021319410000160133,
+        "max": 0.002181371999995463
+      },
+      "setup_seconds": {
+        "median": 0.0002367250001498178,
+        "min": 0.0002334050000172283,
+        "max": 0.0002392660001078184
+      },
+      "complete_query_seconds": {
+        "median": 0.006118974000173694,
+        "min": 0.006073012001024836,
+        "max": 0.006378862000474328
+      },
+      "first_complete_total_seconds": {
+        "median": 0.00251381000020956,
+        "min": 0.0025027500000760483,
+        "max": 0.0025505999999495543
+      },
+      "states": {
+        "median": 254,
+        "min": 254,
+        "max": 254
+      },
+      "transitions": {
+        "median": 597,
+        "min": 597,
+        "max": 597
+      },
+      "label_literals": {
+        "median": 3444,
+        "min": 3444,
+        "max": 3444
+      },
+      "unique_label_literals": {
+        "median": 582,
+        "min": 582,
+        "max": 582
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 102,
+        "min": 102,
+        "max": 102
+      },
+      "max_layer_states": {
+        "median": 34,
+        "min": 34,
+        "max": 34
+      },
+      "peak_rss_kib": {
+        "median": 24732,
+        "min": 24680,
+        "max": 24800
+      },
+      "elapsed_seconds": {
+        "median": 0.012542015000008178,
+        "min": 0.012522045999958209,
+        "max": 0.012731650000205263
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.00849281100022381
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 6,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.00028681699996013776,
+        "min": 0.00026750699998956406,
+        "max": 0.000293716999976823
+      },
+      "setup_seconds": {
+        "median": 0.0005198919998292695,
+        "min": 0.0005045419998168654,
+        "max": 0.00052974200002609
+      },
+      "complete_query_seconds": {
+        "median": 0.016765652999993108,
+        "min": 0.016618670999605456,
+        "max": 0.016929422000202976
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0011181970000961883,
+        "min": 0.0010944459997972444,
+        "max": 0.0011213459997634345
+      },
+      "clauses": {
+        "median": 368,
+        "min": 368,
+        "max": 368
+      },
+      "cnf_variables": {
+        "median": 102,
+        "min": 102,
+        "max": 102
+      },
+      "peak_rss_kib": {
+        "median": 24336,
+        "min": 24200,
+        "max": 24552
+      },
+      "elapsed_seconds": {
+        "median": 0.021316511999884824,
+        "min": 0.021233990000155245,
+        "max": 0.02168897100000322
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.01755701199977011
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 6,
+      "method": "unfold",
+      "repetitions": 3,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 3
+      },
+      "failures": [
+        {
+          "path": "main/0020.json",
+          "stage": "compile",
+          "reason": "Scheduling graph state/edge limit"
+        },
+        {
+          "path": "main/0038.json",
+          "stage": "compile",
+          "reason": "Scheduling graph state/edge limit"
+        },
+        {
+          "path": "main/0053.json",
+          "stage": "compile",
+          "reason": "Scheduling graph state/edge limit"
+        }
+      ]
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 8,
+      "method": "co-first",
+      "repetitions": 3,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 3
+      },
+      "failures": [
+        {
+          "path": "main/0042.json",
+          "stage": "compile",
+          "reason": "CO-first construction limit"
+        },
+        {
+          "path": "main/0043.json",
+          "stage": "compile",
+          "reason": "CO-first construction limit"
+        },
+        {
+          "path": "main/0049.json",
+          "stage": "compile",
+          "reason": "CO-first construction limit"
+        }
+      ]
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 8,
+      "method": "dynamic",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.004151746999923489,
+        "min": 0.004120866999983264,
+        "max": 0.004191479000155596
+      },
+      "setup_seconds": {
+        "median": 0.0006989959999827988,
+        "min": 0.0006938359999821841,
+        "max": 0.0007087470000897156
+      },
+      "complete_query_seconds": {
+        "median": 0.01007848800031752,
+        "min": 0.009887002000141365,
+        "max": 0.01008375899937164
+      },
+      "first_complete_total_seconds": {
+        "median": 0.005088480000040363,
+        "min": 0.005039107999891712,
+        "max": 0.0051188300001285825
+      },
+      "states": {
+        "median": 434,
+        "min": 434,
+        "max": 434
+      },
+      "transitions": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "label_literals": {
+        "median": 7920,
+        "min": 7920,
+        "max": 7920
+      },
+      "unique_label_literals": {
+        "median": 1160,
+        "min": 1160,
+        "max": 1160
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "cnf_variables": {
+        "median": 168,
+        "min": 168,
+        "max": 168
+      },
+      "max_layer_states": {
+        "median": 46,
+        "min": 46,
+        "max": 46
+      },
+      "peak_rss_kib": {
+        "median": 25144,
+        "min": 25116,
+        "max": 25244
+      },
+      "elapsed_seconds": {
+        "median": 0.020407980999834763,
+        "min": 0.019971040999962497,
+        "max": 0.020502883000062866
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.014944252999384844
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 8,
+      "method": "dynamic-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.008776726999940365,
+        "min": 0.008684825000045748,
+        "max": 0.009403841999983342
+      },
+      "setup_seconds": {
+        "median": 0.018161277999979575,
+        "min": 0.017710136999994575,
+        "max": 0.018712880999828485
+      },
+      "complete_query_seconds": {
+        "median": 0.011405689000866914,
+        "min": 0.011234255999170273,
+        "max": 0.011524091001319903
+      },
+      "first_complete_total_seconds": {
+        "median": 0.026946214999952645,
+        "min": 0.02640298200003599,
+        "max": 0.028125362999844583
+      },
+      "states": {
+        "median": 434,
+        "min": 434,
+        "max": 434
+      },
+      "transitions": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "label_literals": {
+        "median": 7920,
+        "min": 7920,
+        "max": 7920
+      },
+      "unique_label_literals": {
+        "median": 1160,
+        "min": 1160,
+        "max": 1160
+      },
+      "clauses": {
+        "median": 8845,
+        "min": 8845,
+        "max": 8845
+      },
+      "cnf_variables": {
+        "median": 4519,
+        "min": 4519,
+        "max": 4519
+      },
+      "max_layer_states": {
+        "median": 46,
+        "min": 46,
+        "max": 46
+      },
+      "peak_rss_kib": {
+        "median": 27272,
+        "min": 27100,
+        "max": 27348
+      },
+      "elapsed_seconds": {
+        "median": 0.044072938999988764,
+        "min": 0.04325968900002408,
+        "max": 0.04518893499994192
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.03846209600123984
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 8,
+      "method": "order-sat",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0004923920000692306,
+        "min": 0.0004848019998462405,
+        "max": 0.0005212619998928858
+      },
+      "setup_seconds": {
+        "median": 0.0008961309999904188,
+        "min": 0.0008931309998843062,
+        "max": 0.0009209820000251057
+      },
+      "complete_query_seconds": {
+        "median": 0.03077844399854257,
+        "min": 0.030682564999551687,
+        "max": 0.031017932000168003
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0019743269997434254,
+        "min": 0.001971527000023343,
+        "max": 0.001978435999717476
+      },
+      "clauses": {
+        "median": 666,
+        "min": 666,
+        "max": 666
+      },
+      "cnf_variables": {
+        "median": 168,
+        "min": 168,
+        "max": 168
+      },
+      "peak_rss_kib": {
+        "median": 24972,
+        "min": 24772,
+        "max": 25096
+      },
+      "elapsed_seconds": {
+        "median": 0.03767598799981897,
+        "min": 0.037498514000162686,
+        "max": 0.03788475299984384
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.03215637699827312
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 8,
+      "method": "unfold",
+      "repetitions": 3,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 3
+      },
+      "failures": [
+        {
+          "path": "main/0010.json",
+          "stage": "compile",
+          "reason": "Scheduling graph state/edge limit"
+        },
+        {
+          "path": "main/0019.json",
+          "stage": "compile",
+          "reason": "Scheduling graph state/edge limit"
+        },
+        {
+          "path": "main/0041.json",
+          "stage": "compile",
+          "reason": "Scheduling graph state/edge limit"
+        }
+      ]
+    },
+    {
+      "campaign": "main",
+      "family": "producers",
+      "n": 32,
+      "method": "dynamic-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.28785334400004103,
+        "min": 0.28287878800006183,
+        "max": 0.28964664799991624
+      },
+      "setup_seconds": {
+        "median": 1.1877571379998244,
+        "min": 1.180978487999937,
+        "max": 1.1975405279999904
+      },
+      "complete_query_seconds": {
+        "median": 0.23251441200090994,
+        "min": 0.22959642200044073,
+        "max": 0.2674846270015223
+      },
+      "first_complete_total_seconds": {
+        "median": 1.4756386029998794,
+        "min": 1.470655896999915,
+        "max": 1.4804584270000305
+      },
+      "states": {
+        "median": 6338,
+        "min": 6338,
+        "max": 6338
+      },
+      "transitions": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "label_literals": {
+        "median": 470976,
+        "min": 470976,
+        "max": 470976
+      },
+      "unique_label_literals": {
+        "median": 43040,
+        "min": 43040,
+        "max": 43040
+      },
+      "clauses": {
+        "median": 161365,
+        "min": 161365,
+        "max": 161365
+      },
+      "cnf_variables": {
+        "median": 68767,
+        "min": 68767,
+        "max": 68767
+      },
+      "max_layer_states": {
+        "median": 190,
+        "min": 190,
+        "max": 190
+      },
+      "peak_rss_kib": {
+        "median": 77772,
+        "min": 77728,
+        "max": 77880
+      },
+      "elapsed_seconds": {
+        "median": 1.7634768279999662,
+        "min": 1.762460492999935,
+        "max": 1.7934330450000289
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 1.710015738000493
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 2,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.00013730399996347842,
+        "min": 0.00012596299984579673,
+        "max": 0.00014644399971075472
+      },
+      "setup_seconds": {
+        "median": 1.0401000054116594e-05,
+        "min": 9.370000043418258e-06,
+        "max": 1.1551000170584302e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.0024047760002758878,
+        "min": 0.002375814997321868,
+        "max": 0.00242224500152588
+      },
+      "first_complete_total_seconds": {
+        "median": 0.00021522600036405493,
+        "min": 0.00019392600006540306,
+        "max": 0.00021887599996261997
+      },
+      "states": {
+        "median": 38,
+        "min": 38,
+        "max": 38
+      },
+      "transitions": {
+        "median": 69,
+        "min": 69,
+        "max": 69
+      },
+      "label_descriptors": {
+        "median": 69,
+        "min": 69,
+        "max": 69
+      },
+      "max_layer_states": {
+        "median": 10,
+        "min": 10,
+        "max": 10
+      },
+      "peak_rss_kib": {
+        "median": 24184,
+        "min": 24172,
+        "max": 24348
+      },
+      "elapsed_seconds": {
+        "median": 0.004430133999903774,
+        "min": 0.004304462000163767,
+        "max": 0.0051455309999255405
+      },
+      "query_count": 64,
+      "sat_queries": 59,
+      "total_compile_setup_64queries": 0.0025586090014257934
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 4,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0004248999998708314,
+        "min": 0.000400530000206345,
+        "max": 0.0004260700002305384
+      },
+      "setup_seconds": {
+        "median": 1.3140000191924628e-05,
+        "min": 1.3020000096730655e-05,
+        "max": 1.6030000097089214e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.007457618000444199,
+        "min": 0.0072350410009676125,
+        "max": 0.007729612997991353
+      },
+      "first_complete_total_seconds": {
+        "median": 0.0006081240003368293,
+        "min": 0.0006039440004315111,
+        "max": 0.0006155340001896548
+      },
+      "states": {
+        "median": 122,
+        "min": 122,
+        "max": 122
+      },
+      "transitions": {
+        "median": 269,
+        "min": 269,
+        "max": 269
+      },
+      "label_descriptors": {
+        "median": 269,
+        "min": 269,
+        "max": 269
+      },
+      "max_layer_states": {
+        "median": 22,
+        "min": 22,
+        "max": 22
+      },
+      "peak_rss_kib": {
+        "median": 24440,
+        "min": 24392,
+        "max": 24836
+      },
+      "elapsed_seconds": {
+        "median": 0.01080883399981758,
+        "min": 0.010721392999585078,
+        "max": 0.010989109000092867
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.00789854800041212
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 6,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0008174790000339272,
+        "min": 0.0008035089999793854,
+        "max": 0.0008303099998556718
+      },
+      "setup_seconds": {
+        "median": 3.294099997219746e-05,
+        "min": 3.2730999919294845e-05,
+        "max": 3.2981000003928784e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.015478212000743952,
+        "min": 0.014986884999871108,
+        "max": 0.016191474000152084
+      },
+      "first_complete_total_seconds": {
+        "median": 0.001206818999889947,
+        "min": 0.001178598000024067,
+        "max": 0.0012909609995404026
+      },
+      "states": {
+        "median": 254,
+        "min": 254,
+        "max": 254
+      },
+      "transitions": {
+        "median": 597,
+        "min": 597,
+        "max": 597
+      },
+      "label_descriptors": {
+        "median": 597,
+        "min": 597,
+        "max": 597
+      },
+      "max_layer_states": {
+        "median": 34,
+        "min": 34,
+        "max": 34
+      },
+      "peak_rss_kib": {
+        "median": 24816,
+        "min": 24800,
+        "max": 24968
+      },
+      "elapsed_seconds": {
+        "median": 0.02044593199980227,
+        "min": 0.019840188000216585,
+        "max": 0.02114697899969542
+      },
+      "query_count": 64,
+      "sat_queries": 54,
+      "total_compile_setup_64queries": 0.016328672000781808
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 8,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.0014057439998396148,
+        "min": 0.001393943000039144,
+        "max": 0.0014104530000622617
+      },
+      "setup_seconds": {
+        "median": 2.148000021406915e-05,
+        "min": 2.106100009768852e-05,
+        "max": 2.2979999812378082e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.024505567999767663,
+        "min": 0.024296949999097706,
+        "max": 0.024704634999579866
+      },
+      "first_complete_total_seconds": {
+        "median": 0.002025617999606766,
+        "min": 0.002018908000081865,
+        "max": 0.002035897000496334
+      },
+      "states": {
+        "median": 434,
+        "min": 434,
+        "max": 434
+      },
+      "transitions": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "label_descriptors": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "max_layer_states": {
+        "median": 46,
+        "min": 46,
+        "max": 46
+      },
+      "peak_rss_kib": {
+        "median": 25200,
+        "min": 25084,
+        "max": 25444
+      },
+      "elapsed_seconds": {
+        "median": 0.03186850100019001,
+        "min": 0.031524513000022125,
+        "max": 0.03201388500019675
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.025934291999419656
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 8,
+      "method": "grid-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.011776948000260745,
+        "min": 0.011728174999916519,
+        "max": 0.0120230139996238
+      },
+      "setup_seconds": {
+        "median": 0.02277002699975128,
+        "min": 0.022499820000120963,
+        "max": 0.022970582000198192
+      },
+      "complete_query_seconds": {
+        "median": 0.012268697001218243,
+        "min": 0.01217995499882818,
+        "max": 0.012562058001094556
+      },
+      "first_complete_total_seconds": {
+        "median": 0.03455680499973823,
+        "min": 0.034237525000207825,
+        "max": 0.03500382699985494
+      },
+      "states": {
+        "median": 434,
+        "min": 434,
+        "max": 434
+      },
+      "transitions": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "label_descriptors": {
+        "median": 1053,
+        "min": 1053,
+        "max": 1053
+      },
+      "clauses": {
+        "median": 15289,
+        "min": 15289,
+        "max": 15289
+      },
+      "cnf_variables": {
+        "median": 4428,
+        "min": 4428,
+        "max": 4428
+      },
+      "max_layer_states": {
+        "median": 46,
+        "min": 46,
+        "max": 46
+      },
+      "peak_rss_kib": {
+        "median": 28364,
+        "min": 28268,
+        "max": 28388
+      },
+      "elapsed_seconds": {
+        "median": 0.0526396210002531,
+        "min": 0.05263398099987171,
+        "max": 0.05316803400000936
+      },
+      "query_count": 64,
+      "sat_queries": 51,
+      "total_compile_setup_64queries": 0.04681567200123027
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 16,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.005569791000198165,
+        "min": 0.005532871000013984,
+        "max": 0.005587841999840748
+      },
+      "setup_seconds": {
+        "median": 8.414199965045555e-05,
+        "min": 7.975200014698203e-05,
+        "max": 9.255200029656407e-05
+      },
+      "complete_query_seconds": {
+        "median": 0.08939886499911154,
+        "min": 0.08756514500055346,
+        "max": 0.0928397610000502
+      },
+      "first_complete_total_seconds": {
+        "median": 0.00802880900027958,
+        "min": 0.007888107000326272,
+        "max": 0.008082779999767808
+      },
+      "states": {
+        "median": 1634,
+        "min": 1634,
+        "max": 1634
+      },
+      "transitions": {
+        "median": 4157,
+        "min": 4157,
+        "max": 4157
+      },
+      "label_descriptors": {
+        "median": 4157,
+        "min": 4157,
+        "max": 4157
+      },
+      "max_layer_states": {
+        "median": 94,
+        "min": 94,
+        "max": 94
+      },
+      "peak_rss_kib": {
+        "median": 28004,
+        "min": 27884,
+        "max": 28192
+      },
+      "elapsed_seconds": {
+        "median": 0.11075141199989957,
+        "min": 0.10805185700019138,
+        "max": 0.11323392999975113
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.09507925899924885
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 32,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.02134186300008878,
+        "min": 0.021241130999896995,
+        "max": 0.021397783999873354
+      },
+      "setup_seconds": {
+        "median": 0.0002370360002714733,
+        "min": 0.0002260250003018882,
+        "max": 0.00023828600023989566
+      },
+      "complete_query_seconds": {
+        "median": 0.3342417320018285,
+        "min": 0.3317856529979508,
+        "max": 0.337199521000457
+      },
+      "first_complete_total_seconds": {
+        "median": 0.030760235000343528,
+        "min": 0.03072910499986392,
+        "max": 0.030961680000018532
+      },
+      "states": {
+        "median": 6338,
+        "min": 6338,
+        "max": 6338
+      },
+      "transitions": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "label_descriptors": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "max_layer_states": {
+        "median": 190,
+        "min": 190,
+        "max": 190
+      },
+      "peak_rss_kib": {
+        "median": 34720,
+        "min": 34656,
+        "max": 35032
+      },
+      "elapsed_seconds": {
+        "median": 0.40377222899996923,
+        "min": 0.40202952800018465,
+        "max": 0.4066729370001667
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 0.3557211490019654
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 32,
+      "method": "grid-cnf",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.2009405069998138,
+        "min": 0.20035484399977577,
+        "max": 0.2014310680001472
+      },
+      "setup_seconds": {
+        "median": 1.6360564210003758,
+        "min": 1.5502126260003024,
+        "max": 1.7684107210002367
+      },
+      "complete_query_seconds": {
+        "median": 0.2569036559993947,
+        "min": 0.25356132400020215,
+        "max": 0.298221808998278
+      },
+      "first_complete_total_seconds": {
+        "median": 1.8364364359999854,
+        "min": 1.7511771330000556,
+        "max": 1.9698727590007366
+      },
+      "states": {
+        "median": 6338,
+        "min": 6338,
+        "max": 6338
+      },
+      "transitions": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "label_descriptors": {
+        "median": 16509,
+        "min": 16509,
+        "max": 16509
+      },
+      "clauses": {
+        "median": 240385,
+        "min": 240385,
+        "max": 240385
+      },
+      "cnf_variables": {
+        "median": 68484,
+        "min": 68484,
+        "max": 68484
+      },
+      "max_layer_states": {
+        "median": 190,
+        "min": 190,
+        "max": 190
+      },
+      "peak_rss_kib": {
+        "median": 82732,
+        "min": 82700,
+        "max": 83012
+      },
+      "elapsed_seconds": {
+        "median": 2.1453543369998442,
+        "min": 2.0647621269999945,
+        "max": 2.333026751000034
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 2.0899725890003538
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 64,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.09587902000021131,
+        "min": 0.094748392999918,
+        "max": 0.09958494700003939
+      },
+      "setup_seconds": {
+        "median": 0.0008227090002037585,
+        "min": 0.0008085889999165374,
+        "max": 0.0008304299999508657
+      },
+      "complete_query_seconds": {
+        "median": 1.2661269060013183,
+        "min": 1.246782780997819,
+        "max": 1.2801211820005847
+      },
+      "first_complete_total_seconds": {
+        "median": 0.13373024300017278,
+        "min": 0.1315727309997783,
+        "max": 0.13731369600054677
+      },
+      "states": {
+        "median": 24962,
+        "min": 24962,
+        "max": 24962
+      },
+      "transitions": {
+        "median": 65789,
+        "min": 65789,
+        "max": 65789
+      },
+      "label_descriptors": {
+        "median": 65789,
+        "min": 65789,
+        "max": 65789
+      },
+      "max_layer_states": {
+        "median": 382,
+        "min": 382,
+        "max": 382
+      },
+      "peak_rss_kib": {
+        "median": 55028,
+        "min": 54876,
+        "max": 55156
+      },
+      "elapsed_seconds": {
+        "median": 1.5334111709998979,
+        "min": 1.5105224509998152,
+        "max": 1.5441216519998306
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 1.3665345620015614
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 128,
+      "method": "grid",
+      "repetitions": 3,
+      "completed": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "failures": [],
+      "compile_seconds": {
+        "median": 0.4145377830000143,
+        "min": 0.41120214399961696,
+        "max": 0.42339453100021274
+      },
+      "setup_seconds": {
+        "median": 0.0037380779999693914,
+        "min": 0.0036647460001404397,
+        "max": 0.0038884810001036385
+      },
+      "complete_query_seconds": {
+        "median": 4.968856669999241,
+        "min": 4.911251306998565,
+        "max": 5.028103076999287
+      },
+      "first_complete_total_seconds": {
+        "median": 0.5626695650003057,
+        "min": 0.5621843929998249,
+        "max": 0.5698933440003202
+      },
+      "states": {
+        "median": 99074,
+        "min": 99074,
+        "max": 99074
+      },
+      "transitions": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "label_descriptors": {
+        "median": 262653,
+        "min": 262653,
+        "max": 262653
+      },
+      "max_layer_states": {
+        "median": 766,
+        "min": 766,
+        "max": 766
+      },
+      "peak_rss_kib": {
+        "median": 143008,
+        "min": 142960,
+        "max": 143392
+      },
+      "elapsed_seconds": {
+        "median": 6.0188291939998635,
+        "min": 5.982025538000016,
+        "max": 6.080108009000014
+      },
+      "query_count": 64,
+      "sat_queries": 49,
+      "total_compile_setup_64queries": 5.3870591989993954
+    },
+    {
+      "campaign": "range",
+      "family": "producers",
+      "n": 128,
+      "method": "grid-cnf",
+      "repetitions": 3,
+      "completed": 0,
+      "statuses": {
+        "UNKNOWN": 3
+      },
+      "failures": [
+        {
+          "path": "range/0006.json",
+          "stage": "setup",
+          "reason": "wall_timeout_100s"
+        },
+        {
+          "path": "range/0019.json",
+          "stage": "setup",
+          "reason": "wall_timeout_100s"
+        },
+        {
+          "path": "range/0020.json",
+          "stage": "setup",
+          "reason": "wall_timeout_100s"
+        }
+      ]
+    }
+  ],
+  "headline": {
+    "records": 138,
+    "completed_records": 129,
+    "complete_query_evaluations": 8256,
+    "statuses": {
+      "UNKNOWN": 9,
+      "ok": 129
+    }
+  }
+}
