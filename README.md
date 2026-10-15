@@ -10,6 +10,12 @@ The complete-propagation contract applies to original relation assumptions on
 the accepted fixed event instance. It does not cover arbitrary auxiliary
 decisions, dynamic addresses, RMWs, or general control-flow activation.
 
+The [novelty audit](docs/NOVELTY_AUDIT.zh.txt) compares the current claims with
+primary literature through 2026-10-15. The [theory agenda](docs/THEORY_AGENDA.zh.txt)
+separates established generic machinery from the open relational-interface
+theorems needed for a broader contribution. Neither document claims that the
+generalized theory has already been proved.
+
 ## Run
 
 Python 3.10 or later:

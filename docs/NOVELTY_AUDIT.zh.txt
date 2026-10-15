@@ -1,0 +1,269 @@
+弱内存理论综合：文献对照与创新性审计
+检索日期：2026-10-15
+基于实现版本：本地 4db3b61；GitHub f8ff949（文件树相同）
+
+结论
+====
+研究问题重要；当前已有一个受限语义片段上的证明稿、实际 TSO 执行子类和原型。
+但是，不能据此确认已经形成足够强的顶会理论贡献。泛化求解、自动生成一致性
+检查器、有界历史操作化、自动机支持传播都有直接先例。最可能有价值的增量是：
+从关系结构可检查地推出闭包稳定的有限历史接口，精确保留部分 rf/co 赋值的所有
+合法补全，并据此获得受结构参数约束的完备传播。当前只对一个较窄片段和协议
+给出这条链条，尚未证明它相对已有框架的严格新增覆盖范围。
+
+因此现阶段应优先推进理论：扩大关系片段、证明有效识别与闭包保持、给出有实质
+差异的模型实例及边界。降低已有实现的状态生成成本暂列后续算法工作。
+这不是文献穷尽性证明，也不是审稿或录用预测。“未找到相同定理”不等于首创。
+
+1. 当前结果到底是什么
+====================
+依据 docs/proof_audit.txt、docs/optimization_proofs.txt 和 docs/METHOD.md：
+
+输入：固定事件、地址、值、RF 候选与块分解；每地址 co 是严格全序；rf 恰好
+给每个读选择一个来源；fr = inverse(rf);co。无环公理形如：
+  P_j union (rf intersect theta_j) union optional co union optional fr。
+theta_j 为静态端点过滤。跨块 co 必须已经有固定证书保证向前。
+
+证明稿中的机制：保留固定跨界端点、仍可作为来源的写、来源入口端口、地址出口
+端口；先闭包并检测内部冲突，再投影。方向化版本只保留未来入口到未来出口的
+可达性。相同摘要共享后续状态，边标签保留每个原始变量的局部取值。
+
+保证：对被接受的固定输入，路径语言精确表示合法 rf/co 补全；对任意原始变量
+部分赋值，支持传播检出无解或全部必然原始文字。不保证对任意辅助变量决策的
+传播完备性，也不保证与任意外部程序约束合取后仍由传播决定全部后果。
+
+实际实例：普通读写与 MFENCE 的 alternating-flag TSO 成功分支执行族，固定
+线程数、地址数和每轮负载，轮数任意有限；每地址写数随轮数增长。并非任意 TSO
+程序、一般自旋循环、动态地址、RMW 或无限执行验证定理。
+
+重要区别：
+  - 不限制写数，是一个输入族上的界；每个被编译输入仍然有限。
+  - 有界活动摘要，不是整个工具占用常数内存；历史变量标签和各层状态仍保存。
+  - 现有编译器避免完整历史枚举，但会枚举局部选择和可达接口状态。
+  - 多项式查询不能掩盖指数预处理；复杂度必须包括识别、编译、标签及解释。
+  - 有效性证明与原创性是两项不同义务；实验一致性不能替代其中任何一项。
+
+2. 必须正面对照的工作
+====================
+以下使用论文原文、作者论文页或正式会议页面。阅读深度在各项中明确说明。
+只概括与我们问题直接有关的结果，不将论文没有讨论的保证说成“不可能做到”。
+
+[L1] CAAT: Consistency as a Theory
+Thomas Haas, Roland Meyer, Hernán Ponce de León. OOPSLA 2022.
+https://doi.org/10.1145/3563292
+https://hernanponcedeleon.github.io/pdfs/oopsla2022.pdf
+核对：引言、理论语义、§4，特别是 §4.1 的集成方式。
+已有：关系模型作为输入的一族一致性理论及通用求解过程。该论文的实现采用
+offline lazy SMT；将在线增量集成列为困难问题。
+判断：推翻“每个弱内存模型都只能人工写专用理论求解器”的绝对表述。
+我们的候选差别在结构受限时对全部部分赋值的精确支持与成本界，不能只说自动化。
+
+[L2] Kater: Automating Weak Memory Model Metatheory and Consistency Checking
+Michalis Kokologiannakis, Ori Lahav, Viktor Vafeiadis. POPL 2023.
+https://doi.org/10.1145/3571212
+https://plv.mpi-sws.org/kater/paper.pdf
+核对：摘要、§4.2、§5.1–5.2。
+已有：关系语言/自动机方法；自动生成增量一致性检查代码并接入 GenMC。
+§4.2 检查一个已一致执行图新增事件后的合法性，利用新环必须涉及新增事件。
+判断：这是自动生成检查器的直接先例。我们的查询是固定候选实例上任意关系
+部分赋值的全部合法补全支持；二者问题不同，但差异本身尚不足以证明创新。
+
+[L3] Automating Memory Model Metatheory with Intersections
+Aristotelis Koutsouridis, Michalis Kokologiannakis, Viktor Vafeiadis. CONCUR 2024.
+https://doi.org/10.4230/LIPIcs.CONCUR.2024.33
+https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.CONCUR.2024.33
+核对：正式摘要、引言及所陈述范围。
+已有：将上述方法扩展到与未解释关系的交，涉及 RC11、LKMM 及生成增量检查。
+判断：把我们的静态 rf 过滤简单推广为“支持 intersection”不能单独主张新颖。
+后续必须核对其完整技术附录，再确定我们拟支持的关系语法是否真有新增部分。
+
+[L4] Automated Conversion of Axiomatic to Operational Models: Theory and Practice
+Adwait Godbole, Yatin A. Manerkar, Sanjit A. Seshia. FMCAD 2022.
+https://doi.org/10.34727/2022/isbn.978-3-85448-053-2_40
+https://repositum.tuwien.at/bitstream/20.500.12708/81369/1/Godbole-2022-Automated%20Conversion%20of%20Axiomatic%20to%20Operational%20Models%20Theo...-vor.pdf
+核对：§VII、Lemmas 4–5、Theorem 2；另查 2026 学位论文第 7 章。
+已有：在重排界、extensibility、refinability 等条件下，综合有限状态、有界历史
+操作模型；活动指令集合限制历史保存量。
+判断：和“自动综合且安全遗忘历史”非常接近，不能遗漏。其事件线性化/操作化
+合同与我们的 rf/co 部分赋值支持合同不同；还需构造范围分离或证明更强的合同。
+时间纠正：2026 学位论文中的 Ax2Op 章节明确基于 FMCAD 2022，不能当作全新
+2026 成果。论文链接：https://www2.eecs.berkeley.edu/Pubs/TechRpts/2026/EECS-2026-170.pdf
+
+[L5] An MSO Framework for Weak-Memory Verification and Robustness
+Giovanna Kobus Conrado, Andreas Pavlogiannis. CONCUR 2026.
+https://arxiv.org/abs/2606.20134
+https://arxiv.org/html/2606.20134v1
+核对：§2、§3、§4；Lemmas 1–2、Theorems 9 和 13；作者页确认会议归属。
+研究的是 <E,sb,rf> 图，sb 为相邻事件关系，mo 被存在量化。
+SC 的树宽界依赖线程和地址数；TSO 即使两线程两地址也可有无界树宽。
+若干 RA/Relaxed 类有 MSO 刻画；另一些模型在该图表示下有条件非可定义性。
+判断：这是最近、最应重点比较的理论框架。我们的接口宽度不能直接等同于树宽；
+不能用稠密 co 全序制造的团冒充对其稀疏 rf 图结果的严格突破。
+其非可定义性带有表示与复杂度假设，不是所有弱内存逻辑或受限实例的否定结论。
+
+[L6] How Hard is Weak-Memory Testing?
+Soham Chakraborty, Shankara Narayanan Krishna, Umang Mathur,
+Andreas Pavlogiannis. POPL 2024.
+https://arxiv.org/abs/2311.04302
+https://arxiv.org/html/2311.04302v2
+核对：主定理、Theorem 1.4 及附录中的 TSO 证明。
+已有：一些弱模型即使线程、地址、值数量固定仍 NP 难；TSO/PSO 在固定线程和
+地址数下已有多项式测试算法。附录的状态数量界包含 n 的参数相关指数。
+判断：“固定线程/地址而不限制写数仍可处理”本身不是新突破。应比较 FPT 形式
+f(k)·n^c 与 XP 形式 n^{g(k)}，并明确双方的参数、输入和查询并不相同。
+
+[L7] Optimal Reads-From Consistency Checking for C11-Style Memory Models
+Hünkar Can Tunç, Parosh Aziz Abdulla, Soham Chakraborty,
+Shankara Narayanan Krishna, Umang Mathur, Andreas Pavlogiannis. PLDI 2023.
+https://arxiv.org/abs/2304.03714
+https://arxiv.org/html/2304.03714v2
+核对：输入定义、Theorems 1.1–1.7、minimal coherence 的算法作用。
+已有：固定 rf 后，对若干 C11 风格模型高效判定是否存在合法 mo；另有困难性界。
+判断：不能把“未知 co”当作无人处理的缺口。我们的差别应精确落在 rf 也未定、
+多个假设可撤销、全部文字支持及可复用编译上；必须同时研究是否能借用其稀疏
+一致性见证，避免把强制跨块总序当成永久必要条件。
+
+[L8] Static Analysis of Memory Models for SMT Encodings
+Thomas Haas, René Maseli, Roland Meyer, Hernán Ponce de León. OOPSLA 2023.
+https://doi.org/10.1145/3622855
+https://hernanponcedeleon.github.io/pdfs/oopsla2023.pdf
+核对：摘要、引言及分析目标。
+已有：对 CAT 关系计算可能/必然边界，使用事件执行条件及外部分析来改进编码。
+判断：关系层自动识别不是空白。我们的新增目标应是输出足以认证精确遗忘和
+统一资源界的证书，而不只是计算更多 may/must 关系。
+
+[L9] A Regular Language Membership Constraint for Finite Sequences of Variables
+Gilles Pesant. CP 2004.
+https://doi.org/10.1007/978-3-540-30201-8_36
+https://publications.polymtl.ca/24731/
+核对：作者机构的出版记录；传播背景同时由 L10、L11 交叉核对。
+判断：已有自动机约束及域一致性传统；不能把接受路径的前后向支持过滤作为
+全新传播原理。正式写论文前应补齐此篇原文逐节核对。
+
+[L10] Circuit Complexity and Decompositions of Global Constraints
+Christian Bessiere, George Katsirelos, Nina Narodytska, Toby Walsh. IJCAI 2009.
+https://www.ijcai.org/Proceedings/09/Papers/076.pdf
+https://arxiv.org/abs/0905.3757
+核对：摘要、引言及多项式分解与单调电路的对应结果。
+已有：保持传播强度的多项式 CNF 分解与多项式单调电路之间的联系。
+判断：多项式判定算法不自动意味着多项式 UP 完备编码。若未来声称编码下界，
+需要独立证明到弱内存实例的适当归约；不能直接搬用 ALLDIFFERENT 的下界。
+
+[L11] Propagation complete encodings of smooth DNNF theories
+Petr Kučera, Petr Savický. arXiv 2019；当前核对版本 2021 v3。
+https://arxiv.org/abs/1909.06673
+核对：摘要及其与既有 decision-diagram 编码的关系；未逐页复核全部证明。
+已有：DNNF/决策图的传播编码，区分仅原始变量的域一致性与包含辅助变量的
+propagation completeness。
+判断：我们的合同应称“相对原始关系变量的传播完备性”，避免冒充更强合同。
+从精确分层图到支持编码，应作为复用的通用引理，而非主要理论发现。
+
+[L12] Recurrence Sets for Proving Fair Non-termination under Axiomatic
+Memory Consistency Models
+Thomas Haas, Roland Meyer, Hernán Ponce de León, Andrés Lomelí Garduño.
+POPL 2026. https://doi.org/10.1145/3776687
+https://hernanponcedeleon.github.io/pdfs/popl2026.pdf
+核对：摘要、引言与论文所述问题。
+已有：在公理弱内存与公平性下，以执行扩展定义递归集并用有限 lasso 表示进行
+非终止验证。问题不同，不直接覆盖我们的有限实例支持查询。
+判断：若以后推广到无限历史/终止性质，必须比较；本轮不据此主张我们已处理
+无限执行，也不将其“完备性”与本项目传播合同混用。
+
+[L13] Unified Fairness for Weak Memory Verification
+Parosh Aziz Abdulla, Mohamed Faouzi Atig, Adwait Godbole,
+Shankaranarayanan Krishna, Mihir Vahanwala.
+https://arxiv.org/abs/2305.17605
+前身 CAV 2023：https://doi.org/10.1007/978-3-031-37706-8_10
+核对：前身论文统一消息框架、size-bounded/repeatedly-plain 定义及公平性结果。
+判断：统一操作模型、过时消息管理及历史大小限制已有相关研究；它的公平活性
+合同与我们的可撤销关系支持不同。此项为历史遗忘方向的相邻先例。
+
+[L14] A Refined Ordering Consistency Theory: Full Sequential Consistency
+and Generalized Preventive Reasoning
+Zhiheng Cai, Zhihang Sun, Fei He. FM 2026.
+https://doi.org/10.1007/978-3-032-26204-2_26
+核对：此前本地全文、当前正式出版信息。
+判断：是研究动机和 ordering-consistency 对照，但“该文未来工作尚未完成”不能
+推导为整个领域没有自动化框架。Zord 已涉及 TSO/PSO，增加模型名字不构成增量。
+
+检索入口另包括：2026 年 Weak Memory Model Formalisms: Introduction and Survey
+（https://doi.org/10.1002/cpe.70484），Pavlogiannis、Ponce de León、MPI-SWS
+作者论文目录。技术结论以以上原始论文为据。搜索引擎的“发布于几个月前”未被
+当作论文年份；例：FMCAD 2022 的 PDF 近期抓取并不使它成为 2026 工作。
+
+3. 创新性逐项裁决
+================
+主张                                      当前判断
+----------------------------------------  -----------------------------------
+模型公理输入 -> 自动求解/检查               已有直接工作；不可作为首创
+无界写历史 -> 有界活动摘要                 一般思想已有；具体关系条件或可新增
+相同未来行为的状态可合并                   标准语言等价思想；不是新主定理
+有界接口 -> 动态规划                       通用结构方法；需具体有效构造
+精确状态图 -> 全部原始文字支持             通用约束传播；主要作为推论
+rf/co/fr 的来源入口与地址出口摘要          候选增量；尚需与 L4/L5/L7 逐项分离
+关系语法 -> 闭包稳定证书 -> 完备传播界      有价值的目标；一般版本尚未证明
+一个真实 TSO 子类、任意有限轮数实例化       有意义的证明支撑；覆盖面仍偏窄
+一般弱内存模型完整完备传播                 未证明，不应声称
+普遍优于成熟工具                           实验未支持，也非理论保证
+
+对现有工作最尖锐且合理的审稿问题会是：
+“这是否只是把标准分隔集可达性摘要、自动机最小化与域一致性编码，套在一个
+预先规定轮次屏障的 TSO 协议上？”
+当前材料还不能充分排除这一评价。需要一个不能由上述标准组件立即推出的
+关系结构定理，以及非人为特制的、具有不同交互机制的实例族。
+
+4. 为什么值得继续，而不是立刻放弃
+================================
+完整检查一个已选执行图、寻找一个合法补全、对全部部分赋值求全部支持，属于
+不同任务。固定 rf 的高效检查不解决任意 rf 候选域上的全部推论；但一个能处理
+任意部分赋值的完整判定器，也可通过查询 T ∧ alpha ∧ ¬l 得到每个必然文字。
+因此不能说“基线无法得到我们的结论”，应比较能否以统一有界编译和纯传播得到。
+
+若只要求有限实例存在一个完备规则集，枚举全部不满足赋值、全部素蕴含子句或
+全部模型就能获得指数构造。非平凡研究内容在于：适用类可识别、构造有效、成本
+受结构约束、无需完整补全搜索，并且对回溯后的任意原始假设仍然精确。
+
+L6 也给出推广的硬边界：除非 P=NP，不能对它证明 NP 难的整个输入类同时保证
+多项式识别/编译和多项式完备冲突传播，否则在空赋值上就能多项式决定一致性。
+因此新增结构参数必须能排除困难实例，不能仅换一个名字重复线程/地址/值的界。
+
+我们已有的 fr 审计暴露了真实难点：旧写不再能充当 RF 来源，也可能作为未来
+fr 的目标参与冲突。遗忘依据必须是未来可能影响，而不能只是事件年龄或已读性。
+这提供了研究切入点，但这个例子本身不是足够的理论贡献。
+
+5. 下一阶段的主线与停止条件
+==========================
+主线：关系公理下可有效识别的精确历史遗忘，与由此导出的完备传播综合。
+目标合同和证明义务详见 THEORY_AGENDA.zh.txt。
+
+优先级：
+1. 为关系组合、受限交及闭包给出可组合的接口义务；先说明何时不成立。
+2. 放松“所有跨块 co 已固定向前”，研究由稀疏一致性见证或有限观察类型取代它。
+3. 证明关系/实例证书的检查成本、更新闭包保持、候选和原始标签的完整保存。
+4. 在 TSO 之外完成一个交互机制不同的 RA/RC11 受限实例；不用换模型名充数。
+5. 给出同一表示下的范围分离、摘要必要性或不可能性结果。
+6. 上述完成后，再研究直接生成商状态、惰性构造与可撤销增量维护。
+
+进入主要求解器开发前的研究门槛：
+  (a) 主定理不以“存在一个恰好正确的有限摘要”作为全部实质前提；
+  (b) 有一个从关系语法及可检查实例证书导出摘要的有效过程；
+  (c) 至少一个实例超出现有成功轮次协议的交互结构；
+  (d) 对 L2/L4/L5 的差别落在定理假设/结论，而不只是术语；
+  (e) 完整标明识别、预处理、查询、解释成本，以及失败时的 UNKNOWN 边界。
+
+若只能得到“假设有限未来等价类，则可以构造自动机”，应降低理论首创主张；
+它可以作为论文基础，但不能代替弱内存特有的识别和闭包定理。
+若无法找到有意义的新增结构类，应考虑转向更清晰的算法贡献，或调整研究问题；
+不能继续堆叠通用引理来制造理论厚度。
+
+6. 检索与证据边界
+================
+检索词覆盖 generic consistency theory / generated consistency checker /
+weak-memory metatheory / bounded history operationalization / reads-from
+consistency / parameterized testing / MSO treewidth / propagation complete
+encoding / monotone circuits，并专门检查 2025–2026 作者论文目录。
+
+本次核对了直接竞争工作的关键定义和结论，并没有形式验证它们的全部证明。
+尚待补强：L3 技术附录、L9 原文、知识编译的结构参数下界与 L4 的精确范围分离。
+这些待办不影响“泛化求解/自动检查/有限状态传播已有先例”的结论，但影响最终
+能否声称我们某个新定理确实首创。本报告是批判性研究判断，非优先权证明。
