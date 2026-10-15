@@ -21,6 +21,16 @@ necessary boundary for deterministic history summaries. These are mathematical
 proof drafts, not proof-assistant certifications; the new compiler and RA instance
 are **not implemented** by the current prototype.
 
+The subsequent [relational recognition theorem](docs/RELATIONAL_RECOGNITION.zh.txt)
+replaces the fixed protocol template with a checkable relation kernel, causal
+separation and write-coverage conditions, including arbitrary strongly connected
+synchronization networks. The [bounded-history comparison](docs/BOUNDED_HISTORY_COMPARISON.zh.txt)
+also proves that the same RA family has exponentially many states at a fixed
+CO-first cut but a polynomial exact support graph under a different decision
+schedule. [Theory delivery](docs/THEORY_DELIVERY.zh.txt) states the precise
+algorithm contract and remaining scope limits. These additions are proofs only;
+the implementation and recorded experiments retain their earlier scope.
+
 ## Run
 
 Python 3.10 or later:
