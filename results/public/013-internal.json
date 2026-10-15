@@ -1,0 +1,51 @@
+{
+  "path": "litmus/X86/podrw000.litmus",
+  "status": "ok",
+  "proposed": {
+    "sat": true,
+    "seconds": 0.0003625190001912415,
+    "stats": {
+      "compile_seconds": 0.00027449699996395793,
+      "states": 3,
+      "transitions": 2,
+      "attempted_transitions": 2,
+      "layer_states": [
+        1,
+        1,
+        1
+      ],
+      "max_layer_states": 1,
+      "max_interface": 6,
+      "interface_sizes": [
+        0,
+        6,
+        0
+      ],
+      "local_choices": [
+        1,
+        1
+      ],
+      "original_variables": 2,
+      "cnf_variables": 16,
+      "clauses": 25,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 2
+    }
+  },
+  "eager": {
+    "sat": true,
+    "seconds": 0.001709843000071487,
+    "stats": {
+      "compile_seconds": 0.0013478040000336478,
+      "original_variables": 2,
+      "cnf_variables": 158,
+      "clauses": 434,
+      "guarded_edge_pairs": 12,
+      "encoding": "binary topological ranks"
+    }
+  },
+  "seconds": 0.003955709999900137,
+  "peak_rss_kib": 24224
+}

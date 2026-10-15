@@ -1,0 +1,2941 @@
+{
+  "revisions": {
+    "Dat3M": "b81ec6c55503e824bb0ddc4ebac6c6f0a63d56d8",
+    "herdtools7": "9574394fc4b2bcb1a7ba23dd7877f46bb28ebb34"
+  },
+  "total": 487,
+  "parsed": 30,
+  "unsupported_reasons": {
+    "only conjunctions of final register equalities supported": 133,
+    "only positive exists conditions supported": 296,
+    "unsupported filter or declaration": 6,
+    "unsupported initialization": 13,
+    "malformed instruction table": 9
+  },
+  "recognition": "All parsed tests use a single event block. This is not evidence of a bounded-history certificate for long programs.",
+  "selection": "Deterministic SHA256 filename ordering, first N parsed tests; no outcome/performance filtering.",
+  "manifest": [
+    {
+      "path": "litmus/X86/2+2W+mfence-po+po-rfi-po.litmus",
+      "sha256": "8f06d4a9e4dfb7c46174cb3cbe7d508338791d9cfe4cfdaf8498239da0c9aba7",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/2+2W+mfence-po+rfi-po.litmus",
+      "sha256": "f50f2c420687ea40376915c4919cc3734f2a9c9adf509545485c5af03bda33de",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/2+2W+mfence-rmw+po-rmw.litmus",
+      "sha256": "e26790febbb323cbc64af51a061954135fefa8734bea6d8777a36cb604d70a4a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/2+2W+mfence-rmws.litmus",
+      "sha256": "693b1907441012a1822e14fd1605279ecc371c9c0902c0130023f196e2767be0",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/2+2W+po+mfence-rmw.litmus",
+      "sha256": "4fe65089044b219f37e490d181f3d9b0c2f7f24c55d694786cfd7618c4d20212",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/2+2W+po+po-rmw.litmus",
+      "sha256": "aeaab8aaadb535d641f5f576653e127f9338ada348e6cbdc384d26c46f066798",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/2+2W+po-rfi-pos.litmus",
+      "sha256": "e460f23bcb27a4435fa499157d9e7258a7d7319a785973402e93789195ab203b",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/2+2W+po-rmws.litmus",
+      "sha256": "7179b802a11832eba68a19b46a0b067442b6851b3a4840fd6c24fe4e9ba8716f",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/2+2W+rfi-po+po-rfi-po.litmus",
+      "sha256": "25715c79d3f9d50e8dafc656e424d80781eff35efc3caf615e808fbf6bde90b9",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/2+2W+rfi-pos.litmus",
+      "sha256": "7bc82337107b9546cc8b2bc16e469f98b0c94217d12e8eb8516762458705f798",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/2+2W.litmus",
+      "sha256": "2e3e649b656e340f2f69324f8ec641dbd187f108a57d5a9c01b4c5e6e6c8a8fe",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.2W.litmus",
+      "sha256": "3546c18050fe2a8903c26a6ffb27932da9f06c17645097a3f9e49e0bf8b12612",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.LB.litmus",
+      "sha256": "777e1fdf92d0238bd5ccf29f37d5dd53f847b3c54e471633f7733ae67fcd9d55",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB+mfence+mfence+po.litmus",
+      "sha256": "b7fbfa063e424165be3695085c227f604b161ffac1a7dc1a86a6696b05e93782",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB+mfence+mfence+rfi-po.litmus",
+      "sha256": "921c57f222ccb8793b1440232aed4550f780be49459b0754572ca5311a335ec7",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB+mfence+po+po.litmus",
+      "sha256": "9bbc66486471c2f0417b605af84b36ab11924aa5207dfce9f9cbc7b0b28f08d4",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB+mfence+po+rfi-po.litmus",
+      "sha256": "7d9c8e935a8f7c16cb2eaf4ab1634136654bbd2941453f46307a00b1278d8b93",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB+mfence+rfi-po+po.litmus",
+      "sha256": "d59506c84929426e5f681bb909cc3a9ed303b2ddd899fac913c400092040a889",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB+mfence+rfi-po+rfi-po.litmus",
+      "sha256": "1e1ead5be9634b1b0f370e67133ec2b977dc7e3ff1bfa6b50dc5603941ac5256",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB+mfences.litmus",
+      "sha256": "fdd7c32ba92a2cdf3a2dcbb7aece9b719f022fc0cf266196b2361695ba65b83c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB+po+rfi-po+po.litmus",
+      "sha256": "cc5ba5f9b641e0ae8776c49a6cf3fc8592a568e5dc7853f5254d8744db8081fa",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB+po+rfi-po+rfi-po.litmus",
+      "sha256": "a93b250a9b006a70beb9b031cc04e3c56f32f6c6a03059605f34a35df6f910a3",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB+rfi-pos.litmus",
+      "sha256": "74034244eedb1220b725f7ff0c3b72e347eb07824fe1e5a82545d240b2b2c114",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/3.SB.litmus",
+      "sha256": "efaf89d91f535f2204ae2d5b02408e230ece28df386512b1e069c81bfd520d1b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.2W.litmus",
+      "sha256": "2cd9b791611bcfe04fc7b72020021c54584727141488dfad774187dd067c5c5b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.LB.litmus",
+      "sha256": "7998a57e0ad651bd9e9eb49b4abd08e76ace8412d48794ef1a7cb34e918f6ba9",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+mfence+mfence+po.litmus",
+      "sha256": "1caf99dece7c95033779908d0574dab32c5bfb3fc6133e72a79740ab28114d7e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+mfence+mfence+rfi-po.litmus",
+      "sha256": "0058703cb4e275b6b3baefb0420f2c2d05520641d20048093a049b77c6e6075a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+mfence+po+po.litmus",
+      "sha256": "3eb18b139617f7762a4a9ae2f33d6ccb27b0db8aa5c361effd82cfe2bdbbf3c8",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+mfence+po+rfi-po.litmus",
+      "sha256": "c7f89378234e3ddbe757a21461df48d5982f18257e4d3c6958aa89bc20e3a53d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+mfence+rfi-po+po.litmus",
+      "sha256": "2d6d3fee23509accf345bbcd16fbf4fc30b242707bd0020ebc24b8e55cadd77d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+mfence+rfi-po+rfi-po.litmus",
+      "sha256": "27d4719c3d59fd727ca9980c29eb25d3344cb9ede6a21eb40ba891e52e404198",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+po+mfence+po.litmus",
+      "sha256": "6e1c7c8fd1fd200b00d47f7464f675062e51e19a43f6fe90c4faac253fb18c32",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+po+po+po.litmus",
+      "sha256": "31fe29580d62f1f1c8d7af80449c4f8eb3c50371244efa2afe1360616ea460d5",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+po+po+rfi-po.litmus",
+      "sha256": "1ed6a86ba68c8edb4bb46b50498f28f475d527ce8cfc730f6fb6cadc14c7811b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+po+rfi-po+po.litmus",
+      "sha256": "e706f376e7e7026cb347490dc0e7be0777ba693504bc3f32d3ef080f46fa17a3",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+po+rfi-po+rfi-po.litmus",
+      "sha256": "2ef8a885aa9470e33494b51ea54ae8ae48074469bb8a7e633ec8e937e325e33e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+rfi-po+mfence+po.litmus",
+      "sha256": "192d43e27c0e1cfb752f5cce9a960f6f45b55fae34c50cad037d0129420766af",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+rfi-po+mfence+rfi-po.litmus",
+      "sha256": "fbb205bd7af9472885d69a97a6c0b2b1b343cf0343af01b674fa260e7a2330b0",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+rfi-po+po+po.litmus",
+      "sha256": "52cf9ba195bc9deeb41179c458247f9882e512989b42562898d285e3b67b22ac",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+rfi-po+po+rfi-po.litmus",
+      "sha256": "a148edf89ff4779c85ba10e4a7dc0281a649c576c317dc9f8f161ef8e84c1fb7",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+rfi-po+rfi-po+po.litmus",
+      "sha256": "4d63ca68055fdd8115ba512773d8f3769b1225c3c2ea6ba33819310890fc444a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfence+rfi-po+rfi-po+rfi-po.litmus",
+      "sha256": "8556201f617dbada1c3514d4d9562331a68e840fe713660d133e5a1a81ef0885",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+mfences.litmus",
+      "sha256": "ba6b8c7afb07c78c0cff28c47571608ce2de6a558e4367015e72ccc0c1aedaa5",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+po+rfi-po+po+po.litmus",
+      "sha256": "3b964eb9b1ec29c886783c94a853e4877259a04e73b81b90bce8f5bcb60595bf",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+po+rfi-po+po+rfi-po.litmus",
+      "sha256": "d9ab85dab997fddd084571363d68375ce11890b4f64d2f90c5ee51a4f2eb7d73",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+po+rfi-po+rfi-po+po.litmus",
+      "sha256": "8bd5242cb9cac409b467639ebd0df118f9fa98fe41f2417566f7ee922eb71dd4",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+po+rfi-po+rfi-po+rfi-po.litmus",
+      "sha256": "94072101f4f420c92d8eed09b18530e08af06d479ff5765c9a49e2aa99ee54ea",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB+rfi-pos.litmus",
+      "sha256": "de3e2409d15a92b3763b8de196c98ee717aeed11a5674682516c5228ab7a5cf9",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/4.SB.litmus",
+      "sha256": "b8c8a6f24aa61f03555636e8e57fa8bae0b37f9c98d454a6e1e6010fe3b30758",
+      "status": "parsed",
+      "events": 12
+    },
+    {
+      "path": "litmus/X86/6.SB.litmus",
+      "sha256": "96cfc61b7caa27c5ecfda2d43ee74fb6366de96d2e5ff731516f62d3b60b8bd9",
+      "status": "parsed",
+      "events": 18
+    },
+    {
+      "path": "litmus/X86/CoRWR.litmus",
+      "sha256": "1414b2b1209526cf632a98fcf0d8bc2f6cd0f35616d49725f3251228cf197a7e",
+      "status": "parsed",
+      "events": 4
+    },
+    {
+      "path": "litmus/X86/CoRWRR.litmus",
+      "sha256": "30acfc97764059770bcbe5286deec982d6eff07e7fd195aeb8cce64371a1ba62",
+      "status": "unsupported",
+      "reason": "unsupported filter or declaration"
+    },
+    {
+      "path": "litmus/X86/IRIWX.litmus",
+      "sha256": "ea386b675db5aacb12947d267cb2b359e6cd7e2ea24ee97280d2c8efa5976eb6",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/IRRWIW.litmus",
+      "sha256": "36d5ce17f14fd6b868bebf4c2470ef302765971eca854a2dddc0d3518091f46e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/IRWIW.litmus",
+      "sha256": "9f2c8e16c3e16c61c04ce126eb95189d6d5305f975a3071f81a6a9c032144ce6",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/ISA2.litmus",
+      "sha256": "bac202b4c09e7bbdcc33822909b4f54113bcc853f724c3c837c3687bcedaa840",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/LB+po+po-rmw.litmus",
+      "sha256": "d746634511c3208f82afde0a3dd6053a1cd06793906c971bc9a7b2dff9e18a9f",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/LB+po+rmw-po.litmus",
+      "sha256": "dfb24d757c21142e91008efd23731e7b6cf54209e9ed62feda6765d38b3763b0",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/LB+po-rmws.litmus",
+      "sha256": "e904c65f1d18a300c23a8889aae9f2a2a4985deae88bd7fd981f29ce5e9aa1fb",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/LB+rmw-po+po-rmw.litmus",
+      "sha256": "d691e3a8617608a590bb443d8f8fc8f00947b03496a2031987dd4ec1132c906b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/LB+rmw-pos.litmus",
+      "sha256": "9600c6d8b30fc7c4797750772dbf647a87b495517d9e697809a67e13e3ce532d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/LB.litmus",
+      "sha256": "b41c94895b016ba232f0e06e58d0e1b5806b959690af81acc2dbc98cbcbc60d8",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/MP+mfence-rmw+po.litmus",
+      "sha256": "343f38f1e21411379933ccbc3e301e71f8867c95af985816b25427df9f8449d8",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/MP+mfence-rmw+rmw-mfence.litmus",
+      "sha256": "703def9e9dbba7927ae79b04d3828440cdae63794654aae2d2fecc839155885b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/MP+mfence-rmw+rmw-po.litmus",
+      "sha256": "f9316c521b602dc9463872e5540ea1906017a56c833c05a0605e7b41cc072b09",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+fri-mfence-po.litmus",
+      "sha256": "354309835c0e303f07f812860c96eb670736a1ec496c021440e3f3552dd5a03b",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+fri-mfence-pos.litmus",
+      "sha256": "9adf1c75e3ee1b4f2c966cc8cdac3645f8ed2eadedf5bbe817103fb8604d9b5a",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+fri-mfence.litmus",
+      "sha256": "57cd6a8370bea2ab498ca5ac59ab2e4fe6976a5df4ed51a10548e06ce86a80d5",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+fri-po-mfence.litmus",
+      "sha256": "6c8f042f4d6bfc749020f9bb809b1973f580c6b6b9d5fa40bacd651fbec4ca2d",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+fri-po-po.litmus",
+      "sha256": "b546f129e4f749f53a0b5219111d76930e75aba2fd59eff452a5430ad234d6ac",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+fri-po-po001.litmus",
+      "sha256": "62a2cbc72b0c856d69ec9b245de6974c451035d30a6dd3c25f0daff4b44e06a7",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+fri-po-pos.litmus",
+      "sha256": "9d10deff817ae17ba0f33d25b2f6e10443c7f9343decbf534d8ade692d3c8bd3",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+fri-po-rfi.litmus",
+      "sha256": "09866a11c883d28e3f16e7ef63c8735408541636788587943ed43b6ed277cb15",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+fri-po.litmus",
+      "sha256": "3e3f92d4ddf93b359def9ffd4d75738a861dfaf0360949f9c56d1231f4dcc8f2",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+fri-rfi-po.litmus",
+      "sha256": "9c6a6b58907af209b4f33ea5336eb52c172aae5f346ee09a3a189b61a52b46a3",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-fri-mfence.litmus",
+      "sha256": "fbc81bd37a8a5d7fe4020d7474b32ce64d6b4ea8ad67bde7456bf5811059ebf3",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-fri-po.litmus",
+      "sha256": "d4dbf173347c3415a0caff3b0b87a1ff39d58137b4807dc2c4ec87d1c30438a9",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-fri-rfi.litmus",
+      "sha256": "d991ea6f5821aa0c2d726c1485368bfee1477b1b85e10308d2a2fcf8ddeaae9a",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-mfence-po.litmus",
+      "sha256": "d807a106a69eb8bf43977f3b71c6f1a93b468bdae6a72bd145331df804e91dfe",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-mfence-pos.litmus",
+      "sha256": "4e38798db2892be2494c34131b3cb978bcc65cfa35adb1332b35360ebb927b81",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-mfence.litmus",
+      "sha256": "05662c9ba71888969933cdcea73d58cc3f3474a61fda179400040ea4013b8185",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po-mfence.litmus",
+      "sha256": "cfa3001e853c82b10b1e76d718bfbb96d79bc79f50d8699f333a6dcad7b392af",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po-mfence001.litmus",
+      "sha256": "065f7ff39aa44104527e8e2cdccfc731d0955603f39e41a1f747f5f8f8f893b0",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po-po.litmus",
+      "sha256": "49caae117d2acf309a506bc27e18d407d954bb1e8e12b280e993cf880a054a12",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po-po001.litmus",
+      "sha256": "778df1c6a82c92d610269a6501fc2c79d737341f8ac161e7d99e012858d315e8",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po-po002.litmus",
+      "sha256": "ef40ed93e7f8b3b9c729e311fd76f598849d5aed0fd5aa25d9fe5f6cf1323a45",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po-po003.litmus",
+      "sha256": "9fb08bb3e53b31ebf1228f28f83d22646ce7ea1ff5a101e43e7277a58f2e60df",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po-pos.litmus",
+      "sha256": "dd2733e1290cb9e0270e73166b494963ec8babbd7fbdb36a490fa7c6691c41d3",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po-pos001.litmus",
+      "sha256": "2521d5b3e17affdfe97948eb83cf82d388d8af874dd82e4a498b7b1aabebf8b3",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po-rfi.litmus",
+      "sha256": "27a814d22ea0e7b22edaa7adfa009b689efdb4cee7831da97a65d324e247106c",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po-rfi001.litmus",
+      "sha256": "70e1d9d99619f395854b0a63320fdaf71a281c84e1a6360ee05e4cf009ba767f",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po.litmus",
+      "sha256": "31dd5b03141efe199cf348b2c410a75d05845ef79851986df3b7037447ca7cb9",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-po001.litmus",
+      "sha256": "8a5057d1ff9ba8e6b61d0e745e296c5c63731d57ab603bbce11ae71935d41fee",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-pos-po.litmus",
+      "sha256": "b2529acfba09a81263c71692a7ce00aebc5b7d0807ea4827f012ca43af0f3575",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-pos-pos.litmus",
+      "sha256": "83566a3949e33193be2baa08fed6c45d663ea379069358d71d22ba5db00653c7",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-pos.litmus",
+      "sha256": "93dc2726f9d016c1fad5173ee16f4629fafe84a4c337811854a9092a2ef46a0e",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-rfi-po.litmus",
+      "sha256": "8e74a38f490ed2093ec9f1ab3a276161adb94b9b683a6b4201f665a509e09b46",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-rfi-pos.litmus",
+      "sha256": "845ff739560da8bddac5f2c0ca68d1ecb05e821b2139730648d5b93839f3b1bb",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-rfi.litmus",
+      "sha256": "c6602f38dd49bd60708c17f4236b2937fac89d91fb977fa7fe545d0233525eee",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-wsi-mfence.litmus",
+      "sha256": "6b19ec800b73dcbcc9f8ade8549682f450848caf7f4bf5af8b8f98b3524158ed",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+po-wsi-po.litmus",
+      "sha256": "83b8ba6a0ea91d0f94e98c70fa61e1a3c9acba01cd94ca49c0885ffc78b52ee9",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+pos-fri-mfence.litmus",
+      "sha256": "68a9949903670f0880ef56e2ec234c3f5bdd382acb315799db15d260fbd30c0e",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+pos-fri-po.litmus",
+      "sha256": "72f291f793e2289b2aaac27d12d62f7989c5ceec5bdf652a0ac8ef78fb8da2f2",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+pos-po-mfence.litmus",
+      "sha256": "6557d09362632afa7c69983a87343a8a7a917abaf36116c402cbfcb6a788ae89",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+pos-po-po.litmus",
+      "sha256": "4230851bec97088a52f2d448a2b3771b698cd1b1e2f56c15850f933af69acd8b",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+pos-po-po001.litmus",
+      "sha256": "bfd4f14fd937274e96d1024f2cae69817173aeddb286dfa572203585cefeafd5",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+pos-po-pos.litmus",
+      "sha256": "a26880bb651cda575320a3cb92b1e8a3cade250d7341afc5d6f82c6ea681b8ea",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+pos-po-rfi.litmus",
+      "sha256": "dad80ddd47590cb05e06b6ffb485ac7b1ec396e4fab3444c26ce71c83ab1e5fa",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+pos-po.litmus",
+      "sha256": "06086d8334994fd9525ae2d22f938372ce5a31a5541e5a419091863b7ce8dd60",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+pos-pos-po.litmus",
+      "sha256": "e5f2795f593a667927552237f888f276a87a2672d961ebfad44fd9baab440de2",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+rmw-mfence.litmus",
+      "sha256": "999e5fdd9606c75c5f0d4eea39d71a3d544fed72d6f034ee27cb277e21991f36",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/MP+po+rmw-po.litmus",
+      "sha256": "912e0dbaa9a7f7f4fac6baca513d394f516b34515a89331d81f956d76779f147",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/MP+po-rmw+po.litmus",
+      "sha256": "ad8ada56fcba226b6fc8393fbdd99698ab45c8df0d4fccc87ed4d72430388a4b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/MP+po-rmw+rmw-mfence.litmus",
+      "sha256": "4c4ef9523186e38afbd8fd211e04921e72f0f83ca0a2c2dd6e29b751b029ad3b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/MP+po-rmw+rmw-po.litmus",
+      "sha256": "1218a56e0128cc9db97aa5c2747ab813fc92297590ccf7c239e75cd1d369c57e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/MP.litmus",
+      "sha256": "5ab861bd423923b73ec994e9717a7625bd5a8e66192a79302949b6644e3a8d9a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/R+mfence-po+po-rfi-po.litmus",
+      "sha256": "01ca68aa600e19cad6cffc14a42dd6a9d4e181c0f2a0828317853a1b5debbda6",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+mfence-po+po-rfi.litmus",
+      "sha256": "b3f03af240ee5f27deed30e68a033daf92af983da1c0194ff7da05110f3233a5",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+mfence-po+rfi-po.litmus",
+      "sha256": "ae56f91fbb64ccdf52c705a480f7daeea09c79881280ff10093a55dc1c560558",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+mfence-rmw+mfence.litmus",
+      "sha256": "7d0281a8d8fa1a6dc742e9988374868480fb88e041662f90478594d529ee1cd4",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/R+mfence-rmw+po.litmus",
+      "sha256": "a64bdc2ed4efd47db38b485025cbb00b0baa3d559a0f2f17c021126530cb861e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/R+mfence-rmw+rfi-po.litmus",
+      "sha256": "66e94b62f3aa2ddd596c73c497c2ab72245a0ff957b8e84c5a47bb3c769ebe49",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-fri-mfence.litmus",
+      "sha256": "542362750995a9315a5fb38f42a34b0fd25901a168edda73ed4d5717a1d77ba9",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-fri-po.litmus",
+      "sha256": "9e57d67fc446a452aa8484f923319dde0beac94e0af784363751cf7d265c21e3",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-fri-rfi.litmus",
+      "sha256": "1353298853d923fdbc549927692571cdd1c858d58c8545e66f2588d0d117fb89",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-po-mfence.litmus",
+      "sha256": "3e85d4c84be027bdf2a3c52df70eac06cf41d058c48d22576c5ad40a813652fa",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-po-po.litmus",
+      "sha256": "844f1da77054b00c9a70b0279827d325907c2002cdf12123b663b27d42a14eca",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-po-po001.litmus",
+      "sha256": "f2cab7739ec89ef0e6a0c570a6cbd5a1862af98b475c891f9421f43d23e44952",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-po-pos.litmus",
+      "sha256": "0c953d221744525575b242b9d47c33e79db47adf81b5cefa012d7cf935ca23c0",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-po-rfi.litmus",
+      "sha256": "c81681172e645367b12c25500ea67433c78e1f10c9d7b99b4b3c30a41a70bab9",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-po.litmus",
+      "sha256": "16f583daac688d60658e0325da952c05199bac557646a43a050750e8c87c8d74",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-pos-po.litmus",
+      "sha256": "e655bc1e58bdc2ab87591e0c74493444da6000465af4fa5ea4d7aefab57343a9",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-pos-pos.litmus",
+      "sha256": "639fb069eee2894b0300708aef09f0ee8eabf8be66eee40f08f81dc9210165c9",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence-pos.litmus",
+      "sha256": "8d9cb37fdbc05743860bc9cd18578c94329b39dbdb83ccd30a949ccd0932c0de",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+mfence.litmus",
+      "sha256": "5f57f8cb611acae04db9ccca0a3ce83eddd514dee2783f7a5b4613f68ccc1965",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-fri-mfence.litmus",
+      "sha256": "446b46a8ab4348dab0ada5d19ff7502b8643ae9365866fb2102f884b6d6304fd",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-fri-po.litmus",
+      "sha256": "a385d9be0c30e40f4f7d22e1e5ffe7397be7fa9fbf2403feddd602e3bf801668",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-fri-rfi.litmus",
+      "sha256": "b08f6c0fe282e7c083a1cbc7d205875b5654aecc4fe3a5540f65724a2c75d66c",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-mfence-po.litmus",
+      "sha256": "ae66bf5a64811a1c9de11021bc05ce1dd52e4e83ef80829be9d49807d11dbdea",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-mfence-pos.litmus",
+      "sha256": "e1a28705cac87ae3467329ea2351cf45d28237869809b41b5533b407592bade7",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-mfence.litmus",
+      "sha256": "c43976a2d2fc2341cb74b9829330cd93294eade042c2185155845f92a324ffa3",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po-mfence.litmus",
+      "sha256": "0773962fa787b6d4e062d8bf03c283feb70cf3a98612e3cdee42e688a2b6d151",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po-mfence001.litmus",
+      "sha256": "39f38ce8b6c46fa02fbbf4b8a31e95a95e4c0eda7a9ba7c3af5604a2a6a80037",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po-po.litmus",
+      "sha256": "d82a277783fe932bd91eb388f3e5d1fc5d024fbbbd4c0ca42c52c471b5b7a125",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po-po001.litmus",
+      "sha256": "3b88d376338ef416ed0fe0ca167caf30b1b0c9f71247b0e198a4a40190a13069",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po-po002.litmus",
+      "sha256": "b85819191e5c1828fb222827078ef1d2f0d09d25439d4fb6cc835f89aa94a447",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po-po003.litmus",
+      "sha256": "3d0e1a1e7843960c2746e52e0f3da4d9aed8c83b56c22194964b2bf5f4d6c902",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po-pos.litmus",
+      "sha256": "4ff394672860be275d2d1c465b987eb7c7b97880bb59d0ad3d399311a7cc7652",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po-pos001.litmus",
+      "sha256": "193ef74193c77e6cb6fa0a09a4a0101162f50cac329e6b9e112e8590f88d3763",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po-rfi.litmus",
+      "sha256": "6c85d3a64c61400ea70ce409c5db608c67370c46e225b5a553401795f39a4d97",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po-rfi001.litmus",
+      "sha256": "2831f6620c8de5947203c96a9934a69b92095d4662b36888d9fd9127d603743b",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po.litmus",
+      "sha256": "033690b3e7b213442b55657bd6922b97b4aced06441919e0c2052cd224ab5a29",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-po001.litmus",
+      "sha256": "807cfbef9c85178287b8259b47f0420cee62227aec982f53f9e1798518278108",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-pos-po.litmus",
+      "sha256": "83001c875e479e87d406df58d7d04a726394de2f8bf7183fe69c5e93cfcd02f7",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-pos-pos.litmus",
+      "sha256": "75bfe63fd80e52ef01357eeebcef5152a5c86757d4fa02ee1684c98885e75029",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-pos.litmus",
+      "sha256": "e2a083fd2fed2efe34208f1130d1df88e6217ec4a94e6631709038c47ab1fbc5",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-rfi-po.litmus",
+      "sha256": "20e5f22da7c03b96f1c27fe0b90b9655c17c9de81fbde3eb550428a616a40205",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-rfi-pos.litmus",
+      "sha256": "369d2800e8ef2aab002418cffa8bda3ba2bb53eb7e8194abb9c8949c1d84690a",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-rfi.litmus",
+      "sha256": "82e17c4a42b663f1ef57373adf7ea16245940a676b365631911ca0b5a2de6528",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-wsi-mfence.litmus",
+      "sha256": "6e9d9589c9535c3780f3a882c8cafb90a25a6b3f8b3b6def9d02bd6addef536d",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+po-wsi-po.litmus",
+      "sha256": "f29f42dcfae4cee0a25cfcf70f6629199f6b5fcbdc9b281f3cd2768f9be6034b",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+rfi-po-mfence.litmus",
+      "sha256": "195fe192ca352d5c7666ff42471593016a6096633f24bdefb1b22b8e5603e91c",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+rfi-po-po.litmus",
+      "sha256": "68fec45406e061fcf3dd87ced83b05515e56534aecfe5a6c04888e913d413546",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+rfi-po-po001.litmus",
+      "sha256": "8970a363d9004f378eb846ac45ca7c46375363fc1375eab10d7d22147737f7f1",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+rfi-po-pos.litmus",
+      "sha256": "d641a53de51bd223c51372a56299c760d745abb669c7154f42de967ff6da0ebf",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+rfi-po-rfi.litmus",
+      "sha256": "4d5e36c069704cb2670cc4a86d53b192cdd17cdb8d93a2f00797f3e12fc1b410",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po+rfi-po.litmus",
+      "sha256": "c8097c95ab780076e6bfa8d81a41a1c82d94a8fa67f9186534a6fcbd9a2ebd66",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/R+po+rfi-pos-po.litmus",
+      "sha256": "1cf538b460934281770d5b735c4830f52e8f831b51e767d79c103c5782886706",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po-rfi-po+mfence.litmus",
+      "sha256": "f5ea582ffd187ed851a7b683e8b163cbca667f9dce992d3b800c7be64458ebcc",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po-rfi-po+po-rfi.litmus",
+      "sha256": "61e5ef4059336cf4fc40ab240cd3eff8e7f44db3baada4a154f61e1e99836953",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po-rfi-po+rfi-po.litmus",
+      "sha256": "036647523ba755af55755d059e554170d1644d53476acb68857784f8a42c5853",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po-rfi-pos.litmus",
+      "sha256": "c66eb287e4120affad1c679ccee1e279a1ad95c56bda3fbf4a178419ace1c41b",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+po-rmw+mfence.litmus",
+      "sha256": "1c254fae09e2576ec52df67365f4ac650012c3025d0e4fb17d3fa2668afe1dec",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/R+po-rmw+po.litmus",
+      "sha256": "087e56739e2804d660bfa7ef478e52d1ef67df3aacdc8bfc422e5fba0e7d0f9d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/R+po-rmw+rfi-po.litmus",
+      "sha256": "66ceb200de7b61b0a510ee4b9466d7aefd664db94e47d0db9a2db0757462c7f9",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/R+rfi-po+mfence.litmus",
+      "sha256": "43d268b8c375131b70a5e3cbfe7648611948746ec5577c143e95d66c25d0a5e9",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+rfi-po+po-rfi-po.litmus",
+      "sha256": "ec5251bcd59f1cbdaddf748b2e6924f57f6567cd36f521f43f2f7adce60f8739",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+rfi-po+po-rfi.litmus",
+      "sha256": "6e2da2d6c06b48adf0ead2538e02de2cccf93d2cbf43ee28e048308a7ef78820",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R+rfi-pos.litmus",
+      "sha256": "4347a8a3f21672da9e3f2610bd463f81d9b3f643b5b837cb58533ff875a771f3",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/R.litmus",
+      "sha256": "9c57b6c052c73e02909e8aae143decdf388dce40c76a4454126312ce7ac6e0c7",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/RR+RR+rmw-mfence+rmw-po.litmus",
+      "sha256": "3b70a089032eac52d16fa392d6741e4b2434bb80e7f774d070f58825fa21ca8e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+RR+rmw-mfences.litmus",
+      "sha256": "21cb776911e0fea0f7f7fb18af3be6257133573a31160db05933e1d14318221e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+RR+rmw-pos.litmus",
+      "sha256": "a042535cb4de209b5d8635ba5cdf7df6512a38e0ea22a8dbcb030921b9649663",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+RW+po+rmw-po.litmus",
+      "sha256": "680d738e46d82ec08cd56b6159746ddcd191d8ce0f98ebd224108e64e1f55e39",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+RW+rmw-mfence+rmw-po.litmus",
+      "sha256": "a09755b3c9bbd969d851bd727ad4ee0063c003038a09bda85193249e4bfe4723",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+RW+rmw-pos.litmus",
+      "sha256": "ecfb600cad675d8ce0b1f091afbe360e32d4dc11059c6abe893b9d36da01678a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+WR+rmw-mfence+mfence.litmus",
+      "sha256": "48535e34a43fe2482d1d5d55eebc7e6a344175cf1c5ac2e7c4b4eefa6bab8f0f",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+WR+rmw-mfence+po.litmus",
+      "sha256": "d832241dfda4968f38d4948e56f034ee7c09561409c158218fa93f120c4c0143",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+WR+rmw-mfence+rfi-po.litmus",
+      "sha256": "d8ac424160f23c0ae5490d70f1dd302f463619c1b7b83d028c62c033c0f777be",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+WR+rmw-po+mfence.litmus",
+      "sha256": "05a73407e2235eb6a2e52423f649044b57e03366822c7087065697db94c45aff",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+WR+rmw-po+po.litmus",
+      "sha256": "925d37a78fb195bee3517213e1aea6fd0619426a44b77a5f4bec0c0b14c1a747",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RR+WR+rmw-po+rfi-po.litmus",
+      "sha256": "42b5c1461f8753e84c5b63f409b19078c45aaa7d65dc068b57ec7d93c673286f",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RW+WR+rmw-po+mfence.litmus",
+      "sha256": "cc1cc2875d611deb9cc889be0ee80b2ea19ed3fe225a4be6f2f68324dbc08da9",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RW+WR+rmw-po+po.litmus",
+      "sha256": "f4e2d823cb4e2a04a6d3aac0e9093c0e169fd31ee1e3330270f9a7cb9e52b511",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RW+WR+rmw-po+rfi-po.litmus",
+      "sha256": "5ba83b396e63a67419f27befaf4c6e55fe7ddb6b5ac9e977787da6a5ad1977cc",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RWC+po+mfence.litmus",
+      "sha256": "c702f27ae9d607306906a69cfd5be7f44f888a1cf60be9fbb1ed8131303d4c6f",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/RWC+po+rfi-po.litmus",
+      "sha256": "44f8dbb14f299ffd251860e38a5871e9329fec57eda1c5634b50da18e8d2d74a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/S+mfence-rmw+po-rmw.litmus",
+      "sha256": "7f2710c6cd6e70a53fc01c55c37b58722fe022ff4bae54e43ce58fee5ff3b06d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/S+mfence-rmw+po.litmus",
+      "sha256": "bba1d3f41a913854ac6c23de4dcfa42b522e8c0ef6843676ada388f87720abb4",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/S+mfence-rmw+rmw-po.litmus",
+      "sha256": "383766eb2bebffa9cfd96b0eeefc136390eb0219954563eddc07687654501d47",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/S+po+po-rmw.litmus",
+      "sha256": "dde147c5d3bbb9cc69e7870be022ac9ed305a4efb368ca30b25af9e587a79867",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/S+po+rmw-po.litmus",
+      "sha256": "1df2339d205a1749780859679527f1ba50545fd006660f4054a814db10be63b8",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/S+po-rmw+po.litmus",
+      "sha256": "1e9088b03e71fae8676eb981aa2db24e613f829e2cb17fc3669d524612826d69",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/S+po-rmw+rmw-po.litmus",
+      "sha256": "2012966e8216f34015fe4455658e00d2585e2527185e6dc48f4e20b4fc47b023",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/S+po-rmws.litmus",
+      "sha256": "9a5131edbecd7a73d05d6d8243e00f6a7ab56b27a927a9706f296820c471d90d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/S.litmus",
+      "sha256": "f36267c46b075e9b7d3b66bd576c3a4bb421a1fcf3d661f152625d6a2be5fa6d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/SB+FENCE.litmus",
+      "sha256": "0cc00ac5ee65cd20363550bd2cf2f31c936773592a121921993c9159c1c971c6",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/SB+mfence+po-rfi-po.litmus",
+      "sha256": "abfa3efeffc68f69cc71bc3682bf9d5ded85f73877adbfd8973c68b1e996ca14",
+      "status": "parsed",
+      "events": 10
+    },
+    {
+      "path": "litmus/X86/SB+mfence+po-rfi.litmus",
+      "sha256": "e2d0f90b25916ae648b7ea81508c3a611b268a42f4de1b21ec22a815a77226df",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/SB+mfence+po.litmus",
+      "sha256": "b044196750f6109486241a6cec634747dd2934849566a33918c34b5d51bd5495",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/SB+mfence+rfi-po.litmus",
+      "sha256": "6a43d29da9b6269168cbbf9f1b9a9167bba47b2bc0c6b195682479a6371061dc",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/SB+mfences.litmus",
+      "sha256": "eeb762b17a344ca2010ac1f527e95d2bdbf5dd1971af4ef7003e7d3c9e5acd2f",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/SB+po+rfi-po.litmus",
+      "sha256": "86fc4a7c33046c993f724cbfbd0ebb5406a9ee1a15d9373a993d853493ee7530",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/SB+po-rfi+po-rfi-po.litmus",
+      "sha256": "b26e57301c9670c1d21b8efaa3a8fe2b3cadb714d0a0811c8e9ca8cc174a977c",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/SB+po-rfi-pos.litmus",
+      "sha256": "409efc25cf092706dd6b0f0bc6fb34ec97a2dd62a9b03e269a3ba378e4f1f582",
+      "status": "parsed",
+      "events": 12
+    },
+    {
+      "path": "litmus/X86/SB+po-rfis.litmus",
+      "sha256": "76a5c0c4fda353370372d633584489d0a0a2a6f6ec58706ba0c32e85bf7113f3",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/SB+rfi+po-rfi-po.litmus",
+      "sha256": "685da27a52f9ccf12967cd3a5d3cc24c53c27993a0d05a08d3e4277667038b0e",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/SB+rfi-po+po-rfi-po.litmus",
+      "sha256": "172daebc90c7804c809f699fb7981667fb196b8125f5ffae418bcd8ea13029af",
+      "status": "parsed",
+      "events": 10
+    },
+    {
+      "path": "litmus/X86/SB+rfi-po+po-rfi.litmus",
+      "sha256": "d08a04b442bc83feee39eb3e29079bf9512051ab753a89cb4cbf606596e9ea8f",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/SB+rfi-pos.litmus",
+      "sha256": "6430208cceff027ee4efec6210c9590fa1d03bb3e89fbf663326c6e4222a8e87",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/SB-XCHG.litmus",
+      "sha256": "d8cb2239bb5055f055ae924045215888a26916e5610b0ba1ec3b0e86c3d92526",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/SB.litmus",
+      "sha256": "b86a6d9f7f8bfb1447751c20e4d583180d7f5f9250a0a67cbb997050b3894d81",
+      "status": "parsed",
+      "events": 6
+    },
+    {
+      "path": "litmus/X86/SB3.litmus",
+      "sha256": "59ab4d31ffec139ea361931629b74223b2fbd90ff0c91fafb4cac090170f17ea",
+      "status": "parsed",
+      "events": 9
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WR+po+mfence+mfence.litmus",
+      "sha256": "83a42bae32c5d6962bbc6ae0caa5098a186c7e68fb6c267f90d522207b002374",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WR+po+mfence+po.litmus",
+      "sha256": "25ec45df7f87b85c993fe01f2e668766a24eb0169e3023aa7b01e080ccefe119",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WR+po+mfence+rfi-po.litmus",
+      "sha256": "faee633fb58a510407d5e63bf6ec653e99a18469b5684eeb7a4da82f49168989",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WR+po+po+mfence.litmus",
+      "sha256": "046ba06014aca488b6cb267240b6a245aab8d4eb00f3e0be53b1c3e7e1422f95",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WR+po+po+rfi-po.litmus",
+      "sha256": "0ce0be4e4f553a86ffecf15f2815438aaa4a46dc4f38329622a9164b8a55c476",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WR+po+rfi-po+mfence.litmus",
+      "sha256": "bd4648d130e9578d5f8593171c64b48afccde892b09c27ba370befca762f4d13",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WR+po+rfi-po+po.litmus",
+      "sha256": "1082175e9f672c135c96915f761ce2aa086012853b9308c3d1f2ee77cc33208c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WR+po+rfi-po+rfi-po.litmus",
+      "sha256": "404f93d3f34ad3b7d294d55d15ce663aa4594e01d764192543a3b834f961617f",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WR.litmus",
+      "sha256": "b59108f0233b0e6e17d0e8f0d86288de06aa888184c2d99ca7d049d55c8af547",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WW+po+mfence+po.litmus",
+      "sha256": "31da38f64ae3c209533b0d65bbdda9afcd0e207a3f423c1afd047884f860c747",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WW+po+rfi-po+po.litmus",
+      "sha256": "d91a43457760aa8b9475f8767618c10839012794774db74f3a6b2fecc111b941",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WR+WW.litmus",
+      "sha256": "eca161a8a3823395eb9308fac1f59780563da6e68d91850ebed691d09650ef9f",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WW+RR.litmus",
+      "sha256": "21a88f3608b4fd951800539f55083ba3868ffa843386ea81a3169082a47eda09",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WW+RW.litmus",
+      "sha256": "34bf32c1dd2a8c4e44f8403938975b2dae9a3c44e7d812e3baeaef20cc1d2d1d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WW+WR+po+po+mfence.litmus",
+      "sha256": "199f51e6af1354da87d7b21c08c994a559aa2d38d7688be5e67fc66a2368ac0c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WW+WR+po+po+rfi-po.litmus",
+      "sha256": "6705809a3d9669f22470d0ce5133b2b967ce58d24e412fc2a4da20632c9abbae",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WW+WR.litmus",
+      "sha256": "32bf2b7874b6a2f9a8af8e5bd2db9c90f23c842d7e5819dc7f93388bf68393e3",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RR+WW+WW.litmus",
+      "sha256": "6fb01812baa62bb449e1fdb24648f991a116587026e89d97d5e85b4761cce963",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+RR+WR+po+po+mfence.litmus",
+      "sha256": "dee996f26e8aa1112de11c30772ec858b6a199c9be61f8b6abae19ad4ca87a82",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+RR+WR+po+po+rfi-po.litmus",
+      "sha256": "79230df35cd36fc4bc6fdd647a7c5d420808693c1d57f8e0fc3e338ebc57b9a6",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+RR+WR.litmus",
+      "sha256": "e57efdcdd09306c5a6396cfd897fbe5d07bd8794839e1502983537a376abdf09",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+RR+WW.litmus",
+      "sha256": "18b9b9b6ca1949e8e9b93a260dd23a27b6efdac1394511984054dd9570fb373c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+RW+RR.litmus",
+      "sha256": "b7e722af841671b02ca2e2ae577f4c69255dd6d8915824a7b012e6fb40dc8002",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+RW+RW.litmus",
+      "sha256": "14ec613ea6fecfe1cad792634ed65a9301e71c3511cb04796ce804163daeaf28",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+RW+WR+po+po+mfence.litmus",
+      "sha256": "cb17bc10103942401d2e6bdaef8d631f7cfe82a545dbd64147661459ab1bc7fe",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+RW+WR+po+po+rfi-po.litmus",
+      "sha256": "a12ff5bdcb7691dc76509ce2ad8eff60e29f794d2d285587b3d3d0238a1e39db",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+RW+WR.litmus",
+      "sha256": "0a5d43a005638c4519097c419d5cc6aa897cf3d926783e119ce751daa819e4a2",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+RW+WW.litmus",
+      "sha256": "2e62a791a5a51879810efe9b6e840e7d883f6f5926817c044b8b4cd05f2c31b1",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WR+po+mfence+mfence.litmus",
+      "sha256": "bc00dffe573b930e5bf8a948b7a6693d2429accbacc621d4ac657045e0762c7c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WR+po+mfence+po.litmus",
+      "sha256": "a1f5f0eae222298b9df8830dee83a7eaed14d4de8ebf76643a7df11338a9137e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WR+po+mfence+rfi-po.litmus",
+      "sha256": "e09e96b8275663f9bc435014e5c5360262098184c0bb0f35c2fb8acb19189d6b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WR+po+po+mfence.litmus",
+      "sha256": "bce50f6dd3b32d8bbcd825b1e2c7753235f3d0b7053cc0324f9ba3f58c0553c5",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WR+po+po+rfi-po.litmus",
+      "sha256": "52db27852cae8a0260a4b207ece60001066392e1320157b7d465865367aae4c1",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WR+po+rfi-po+mfence.litmus",
+      "sha256": "678ddc6714e78b36142544b07c239dcc744ccb6df622c577f63445c6d447eddc",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WR+po+rfi-po+po.litmus",
+      "sha256": "e5b4c2c1a2a3a9bb847c3de0652f6155e1cfa22f2e43d86cdaad49ca28370c07",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WR+po+rfi-po+rfi-po.litmus",
+      "sha256": "9fca1853787b8900c8af3e497a404c4b59bb1d4132a0f703ae85cba3f71fd25f",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WR.litmus",
+      "sha256": "9e1f0d8829d072d31ab0b947ed72dfad62e54161a50ffc30dab4d321576b651a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WW+po+mfence+po.litmus",
+      "sha256": "b9dca01f66ddc3cbce52b13a431889710c309e1be86b5cba4a7c01b923d7f077",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WW+po+rfi-po+po.litmus",
+      "sha256": "bb7f4aae56dcad79018edb45928b23ed0152b06873d1784a5d3da5361b8a5f7d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WR+WW.litmus",
+      "sha256": "059b45d77f0b0851fbfb9f1563c7bc6fee4f46a95426a8c0aad0c9710d287c23",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WW+RR.litmus",
+      "sha256": "336835a4ffda40ade89e629f2308035317713176558be61ceee6486f181a47be",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WW+RW.litmus",
+      "sha256": "9a0b257d8b601b5eb29e3a7f836a39b61ff087b1e26938737536538827b9378f",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WW+WR+po+po+mfence.litmus",
+      "sha256": "ff5b89390a0d635ef382125582407015492281b358b21e682042c75302235f82",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WW+WR+po+po+rfi-po.litmus",
+      "sha256": "ef439c843830b830c75175051b0c3b508769d50465d51f22f2f38b3ab93fae7c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WW+WR.litmus",
+      "sha256": "87892c332e3901c52a6c572eea584aef39d93dab01f91501b158e0bbdac9dff4",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RW+WW+WW.litmus",
+      "sha256": "a9ce7112dc40c84b057409b2dea9e234d3c7c2fe31c2c401f6d4795571f1b6ca",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RWC+po+po+mfence.litmus",
+      "sha256": "ea4e3b6036253b723fcb285d04d16793fa73defabe17f56d76706dadd623db57",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RWC+po+po+rfi-po.litmus",
+      "sha256": "7545653a460d91a7ec7a8dcb35ba8faf23e50e1a2c0843990d4b7d3cff9b8b3c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/W+RWC.litmus",
+      "sha256": "e4afc0dcbc832c1fdd328bc016360c8f9b39e7db7261ee2843768b9b6bc63037",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WR+po-rfi-po.litmus",
+      "sha256": "ec8404565bc57dc8754789a5f6020432c986706ba2644ab178b32b4e86bdaa31",
+      "status": "parsed",
+      "events": 6
+    },
+    {
+      "path": "litmus/X86/WRC.litmus",
+      "sha256": "32034257548459d45f798cdd1922d472f551e55b7f15fadb360876df88623b3b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WRR+2W.litmus",
+      "sha256": "7d33efb4a8b971527568da994910578f119596dc0731e39a880ea357d984c3b0",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WRW+2W.litmus",
+      "sha256": "e198d2a4d339d61190665523852e6ebe9b9dae4c50a7d5984f7b7fffe9792034",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WRW+WR+po+mfence.litmus",
+      "sha256": "51f82b3b616f657eeb4cbc3e3d24791b633f62c4f83e0ad511d9a62103eaedaa",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WRW+WR+po+rfi-po.litmus",
+      "sha256": "b8bcacb917654d60f2d88f705a70caa352ded448dd14960926e96ae2fd2d6828",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WRW+WR.litmus",
+      "sha256": "d0ef2d922216a0d88c1f955a7ca1e98337d2c462974c58963297469ac1b9f584",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WR+WR+po+po+mfence+mfence.litmus",
+      "sha256": "ea31e952a74f05190493fe1a1becf7724a16b5c675eba4ac1ba6734a313eb98b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WR+WR+po+po+mfence+po.litmus",
+      "sha256": "77e22a9f19911bd433d2652454a47e568d18537335c4439249ebdc53fca282cd",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WR+WR+po+po+mfence+rfi-po.litmus",
+      "sha256": "f10a557bb7c81c441584c35fc8662f4e10785d9dada1a4dd76bacc33dea8e267",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WR+WR+po+po+po+mfence.litmus",
+      "sha256": "3144fa273eaba68731e061a06220cc474e714d169f326e98a45a389dc78b84cc",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WR+WR+po+po+po+rfi-po.litmus",
+      "sha256": "ff10bd763272c18d1a3824f08678ade5f2db70041390ba0be12249cd776e1d4a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WR+WR+po+po+rfi-po+mfence.litmus",
+      "sha256": "3c7a0ae9e55f06091a7be09eeb728fc2a8f4cc44b23beba7263540d6297d76c1",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WR+WR+po+po+rfi-po+po.litmus",
+      "sha256": "27f1765ff20b67bf09bd168e96ba5db5403cde2fc94de050347f523baa538d2c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WR+WR+po+po+rfi-po+rfi-po.litmus",
+      "sha256": "2c24dd4d50b0f121ec6bdade822aab889be9fe680744f383d610b133a4ad7525",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WR+WR.litmus",
+      "sha256": "2b17d59a4e20b5fd313c82d3f4fe412490a624c1530782f89f21965a1cdb7f07",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WW+RR.litmus",
+      "sha256": "5a78be27f2c2dfcc1234332c72a871b66305be04b9db5354ec3300df281d9e98",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WW+RW.litmus",
+      "sha256": "f4a309ead7c4551981ff893365325642c1271c6ac05277b2640122b9287abe91",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WW+WR+po+po+po+mfence.litmus",
+      "sha256": "f1785edb0e42cc240b6e6edf26b38a7f4929169d9495074abd893f784c3b5aba",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WW+WR+po+po+po+rfi-po.litmus",
+      "sha256": "b2906fdd95e4c066b15034620fbf29afdf522aae1c5aa56ea018ac4baf8997b5",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RR+WW+WR.litmus",
+      "sha256": "e80cc683410ac696d3401fa319c2e5f6d3339eb277947aeec917bd700f743521",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+RR+WR+po+po+po+mfence.litmus",
+      "sha256": "cd9924172ee01331ba22443cf7e1b95260c82be5e19ca27be7fe5aa139d77063",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+RR+WR+po+po+po+rfi-po.litmus",
+      "sha256": "516a19b341561d41e3040622b63582c338d2fc6f8ed63dc3108fb1fca18a95f4",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+RR+WR.litmus",
+      "sha256": "15d52bc777af446f49869da204f4c57bc1b66c2739f40aeb92e3b2e860544b2c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+RW+RR.litmus",
+      "sha256": "18e5389fdd352ec058c9293263ada830262ee167643a7abe4dd8bcfffbb4afc7",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+RW+RW.litmus",
+      "sha256": "d0c4c490ee30a2088c11d0611ec661a098b945f853467c0cd8685d18d1ea302b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+RW+WR+po+po+po+mfence.litmus",
+      "sha256": "6f136f0672a315e0bfa8a69959380e391bf3f4a818b015f4daea3b9dda6f606e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+RW+WR+po+po+po+rfi-po.litmus",
+      "sha256": "957d32c673ebec110486344c01a934c57cbd6a2e305dbbd482676b45117eef66",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+RW+WR.litmus",
+      "sha256": "6104626a8331b3e781a30e3d16b5bebaee9556c71d97db0637f05cf9fa0c64d3",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WR+WR+po+po+mfence+mfence.litmus",
+      "sha256": "de2857d71f10099a5ff007cb724c3bb62cb78ca3ca70e5f29506ec446eb76ce4",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WR+WR+po+po+mfence+po.litmus",
+      "sha256": "d6c3a6fe58d70af38b8dc687ca35cc94ee92af2d6948436716061192879c90bc",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WR+WR+po+po+mfence+rfi-po.litmus",
+      "sha256": "adee75676200e4fec58191b98213934c5ebd1f0f06b2b72801b359a897da1c97",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WR+WR+po+po+po+mfence.litmus",
+      "sha256": "b946bbabbad69b8cbc616692d130622f9e6ea4891ac43c61bceb46a19e1a3106",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WR+WR+po+po+po+rfi-po.litmus",
+      "sha256": "c01343c4531a4f7c7d5852fb5b6c015c8421f1f0b25d04a89c28ecffaccdc027",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WR+WR+po+po+rfi-po+mfence.litmus",
+      "sha256": "ebcf865159a98f6731a70c7887b1abc2c123f9b0caad6391ded97c9b956d1427",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WR+WR+po+po+rfi-po+po.litmus",
+      "sha256": "174f9f6d564b1abd42b2091dce15a5baf5b66d676071573ffa1f2bed4f8357f7",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WR+WR+po+po+rfi-po+rfi-po.litmus",
+      "sha256": "4a42e7afc680ac423e7257075dedd4b28622a8b4b9d3b511c5b69ae6597139be",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WR+WR.litmus",
+      "sha256": "a83a2a6d0a251ab33bfcf299d336388d42204b97dbe0cbba849a2b4bdeb7b94b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WW+RW.litmus",
+      "sha256": "aa22bccf382c9461a5c9c87aac1de250751d3b9b6da92be88dfbf28a27e69eac",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WW+WR+po+po+po+mfence.litmus",
+      "sha256": "b59397c6cf38f54b535b196b977390b08cec36f743852349bc55d9c3ebdd422d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WW+WR+po+po+po+rfi-po.litmus",
+      "sha256": "ec318b7f71e2c68705a1f0eea6f9271d83abdefd30c1d05320904ebf3dd8de86",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+RW+WW+WR.litmus",
+      "sha256": "e30fbf81814be64f3aa329e7d7b5facb070e95dfabca07400a04333d22326f11",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+mfence+mfence+mfence.litmus",
+      "sha256": "28f3512635853c28c6ae375dcb7f04b99f5fe7e027ab3e9f2d5d3de132312b71",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+mfence+mfence+po.litmus",
+      "sha256": "9f51c893fbcee47831ccbf56be7180c5f4c96363f9d96073c3270cbc6e9baf1c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+mfence+mfence+rfi-po.litmus",
+      "sha256": "e46310cd9f9f24f3676a8b3e19ca884142e892929196ca0a314e29ae5d9af957",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+mfence+po+mfence.litmus",
+      "sha256": "2b9a578875f39e063903124179ab3657b35b66cf5e27e0716266db249f81bdf7",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+mfence+po+po.litmus",
+      "sha256": "0b4845733de57468808997ad4c849fa6467532cb7b968cce44e0858ede07565d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+mfence+po+rfi-po.litmus",
+      "sha256": "66653fddc1d4d2f4361c19740e226ddb684f51932e793b50dbc4a81bb7b70284",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+mfence+rfi-po+mfence.litmus",
+      "sha256": "fd580a3db610a31bdfa4b24f22c3107ca13d90e2e64fd2631fd15f56c6a3eb0a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+mfence+rfi-po+po.litmus",
+      "sha256": "530deaaba7d505bf34610df60dc1748df69662c0f9e6d2feadb3572524094cf7",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+mfence+rfi-po+rfi-po.litmus",
+      "sha256": "681c37fe7852bbafadcb544cdb11b60ebfce7b638469f54690feb1cb0239136d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+po+mfence+mfence.litmus",
+      "sha256": "d18b2f4142018e8070149455d8f8b286c3f013d1208eae8b3f31c311dae01a1f",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+po+mfence+po.litmus",
+      "sha256": "d034b701ec4ca22b104b2c4bb354ad96ef036858f06851397a7105d001f8dab7",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+po+mfence+rfi-po.litmus",
+      "sha256": "9e5fce8a8230a4084112f7a9e6ace360f8464b137919dc6b161631bf4116525a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+po+po+mfence.litmus",
+      "sha256": "97a8a2fc227a5ecf4f4719518ed4f5ff9123aa6c9bff141210c616d63b84aedb",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+po+po+rfi-po.litmus",
+      "sha256": "4cd4afdc4a5ef4c4b569c7e5ff479fcd4666e048d3ae03682c77aeab92dbe232",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+po+rfi-po+mfence.litmus",
+      "sha256": "0ec453de6146b667cdb6f3217accfcc16ad4efc2a73f4d01ac00dbea1071f77d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+po+rfi-po+po.litmus",
+      "sha256": "d2782eb6e76c27b1ca2835bb64caf9db1b2a85b5835a20ccf5cb294f7ce30ac2",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+po+rfi-po+rfi-po.litmus",
+      "sha256": "32b193f7fc6485d5a5b718c89c969412f86b1d63647c548338d815b8881c5bf1",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+rfi-po+mfence+mfence.litmus",
+      "sha256": "ffb92263f12f9518aea197645a9e87a5e7cbbeee01d325bd40aa720b77eb3c40",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+rfi-po+mfence+po.litmus",
+      "sha256": "70e5762a7f8ec15da9d3ed7026b0c6c21af330627365dab7e5a7481f35814179",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+rfi-po+mfence+rfi-po.litmus",
+      "sha256": "eab51dc49b49557d3df36f5a2ff912f92f00fbd33c4a53dd1260cd5d6bf8a149",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+rfi-po+po+mfence.litmus",
+      "sha256": "6e2954571f0fa86ea72794b0e63388d4c8867a289d8439dd60b6031d5dbcb881",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+rfi-po+po+po.litmus",
+      "sha256": "77cdb58c68fc99d3f30ce0b86e2e889730649143f536ddefc6b22ad0114be887",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+rfi-po+po+rfi-po.litmus",
+      "sha256": "e142d971d434d25420eccc4fd70665579ab54bb886cc1036921d178b8ccf1441",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+rfi-po+rfi-po+mfence.litmus",
+      "sha256": "b261d8aae0368b7fb8ba5609a7859224e56221cd5d1eab0ca12d950204fe643b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+rfi-po+rfi-po+po.litmus",
+      "sha256": "385cf8fb1117134487291fa2145b93d57d4e98c17dfb45a1b8063e13658e66d0",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR+po+rfi-po+rfi-po+rfi-po.litmus",
+      "sha256": "6b51ef8f5e4e42986da265c5cda807c241a7c6128f7de08c7a87325e9c3d6005",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WR+WR.litmus",
+      "sha256": "76d4556ab7e0b63500739695546787ff7ecca9e5d1e302ae9a5ea04e802eb145",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WW+WR+po+mfence+po+mfence.litmus",
+      "sha256": "3b776eddc45de09e394459ab6578c1cb302e1426336418fc409ffe0e0f9c2d33",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WW+WR+po+mfence+po+po.litmus",
+      "sha256": "d204f24362789dca6abf9bf9a489e61efbcf882282b6d38fafd2dcb088f735ed",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WW+WR+po+mfence+po+rfi-po.litmus",
+      "sha256": "4e0565e1cbae8fd6aea334c84e9eceb1725c0d6c336d4ac81591263910473460",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WW+WR+po+rfi-po+po+po.litmus",
+      "sha256": "93b8b1e7a4782c00680f2bcedbf7423b374300fd4281ca2d5a13bada2ed2bd2a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WW+WR+po+rfi-po+po+rfi-po.litmus",
+      "sha256": "d5fa9f5fdc0e43b16a033f02a8e62f17752801c8527b1d81ee0379d150265c98",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WR+WW+WR.litmus",
+      "sha256": "7fab7661a78459fb10d2bc9d0c7e557fe1449a7d9b2122f67f851f853790a96b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+RR+WR+po+po+po+mfence.litmus",
+      "sha256": "bf7a8c36e85abd53d69f86ad1220fa4627ec33e0206e5e6e97839d782309816d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+RR+WR+po+po+po+rfi-po.litmus",
+      "sha256": "df5a10ed94b00dae6fc6f236bd71380afa31485353679dac39e4c692d67cbe03",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+RR+WR.litmus",
+      "sha256": "deefe152dd18cd89912f29ba355f8d0786d27bae1c47e5a6eaf88657325aa014",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+RW+RR.litmus",
+      "sha256": "3ef712e96f5f8cc355f407a439e84c1505608c88f7334324a71aa27cc993c069",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+RW+RW.litmus",
+      "sha256": "4f3a147cc17361ee6a7868a3756fcd643088b6d9b524a727b6895f146dae3175",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+RW+WR+po+po+po+mfence.litmus",
+      "sha256": "4b300ebcacd960027b25b6c16c19abf67513d66f35a63e5730dd7a84372a4963",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+RW+WR+po+po+po+rfi-po.litmus",
+      "sha256": "e4b7dfa8cbfd34af8619c94d4057f079f02be00aea1b01edbf1dbf547ffc575a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+RW+WR.litmus",
+      "sha256": "ad33dd730d877732c1705078a8d229fc0119fc904e8fca95540475af30a86d54",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WR+WR+po+po+mfence+mfence.litmus",
+      "sha256": "11ced982b147cba31622b6c0488e3a7179634870e25b03be1ee4e78f0322178d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WR+WR+po+po+mfence+po.litmus",
+      "sha256": "c394bc358c22ee9e09452d1837c49ae3af0667b69a42aadf61ed62e149afc905",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WR+WR+po+po+mfence+rfi-po.litmus",
+      "sha256": "0907f19d1a79552c47eada98350a16e058b810a7ba7b33a63ff2bd1dcc7a55ed",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WR+WR+po+po+po+mfence.litmus",
+      "sha256": "c0f7af731493b50515f47c707a1c012520ac24592fe63359fd21d783926cf7de",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WR+WR+po+po+po+rfi-po.litmus",
+      "sha256": "267278fc22ae517a145643a764e0bebf28ab1749b75ba50c1be8ca45e9716db6",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WR+WR+po+po+rfi-po+mfence.litmus",
+      "sha256": "2eb2a6faf0b0242cc7cc6ba63044042b392172ee53cc2bc1963a999188eec760",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WR+WR+po+po+rfi-po+po.litmus",
+      "sha256": "0a2d25f6d21cd59b28f3e71332abd2705986722d44e2ee111f2348a2e3118507",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WR+WR+po+po+rfi-po+rfi-po.litmus",
+      "sha256": "1a96fd7ba3529d6a8455157e7f5b7a5c24b49e4b0ac68b4ab710607c456b8283",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WR+WR.litmus",
+      "sha256": "995c8e341bdee6e8a22ef659379b2988f65d293e3a53fe5a6db87a2eba7c49b9",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WW+RR.litmus",
+      "sha256": "0f60cd7e9aa34acf2205d61a35d29e32257716ce9f0a5afdcd1db637fcb21ae4",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WW+RW.litmus",
+      "sha256": "8b4c0befa1729f2d83ab46f1f90a31ba9177895ef1aa6775bb469d39dc35fd49",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WW+WR+po+po+po+mfence.litmus",
+      "sha256": "b647c23662d7367a0ec1d92a2b7476f8f78438401750bcea9e6a04ac0f291247",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WW+WR+po+po+po+rfi-po.litmus",
+      "sha256": "193fb8e49268fd9f08d04a9cefe2ceee8389c768d2758f0004309376db099d97",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+WW+WW+WR.litmus",
+      "sha256": "bbc4f43787c2c5868c93c4306e01063a9c1b0cd98a5b44efc2ed737bdff1f186",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/WW+po-rfi-po.litmus",
+      "sha256": "72d88ffc495db86a642679acf1338a335066e75b36da8f0a2971e92a7aafe758",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/WWC.litmus",
+      "sha256": "20f7b352cdc2aaf87c50b134548cf7b1f90980bba7e18d1d84d0448ca0f7c89d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/X000.litmus",
+      "sha256": "31e0e31423a97a046a0e158c5562f92fa087be8bc2a34c16bef4af82baf22c0e",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/X001.litmus",
+      "sha256": "6806d6e5282f29f00c60058ccea3db8bcf6c9ceb2ebb9dda68adb9cb1b3f0f42",
+      "status": "parsed",
+      "events": 7
+    },
+    {
+      "path": "litmus/X86/X002.litmus",
+      "sha256": "4290ac36510c77ccdd854cacde3e7210f3b95f1933f53dfaba87f586809be192",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/X003.litmus",
+      "sha256": "a49c62b80ef04e5afa6031fd740eed5de943d53ff41c2c134da3874f01366b90",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/X004.litmus",
+      "sha256": "3a26eb773608257cb95d156ea34aee66d55e782335ba671ac6473028d1b8bf00",
+      "status": "parsed",
+      "events": 6
+    },
+    {
+      "path": "litmus/X86/X005.litmus",
+      "sha256": "10743cdbfe981a312e7f533e26f2e99491116527592de8e442f722fa2d51b46f",
+      "status": "parsed",
+      "events": 7
+    },
+    {
+      "path": "litmus/X86/X006.litmus",
+      "sha256": "9861fdf169b11d67f0fd2a6b4f17132ef25b922c8c2750996d1d0f5b41c35c87",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/Z6.0+po+po+mfence.litmus",
+      "sha256": "852d91c3eaaeb48a1d0ef0aededffd477b3be0b394493f39210876263e50bd57",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.0+po+po+rfi-po.litmus",
+      "sha256": "fa7cca467e6a4211679dc735fe4d3467b097fa007ea6cf9dac22808e2c9b00bc",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.0.litmus",
+      "sha256": "8d2263a3e3e92d4e0b1e10f0b265983947a9c9e9d91284a131217cc5cd9091df",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.1.litmus",
+      "sha256": "a71557f19da4e9c8fbff183ffc2067480eb1caf4d769556b8fc91e3f2441ea95",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.2.litmus",
+      "sha256": "abe16dd4d9c13d10ea5995bd7662f713b8169123058aa2baceb7c35c5a21f6f8",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.3.litmus",
+      "sha256": "ab411be8d074f0443e1db6d4b95ad1f9ca29537ae3ba80ecb1d48c53d885f5cd",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.4+po+mfence+mfence.litmus",
+      "sha256": "d65fee16a6c72764c231260ed4e004f80b197faf1c301b037f5a8a19e60ce0e1",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.4+po+mfence+po.litmus",
+      "sha256": "53be5d4386582662ca930a128a0d24a5a786dab0ce250562213c4fc6a36f820a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.4+po+mfence+rfi-po.litmus",
+      "sha256": "00fd837f3e3b994ea6d30c7fa199a1158b139316c3f2fc14890d45fe24998c52",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.4+po+po+mfence.litmus",
+      "sha256": "87df3212f7d671d665a859e92ca396824c729cb6dd00dca8cc41054409a37016",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.4+po+po+rfi-po.litmus",
+      "sha256": "7c760b5731caf791f4fc9d32028f3cc8f161b4e785672c06c4a7f94dc1fd8313",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.4+po+rfi-po+mfence.litmus",
+      "sha256": "bdd6b4b51940ec9d4f0ad3294de75db7f08c2a3c26aa5d4faaf2af9d04e1ebf3",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.4+po+rfi-po+po.litmus",
+      "sha256": "a9a355071fe379213740d9c5ed047d3c3bd921dd2a81894b910af9b3ab43104e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.4+po+rfi-po+rfi-po.litmus",
+      "sha256": "21f537557597253344ecaaaa11da00b3f7f5d6bcce0f7e8df7dbf9f7eddcf4fd",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.4.litmus",
+      "sha256": "0a274441e6e3f8048ef4cceb456de9f3826af6b0b5920c183129d340eec461ef",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.5+po+po+mfence.litmus",
+      "sha256": "51bab00ebd5cf607def624cc92acd9d6498c1ad10fb8dbe943979973556d2878",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.5+po+po+rfi-po.litmus",
+      "sha256": "9c0e82631e44187dad0ed17775c25805b733322f1b16d760c47a8f4f1048b8e5",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/Z6.5.litmus",
+      "sha256": "98bc1368b56b347949ec4382ebf2c7028f8f836371774b2ddc308d3179751f9a",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/amd10.litmus",
+      "sha256": "ac9058a2221426145c92399323d1254d6c5cd75c07ffc897cacd2b48279a2af0",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/amd3.litmus",
+      "sha256": "cbf8385c3fd75a0168b0040557815585f54475f85b9e7af6778b927e59fdeff3",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/amd3bis.litmus",
+      "sha256": "119b83b67e33948e9be27874ba3393615c6c5f54e9ad07938431b58e947652d6",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/amd5.litmus",
+      "sha256": "0854a1df58274eb2450c940698d480ff15bb4ba1cd8a7f198ff55018149ece14",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/amd6.litmus",
+      "sha256": "cb7cc224c69b7aa9ababb20bdaae5b52cbb33c1feeb63c4f7c2a6316946ce60d",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/classic.litmus",
+      "sha256": "84badd704eb7a87470ea36a644c349d7b0be299b25fb0db7ad87b16f201b4050",
+      "status": "parsed",
+      "events": 6
+    },
+    {
+      "path": "litmus/X86/frmap.litmus",
+      "sha256": "f22a5da436863769d3974582ea17fa7101612f9f9a8213f6d51686aa00f4531e",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/frmap2.litmus",
+      "sha256": "9dba22f877a7f23f81b08ae61f91fe207cbf2dc974a793189f7080f546f58989",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/fwd.litmus",
+      "sha256": "5fcc5a253b276aa0d779ea297e2169d6730e7cff68a27bc7a2c1a1deee11c1b0",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/intel.3.1.litmus",
+      "sha256": "917dd52bbbe7180e166a59031a2bb69c3f7f1cd512f199740706c633f4f48a64",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/intel.4.litmus",
+      "sha256": "48462d814983935ef557881301aef6c8b3bd7900ca8fcaf74c251c825618a499",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/intel.5.litmus",
+      "sha256": "834eec5a6136104e6b2bfbd91368981151f43b0b7cd1cac30fe6ba3940214f6a",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/intel.cc.litmus",
+      "sha256": "e1e5df3b3eecfec99d62820fadcf17e5c0d8ed16576b9196db63c044ab88d2eb",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/intel.iriw.litmus",
+      "sha256": "6d189e184879f2086ed1851d9d7533ebd96188bb2c6eb2cecc3e2f7714b93f57",
+      "status": "unsupported",
+      "reason": "malformed instruction table"
+    },
+    {
+      "path": "litmus/X86/intel.n4.litmus",
+      "sha256": "482f174c2112a6089ae9f0742abd6a530f64c5bef91983c11ba2b6094fdd19de",
+      "status": "unsupported",
+      "reason": "malformed instruction table"
+    },
+    {
+      "path": "litmus/X86/intel.n5.litmus",
+      "sha256": "aa062f8bd31c97a112ce2e50c7e61938636d6c9caa4c37f09e23fbac2ec4174e",
+      "status": "unsupported",
+      "reason": "malformed instruction table"
+    },
+    {
+      "path": "litmus/X86/intel.n7.litmus",
+      "sha256": "6d32f0ed30d46365cf09cae638384527a6908d7dcbb8503baf6d30b59ec8ba06",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/intel.n8.litmus",
+      "sha256": "156743061c8f4922cb8e09b457d8460989629765036c2a3078e30901bed81aff",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/intel.paul-tso.litmus",
+      "sha256": "b1ba3bdca30c074ed661a62f1966165216003e129ac8b15dc63c3d7301fa2b2a",
+      "status": "unsupported",
+      "reason": "malformed instruction table"
+    },
+    {
+      "path": "litmus/X86/intel.rwc.litmus",
+      "sha256": "999e0bcca466422cde83ce0081503478a8bbf0ecb5a011993860a7d82d347958",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/iriw-internal.litmus",
+      "sha256": "adf9d6fab17da1ac2c3d8b7425179fa023eff3096056f6ae83be6059f3d53311",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/iriw.2.litmus",
+      "sha256": "426bc7032646c23c9aed51bc9f470486690c638db49e808d69ba1ef824fcdda9",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/iriw.litmus",
+      "sha256": "4b07f218f40a57d17c3d2e21f26c6bdcc722653e6cb80f3399dca96fa768fd73",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/irreduc2.litmus",
+      "sha256": "8fa70c9f4877eaffd9b4e2c7d880afab3a9ce8c7dcb6a054ef96265f00597d7c",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/irreduc3.litmus",
+      "sha256": "c0744b09b1035a71df621764c98312832cc388c8db0d2d9e32b968a53cb0d6f7",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/iwp2.2-amd2.litmus",
+      "sha256": "badfbc2c9884fd05b68c26eb6cd135454ff0e866c453ad7f12b20683b5eab4a9",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/iwp2.3.a-amd4.litmus",
+      "sha256": "d6b8ca348987195ae12500f2738d4fd7c4649b7fe7756ed7497224d2e7400c09",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/iwp2.3.a-amd4.mfence.litmus",
+      "sha256": "70f9562472d8f27bf52a6a2b72f1c31bca188c323df2389b7bfca9dca5816e6d",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/iwp2.3.b.half.litmus",
+      "sha256": "9e793a3d0e8420ec0341dbdbabd39850bbca22a9481f89116302d8555694c4d4",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/iwp2.3.b.litmus",
+      "sha256": "a29c5ffa13aab32f6dd2693df781c44188ec092230967062b94635a3d45e2343",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/iwp2.4-amd9.litmus",
+      "sha256": "1c65756ac3dad6ea2d14fc9f438cdf7e7034f9441fd60ea89a2ef7153eee07c8",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/iwp2.5-amd8.litmus",
+      "sha256": "3a32959d8f9b957b4afe9e32595d99468ed2898564389b4766c129861866dd14",
+      "status": "unsupported",
+      "reason": "malformed instruction table"
+    },
+    {
+      "path": "litmus/X86/iwp2.6.litmus",
+      "sha256": "d6d08b0559d3b14925261dc9a9c4f1ed0ffe4a2e2409f039c0905c10f4e34c8c",
+      "status": "unsupported",
+      "reason": "malformed instruction table"
+    },
+    {
+      "path": "litmus/X86/iwp2.7-amd7.litmus",
+      "sha256": "3653c5822e9e2758082f8c231b1983514d68c710012f1b9c67c4aa4ef74e9b56",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/iwp2.8.a.litmus",
+      "sha256": "553c357a017b36efe5cc0e7f907d6ca9b1a48b52754445659e1eb897212540c0",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/iwp2.8.b.litmus",
+      "sha256": "11da1b9ace1c651bc7f9c67a541302645397813ffcc7263a94481bec4cf1c574",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/m11.litmus",
+      "sha256": "057b9f79fb057c06117c9b80be14df264d747351b80172639617cab2fe44180d",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m12.litmus",
+      "sha256": "9768337719ec865941101d501a86181a1e4a0ca1812ab899ee72dd4b94aabcac",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m13.litmus",
+      "sha256": "a9ec997223acfaac9bdee5721cbf3b18b94fe7bba070f7cf44edf6915397a397",
+      "status": "unsupported",
+      "reason": "unsupported filter or declaration"
+    },
+    {
+      "path": "litmus/X86/m13f.litmus",
+      "sha256": "4f316e83ee136cb71f4f8fbb2bd31ccfb6719942ec8b8452be44c5e41b329928",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m14.litmus",
+      "sha256": "487c41546f1ef4a63ad03256d189264c442487a6697fcccf7fc33fbc7d0029be",
+      "status": "unsupported",
+      "reason": "unsupported filter or declaration"
+    },
+    {
+      "path": "litmus/X86/m14f.litmus",
+      "sha256": "d9b0740fd4281953d8002cd739629abc46d32f6560ce8c0a30ae635bae7bf7c9",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m14i.litmus",
+      "sha256": "d005181eb82cfbfce27068f4925c992936e71a8ff08a8024d95124447b65ec66",
+      "status": "unsupported",
+      "reason": "unsupported filter or declaration"
+    },
+    {
+      "path": "litmus/X86/m15.litmus",
+      "sha256": "ba97211fbc681f58a0b2eae570642f57206d13db2dd3bf5f90ad6be984e0f4de",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m22.litmus",
+      "sha256": "2b8d6c3f64aced83f53e9a95db19f2707c7ba22571dd90d2c090046633a17730",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m23.litmus",
+      "sha256": "0d0887314fcf80584e145ff0dcfb916524f4771bba1b601ae713335b59b33a8b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m24.litmus",
+      "sha256": "436dfed164443e27e23d77e128746a9519c59b52eb32b5f819fe4edf0159b2f8",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m25.litmus",
+      "sha256": "7847c920a5dc5299c0f1b0648341904af451308c772b4bd6e8221f198e7fae37",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m33.litmus",
+      "sha256": "574e7f229161648e36c17438c23756bf99c21cea1de6355b049b5ef312630e18",
+      "status": "parsed",
+      "events": 6
+    },
+    {
+      "path": "litmus/X86/m33f.litmus",
+      "sha256": "ac79a545384076d75fd68647426be6918c093452cca992b95cab59efd8b65546",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m34.litmus",
+      "sha256": "0c1fc5bdd4ff37375daae45e41aab1b82bfcf5781302e5cc7f3830905aa75481",
+      "status": "parsed",
+      "events": 7
+    },
+    {
+      "path": "litmus/X86/m34f.litmus",
+      "sha256": "4bed4ea4c9f9058a105518206d888cf54d36e12d446cd2d8aa423040d818a464",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m34i.litmus",
+      "sha256": "3780255d55cf4a6f867b5adf2dbdc95da0892be4fa5012715eddeb5eef729c3d",
+      "status": "parsed",
+      "events": 7
+    },
+    {
+      "path": "litmus/X86/m34if.litmus",
+      "sha256": "8fd4ae654a145453f2b5e8e9f8cf6a2ce2b35f74a81545b7c38f979ea6ab7dc9",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m35.litmus",
+      "sha256": "a719ad35caa6fc1e54dba8fa41d0f3dfa711bbbab51d3d73fef40cf8340112fb",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m44.litmus",
+      "sha256": "ea5b1ffd5c351a4b77aee0e325bdc178381282b22f795743907f10ab697bb9ee",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m44i.litmus",
+      "sha256": "18ce202e8005c8132fb828f99ee55effdbdbc284e04da4fa176bde8f152c35ae",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/m44if.litmus",
+      "sha256": "071cba9b5fefc1bbeaddb3ff5e977f4b4bcedc2c19a36e9b2024d45bf27d48bb",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m44ii.litmus",
+      "sha256": "80ede74490b7e7ec51c20398a35e7ed29848bdef7c6da30053909151fd6fe6cc",
+      "status": "parsed",
+      "events": 8
+    },
+    {
+      "path": "litmus/X86/m44iif.litmus",
+      "sha256": "d0d4c2b42a3fbc9c58a924fc7b2cac7b24cdf54fd8a93565abaacf716aa00082",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m45.litmus",
+      "sha256": "c42464fa894032fe428ef01dd302466479ea965e903c97789e20e24b743a662e",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m45i.litmus",
+      "sha256": "7ce852f05a56eb21f2e77411892ce02af9c7070158e11a7911818dd4078301f8",
+      "status": "unsupported",
+      "reason": "unsupported filter or declaration"
+    },
+    {
+      "path": "litmus/X86/m45ii.litmus",
+      "sha256": "207376be20ebf6c577fe209fb57cc90f97c8583fc7da4d45f78f0da712a57e48",
+      "status": "unsupported",
+      "reason": "unsupported filter or declaration"
+    },
+    {
+      "path": "litmus/X86/m45iif.litmus",
+      "sha256": "f4df8ef09e2aac984879183407301d4d28af0e4cfd95b17a7cbf4bc02c51f21b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m55.litmus",
+      "sha256": "ee404660f870aa5f0cb888cf28b382f0d4cc41e438fceba21a181e1706f3cfef",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/m55ii.litmus",
+      "sha256": "3d3eca6fdb9f2485b15ac41e385c46b56f49a27c7b4b8565b69537eba8175750",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/mfence.litmus",
+      "sha256": "c0d5082753a9b5c38cb476cfb540cda09315ba82932d001c21c8427ae9fff252",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/mfence2.litmus",
+      "sha256": "b8bc19a75666f64c4c00426b1b0ac82155acce71c3e9285ffa4864e3e3cbf371",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/n1.litmus",
+      "sha256": "984873c4d20cd2d1bccdcd11b7aeefab53e8c6fe2cd8a07bb92fcf9c3d2ccfd8",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/n2.litmus",
+      "sha256": "e67c1772a8eb837317147c8d11fb3e09378553122e1d6c256284bd84b363d24f",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/n3.litmus",
+      "sha256": "d4930360ada457a8ea56f71078d59bf17a6a5699225cf01bdab694507c3b3296",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/n4.litmus",
+      "sha256": "cde8b244f8a81e35187fa5aa5647d42f9094735e3a1e117eb3d7395b93647152",
+      "status": "unsupported",
+      "reason": "malformed instruction table"
+    },
+    {
+      "path": "litmus/X86/n4b.litmus",
+      "sha256": "10ff8b92121c27684c27cd7a27b1a0eee720c38d8e18053de24266c694c8c566",
+      "status": "unsupported",
+      "reason": "malformed instruction table"
+    },
+    {
+      "path": "litmus/X86/n5.litmus",
+      "sha256": "ac9a68e8ae14bce2d02461f1c1c0c7b6b1127059408d2274557dd4b17ee074f5",
+      "status": "unsupported",
+      "reason": "malformed instruction table"
+    },
+    {
+      "path": "litmus/X86/n7.litmus",
+      "sha256": "31f9be11e8a4358b517c75ee7d2fa27817d132b3a23f7d8c442d30791210f088",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/n8.litmus",
+      "sha256": "841c2b91eb9042654e48be9d5cc22f7ad6b5d4a363bc0082ee725e1d0f2e3379",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/nofence.litmus",
+      "sha256": "4131c0796201572586f3a9688842bb072b12091346e6ac2722741f6f5c1167b1",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/podrw000.litmus",
+      "sha256": "aacdbde17e4f87cc9d2b84af32d2820919be45bd8e2ec0e05af61b591b73bda3",
+      "status": "parsed",
+      "events": 6
+    },
+    {
+      "path": "litmus/X86/podrw001.litmus",
+      "sha256": "dd45be89e1b7adbdd45885812cbfa6cfde7ba4b42cbb1ae09866b4bf8e3bf917",
+      "status": "parsed",
+      "events": 9
+    },
+    {
+      "path": "litmus/X86/pso.litmus",
+      "sha256": "89b1d0d758dec7a702e7aacd21495f63b9e37a0747a220d69ee9a1549bba37d2",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/rwc-fenced.litmus",
+      "sha256": "d8c7989a822fe84e0dc6271e4545409f7d42091359d2ba6cc756f71160d7ee27",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/rwc.2.litmus",
+      "sha256": "2ddfcee46e4645ca2a958bec8aa5183b80ef1a798607b6571a074b57cd81b2ff",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/rwc.litmus",
+      "sha256": "361a258bd5a1a0a1f47315cfd423ffe885764ed12ddb92e92891e7b0e40d105b",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/test.debug.2.litmus",
+      "sha256": "eab5d53345326e3d76dcfe38170bc306646515b62bc5850818b4c272383f1fe4",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/test.intel.1.litmus",
+      "sha256": "c498c3b4ccc19a01cbca1dbe686b0b4d9171385b1ba0af9eaf142ba7a17605d5",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/x86-2+2W.litmus",
+      "sha256": "15df319bd954a22d6a191955345fd7a02a2874d8104eb475f1089d9accd3f2b6",
+      "status": "unsupported",
+      "reason": "only conjunctions of final register equalities supported"
+    },
+    {
+      "path": "litmus/X86/x86-e1.litmus",
+      "sha256": "dcfcc9ac848647d8c7ec5e34f80d8cb2ce30be582f5ec7c87a5c1311c00a91e9",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    },
+    {
+      "path": "litmus/X86/x86-m1.litmus",
+      "sha256": "74ccd0f38a2b3dd301c09f4d71f0828aa6b3ab448e120d771246d20d8c86ed00",
+      "status": "unsupported",
+      "reason": "unsupported initialization"
+    },
+    {
+      "path": "litmus/X86/x86-m4.litmus",
+      "sha256": "aaea42b7904de64a65ebe271729ef21d3b67e497152df782439e26418d8feee3",
+      "status": "parsed",
+      "events": 7
+    },
+    {
+      "path": "litmus/X86/x86-m4s.litmus",
+      "sha256": "7fac04943544cac3edcc480cb8de20dbbb98d4194a739abd7fbb3a19bc495e70",
+      "status": "unsupported",
+      "reason": "only positive exists conditions supported"
+    }
+  ]
+}

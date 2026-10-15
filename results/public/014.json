@@ -1,0 +1,87 @@
+{
+  "path": "litmus/X86/SB+po-rfi-pos.litmus",
+  "cpu": 4,
+  "internal_process": {
+    "exit_code": 0,
+    "seconds": 0.07875054700002693,
+    "stdout": "",
+    "stderr": "",
+    "status": "finished"
+  },
+  "internal": {
+    "path": "litmus/X86/SB+po-rfi-pos.litmus",
+    "status": "ok",
+    "proposed": {
+      "sat": true,
+      "seconds": 0.00047437200009881053,
+      "stats": {
+        "compile_seconds": 0.0003855500001463952,
+        "states": 3,
+        "transitions": 2,
+        "attempted_transitions": 2,
+        "layer_states": [
+          1,
+          1,
+          1
+        ],
+        "max_layer_states": 1,
+        "max_interface": 8,
+        "interface_sizes": [
+          0,
+          8,
+          0
+        ],
+        "local_choices": [
+          1,
+          1
+        ],
+        "original_variables": 4,
+        "cnf_variables": 18,
+        "clauses": 31,
+        "merge": true,
+        "strong": true,
+        "transition_cache_hits": 0,
+        "transition_cache_misses": 2
+      }
+    },
+    "eager": {
+      "sat": true,
+      "seconds": 0.004155145000140692,
+      "stats": {
+        "compile_seconds": 0.0033258240000577644,
+        "original_variables": 4,
+        "cnf_variables": 408,
+        "clauses": 1106,
+        "guarded_edge_pairs": 22,
+        "encoding": "binary topological ranks"
+      }
+    },
+    "seconds": 0.006549764999817853,
+    "peak_rss_kib": 24336
+  },
+  "herd7": {
+    "exit_code": 0,
+    "seconds": 0.016117686000143294,
+    "stdout": "Test SB+po-rfi-pos Allowed\nStates 4\n0:EAX=1; 0:EBX=0; 1:EAX=1; 1:EBX=0;\n0:EAX=1; 0:EBX=0; 1:EAX=1; 1:EBX=1;\n0:EAX=1; 0:EBX=1; 1:EAX=1; 1:EBX=0;\n0:EAX=1; 0:EBX=1; 1:EAX=1; 1:EBX=1;\nOk\nWitnesses\nPositive: 1 Negative: 3\nCondition exists (0:EAX=1 /\\ 0:EBX=0 /\\ 1:EAX=1 /\\ 1:EBX=0)\nObservation SB+po-rfi-pos Sometimes 1 3\nTime SB+po-rfi-pos 0.01\nHash=81b9cfe82d2cc051202ee10a0951d298\n\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "dartagnan_lazy": {
+    "exit_code": 0,
+    "seconds": 2.3500634360000277,
+    "stdout": "Test: /root/wm-research/baselines/Dat3M/litmus/X86/SB+po-rfi-pos.litmus\nResult: PASS\nTime: 0.803 secs\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "dartagnan_eager": {
+    "exit_code": 0,
+    "seconds": 2.594350996000003,
+    "stdout": "Test: /root/wm-research/baselines/Dat3M/litmus/X86/SB+po-rfi-pos.litmus\nResult: PASS\nTime: 0.732 secs\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "mismatch": false
+}

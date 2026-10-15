@@ -1,0 +1,51 @@
+{
+  "path": "litmus/X86/SB+mfences.litmus",
+  "status": "ok",
+  "proposed": {
+    "sat": false,
+    "seconds": 0.00032000800001696916,
+    "stats": {
+      "compile_seconds": 0.00025085600009333575,
+      "states": 2,
+      "transitions": 1,
+      "attempted_transitions": 2,
+      "layer_states": [
+        1,
+        1,
+        0
+      ],
+      "max_layer_states": 1,
+      "max_interface": 6,
+      "interface_sizes": [
+        0,
+        6,
+        0
+      ],
+      "local_choices": [
+        1,
+        1
+      ],
+      "original_variables": 2,
+      "cnf_variables": 10,
+      "clauses": 15,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 2
+    }
+  },
+  "eager": {
+    "sat": false,
+    "seconds": 0.0018133959999886429,
+    "stats": {
+      "compile_seconds": 0.0014293560000169236,
+      "original_variables": 2,
+      "cnf_variables": 190,
+      "clauses": 506,
+      "guarded_edge_pairs": 14,
+      "encoding": "binary topological ranks"
+    }
+  },
+  "seconds": 0.0038695880000432226,
+  "peak_rss_kib": 24108
+}

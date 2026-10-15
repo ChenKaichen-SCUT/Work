@@ -1,0 +1,51 @@
+{
+  "path": "litmus/X86/SB.litmus",
+  "status": "ok",
+  "proposed": {
+    "sat": true,
+    "seconds": 0.00034762899986162665,
+    "stats": {
+      "compile_seconds": 0.0002629570001317916,
+      "states": 3,
+      "transitions": 2,
+      "attempted_transitions": 2,
+      "layer_states": [
+        1,
+        1,
+        1
+      ],
+      "max_layer_states": 1,
+      "max_interface": 6,
+      "interface_sizes": [
+        0,
+        6,
+        0
+      ],
+      "local_choices": [
+        1,
+        1
+      ],
+      "original_variables": 2,
+      "cnf_variables": 16,
+      "clauses": 25,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 2
+    }
+  },
+  "eager": {
+    "sat": true,
+    "seconds": 0.0017310630000793026,
+    "stats": {
+      "compile_seconds": 0.0013771339999948395,
+      "original_variables": 2,
+      "cnf_variables": 158,
+      "clauses": 434,
+      "guarded_edge_pairs": 12,
+      "encoding": "binary topological ranks"
+    }
+  },
+  "seconds": 0.00399129999982506,
+  "peak_rss_kib": 24068
+}

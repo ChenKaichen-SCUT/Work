@@ -1,0 +1,87 @@
+{
+  "path": "litmus/X86/podrw001.litmus",
+  "cpu": 5,
+  "internal_process": {
+    "exit_code": 0,
+    "seconds": 0.07490275899999688,
+    "stdout": "",
+    "stderr": "",
+    "status": "finished"
+  },
+  "internal": {
+    "path": "litmus/X86/podrw001.litmus",
+    "status": "ok",
+    "proposed": {
+      "sat": true,
+      "seconds": 0.00045125199994799914,
+      "stats": {
+        "compile_seconds": 0.00035309899999447225,
+        "states": 3,
+        "transitions": 2,
+        "attempted_transitions": 2,
+        "layer_states": [
+          1,
+          1,
+          1
+        ],
+        "max_layer_states": 1,
+        "max_interface": 9,
+        "interface_sizes": [
+          0,
+          9,
+          0
+        ],
+        "local_choices": [
+          1,
+          1
+        ],
+        "original_variables": 3,
+        "cnf_variables": 17,
+        "clauses": 28,
+        "merge": true,
+        "strong": true,
+        "transition_cache_hits": 0,
+        "transition_cache_misses": 2
+      }
+    },
+    "eager": {
+      "sat": true,
+      "seconds": 0.003358093999850098,
+      "stats": {
+        "compile_seconds": 0.002657666999994035,
+        "original_variables": 3,
+        "cnf_variables": 327,
+        "clauses": 903,
+        "guarded_edge_pairs": 18,
+        "encoding": "binary topological ranks"
+      }
+    },
+    "seconds": 0.0056562019999546465,
+    "peak_rss_kib": 24484
+  },
+  "herd7": {
+    "exit_code": 0,
+    "seconds": 0.014218798999991122,
+    "stdout": "Test podrw001 Allowed\nStates 8\n0:EAX=0; 1:EAX=0; 2:EAX=0;\n0:EAX=0; 1:EAX=0; 2:EAX=1;\n0:EAX=0; 1:EAX=1; 2:EAX=0;\n0:EAX=0; 1:EAX=1; 2:EAX=1;\n0:EAX=1; 1:EAX=0; 2:EAX=0;\n0:EAX=1; 1:EAX=0; 2:EAX=1;\n0:EAX=1; 1:EAX=1; 2:EAX=0;\n0:EAX=1; 1:EAX=1; 2:EAX=1;\nOk\nWitnesses\nPositive: 1 Negative: 7\nCondition exists (0:EAX=0 /\\ 1:EAX=0 /\\ 2:EAX=0)\nObservation podrw001 Sometimes 1 7\nTime podrw001 0.00\nHash=7015574e5960da9548f7fd04ec792cdb\n\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "dartagnan_lazy": {
+    "exit_code": 0,
+    "seconds": 2.321617246999949,
+    "stdout": "Test: /root/wm-research/baselines/Dat3M/litmus/X86/podrw001.litmus\nResult: PASS\nTime: 0.795 secs\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "dartagnan_eager": {
+    "exit_code": 0,
+    "seconds": 2.1974637169998914,
+    "stdout": "Test: /root/wm-research/baselines/Dat3M/litmus/X86/podrw001.litmus\nResult: PASS\nTime: 0.722 secs\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "mismatch": false
+}

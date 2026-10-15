@@ -1,0 +1,51 @@
+{
+  "path": "litmus/X86/SB+mfence+po-rfi-po.litmus",
+  "status": "ok",
+  "proposed": {
+    "sat": true,
+    "seconds": 0.00039807999996810395,
+    "stats": {
+      "compile_seconds": 0.00030752799989386403,
+      "states": 3,
+      "transitions": 2,
+      "attempted_transitions": 2,
+      "layer_states": [
+        1,
+        1,
+        1
+      ],
+      "max_layer_states": 1,
+      "max_interface": 7,
+      "interface_sizes": [
+        0,
+        7,
+        0
+      ],
+      "local_choices": [
+        1,
+        1
+      ],
+      "original_variables": 3,
+      "cnf_variables": 17,
+      "clauses": 28,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 2
+    }
+  },
+  "eager": {
+    "sat": true,
+    "seconds": 0.0031547090000003664,
+    "stats": {
+      "compile_seconds": 0.002480772000126308,
+      "original_variables": 3,
+      "cnf_variables": 335,
+      "clauses": 904,
+      "guarded_edge_pairs": 18,
+      "encoding": "binary topological ranks"
+    }
+  },
+  "seconds": 0.005345634000150312,
+  "peak_rss_kib": 24248
+}

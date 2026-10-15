@@ -1,0 +1,51 @@
+{
+  "path": "litmus/X86/CoRWR.litmus",
+  "status": "ok",
+  "proposed": {
+    "sat": false,
+    "seconds": 0.00024382700007663516,
+    "stats": {
+      "compile_seconds": 0.0001810149999528221,
+      "states": 2,
+      "transitions": 1,
+      "attempted_transitions": 2,
+      "layer_states": [
+        1,
+        1,
+        0
+      ],
+      "max_layer_states": 1,
+      "max_interface": 3,
+      "interface_sizes": [
+        0,
+        3,
+        0
+      ],
+      "local_choices": [
+        1,
+        1
+      ],
+      "original_variables": 2,
+      "cnf_variables": 10,
+      "clauses": 15,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 2
+    }
+  },
+  "eager": {
+    "sat": false,
+    "seconds": 0.0009436529999220511,
+    "stats": {
+      "compile_seconds": 0.0007444980001309887,
+      "original_variables": 2,
+      "cnf_variables": 90,
+      "clauses": 266,
+      "guarded_edge_pairs": 12,
+      "encoding": "binary topological ranks"
+    }
+  },
+  "seconds": 0.003008834999945975,
+  "peak_rss_kib": 24140
+}

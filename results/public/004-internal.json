@@ -1,0 +1,51 @@
+{
+  "path": "litmus/X86/SB+rfi-pos.litmus",
+  "status": "ok",
+  "proposed": {
+    "sat": true,
+    "seconds": 0.00037588000009236566,
+    "stats": {
+      "compile_seconds": 0.00027961800014963956,
+      "states": 3,
+      "transitions": 2,
+      "attempted_transitions": 2,
+      "layer_states": [
+        1,
+        1,
+        1
+      ],
+      "max_layer_states": 1,
+      "max_interface": 6,
+      "interface_sizes": [
+        0,
+        6,
+        0
+      ],
+      "local_choices": [
+        1,
+        1
+      ],
+      "original_variables": 4,
+      "cnf_variables": 18,
+      "clauses": 31,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 2
+    }
+  },
+  "eager": {
+    "sat": true,
+    "seconds": 0.0020853949999946053,
+    "stats": {
+      "compile_seconds": 0.0016163530001449544,
+      "original_variables": 4,
+      "cnf_variables": 212,
+      "clauses": 582,
+      "guarded_edge_pairs": 16,
+      "encoding": "binary topological ranks"
+    }
+  },
+  "seconds": 0.004251172000067527,
+  "peak_rss_kib": 24444
+}

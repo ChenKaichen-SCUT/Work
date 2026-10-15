@@ -1,0 +1,382 @@
+[
+  {
+    "name": "protocol_p2_n1_v0",
+    "parameters": {
+      "threads": 2,
+      "rounds": 1,
+      "first_read_value": 0
+    },
+    "proposed_sat": true,
+    "stats": {
+      "compile_seconds": 0.0003114180001375644,
+      "states": 3,
+      "transitions": 2,
+      "attempted_transitions": 2,
+      "layer_states": [
+        1,
+        1,
+        1
+      ],
+      "max_layer_states": 1,
+      "max_interface": 8,
+      "interface_sizes": [
+        0,
+        8,
+        0
+      ],
+      "local_choices": [
+        1,
+        1
+      ],
+      "original_variables": 4,
+      "cnf_variables": 18,
+      "clauses": 31,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 2
+    },
+    "herd7": {
+      "exit_code": 0,
+      "seconds": 0.012690622000036456,
+      "stdout": "Test protocol_p2_n1_v0 Allowed\nStates 16\n0:EAX=0; 0:EBX=0; 1:EAX=0; 1:EBX=0;\n0:EAX=0; 0:EBX=0; 1:EAX=0; 1:EBX=1;\n0:EAX=0; 0:EBX=0; 1:EAX=1; 1:EBX=0;\n0:EAX=0; 0:EBX=0; 1:EAX=1; 1:EBX=1;\n0:EAX=0; 0:EBX=1; 1:EAX=0; 1:EBX=0;\n0:EAX=0; 0:EBX=1; 1:EAX=0; 1:EBX=1;\n0:EAX=0; 0:EBX=1; 1:EAX=1; 1:EBX=0;\n0:EAX=0; 0:EBX=1; 1:EAX=1; 1:EBX=1;\n0:EAX=1; 0:EBX=0; 1:EAX=0; 1:EBX=0;\n0:EAX=1; 0:EBX=0; 1:EAX=0; 1:EBX=1;\n0:EAX=1; 0:EBX=0; 1:EAX=1; 1:EBX=0;\n0:EAX=1; 0:EBX=0; 1:EAX=1; 1:EBX=1;\n0:EAX=1; 0:EBX=1; 1:EAX=0; 1:EBX=0;\n0:EAX=1; 0:EBX=1; 1:EAX=0; 1:EBX=1;\n0:EAX=1; 0:EBX=1; 1:EAX=1; 1:EBX=0;\n0:EAX=1; 0:EBX=1; 1:EAX=1; 1:EBX=1;\nOk\nWitnesses\nPositive: 1 Negative: 15\nCondition exists (0:EAX=0 /\\ 0:EBX=1 /\\ 1:EAX=0 /\\ 1:EBX=1)\nObservation protocol_p2_n1_v0 Sometimes 1 15\nTime protocol_p2_n1_v0 0.01\nHash=8f6c89169b06e94d194a129b65583e3e\n\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "dartagnan_lazy": {
+      "exit_code": 0,
+      "seconds": 1.8163404229999287,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p2_n1_v0.litmus\nResult: PASS\nTime: 0.630 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "dartagnan_eager": {
+      "exit_code": 0,
+      "seconds": 1.70560476799983,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p2_n1_v0.litmus\nResult: PASS\nTime: 0.559 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "mismatch": false
+  },
+  {
+    "name": "protocol_p2_n2_v0",
+    "parameters": {
+      "threads": 2,
+      "rounds": 2,
+      "first_read_value": 0
+    },
+    "proposed_sat": true,
+    "stats": {
+      "compile_seconds": 0.0009001930000067659,
+      "states": 4,
+      "transitions": 6,
+      "attempted_transitions": 6,
+      "layer_states": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "max_layer_states": 1,
+      "max_interface": 16,
+      "interface_sizes": [
+        0,
+        8,
+        16,
+        0
+      ],
+      "local_choices": [
+        1,
+        1,
+        4
+      ],
+      "original_variables": 10,
+      "cnf_variables": 42,
+      "clauses": 93,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 6
+    },
+    "herd7": {
+      "exit_code": 0,
+      "seconds": 3.1939859219999107,
+      "stdout": "Test protocol_p2_n2_v0 Allowed\nStates 96\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\nOk\nWitnesses\nPositive: 4 Negative: 534\nCondition exists (0:EAX=0 /\\ 0:EBX=1 /\\ 0:ECX=1 /\\ 0:EDX=0 /\\ 1:EAX=0 /\\ 1:EBX=1 /\\ 1:ECX=1 /\\ 1:EDX=0)\nObservation protocol_p2_n2_v0 Sometimes 4 534\nTime protocol_p2_n2_v0 3.19\nHash=c21d7669ac68534a07efc1c94d77f654\n\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "dartagnan_lazy": {
+      "exit_code": 0,
+      "seconds": 1.8121406669999942,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p2_n2_v0.litmus\nResult: PASS\nTime: 0.673 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "dartagnan_eager": {
+      "exit_code": 0,
+      "seconds": 1.737195525000061,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p2_n2_v0.litmus\nResult: PASS\nTime: 0.590 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "mismatch": false
+  },
+  {
+    "name": "protocol_p2_n2_v1",
+    "parameters": {
+      "threads": 2,
+      "rounds": 2,
+      "first_read_value": 1
+    },
+    "proposed_sat": true,
+    "stats": {
+      "compile_seconds": 0.0009217130000251927,
+      "states": 4,
+      "transitions": 6,
+      "attempted_transitions": 6,
+      "layer_states": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "max_layer_states": 1,
+      "max_interface": 16,
+      "interface_sizes": [
+        0,
+        4,
+        16,
+        0
+      ],
+      "local_choices": [
+        1,
+        1,
+        4
+      ],
+      "original_variables": 10,
+      "cnf_variables": 42,
+      "clauses": 93,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 6
+    },
+    "herd7": {
+      "exit_code": 0,
+      "seconds": 3.197409027000049,
+      "stdout": "Test protocol_p2_n2_v1 Allowed\nStates 96\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=0; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=0; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=0; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=0; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=0; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=0; 1:EBX=1; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=0; 1:ECX=1; 1:EDX=1;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=0;\n0:EAX=1; 0:EBX=1; 0:ECX=1; 0:EDX=1; 1:EAX=1; 1:EBX=1; 1:ECX=1; 1:EDX=1;\nOk\nWitnesses\nPositive: 4 Negative: 534\nCondition exists (0:EAX=1 /\\ 0:EBX=1 /\\ 0:ECX=1 /\\ 0:EDX=0 /\\ 1:EAX=1 /\\ 1:EBX=1 /\\ 1:ECX=1 /\\ 1:EDX=0)\nObservation protocol_p2_n2_v1 Sometimes 4 534\nTime protocol_p2_n2_v1 3.19\nHash=c21d7669ac68534a07efc1c94d77f654\n\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "dartagnan_lazy": {
+      "exit_code": 0,
+      "seconds": 1.8249309600000743,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p2_n2_v1.litmus\nResult: PASS\nTime: 0.666 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "dartagnan_eager": {
+      "exit_code": 0,
+      "seconds": 1.8138364090000323,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p2_n2_v1.litmus\nResult: PASS\nTime: 0.598 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "mismatch": false
+  },
+  {
+    "name": "protocol_p4_n1_v0",
+    "parameters": {
+      "threads": 4,
+      "rounds": 1,
+      "first_read_value": 0
+    },
+    "proposed_sat": true,
+    "stats": {
+      "compile_seconds": 0.0011064880000049016,
+      "states": 3,
+      "transitions": 5,
+      "attempted_transitions": 5,
+      "layer_states": [
+        1,
+        1,
+        1
+      ],
+      "max_layer_states": 1,
+      "max_interface": 10,
+      "interface_sizes": [
+        0,
+        10,
+        0
+      ],
+      "local_choices": [
+        1,
+        4
+      ],
+      "original_variables": 16,
+      "cnf_variables": 42,
+      "clauses": 133,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 5
+    },
+    "herd7": {
+      "seconds": 40.04375473599998,
+      "status": "timeout",
+      "stdout": "",
+      "stderr": ""
+    },
+    "dartagnan_lazy": {
+      "exit_code": 0,
+      "seconds": 1.8792892550000033,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p4_n1_v0.litmus\nResult: PASS\nTime: 0.694 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "dartagnan_eager": {
+      "exit_code": 0,
+      "seconds": 1.8876078329999473,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p4_n1_v0.litmus\nResult: PASS\nTime: 0.635 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "mismatch": false
+  },
+  {
+    "name": "protocol_p4_n1_v1",
+    "parameters": {
+      "threads": 4,
+      "rounds": 1,
+      "first_read_value": 1
+    },
+    "proposed_sat": true,
+    "stats": {
+      "compile_seconds": 0.0030712709999534127,
+      "states": 3,
+      "transitions": 17,
+      "attempted_transitions": 17,
+      "layer_states": [
+        1,
+        1,
+        1
+      ],
+      "max_layer_states": 1,
+      "max_interface": 6,
+      "interface_sizes": [
+        0,
+        6,
+        0
+      ],
+      "local_choices": [
+        1,
+        16
+      ],
+      "original_variables": 18,
+      "cnf_variables": 92,
+      "clauses": 433,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 17
+    },
+    "herd7": {
+      "seconds": 40.04745099699994,
+      "status": "timeout",
+      "stdout": "",
+      "stderr": ""
+    },
+    "dartagnan_lazy": {
+      "exit_code": 0,
+      "seconds": 1.8185476449998532,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p4_n1_v1.litmus\nResult: PASS\nTime: 0.651 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "dartagnan_eager": {
+      "exit_code": 0,
+      "seconds": 1.8320780019998892,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p4_n1_v1.litmus\nResult: PASS\nTime: 0.619 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": true
+    },
+    "mismatch": false
+  },
+  {
+    "name": "protocol_p2_n1_v2",
+    "parameters": {
+      "threads": 2,
+      "rounds": 1,
+      "first_read_value": 2
+    },
+    "proposed_sat": false,
+    "stats": {
+      "compile_seconds": 0.00016218400014622603,
+      "states": 2,
+      "transitions": 1,
+      "attempted_transitions": 1,
+      "layer_states": [
+        1,
+        1,
+        0
+      ],
+      "max_layer_states": 1,
+      "max_interface": 4,
+      "interface_sizes": [
+        0,
+        4,
+        0
+      ],
+      "local_choices": [
+        1,
+        0
+      ],
+      "original_variables": 2,
+      "cnf_variables": 10,
+      "clauses": 15,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 1
+    },
+    "herd7": {
+      "exit_code": 0,
+      "seconds": 0.013241808999964633,
+      "stdout": "Test protocol_p2_n1_v2 Allowed\nStates 16\n0:EAX=0; 0:EBX=0; 1:EAX=0; 1:EBX=0;\n0:EAX=0; 0:EBX=0; 1:EAX=0; 1:EBX=1;\n0:EAX=0; 0:EBX=0; 1:EAX=1; 1:EBX=0;\n0:EAX=0; 0:EBX=0; 1:EAX=1; 1:EBX=1;\n0:EAX=0; 0:EBX=1; 1:EAX=0; 1:EBX=0;\n0:EAX=0; 0:EBX=1; 1:EAX=0; 1:EBX=1;\n0:EAX=0; 0:EBX=1; 1:EAX=1; 1:EBX=0;\n0:EAX=0; 0:EBX=1; 1:EAX=1; 1:EBX=1;\n0:EAX=1; 0:EBX=0; 1:EAX=0; 1:EBX=0;\n0:EAX=1; 0:EBX=0; 1:EAX=0; 1:EBX=1;\n0:EAX=1; 0:EBX=0; 1:EAX=1; 1:EBX=0;\n0:EAX=1; 0:EBX=0; 1:EAX=1; 1:EBX=1;\n0:EAX=1; 0:EBX=1; 1:EAX=0; 1:EBX=0;\n0:EAX=1; 0:EBX=1; 1:EAX=0; 1:EBX=1;\n0:EAX=1; 0:EBX=1; 1:EAX=1; 1:EBX=0;\n0:EAX=1; 0:EBX=1; 1:EAX=1; 1:EBX=1;\nNo\nWitnesses\nPositive: 0 Negative: 16\nCondition exists (0:EAX=2 /\\ 0:EBX=1 /\\ 1:EAX=2 /\\ 1:EBX=1)\nObservation protocol_p2_n1_v2 Never 0 16\nTime protocol_p2_n1_v2 0.01\nHash=8f6c89169b06e94d194a129b65583e3e\n\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": false
+    },
+    "dartagnan_lazy": {
+      "exit_code": 0,
+      "seconds": 1.7256671600000573,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p2_n1_v2.litmus\nResult: FAIL\nReason: Program specification violation found\nCondition: exists (0:EAX == bv64(2)) && (0:EBX == bv64(1)) && (1:EAX == bv64(2)) && (1:EBX == bv64(1))\nTime: 0.589 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": false
+    },
+    "dartagnan_eager": {
+      "exit_code": 0,
+      "seconds": 1.7518193989999418,
+      "stdout": "Test: /root/wm-research/project/examples/protocol_p2_n1_v2.litmus\nResult: FAIL\nReason: Program specification violation found\nCondition: exists (0:EAX == bv64(2)) && (0:EBX == bv64(1)) && (1:EAX == bv64(2)) && (1:EBX == bv64(1))\nTime: 0.575 secs\n",
+      "stderr": "",
+      "status": "finished",
+      "sat": false
+    },
+    "mismatch": false
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "scope": "Independent relational x86-TSO oracle, not a herd7 execution.",
+  "alternating_flag_matching": {
+    "threads": 2,
+    "rounds": 4,
+    "raw_flag_rf_combinations": 1296,
+    "tso_valid_flag_rf_combinations": 1,
+    "matching_mismatches": 0
+  },
+  "actual_tso_payload_instance": {
+    "threads": 4,
+    "rounds": 2,
+    "full_execution_choices_checked": 256,
+    "tso_valid_choices": 144,
+    "summary_mismatches": 0,
+    "max_interface_nodes_local_global": [
+      32,
+      26
+    ],
+    "matching_flag_rf_proved_then_fixed": 24,
+    "sparse_fixed_relation_reachability_matches_dense": true
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "path": "litmus/X86/iriw-internal.litmus",
+  "status": "ok",
+  "proposed": {
+    "sat": true,
+    "seconds": 0.00043663200017363124,
+    "stats": {
+      "compile_seconds": 0.0003235389999645122,
+      "states": 3,
+      "transitions": 2,
+      "attempted_transitions": 2,
+      "layer_states": [
+        1,
+        1,
+        1
+      ],
+      "max_layer_states": 1,
+      "max_interface": 6,
+      "interface_sizes": [
+        0,
+        6,
+        0
+      ],
+      "local_choices": [
+        1,
+        1
+      ],
+      "original_variables": 4,
+      "cnf_variables": 18,
+      "clauses": 31,
+      "merge": true,
+      "strong": true,
+      "transition_cache_hits": 0,
+      "transition_cache_misses": 2
+    }
+  },
+  "eager": {
+    "sat": true,
+    "seconds": 0.002234669000017675,
+    "stats": {
+      "compile_seconds": 0.0017557959999976447,
+      "original_variables": 4,
+      "cnf_variables": 212,
+      "clauses": 582,
+      "guarded_edge_pairs": 16,
+      "encoding": "binary topological ranks"
+    }
+  },
+  "seconds": 0.0046034119998239476,
+  "peak_rss_kib": 24176
+}

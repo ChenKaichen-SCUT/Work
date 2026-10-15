@@ -1,0 +1,19 @@
+{
+  "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+  "machine": "x86_64",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "jobs": 3,
+  "cpu_affinity_pool": [
+    0,
+    1,
+    2
+  ],
+  "timeout_seconds": 150,
+  "memory_gb_per_worker": 6,
+  "clock": "perf_counter wall clock",
+  "mode": "main",
+  "repeats": 3,
+  "seed": 20261015,
+  "notes": "Parallel jobs are pinned to distinct logical CPUs; shared-memory/host interference remains possible.",
+  "cpu_model": "General Purpose Processor"
+}

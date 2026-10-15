@@ -1,0 +1,43 @@
+{
+  "scope": "Finite independent checks, not a mechanized theorem or a herd7 execution.",
+  "counterexamples": {
+    "rfe_replaced_with_rf": {
+      "correct_tso": true,
+      "mutant": false
+    },
+    "fr_derived_only_from_rfe": {
+      "correct_tso": false,
+      "mutant": true
+    },
+    "per_thread_mfence_as_global_barrier": {
+      "valid_tso_co": [
+        "a1",
+        "a2",
+        "b1",
+        "b2"
+      ],
+      "violates_round_seal": true
+    },
+    "missing_source_port": {
+      "correct_accept": false,
+      "mutant_accept": true
+    },
+    "reusing_output_port": {
+      "real_cycle": false,
+      "mutant_cycle": true
+    }
+  },
+  "support_cnf": {
+    "automata": 384,
+    "partial_assignments": 12672,
+    "mismatches": 0
+  },
+  "summary_transition": {
+    "exhaustive_four_event_cases": 180224,
+    "accepted_four_event_cases": 13179,
+    "seeded_six_event_cases": 33792,
+    "mismatches": 0,
+    "seed": 20261015,
+    "relation_modes": 11
+  }
+}

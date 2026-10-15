@@ -1,0 +1,87 @@
+{
+  "path": "litmus/X86/WR+po-rfi-po.litmus",
+  "cpu": 4,
+  "internal_process": {
+    "exit_code": 0,
+    "seconds": 0.07549525500007803,
+    "stdout": "",
+    "stderr": "",
+    "status": "finished"
+  },
+  "internal": {
+    "path": "litmus/X86/WR+po-rfi-po.litmus",
+    "status": "ok",
+    "proposed": {
+      "sat": false,
+      "seconds": 0.00022791600008531532,
+      "stats": {
+        "compile_seconds": 0.00016388399990319158,
+        "states": 2,
+        "transitions": 1,
+        "attempted_transitions": 2,
+        "layer_states": [
+          1,
+          1,
+          0
+        ],
+        "max_layer_states": 1,
+        "max_interface": 4,
+        "interface_sizes": [
+          0,
+          4,
+          0
+        ],
+        "local_choices": [
+          1,
+          1
+        ],
+        "original_variables": 2,
+        "cnf_variables": 10,
+        "clauses": 15,
+        "merge": true,
+        "strong": true,
+        "transition_cache_hits": 0,
+        "transition_cache_misses": 2
+      }
+    },
+    "eager": {
+      "sat": false,
+      "seconds": 0.001048345999834055,
+      "stats": {
+        "compile_seconds": 0.0008130100000016682,
+        "original_variables": 2,
+        "cnf_variables": 158,
+        "clauses": 435,
+        "guarded_edge_pairs": 12,
+        "encoding": "binary topological ranks"
+      }
+    },
+    "seconds": 0.0025049330001820636,
+    "peak_rss_kib": 24496
+  },
+  "herd7": {
+    "exit_code": 0,
+    "seconds": 0.011598832000117909,
+    "stdout": "Test WR+po-rfi-po Allowed\nStates 1\n0:EAX=1; 0:EBX=1;\nNo\nWitnesses\nPositive: 0 Negative: 1\nCondition exists (0:EAX=1 /\\ 0:EBX=0)\nObservation WR+po-rfi-po Never 0 1\nTime WR+po-rfi-po 0.00\nHash=36a69c86b55d06a63444c622c598cca6\n\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": false
+  },
+  "dartagnan_lazy": {
+    "exit_code": 0,
+    "seconds": 2.2788724199999706,
+    "stdout": "Test: /root/wm-research/baselines/Dat3M/litmus/X86/WR+po-rfi-po.litmus\nResult: FAIL\nReason: Program specification violation found\nCondition: exists (0:EAX == bv64(1)) && (0:EBX == bv64(0))\nTime: 0.759 secs\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": false
+  },
+  "dartagnan_eager": {
+    "exit_code": 0,
+    "seconds": 2.19926269199982,
+    "stdout": "Test: /root/wm-research/baselines/Dat3M/litmus/X86/WR+po-rfi-po.litmus\nResult: FAIL\nReason: Program specification violation found\nCondition: exists (0:EAX == bv64(1)) && (0:EBX == bv64(0))\nTime: 0.671 secs\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": false
+  },
+  "mismatch": false
+}

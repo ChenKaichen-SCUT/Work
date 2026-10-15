@@ -1,0 +1,87 @@
+{
+  "path": "litmus/X86/X005.litmus",
+  "cpu": 4,
+  "internal_process": {
+    "exit_code": 0,
+    "seconds": 0.07515259900014826,
+    "stdout": "",
+    "stderr": "",
+    "status": "finished"
+  },
+  "internal": {
+    "path": "litmus/X86/X005.litmus",
+    "status": "ok",
+    "proposed": {
+      "sat": true,
+      "seconds": 0.00037982000003466965,
+      "stats": {
+        "compile_seconds": 0.0002859080000234826,
+        "states": 3,
+        "transitions": 2,
+        "attempted_transitions": 2,
+        "layer_states": [
+          1,
+          1,
+          1
+        ],
+        "max_layer_states": 1,
+        "max_interface": 6,
+        "interface_sizes": [
+          0,
+          6,
+          0
+        ],
+        "local_choices": [
+          1,
+          1
+        ],
+        "original_variables": 2,
+        "cnf_variables": 16,
+        "clauses": 25,
+        "merge": true,
+        "strong": true,
+        "transition_cache_hits": 0,
+        "transition_cache_misses": 2
+      }
+    },
+    "eager": {
+      "sat": true,
+      "seconds": 0.0018457580001722818,
+      "stats": {
+        "compile_seconds": 0.001469849000159229,
+        "original_variables": 2,
+        "cnf_variables": 174,
+        "clauses": 470,
+        "guarded_edge_pairs": 13,
+        "encoding": "binary topological ranks"
+      }
+    },
+    "seconds": 0.004062116999875798,
+    "peak_rss_kib": 24444
+  },
+  "herd7": {
+    "exit_code": 0,
+    "seconds": 0.013001484999904278,
+    "stdout": "Test X005 Allowed\nStates 4\n0:EAX=0; 1:EAX=0;\n0:EAX=0; 1:EAX=1;\n0:EAX=1; 1:EAX=0;\n0:EAX=1; 1:EAX=1;\nOk\nWitnesses\nPositive: 1 Negative: 3\nCondition exists (0:EAX=0 /\\ 1:EAX=0)\nObservation X005 Sometimes 1 3\nTime X005 0.00\nHash=7033e2619661e7a5abb983a943fc9ba5\n\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "dartagnan_lazy": {
+    "exit_code": 0,
+    "seconds": 2.317675693999945,
+    "stdout": "Test: /root/wm-research/baselines/Dat3M/litmus/X86/X005.litmus\nResult: PASS\nTime: 0.776 secs\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "dartagnan_eager": {
+    "exit_code": 0,
+    "seconds": 2.212235017000012,
+    "stdout": "Test: /root/wm-research/baselines/Dat3M/litmus/X86/X005.litmus\nResult: PASS\nTime: 0.715 secs\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "mismatch": false
+}

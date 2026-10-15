@@ -1,0 +1,87 @@
+{
+  "path": "litmus/X86/m34.litmus",
+  "cpu": 5,
+  "internal_process": {
+    "exit_code": 0,
+    "seconds": 0.07646380900018812,
+    "stdout": "",
+    "stderr": "",
+    "status": "finished"
+  },
+  "internal": {
+    "path": "litmus/X86/m34.litmus",
+    "status": "ok",
+    "proposed": {
+      "sat": true,
+      "seconds": 0.00037965899991831975,
+      "stats": {
+        "compile_seconds": 0.0002866869999706978,
+        "states": 3,
+        "transitions": 2,
+        "attempted_transitions": 2,
+        "layer_states": [
+          1,
+          1,
+          1
+        ],
+        "max_layer_states": 1,
+        "max_interface": 6,
+        "interface_sizes": [
+          0,
+          6,
+          0
+        ],
+        "local_choices": [
+          1,
+          1
+        ],
+        "original_variables": 3,
+        "cnf_variables": 17,
+        "clauses": 28,
+        "merge": true,
+        "strong": true,
+        "transition_cache_hits": 0,
+        "transition_cache_misses": 2
+      }
+    },
+    "eager": {
+      "sat": true,
+      "seconds": 0.0021449040000334207,
+      "stats": {
+        "compile_seconds": 0.0016994130000966834,
+        "original_variables": 3,
+        "cnf_variables": 195,
+        "clauses": 543,
+        "guarded_edge_pairs": 15,
+        "encoding": "binary topological ranks"
+      }
+    },
+    "seconds": 0.0045422440000493225,
+    "peak_rss_kib": 24036
+  },
+  "herd7": {
+    "exit_code": 0,
+    "seconds": 0.014198048000025665,
+    "stdout": "Test m34 Allowed\nStates 8\n1:EAX=0; 1:EBX=0; 2:ECX=0;\n1:EAX=0; 1:EBX=0; 2:ECX=1;\n1:EAX=0; 1:EBX=1; 2:ECX=0;\n1:EAX=0; 1:EBX=1; 2:ECX=1;\n1:EAX=1; 1:EBX=0; 2:ECX=0;\n1:EAX=1; 1:EBX=0; 2:ECX=1;\n1:EAX=1; 1:EBX=1; 2:ECX=0;\n1:EAX=1; 1:EBX=1; 2:ECX=1;\nOk\nWitnesses\nPositive: 1 Negative: 7\nCondition exists (1:EAX=1 /\\ 1:EBX=0 /\\ 2:ECX=0)\nObservation m34 Sometimes 1 7\nTime m34 0.00\nHash=aaa41417a39c2ddc0fe12b5d1bc1d092\n\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "dartagnan_lazy": {
+    "exit_code": 0,
+    "seconds": 2.301762116999953,
+    "stdout": "Test: /root/wm-research/baselines/Dat3M/litmus/X86/m34.litmus\nResult: PASS\nTime: 0.772 secs\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "dartagnan_eager": {
+    "exit_code": 0,
+    "seconds": 2.1810524219999934,
+    "stdout": "Test: /root/wm-research/baselines/Dat3M/litmus/X86/m34.litmus\nResult: PASS\nTime: 0.663 secs\n",
+    "stderr": "",
+    "status": "finished",
+    "sat": true
+  },
+  "mismatch": false
+}

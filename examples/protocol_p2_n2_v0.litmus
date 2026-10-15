@@ -1,0 +1,14 @@
+X86 protocol_p2_n2_v0
+{ x0=0; x1=0; flag0=0; flag1=0; }
+P0 | P1 ;
+MOV [x0],$1 | MOV [x1],$1 ;
+MOV EAX,[x1] | MOV EAX,[x0] ;
+MOV [flag0],$1 | MOV [flag1],$1 ;
+MOV EBX,[flag1] | MOV EBX,[flag0] ;
+MFENCE | MFENCE ;
+MOV [x0],$1 | MOV [x1],$1 ;
+MOV ECX,[x1] | MOV ECX,[x0] ;
+MOV [flag0],$0 | MOV [flag1],$0 ;
+MOV EDX,[flag1] | MOV EDX,[flag0] ;
+MFENCE | MFENCE ;
+exists (0:EAX=0 /\ 0:EBX=1 /\ 0:ECX=1 /\ 0:EDX=0 /\ 1:EAX=0 /\ 1:EBX=1 /\ 1:ECX=1 /\ 1:EDX=0)
