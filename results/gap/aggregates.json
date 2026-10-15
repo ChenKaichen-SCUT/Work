@@ -1,0 +1,2884 @@
+{
+  "serial": [
+    {
+      "parameters": {
+        "rounds": 16
+      },
+      "scenario": "sat",
+      "method": "cnf",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.5016383069996664,
+        "min": 0.4991182129997469,
+        "max": 0.5092065970002295
+      },
+      "compile_seconds": {
+        "median": 0.47963631699985854,
+        "min": 0.4772738080000636,
+        "max": 0.4873749399994267
+      },
+      "graph_seconds": {
+        "median": 0.45637770099983754,
+        "min": 0.4541189569999915,
+        "max": 0.4640813199994227
+      },
+      "minimize_seconds": {
+        "median": 0.007842095000341942,
+        "min": 0.00769235900042986,
+        "max": 0.007901656000285584
+      },
+      "cnf_seconds": {
+        "median": 0.015446614999746089,
+        "min": 0.015248754999447556,
+        "max": 0.015560155999992276
+      },
+      "query_answer_seconds": {
+        "median": 0.06746158600071794,
+        "min": 0.06706681100149581,
+        "max": 0.0687785230056761
+      },
+      "query_propagation_seconds": {
+        "median": 0.007225629004096845,
+        "min": 0.007004637000136427,
+        "max": 0.00723182900219399
+      },
+      "total_with_queries_seconds": {
+        "median": 0.5690998930003843,
+        "min": 0.5661850240012427,
+        "max": 0.5779851200059056
+      },
+      "peak_rss_kib": {
+        "median": 42928,
+        "min": 42704,
+        "max": 43264
+      },
+      "states": {
+        "median": 63,
+        "min": 63,
+        "max": 63
+      },
+      "raw_states": {
+        "median": 231,
+        "min": 231,
+        "max": 231
+      },
+      "transitions": {
+        "median": 2165,
+        "min": 2165,
+        "max": 2165
+      },
+      "raw_transitions": {
+        "median": 8213,
+        "min": 8213,
+        "max": 8213
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 35958,
+        "min": 35958,
+        "max": 35958
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 16
+      },
+      "scenario": "sat",
+      "method": "eager",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 19.921175266999853,
+        "min": 19.901449492999745,
+        "max": 20.26904573199954
+      },
+      "compile_seconds": {
+        "median": 1.9614119059997392,
+        "min": 1.9508366760001081,
+        "max": 1.9643896369998401
+      },
+      "query_answer_seconds": {
+        "median": 21.74631816800047,
+        "min": 21.676008552000894,
+        "max": 21.94378008300555
+      },
+      "query_propagation_seconds": {
+        "median": 0.0051263479954286595,
+        "min": 0.005028510002375697,
+        "max": 0.005134464006005146
+      },
+      "total_with_queries_seconds": {
+        "median": 41.667493435000324,
+        "min": 41.57745804500064,
+        "max": 42.21282581500509
+      },
+      "peak_rss_kib": {
+        "median": 361528,
+        "min": 361416,
+        "max": 361728
+      },
+      "clauses": {
+        "median": 1105268,
+        "min": 1105268,
+        "max": 1105268
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 16
+      },
+      "scenario": "sat",
+      "method": "graph",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.4702038409996021,
+        "min": 0.4699043989994607,
+        "max": 0.47661844000049314
+      },
+      "compile_seconds": {
+        "median": 0.4563158730006762,
+        "min": 0.456096833000629,
+        "max": 0.46168827100063936
+      },
+      "graph_seconds": {
+        "median": 0.4487557470001775,
+        "min": 0.44837965200076724,
+        "max": 0.4541759940002521
+      },
+      "minimize_seconds": {
+        "median": 0.007554736000201956,
+        "min": 0.007507106000048225,
+        "max": 0.007712460999755422
+      },
+      "cnf_seconds": {
+        "median": 5.900001269765198e-07,
+        "min": 5.800002327305265e-07,
+        "max": 9.599998520570807e-07
+      },
+      "query_answer_seconds": {
+        "median": 0.08370868300244183,
+        "min": 0.08366247700087115,
+        "max": 0.08782341700134566
+      },
+      "query_propagation_seconds": {
+        "median": 0.08370868300244183,
+        "min": 0.08366247700087115,
+        "max": 0.08782341700134566
+      },
+      "total_with_queries_seconds": {
+        "median": 0.5539125240020439,
+        "min": 0.5535668760003318,
+        "max": 0.5644418570018388
+      },
+      "peak_rss_kib": {
+        "median": 35008,
+        "min": 34876,
+        "max": 35204
+      },
+      "states": {
+        "median": 63,
+        "min": 63,
+        "max": 63
+      },
+      "raw_states": {
+        "median": 231,
+        "min": 231,
+        "max": 231
+      },
+      "transitions": {
+        "median": 2165,
+        "min": 2165,
+        "max": 2165
+      },
+      "raw_transitions": {
+        "median": 8213,
+        "min": 8213,
+        "max": 8213
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 16
+      },
+      "scenario": "sat",
+      "method": "v1",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 2.8836263969997162,
+        "min": 2.8619452319999255,
+        "max": 2.8996359669999947
+      },
+      "compile_seconds": {
+        "median": 2.6973644799991234,
+        "min": 2.6766056710002886,
+        "max": 2.713242392000211
+      },
+      "query_answer_seconds": {
+        "median": 0.5179742869959227,
+        "min": 0.5113738379932329,
+        "max": 0.5262301439961448
+      },
+      "query_propagation_seconds": {
+        "median": 0.11512019999463519,
+        "min": 0.10713059999943653,
+        "max": 0.11647819500558398
+      },
+      "total_with_queries_seconds": {
+        "median": 3.395000234992949,
+        "min": 3.379919518995848,
+        "max": 3.4258661109961395
+      },
+      "peak_rss_kib": {
+        "median": 168204,
+        "min": 167992,
+        "max": 168228
+      },
+      "states": {
+        "median": 511,
+        "min": 511,
+        "max": 511
+      },
+      "transitions": {
+        "median": 18293,
+        "min": 18293,
+        "max": 18293
+      },
+      "max_layer_states": {
+        "median": 36,
+        "min": 36,
+        "max": 36
+      },
+      "clauses": {
+        "median": 513873,
+        "min": 513873,
+        "max": 513873
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 2
+      },
+      "scenario": "sat",
+      "method": "cnf",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.03549808300067525,
+        "min": 0.034555498999907286,
+        "max": 0.03586395399997855
+      },
+      "compile_seconds": {
+        "median": 0.03221721899990371,
+        "min": 0.03205674800028646,
+        "max": 0.03296369300005608
+      },
+      "graph_seconds": {
+        "median": 0.030783709000388626,
+        "min": 0.030602695999732532,
+        "max": 0.031531003000054625
+      },
+      "minimize_seconds": {
+        "median": 0.0002539769993745722,
+        "min": 0.00025235699922632193,
+        "max": 0.00025781800013646716
+      },
+      "cnf_seconds": {
+        "median": 0.0011782030005633715,
+        "min": 0.0011778030002460582,
+        "max": 0.0011939839996557566
+      },
+      "query_answer_seconds": {
+        "median": 0.0030861819941492286,
+        "min": 0.0030822610033283127,
+        "max": 0.0031056170037118136
+      },
+      "query_propagation_seconds": {
+        "median": 0.0019316210000397405,
+        "min": 0.0018615589951878064,
+        "max": 0.002035680001426954
+      },
+      "total_with_queries_seconds": {
+        "median": 0.03858426499482448,
+        "min": 0.0376611160036191,
+        "max": 0.03894621500330686
+      },
+      "peak_rss_kib": {
+        "median": 25784,
+        "min": 25496,
+        "max": 25852
+      },
+      "states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "raw_states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "raw_transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "clauses": {
+        "median": 2526,
+        "min": 2526,
+        "max": 2526
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 2
+      },
+      "scenario": "sat",
+      "method": "eager",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.05034164800053986,
+        "min": 0.05002226200031146,
+        "max": 0.0534839780002585
+      },
+      "compile_seconds": {
+        "median": 0.037359317000664305,
+        "min": 0.0367701320001288,
+        "max": 0.0404241930000353
+      },
+      "query_answer_seconds": {
+        "median": 0.09663987399653706,
+        "min": 0.09595258599892986,
+        "max": 0.09713364200888464
+      },
+      "query_propagation_seconds": {
+        "median": 0.0006457449972003815,
+        "min": 0.0006364049995681853,
+        "max": 0.0006799779985158239
+      },
+      "total_with_queries_seconds": {
+        "median": 0.1471559040091961,
+        "min": 0.14698152199707692,
+        "max": 0.14943656399918837
+      },
+      "peak_rss_kib": {
+        "median": 31508,
+        "min": 31320,
+        "max": 31828
+      },
+      "clauses": {
+        "median": 23404,
+        "min": 23404,
+        "max": 23404
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 2
+      },
+      "scenario": "sat",
+      "method": "graph",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.032935477000137325,
+        "min": 0.03282978999959596,
+        "max": 0.03295678999984375
+      },
+      "compile_seconds": {
+        "median": 0.030797246000474843,
+        "min": 0.030708868999681727,
+        "max": 0.030841769000289787
+      },
+      "graph_seconds": {
+        "median": 0.030546339000466105,
+        "min": 0.030457582000053662,
+        "max": 0.030581042000449088
+      },
+      "minimize_seconds": {
+        "median": 0.00024924700028350344,
+        "min": 0.00024875700000848155,
+        "max": 0.00025805699988268316
+      },
+      "cnf_seconds": {
+        "median": 4.500006980379112e-07,
+        "min": 2.8999966161791235e-07,
+        "max": 5.29999852005858e-07
+      },
+      "query_answer_seconds": {
+        "median": 0.004674975006309978,
+        "min": 0.004610562992638734,
+        "max": 0.0047439560003113
+      },
+      "query_propagation_seconds": {
+        "median": 0.004674975006309978,
+        "min": 0.004610562992638734,
+        "max": 0.0047439560003113
+      },
+      "total_with_queries_seconds": {
+        "median": 0.03756735299248248,
+        "min": 0.03750476500590594,
+        "max": 0.037679433000448626
+      },
+      "peak_rss_kib": {
+        "median": 24684,
+        "min": 24276,
+        "max": 24908
+      },
+      "states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "raw_states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "raw_transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 2
+      },
+      "scenario": "sat",
+      "method": "v1",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.11177473800034932,
+        "min": 0.11148270099965885,
+        "max": 0.11229931299931195
+      },
+      "compile_seconds": {
+        "median": 0.10859394799990696,
+        "min": 0.10833545999958005,
+        "max": 0.10918748400035838
+      },
+      "query_answer_seconds": {
+        "median": 0.003138705002129427,
+        "min": 0.0030964129937274265,
+        "max": 0.0031424519984284416
+      },
+      "query_propagation_seconds": {
+        "median": 0.001893939009278256,
+        "min": 0.001871931012829009,
+        "max": 0.0018943790000776062
+      },
+      "total_with_queries_seconds": {
+        "median": 0.11491718999877776,
+        "min": 0.11457911399338627,
+        "max": 0.11543801800144138
+      },
+      "peak_rss_kib": {
+        "median": 25776,
+        "min": 25732,
+        "max": 25964
+      },
+      "states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "clauses": {
+        "median": 4217,
+        "min": 4217,
+        "max": 4217
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 3,
+        "threads": 5
+      },
+      "scenario": "sat",
+      "method": "cnf",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 3.4136639090002063,
+        "min": 3.3498199339992425,
+        "max": 3.453927716999715
+      },
+      "compile_seconds": {
+        "median": 3.397383432999959,
+        "min": 3.3331469270005982,
+        "max": 3.4369819929997902
+      },
+      "graph_seconds": {
+        "median": 3.365189501999339,
+        "min": 3.3019091550004305,
+        "max": 3.404627977999553
+      },
+      "minimize_seconds": {
+        "median": 0.017973254000025918,
+        "min": 0.01752011999997194,
+        "max": 0.018260380000356236
+      },
+      "cnf_seconds": {
+        "median": 0.014089835000049789,
+        "min": 0.013714142000026186,
+        "max": 0.014216716999726486
+      },
+      "query_answer_seconds": {
+        "median": 0.03241061400331091,
+        "min": 0.03209509299813362,
+        "max": 0.03298778100088384
+      },
+      "query_propagation_seconds": {
+        "median": 0.014583573994059407,
+        "min": 0.014554660005160258,
+        "max": 0.014822317002654017
+      },
+      "total_with_queries_seconds": {
+        "median": 3.44575900199834,
+        "min": 3.3828077150001263,
+        "max": 3.486338331003026
+      },
+      "peak_rss_kib": {
+        "median": 46456,
+        "min": 46384,
+        "max": 46680
+      },
+      "states": {
+        "median": 15,
+        "min": 15,
+        "max": 15
+      },
+      "raw_states": {
+        "median": 87,
+        "min": 87,
+        "max": 87
+      },
+      "transitions": {
+        "median": 1741,
+        "min": 1741,
+        "max": 1741
+      },
+      "raw_transitions": {
+        "median": 12109,
+        "min": 12109,
+        "max": 12109
+      },
+      "max_layer_states": {
+        "median": 6,
+        "min": 6,
+        "max": 6
+      },
+      "raw_max_layer_states": {
+        "median": 72,
+        "min": 72,
+        "max": 72
+      },
+      "clauses": {
+        "median": 31150,
+        "min": 31150,
+        "max": 31150
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 3,
+        "threads": 5
+      },
+      "scenario": "sat",
+      "method": "eager",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.1700993529993866,
+        "min": 0.16732517299988103,
+        "max": 0.17063743300059286
+      },
+      "compile_seconds": {
+        "median": 0.12406399800056533,
+        "min": 0.12264029399921128,
+        "max": 0.12473696999950334
+      },
+      "query_answer_seconds": {
+        "median": 0.48636133900527057,
+        "min": 0.4841907500031084,
+        "max": 0.48766577700189373
+      },
+      "query_propagation_seconds": {
+        "median": 0.001271849000659131,
+        "min": 0.001262059996406606,
+        "max": 0.0012831179928980418
+      },
+      "total_with_queries_seconds": {
+        "median": 0.6569987720058634,
+        "min": 0.6515159230029894,
+        "max": 0.6577651300012803
+      },
+      "peak_rss_kib": {
+        "median": 48040,
+        "min": 47744,
+        "max": 48256
+      },
+      "clauses": {
+        "median": 77488,
+        "min": 77488,
+        "max": 77488
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 3,
+        "threads": 5
+      },
+      "scenario": "sat",
+      "method": "graph",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 3.5531794380003703,
+        "min": 3.4558754839999892,
+        "max": 3.6858544040005654
+      },
+      "compile_seconds": {
+        "median": 3.542348625000159,
+        "min": 3.4451296269999148,
+        "max": 3.675288720000026
+      },
+      "graph_seconds": {
+        "median": 3.5248890829998345,
+        "min": 3.4280586400000175,
+        "max": 3.658350992999658
+      },
+      "minimize_seconds": {
+        "median": 0.017066976999558392,
+        "min": 0.016933216999859724,
+        "max": 0.01745500200013339
+      },
+      "cnf_seconds": {
+        "median": 8.300003173644654e-07,
+        "min": 7.899998308857903e-07,
+        "max": 8.699998943484388e-07
+      },
+      "query_answer_seconds": {
+        "median": 0.04448591800246504,
+        "min": 0.04417241200371791,
+        "max": 0.04700585099635646
+      },
+      "query_propagation_seconds": {
+        "median": 0.04448591800246504,
+        "min": 0.04417241200371791,
+        "max": 0.04700585099635646
+      },
+      "total_with_queries_seconds": {
+        "median": 3.5976653560028353,
+        "min": 3.500047896003707,
+        "max": 3.732860254996922
+      },
+      "peak_rss_kib": {
+        "median": 41888,
+        "min": 41860,
+        "max": 41984
+      },
+      "states": {
+        "median": 15,
+        "min": 15,
+        "max": 15
+      },
+      "raw_states": {
+        "median": 87,
+        "min": 87,
+        "max": 87
+      },
+      "transitions": {
+        "median": 1741,
+        "min": 1741,
+        "max": 1741
+      },
+      "raw_transitions": {
+        "median": 12109,
+        "min": 12109,
+        "max": 12109
+      },
+      "max_layer_states": {
+        "median": 6,
+        "min": 6,
+        "max": 6
+      },
+      "raw_max_layer_states": {
+        "median": 72,
+        "min": 72,
+        "max": 72
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 3,
+        "threads": 5
+      },
+      "scenario": "sat",
+      "method": "v1",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 31.736022901999604,
+        "min": 31.579479850000098,
+        "max": 31.803767959999277
+      },
+      "compile_seconds": {
+        "median": 31.444434719999663,
+        "min": 31.282804466000016,
+        "max": 31.509053114999915
+      },
+      "query_answer_seconds": {
+        "median": 0.5987046169966561,
+        "min": 0.59772783900371,
+        "max": 0.6001527570088001
+      },
+      "query_propagation_seconds": {
+        "median": 0.3862963010005842,
+        "min": 0.3776546929993856,
+        "max": 0.39829534699674696
+      },
+      "total_with_queries_seconds": {
+        "median": 32.333750741003314,
+        "min": 32.1796326070089,
+        "max": 32.40247257699593
+      },
+      "peak_rss_kib": {
+        "median": 254432,
+        "min": 254432,
+        "max": 255132
+      },
+      "states": {
+        "median": 159,
+        "min": 159,
+        "max": 159
+      },
+      "transitions": {
+        "median": 22477,
+        "min": 22477,
+        "max": 22477
+      },
+      "max_layer_states": {
+        "median": 144,
+        "min": 144,
+        "max": 144
+      },
+      "clauses": {
+        "median": 899457,
+        "min": 899457,
+        "max": 899457
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "cnf",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.3323541820000173,
+        "min": 0.3318441419996816,
+        "max": 0.33308102800037886
+      },
+      "compile_seconds": {
+        "median": 0.32146177000049647,
+        "min": 0.3209284699996715,
+        "max": 0.32188112800031377
+      },
+      "graph_seconds": {
+        "median": 0.311925126999995,
+        "min": 0.3115250009996089,
+        "max": 0.31211103799978446
+      },
+      "minimize_seconds": {
+        "median": 0.003680894999888551,
+        "min": 0.0035326309998708894,
+        "max": 0.0037245760004225303
+      },
+      "cnf_seconds": {
+        "median": 0.00586749800004327,
+        "min": 0.005851658000210591,
+        "max": 0.0060420830004659365
+      },
+      "query_answer_seconds": {
+        "median": 0.028851456004304055,
+        "min": 0.02879236400804075,
+        "max": 0.02886361899891199
+      },
+      "query_propagation_seconds": {
+        "median": 0.005939658002716897,
+        "min": 0.005854833002558735,
+        "max": 0.005945489988334884
+      },
+      "total_with_queries_seconds": {
+        "median": 0.36114654600805807,
+        "min": 0.36069559800398565,
+        "max": 0.36194464699929085
+      },
+      "peak_rss_kib": {
+        "median": 33980,
+        "min": 33796,
+        "max": 34172
+      },
+      "states": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "raw_states": {
+        "median": 103,
+        "min": 103,
+        "max": 103
+      },
+      "transitions": {
+        "median": 1013,
+        "min": 1013,
+        "max": 1013
+      },
+      "raw_transitions": {
+        "median": 3605,
+        "min": 3605,
+        "max": 3605
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 16854,
+        "min": 16854,
+        "max": 16854
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "eager",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 1.3891283370003293,
+        "min": 1.3811929500006954,
+        "max": 1.4125171159994352
+      },
+      "compile_seconds": {
+        "median": 0.4673712159992647,
+        "min": 0.46729682500063063,
+        "max": 0.4815118540000185
+      },
+      "query_answer_seconds": {
+        "median": 3.318302149004012,
+        "min": 3.3032363540023653,
+        "max": 3.3185911020000276
+      },
+      "query_propagation_seconds": {
+        "median": 0.0026654850043996703,
+        "min": 0.0026118769965250976,
+        "max": 0.0026674200025809114
+      },
+      "total_with_queries_seconds": {
+        "median": 4.707430486004341,
+        "min": 4.699784052000723,
+        "max": 4.7157534700018005
+      },
+      "peak_rss_kib": {
+        "median": 113944,
+        "min": 113668,
+        "max": 114100
+      },
+      "clauses": {
+        "median": 293744,
+        "min": 293744,
+        "max": 293744
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "graph",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.3288836170004288,
+        "min": 0.3226075630000196,
+        "max": 0.34925792700050806
+      },
+      "compile_seconds": {
+        "median": 0.3216921920002278,
+        "min": 0.3152620430000752,
+        "max": 0.3418894950000322
+      },
+      "graph_seconds": {
+        "median": 0.31812081999942166,
+        "min": 0.31176525299997593,
+        "max": 0.33839583400003903
+      },
+      "minimize_seconds": {
+        "median": 0.0034923499997603358,
+        "min": 0.003489611000077275,
+        "max": 0.0035677719997693202
+      },
+      "cnf_seconds": {
+        "median": 8.300003173644654e-07,
+        "min": 4.099993020645343e-07,
+        "max": 1.089999386749696e-06
+      },
+      "query_answer_seconds": {
+        "median": 0.034656805003578484,
+        "min": 0.033950452995668456,
+        "max": 0.03504842200072744
+      },
+      "query_propagation_seconds": {
+        "median": 0.034656805003578484,
+        "min": 0.033950452995668456,
+        "max": 0.03504842200072744
+      },
+      "total_with_queries_seconds": {
+        "median": 0.36283406999609724,
+        "min": 0.357655985000747,
+        "max": 0.38391473200408655
+      },
+      "peak_rss_kib": {
+        "median": 29760,
+        "min": 29744,
+        "max": 29880
+      },
+      "states": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "raw_states": {
+        "median": 103,
+        "min": 103,
+        "max": 103
+      },
+      "transitions": {
+        "median": 1013,
+        "min": 1013,
+        "max": 1013
+      },
+      "raw_transitions": {
+        "median": 3605,
+        "min": 3605,
+        "max": 3605
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "v1",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 2.479942041999493,
+        "min": 2.4756767330000002,
+        "max": 2.5380877400002646
+      },
+      "compile_seconds": {
+        "median": 2.400388615999873,
+        "min": 2.3966566919998513,
+        "max": 2.457331479000459
+      },
+      "query_answer_seconds": {
+        "median": 0.18118915300874505,
+        "min": 0.17931950799720653,
+        "max": 0.1814280670014341
+      },
+      "query_propagation_seconds": {
+        "median": 0.05445350101490476,
+        "min": 0.053910168994661944,
+        "max": 0.05457758000011381
+      },
+      "total_with_queries_seconds": {
+        "median": 2.661131195008238,
+        "min": 2.6549962409972068,
+        "max": 2.7195158070016987
+      },
+      "peak_rss_kib": {
+        "median": 86012,
+        "min": 85592,
+        "max": 86100
+      },
+      "states": {
+        "median": 223,
+        "min": 223,
+        "max": 223
+      },
+      "transitions": {
+        "median": 7925,
+        "min": 7925,
+        "max": 7925
+      },
+      "max_layer_states": {
+        "median": 36,
+        "min": 36,
+        "max": 36
+      },
+      "clauses": {
+        "median": 222641,
+        "min": 222641,
+        "max": 222641
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "unsat",
+      "method": "cnf",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.3353267960001176,
+        "min": 0.3305281990005824,
+        "max": 0.33597031200042693
+      },
+      "compile_seconds": {
+        "median": 0.3237503129994366,
+        "min": 0.3197554710004624,
+        "max": 0.3245354270002281
+      },
+      "graph_seconds": {
+        "median": 0.3143161139996664,
+        "min": 0.3100201620000007,
+        "max": 0.31488381100007246
+      },
+      "minimize_seconds": {
+        "median": 0.003580732999580505,
+        "min": 0.0034084469998560962,
+        "max": 0.003820079000433907
+      },
+      "cnf_seconds": {
+        "median": 0.006021711999892432,
+        "min": 0.00591196899949864,
+        "max": 0.006067303000236279
+      },
+      "query_answer_seconds": {
+        "median": 0.028555719997712004,
+        "min": 0.02849482699912187,
+        "max": 0.028569094001795747
+      },
+      "query_propagation_seconds": {
+        "median": 0.0060727959953510435,
+        "min": 0.005918205002672039,
+        "max": 0.006197079010235029
+      },
+      "total_with_queries_seconds": {
+        "median": 0.3638825159978296,
+        "min": 0.35902302599970426,
+        "max": 0.3645394060022227
+      },
+      "peak_rss_kib": {
+        "median": 33828,
+        "min": 33800,
+        "max": 33932
+      },
+      "states": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "raw_states": {
+        "median": 103,
+        "min": 103,
+        "max": 103
+      },
+      "transitions": {
+        "median": 1013,
+        "min": 1013,
+        "max": 1013
+      },
+      "raw_transitions": {
+        "median": 3605,
+        "min": 3605,
+        "max": 3605
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 16854,
+        "min": 16854,
+        "max": 16854
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "unsat",
+      "method": "eager",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.5742428660005316,
+        "min": 0.5724436549999155,
+        "max": 0.580629260999558
+      },
+      "compile_seconds": {
+        "median": 0.46905702799995197,
+        "min": 0.4656110450005144,
+        "max": 0.4744422069998109
+      },
+      "query_answer_seconds": {
+        "median": 4.070921177001765,
+        "min": 4.070858268004486,
+        "max": 4.107837061000282
+      },
+      "query_propagation_seconds": {
+        "median": 0.0025170510034513427,
+        "min": 0.002403253998636501,
+        "max": 0.002631135993397038
+      },
+      "total_with_queries_seconds": {
+        "median": 4.645101134005017,
+        "min": 4.64336483200168,
+        "max": 4.68846632199984
+      },
+      "peak_rss_kib": {
+        "median": 114820,
+        "min": 114404,
+        "max": 114916
+      },
+      "clauses": {
+        "median": 293744,
+        "min": 293744,
+        "max": 293744
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "unsat",
+      "method": "graph",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.32302257900028053,
+        "min": 0.3219911689993751,
+        "max": 0.3353317330002028
+      },
+      "compile_seconds": {
+        "median": 0.31600105200050166,
+        "min": 0.31491017199914495,
+        "max": 0.32812015099989367
+      },
+      "graph_seconds": {
+        "median": 0.3125118449997899,
+        "min": 0.31134389199996804,
+        "max": 0.3245114299998022
+      },
+      "minimize_seconds": {
+        "median": 0.003562699999747565,
+        "min": 0.0034855369995057117,
+        "max": 0.003604571000323631
+      },
+      "cnf_seconds": {
+        "median": 6.000000212225132e-07,
+        "min": 4.800003807758912e-07,
+        "max": 7.999997251317836e-07
+      },
+      "query_answer_seconds": {
+        "median": 0.034264648995304015,
+        "min": 0.034051331996124645,
+        "max": 0.03451294099977531
+      },
+      "query_propagation_seconds": {
+        "median": 0.034264648995304015,
+        "min": 0.034051331996124645,
+        "max": 0.03451294099977531
+      },
+      "total_with_queries_seconds": {
+        "median": 0.3570739109964052,
+        "min": 0.3565041099991504,
+        "max": 0.3695963819955068
+      },
+      "peak_rss_kib": {
+        "median": 29812,
+        "min": 29708,
+        "max": 29980
+      },
+      "states": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "raw_states": {
+        "median": 103,
+        "min": 103,
+        "max": 103
+      },
+      "transitions": {
+        "median": 1013,
+        "min": 1013,
+        "max": 1013
+      },
+      "raw_transitions": {
+        "median": 3605,
+        "min": 3605,
+        "max": 3605
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "unsat",
+      "method": "v1",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 2.4820061239997813,
+        "min": 2.4785451679999824,
+        "max": 2.568494553000164
+      },
+      "compile_seconds": {
+        "median": 2.4044394079992344,
+        "min": 2.400189357000272,
+        "max": 2.490597138999874
+      },
+      "query_answer_seconds": {
+        "median": 0.18963002600412437,
+        "min": 0.18937696400189452,
+        "max": 0.1898737940000501
+      },
+      "query_propagation_seconds": {
+        "median": 0.05433245599942893,
+        "min": 0.05420185899765784,
+        "max": 0.05444726000496303
+      },
+      "total_with_queries_seconds": {
+        "median": 2.671383088001676,
+        "min": 2.6681751940041067,
+        "max": 2.7583683470002143
+      },
+      "peak_rss_kib": {
+        "median": 85892,
+        "min": 85764,
+        "max": 85988
+      },
+      "states": {
+        "median": 223,
+        "min": 223,
+        "max": 223
+      },
+      "transitions": {
+        "median": 7925,
+        "min": 7925,
+        "max": 7925
+      },
+      "max_layer_states": {
+        "median": 36,
+        "min": 36,
+        "max": 36
+      },
+      "clauses": {
+        "median": 222641,
+        "min": 222641,
+        "max": 222641
+      }
+    }
+  ],
+  "forced": [
+    {
+      "parameters": {
+        "rounds": 2
+      },
+      "scenario": "sat",
+      "method": "cnf",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "compile_seconds": {
+        "median": 0.03233016600006522,
+        "min": 0.031772627999998804,
+        "max": 0.03427046300021175
+      },
+      "graph_seconds": {
+        "median": 0.03092487499998242,
+        "min": 0.03033732600033545,
+        "max": 0.032786198999929184
+      },
+      "minimize_seconds": {
+        "median": 0.00023329699979512952,
+        "min": 0.00023119700017559808,
+        "max": 0.00024436799958493793
+      },
+      "cnf_seconds": {
+        "median": 0.0012022849996355944,
+        "min": 0.0011700839995683054,
+        "max": 0.0012378959991110605
+      },
+      "ready_seconds": {
+        "median": 0.03582047799955035,
+        "min": 0.03532186900065426,
+        "max": 0.0378057660000195
+      },
+      "query_seconds": {
+        "median": 0.0012232259969096049,
+        "min": 0.001221995999912906,
+        "max": 0.001250096999683592
+      },
+      "total_seconds": {
+        "median": 0.037043703996459953,
+        "min": 0.036543865000567166,
+        "max": 0.039055862999703095
+      },
+      "peak_rss_kib": {
+        "median": 25580,
+        "min": 25416,
+        "max": 25644
+      },
+      "states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "raw_states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "raw_transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "clauses": {
+        "median": 2526,
+        "min": 2526,
+        "max": 2526
+      },
+      "sat_calls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "prefix_totals": {
+        "1": 0.03583543799959443,
+        "8": 0.03608125599748746,
+        "32": 0.037043703996459953
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 2
+      },
+      "scenario": "sat",
+      "method": "eager",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "compile_seconds": {
+        "median": 0.0381772569999157,
+        "min": 0.03709568499925808,
+        "max": 0.03935958700003539
+      },
+      "ready_seconds": {
+        "median": 0.06204655599958642,
+        "min": 0.06150925899964932,
+        "max": 0.06323873499968613
+      },
+      "query_seconds": {
+        "median": 0.16954379999788216,
+        "min": 0.16935235899745749,
+        "max": 0.17117193000194675
+      },
+      "total_seconds": {
+        "median": 0.23259109399714362,
+        "min": 0.23105305899753148,
+        "max": 0.23321848600153317
+      },
+      "peak_rss_kib": {
+        "median": 30160,
+        "min": 30072,
+        "max": 30176
+      },
+      "clauses": {
+        "median": 23404,
+        "min": 23404,
+        "max": 23404
+      },
+      "sat_calls": {
+        "median": 243,
+        "min": 243,
+        "max": 243
+      },
+      "prefix_totals": {
+        "1": 0.0737289979988418,
+        "8": 0.11353894299918466,
+        "32": 0.23259109399714362
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 2
+      },
+      "scenario": "sat",
+      "method": "graph",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "compile_seconds": {
+        "median": 0.031090616999790655,
+        "min": 0.030937155000174243,
+        "max": 0.03240079799979867
+      },
+      "graph_seconds": {
+        "median": 0.030849359999592707,
+        "min": 0.03069626800061087,
+        "max": 0.03215545100010786
+      },
+      "minimize_seconds": {
+        "median": 0.00023918700026115403,
+        "min": 0.0002388970005995361,
+        "max": 0.0002432569999655243
+      },
+      "cnf_seconds": {
+        "median": 3.100003596046008e-07,
+        "min": 2.8999966161791235e-07,
+        "max": 3.9000042306724936e-07
+      },
+      "ready_seconds": {
+        "median": 0.03249663800033886,
+        "min": 0.03229292500054726,
+        "max": 0.03384820000064792
+      },
+      "query_seconds": {
+        "median": 0.001200296002025425,
+        "min": 0.0011671350030155736,
+        "max": 0.001212925998515857
+      },
+      "total_seconds": {
+        "median": 0.033663773003354436,
+        "min": 0.03349322100257268,
+        "max": 0.03506112599916378
+      },
+      "peak_rss_kib": {
+        "median": 24296,
+        "min": 24176,
+        "max": 24340
+      },
+      "states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "raw_states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "raw_transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "sat_calls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "prefix_totals": {
+        "1": 0.03255593000085355,
+        "8": 0.03280986800109531,
+        "32": 0.033663773003354436
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 2
+      },
+      "scenario": "sat",
+      "method": "weak",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "compile_seconds": {
+        "median": 0.03198364299987588,
+        "min": 0.031906213000183925,
+        "max": 0.03222681300030672
+      },
+      "graph_seconds": {
+        "median": 0.030667037000057462,
+        "min": 0.030556632000298123,
+        "max": 0.030984756000179914
+      },
+      "minimize_seconds": {
+        "median": 0.00023940600021887803,
+        "min": 0.00023888699979579542,
+        "max": 0.00024813700019876705
+      },
+      "cnf_seconds": {
+        "median": 0.0010010399992097518,
+        "min": 0.0009888790000331937,
+        "max": 0.0011851250001200242
+      },
+      "ready_seconds": {
+        "median": 0.03450451599928783,
+        "min": 0.03438102599920967,
+        "max": 0.034710755999185494
+      },
+      "query_seconds": {
+        "median": 0.0068922699965696665,
+        "min": 0.006846499000857875,
+        "max": 0.006903039999997418
+      },
+      "total_seconds": {
+        "median": 0.04135101500014571,
+        "min": 0.04128406599920709,
+        "max": 0.04160302599575516
+      },
+      "peak_rss_kib": {
+        "median": 25044,
+        "min": 25012,
+        "max": 25116
+      },
+      "states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "raw_states": {
+        "median": 7,
+        "min": 7,
+        "max": 7
+      },
+      "transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "raw_transitions": {
+        "median": 149,
+        "min": 149,
+        "max": 149
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "clauses": {
+        "median": 2381,
+        "min": 2381,
+        "max": 2381
+      },
+      "sat_calls": {
+        "median": 213,
+        "min": 213,
+        "max": 213
+      },
+      "prefix_totals": {
+        "1": 0.03484990599918092,
+        "8": 0.03630086799967103,
+        "32": 0.04135101500014571
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "cnf",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "compile_seconds": {
+        "median": 0.320911110000452,
+        "min": 0.3203201829992395,
+        "max": 0.3245293460004177
+      },
+      "graph_seconds": {
+        "median": 0.3113531810004133,
+        "min": 0.3106746399998883,
+        "max": 0.3151544419997663
+      },
+      "minimize_seconds": {
+        "median": 0.0035347630000615027,
+        "min": 0.003487011999823153,
+        "max": 0.003547293999872636
+      },
+      "cnf_seconds": {
+        "median": 0.00601858599929983,
+        "min": 0.005884621999939554,
+        "max": 0.006094848999964597
+      },
+      "ready_seconds": {
+        "median": 0.34306831899993995,
+        "min": 0.3428506419995756,
+        "max": 0.34684209900024143
+      },
+      "query_seconds": {
+        "median": 0.003971015000388434,
+        "min": 0.003950666000491765,
+        "max": 0.00411190000068018
+      },
+      "total_seconds": {
+        "median": 0.3470393340003284,
+        "min": 0.3469625420002558,
+        "max": 0.3507927650007332
+      },
+      "peak_rss_kib": {
+        "median": 34232,
+        "min": 34076,
+        "max": 34300
+      },
+      "states": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "raw_states": {
+        "median": 103,
+        "min": 103,
+        "max": 103
+      },
+      "transitions": {
+        "median": 1013,
+        "min": 1013,
+        "max": 1013
+      },
+      "raw_transitions": {
+        "median": 3605,
+        "min": 3605,
+        "max": 3605
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 16854,
+        "min": 16854,
+        "max": 16854
+      },
+      "sat_calls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "prefix_totals": {
+        "1": 0.34308647899979405,
+        "8": 0.34402344600130164,
+        "32": 0.3470393340003284
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "eager",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "compile_seconds": {
+        "median": 0.47298928500003967,
+        "min": 0.4709267890002593,
+        "max": 0.4784275820002222
+      },
+      "ready_seconds": {
+        "median": 2.4619508580008187,
+        "min": 2.434582249000414,
+        "max": 2.4628113729995675
+      },
+      "query_seconds": {
+        "median": 12.731441211999481,
+        "min": 12.546686135002346,
+        "max": 12.781899281000733
+      },
+      "total_seconds": {
+        "median": 15.1933920700003,
+        "min": 14.98126838400276,
+        "max": 15.2447106540003
+      },
+      "peak_rss_kib": {
+        "median": 99592,
+        "min": 99304,
+        "max": 99804
+      },
+      "clauses": {
+        "median": 293744,
+        "min": 293744,
+        "max": 293744
+      },
+      "sat_calls": {
+        "median": 970,
+        "min": 970,
+        "max": 970
+      },
+      "prefix_totals": {
+        "1": 3.2084104280002066,
+        "8": 5.913657078001052,
+        "32": 15.1933920700003
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "graph",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "compile_seconds": {
+        "median": 0.31738717300049757,
+        "min": 0.3164112680005928,
+        "max": 0.3193050089994358
+      },
+      "graph_seconds": {
+        "median": 0.31386553199990885,
+        "min": 0.31287893500029895,
+        "max": 0.3157909470000959
+      },
+      "minimize_seconds": {
+        "median": 0.003517731000101776,
+        "min": 0.003509762000248884,
+        "max": 0.003528162999828055
+      },
+      "cnf_seconds": {
+        "median": 8.200004231184721e-07,
+        "min": 6.999998731771484e-07,
+        "max": 9.000004865811206e-07
+      },
+      "ready_seconds": {
+        "median": 0.32310027800031094,
+        "min": 0.3219080799999574,
+        "max": 0.32468056400011847
+      },
+      "query_seconds": {
+        "median": 0.008424080999247963,
+        "min": 0.008337950999703025,
+        "max": 0.008550100002139516
+      },
+      "total_seconds": {
+        "median": 0.3315243589995589,
+        "min": 0.3304581800020969,
+        "max": 0.3330185149998215
+      },
+      "peak_rss_kib": {
+        "median": 29756,
+        "min": 29700,
+        "max": 29820
+      },
+      "states": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "raw_states": {
+        "median": 103,
+        "min": 103,
+        "max": 103
+      },
+      "transitions": {
+        "median": 1013,
+        "min": 1013,
+        "max": 1013
+      },
+      "raw_transitions": {
+        "median": 3605,
+        "min": 3605,
+        "max": 3605
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "sat_calls": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      },
+      "prefix_totals": {
+        "1": 0.32344080799975927,
+        "8": 0.32517982799981837,
+        "32": 0.3315243589995589
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "weak",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "compile_seconds": {
+        "median": 0.32706569299989496,
+        "min": 0.3197684919996391,
+        "max": 0.34306251499947393
+      },
+      "graph_seconds": {
+        "median": 0.31893863799996325,
+        "min": 0.31178611099949194,
+        "max": 0.33507679399917834
+      },
+      "minimize_seconds": {
+        "median": 0.0034919909994641785,
+        "min": 0.003476789999695029,
+        "max": 0.0035467319994495483
+      },
+      "cnf_seconds": {
+        "median": 0.004505580999648373,
+        "min": 0.004486729999371164,
+        "max": 0.004576663000079861
+      },
+      "ready_seconds": {
+        "median": 0.34942530799980887,
+        "min": 0.3419801430000007,
+        "max": 0.3649808270001813
+      },
+      "query_seconds": {
+        "median": 0.3592806900041978,
+        "min": 0.3588606390012501,
+        "max": 0.36263617999702547
+      },
+      "total_seconds": {
+        "median": 0.7120614879968343,
+        "min": 0.7008407820012508,
+        "max": 0.7242615170043791
+      },
+      "peak_rss_kib": {
+        "median": 32268,
+        "min": 31952,
+        "max": 32316
+      },
+      "states": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "raw_states": {
+        "median": 103,
+        "min": 103,
+        "max": 103
+      },
+      "transitions": {
+        "median": 1013,
+        "min": 1013,
+        "max": 1013
+      },
+      "raw_transitions": {
+        "median": 3605,
+        "min": 3605,
+        "max": 3605
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 16061,
+        "min": 16061,
+        "max": 16061
+      },
+      "sat_calls": {
+        "median": 1109,
+        "min": 1109,
+        "max": 1109
+      },
+      "prefix_totals": {
+        "1": 0.36283799600005295,
+        "8": 0.4295566129985673,
+        "32": 0.7120614879968343
+      }
+    }
+  ],
+  "ablation": [
+    {
+      "parameters": {
+        "rounds": 3,
+        "threads": 5
+      },
+      "scenario": "sat",
+      "method": "cnf",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 3.4787549390002823,
+        "min": 3.344361059000221,
+        "max": 3.490839527999924
+      },
+      "compile_seconds": {
+        "median": 3.4625500520005517,
+        "min": 3.3279971769998156,
+        "max": 3.4735403610002322
+      },
+      "graph_seconds": {
+        "median": 3.431238938000206,
+        "min": 3.2966286809996745,
+        "max": 3.4415343310001845
+      },
+      "minimize_seconds": {
+        "median": 0.017505736000202887,
+        "min": 0.01740372299991577,
+        "max": 0.018054848999781825
+      },
+      "cnf_seconds": {
+        "median": 0.0139028009998583,
+        "min": 0.013858319999599189,
+        "max": 0.013946750999821234
+      },
+      "query_answer_seconds": {
+        "median": 0.032465520005644066,
+        "min": 0.03245029999743565,
+        "max": 0.03297058300086064
+      },
+      "query_propagation_seconds": {
+        "median": 0.014540954005497042,
+        "min": 0.014502600993182568,
+        "max": 0.014772276997973677
+      },
+      "total_with_queries_seconds": {
+        "median": 3.511725522001143,
+        "min": 3.376826579005865,
+        "max": 3.5232898279973597
+      },
+      "peak_rss_kib": {
+        "median": 46292,
+        "min": 46272,
+        "max": 46500
+      },
+      "states": {
+        "median": 15,
+        "min": 15,
+        "max": 15
+      },
+      "raw_states": {
+        "median": 87,
+        "min": 87,
+        "max": 87
+      },
+      "transitions": {
+        "median": 1741,
+        "min": 1741,
+        "max": 1741
+      },
+      "raw_transitions": {
+        "median": 12109,
+        "min": 12109,
+        "max": 12109
+      },
+      "max_layer_states": {
+        "median": 6,
+        "min": 6,
+        "max": 6
+      },
+      "raw_max_layer_states": {
+        "median": 72,
+        "min": 72,
+        "max": 72
+      },
+      "clauses": {
+        "median": 31150,
+        "min": 31150,
+        "max": 31150
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 3,
+        "threads": 5
+      },
+      "scenario": "sat",
+      "method": "full_interface",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 8.287426396999763,
+        "min": 8.223764200000005,
+        "max": 8.978595919000327
+      },
+      "compile_seconds": {
+        "median": 8.267404571000043,
+        "min": 8.20337958500022,
+        "max": 8.958292573000108
+      },
+      "graph_seconds": {
+        "median": 8.220637913000246,
+        "min": 8.156839597000726,
+        "max": 8.912201242000265
+      },
+      "minimize_seconds": {
+        "median": 0.0324053720005395,
+        "min": 0.03201215399985813,
+        "max": 0.03266499500023201
+      },
+      "cnf_seconds": {
+        "median": 0.01409699299983913,
+        "min": 0.01407431700044981,
+        "max": 0.014129535999927612
+      },
+      "query_answer_seconds": {
+        "median": 0.032573310006227985,
+        "min": 0.03207985500466748,
+        "max": 0.0329412470009629
+      },
+      "query_propagation_seconds": {
+        "median": 0.014293162003014004,
+        "min": 0.014252066996050416,
+        "max": 0.01432026400561881
+      },
+      "total_with_queries_seconds": {
+        "median": 8.31950625200443,
+        "min": 8.256337510006233,
+        "max": 9.01153716600129
+      },
+      "peak_rss_kib": {
+        "median": 58540,
+        "min": 58440,
+        "max": 58836
+      },
+      "states": {
+        "median": 15,
+        "min": 15,
+        "max": 15
+      },
+      "raw_states": {
+        "median": 159,
+        "min": 159,
+        "max": 159
+      },
+      "transitions": {
+        "median": 1741,
+        "min": 1741,
+        "max": 1741
+      },
+      "raw_transitions": {
+        "median": 22477,
+        "min": 22477,
+        "max": 22477
+      },
+      "max_layer_states": {
+        "median": 6,
+        "min": 6,
+        "max": 6
+      },
+      "raw_max_layer_states": {
+        "median": 144,
+        "min": 144,
+        "max": 144
+      },
+      "clauses": {
+        "median": 31150,
+        "min": 31150,
+        "max": 31150
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 3,
+        "threads": 5
+      },
+      "scenario": "sat",
+      "method": "weak",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 3.3390240250000716,
+        "min": 3.3159255279997524,
+        "max": 3.3820580920000793
+      },
+      "compile_seconds": {
+        "median": 3.3237364630003867,
+        "min": 3.3003576979999707,
+        "max": 3.3661263149997467
+      },
+      "graph_seconds": {
+        "median": 3.2944863189995885,
+        "min": 3.2711202840000624,
+        "max": 3.336513778999688
+      },
+      "minimize_seconds": {
+        "median": 0.01764135899975372,
+        "min": 0.01746638399981748,
+        "max": 0.01782616099990264
+      },
+      "cnf_seconds": {
+        "median": 0.011767080000026908,
+        "min": 0.011605185000007623,
+        "max": 0.011783004999415425
+      },
+      "query_answer_seconds": {
+        "median": 0.03843745200265403,
+        "min": 0.037968027000715665,
+        "max": 0.0385245510005916
+      },
+      "query_propagation_seconds": {
+        "median": 0.012826409007175243,
+        "min": 0.012672441996073758,
+        "max": 0.01287135599523026
+      },
+      "total_with_queries_seconds": {
+        "median": 3.3774614770027256,
+        "min": 3.353893555000468,
+        "max": 3.420582643000671
+      },
+      "peak_rss_kib": {
+        "median": 45320,
+        "min": 45168,
+        "max": 45632
+      },
+      "states": {
+        "median": 15,
+        "min": 15,
+        "max": 15
+      },
+      "raw_states": {
+        "median": 87,
+        "min": 87,
+        "max": 87
+      },
+      "transitions": {
+        "median": 1741,
+        "min": 1741,
+        "max": 1741
+      },
+      "raw_transitions": {
+        "median": 12109,
+        "min": 12109,
+        "max": 12109
+      },
+      "max_layer_states": {
+        "median": 6,
+        "min": 6,
+        "max": 6
+      },
+      "raw_max_layer_states": {
+        "median": 72,
+        "min": 72,
+        "max": 72
+      },
+      "clauses": {
+        "median": 30373,
+        "min": 30373,
+        "max": 30373
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "cnf",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.3360734340003546,
+        "min": 0.3306177470003604,
+        "max": 0.33838264099995286
+      },
+      "compile_seconds": {
+        "median": 0.32500931399954425,
+        "min": 0.319286569999349,
+        "max": 0.32730246699975396
+      },
+      "graph_seconds": {
+        "median": 0.31556865199945605,
+        "min": 0.3099668409995502,
+        "max": 0.3178500300000451
+      },
+      "minimize_seconds": {
+        "median": 0.0034761100005198386,
+        "min": 0.0034200189993498498,
+        "max": 0.0035369839997656527
+      },
+      "cnf_seconds": {
+        "median": 0.005912362999879406,
+        "min": 0.0058961300001101336,
+        "max": 0.005960982000033255
+      },
+      "query_answer_seconds": {
+        "median": 0.029147583996746107,
+        "min": 0.0290610780048155,
+        "max": 0.029781213997011946
+      },
+      "query_propagation_seconds": {
+        "median": 0.006129663001956942,
+        "min": 0.005942924994997156,
+        "max": 0.006163446001664852
+      },
+      "total_with_queries_seconds": {
+        "median": 0.3652210179971007,
+        "min": 0.36039896099737234,
+        "max": 0.36744371900476835
+      },
+      "peak_rss_kib": {
+        "median": 33760,
+        "min": 33588,
+        "max": 33988
+      },
+      "states": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "raw_states": {
+        "median": 103,
+        "min": 103,
+        "max": 103
+      },
+      "transitions": {
+        "median": 1013,
+        "min": 1013,
+        "max": 1013
+      },
+      "raw_transitions": {
+        "median": 3605,
+        "min": 3605,
+        "max": 3605
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 16854,
+        "min": 16854,
+        "max": 16854
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "full_interface",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 1.0897873679996337,
+        "min": 1.0707050270002583,
+        "max": 1.099563069999931
+      },
+      "compile_seconds": {
+        "median": 1.0775622009996368,
+        "min": 1.0585351449999507,
+        "max": 1.0873949990000256
+      },
+      "graph_seconds": {
+        "median": 1.0624739289996796,
+        "min": 1.043379886999901,
+        "max": 1.0719408630002363
+      },
+      "minimize_seconds": {
+        "median": 0.006637611999394721,
+        "min": 0.006423327999982575,
+        "max": 0.00664693199996691
+      },
+      "cnf_seconds": {
+        "median": 0.008661434000714507,
+        "min": 0.008504736000759294,
+        "max": 0.008812674000182597
+      },
+      "query_answer_seconds": {
+        "median": 0.02926015000866755,
+        "min": 0.028887162005048594,
+        "max": 0.02967008299765439
+      },
+      "query_propagation_seconds": {
+        "median": 0.005870410997886211,
+        "min": 0.005778943997938768,
+        "max": 0.006150090002847719
+      },
+      "total_with_queries_seconds": {
+        "median": 1.119457450997288,
+        "min": 1.0999651770089258,
+        "max": 1.1284502320049796
+      },
+      "peak_rss_kib": {
+        "median": 37860,
+        "min": 37456,
+        "max": 37908
+      },
+      "states": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "raw_states": {
+        "median": 223,
+        "min": 223,
+        "max": 223
+      },
+      "transitions": {
+        "median": 1013,
+        "min": 1013,
+        "max": 1013
+      },
+      "raw_transitions": {
+        "median": 7925,
+        "min": 7925,
+        "max": 7925
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 36,
+        "min": 36,
+        "max": 36
+      },
+      "clauses": {
+        "median": 16854,
+        "min": 16854,
+        "max": 16854
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 8
+      },
+      "scenario": "sat",
+      "method": "weak",
+      "runs": 3,
+      "statuses": {
+        "ok": 3
+      },
+      "cold_total_seconds": {
+        "median": 0.33504022200031613,
+        "min": 0.3334017170000152,
+        "max": 0.3399964390000605
+      },
+      "compile_seconds": {
+        "median": 0.3239918529998249,
+        "min": 0.3224724609999612,
+        "max": 0.3290505489994757
+      },
+      "graph_seconds": {
+        "median": 0.3158445869994466,
+        "min": 0.3144950409996454,
+        "max": 0.3209682619999512
+      },
+      "minimize_seconds": {
+        "median": 0.0035471439996399567,
+        "min": 0.003461309999693185,
+        "max": 0.003552412999852095
+      },
+      "cnf_seconds": {
+        "median": 0.00453216300047643,
+        "min": 0.004512710000199149,
+        "max": 0.004590993000419985
+      },
+      "query_answer_seconds": {
+        "median": 0.029867042998375837,
+        "min": 0.029563586002950615,
+        "max": 0.03011274399705144
+      },
+      "query_propagation_seconds": {
+        "median": 0.00491359199895669,
+        "min": 0.004863078997914272,
+        "max": 0.00491742999656708
+      },
+      "total_with_queries_seconds": {
+        "median": 0.36460380800326675,
+        "min": 0.36326875999839103,
+        "max": 0.37010918299711193
+      },
+      "peak_rss_kib": {
+        "median": 33388,
+        "min": 33380,
+        "max": 33408
+      },
+      "states": {
+        "median": 31,
+        "min": 31,
+        "max": 31
+      },
+      "raw_states": {
+        "median": 103,
+        "min": 103,
+        "max": 103
+      },
+      "transitions": {
+        "median": 1013,
+        "min": 1013,
+        "max": 1013
+      },
+      "raw_transitions": {
+        "median": 3605,
+        "min": 3605,
+        "max": 3605
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 16,
+        "min": 16,
+        "max": 16
+      },
+      "clauses": {
+        "median": 16061,
+        "min": 16061,
+        "max": 16061
+      }
+    }
+  ],
+  "wide": [
+    {
+      "parameters": {
+        "readers": 4,
+        "rounds": 3
+      },
+      "scenario": "sat",
+      "method": "eager",
+      "runs": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "cold_total_seconds": {
+        "median": 0.23742359500010934,
+        "min": 0.23742359500010934,
+        "max": 0.23742359500010934
+      },
+      "compile_seconds": {
+        "median": 0.17603784400034783,
+        "min": 0.17603784400034783,
+        "max": 0.17603784400034783
+      },
+      "query_answer_seconds": {
+        "median": 0.6248283940021793,
+        "min": 0.6248283940021793,
+        "max": 0.6248283940021793
+      },
+      "query_propagation_seconds": {
+        "median": 0.001736858000185748,
+        "min": 0.001736858000185748,
+        "max": 0.001736858000185748
+      },
+      "total_with_queries_seconds": {
+        "median": 0.8622519890022886,
+        "min": 0.8622519890022886,
+        "max": 0.8622519890022886
+      },
+      "peak_rss_kib": {
+        "median": 44132,
+        "min": 44132,
+        "max": 44132
+      },
+      "clauses": {
+        "median": 63416,
+        "min": 63416,
+        "max": 63416
+      }
+    },
+    {
+      "parameters": {
+        "readers": 4,
+        "rounds": 3
+      },
+      "scenario": "sat",
+      "method": "graph",
+      "runs": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "cold_total_seconds": {
+        "median": 9.606516173999808,
+        "min": 9.606516173999808,
+        "max": 9.606516173999808
+      },
+      "compile_seconds": {
+        "median": 9.573933512999247,
+        "min": 9.573933512999247,
+        "max": 9.573933512999247
+      },
+      "graph_seconds": {
+        "median": 9.52063648100011,
+        "min": 9.52063648100011,
+        "max": 9.52063648100011
+      },
+      "minimize_seconds": {
+        "median": 0.053292672000679886,
+        "min": 0.053292672000679886,
+        "max": 0.053292672000679886
+      },
+      "cnf_seconds": {
+        "median": 7.300004654098302e-07,
+        "min": 7.300004654098302e-07,
+        "max": 7.300004654098302e-07
+      },
+      "query_answer_seconds": {
+        "median": 0.12508330400396517,
+        "min": 0.12508330400396517,
+        "max": 0.12508330400396517
+      },
+      "query_propagation_seconds": {
+        "median": 0.12508330400396517,
+        "min": 0.12508330400396517,
+        "max": 0.12508330400396517
+      },
+      "total_with_queries_seconds": {
+        "median": 9.731599478003773,
+        "min": 9.731599478003773,
+        "max": 9.731599478003773
+      },
+      "peak_rss_kib": {
+        "median": 62448,
+        "min": 62448,
+        "max": 62448
+      },
+      "states": {
+        "median": 11,
+        "min": 11,
+        "max": 11
+      },
+      "raw_states": {
+        "median": 71,
+        "min": 71,
+        "max": 71
+      },
+      "transitions": {
+        "median": 2597,
+        "min": 2597,
+        "max": 2597
+      },
+      "raw_transitions": {
+        "median": 22037,
+        "min": 22037,
+        "max": 22037
+      },
+      "max_layer_states": {
+        "median": 4,
+        "min": 4,
+        "max": 4
+      },
+      "raw_max_layer_states": {
+        "median": 64,
+        "min": 64,
+        "max": 64
+      },
+      "clauses": {
+        "median": 0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 3,
+        "threads": 6
+      },
+      "scenario": "sat",
+      "method": "eager",
+      "runs": 1,
+      "statuses": {
+        "ok": 1
+      },
+      "cold_total_seconds": {
+        "median": 0.5563382299997102,
+        "min": 0.5563382299997102,
+        "max": 0.5563382299997102
+      },
+      "compile_seconds": {
+        "median": 0.32885186900057306,
+        "min": 0.32885186900057306,
+        "max": 0.32885186900057306
+      },
+      "query_answer_seconds": {
+        "median": 1.4412152969962335,
+        "min": 1.4412152969962335,
+        "max": 1.4412152969962335
+      },
+      "query_propagation_seconds": {
+        "median": 0.0025050899967027362,
+        "min": 0.0025050899967027362,
+        "max": 0.0025050899967027362
+      },
+      "total_with_queries_seconds": {
+        "median": 1.9975535269959437,
+        "min": 1.9975535269959437,
+        "max": 1.9975535269959437
+      },
+      "peak_rss_kib": {
+        "median": 62392,
+        "min": 62392,
+        "max": 62392
+      },
+      "clauses": {
+        "median": 121916,
+        "min": 121916,
+        "max": 121916
+      }
+    },
+    {
+      "parameters": {
+        "rounds": 3,
+        "threads": 6
+      },
+      "scenario": "sat",
+      "method": "graph",
+      "runs": 1,
+      "statuses": {
+        "resource_limit": 1
+      }
+    }
+  ]
+}

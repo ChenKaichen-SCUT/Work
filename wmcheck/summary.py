@@ -15,15 +15,46 @@ def cyclic(rows):
     return any(row&(1<<i) for i,row in enumerate(rows))
 
 
+def close_dag(rows):
+    """Exact closure or None for a cycle, with no recursion-depth limit.
+
+    A completed child's closure skips successors already reached through it.
+    Only completed subgraphs may be skipped; active ancestors still detect
+    cycles. Every vertex is visited, including vertices later projected away.
+    """
+    closed=[0]*len(rows); done=0; active=0
+    for start in range(len(rows)):
+        bit=1<<start
+        if done&bit: continue
+        stack=[(start,rows[start],0)];active |= bit
+        while stack:
+            v,pending,reach=stack[-1]
+            pending &= ~reach
+            if not pending:
+                closed[v]=reach;done |= 1<<v;active &= ~(1<<v)
+                stack.pop()
+                continue
+            childbit=pending&-pending;child=childbit.bit_length()-1
+            if active&childbit: return None
+            if done&childbit:
+                stack[-1]=(v,pending,reach|childbit|closed[child])
+            else:
+                active |= childbit
+                stack.append((child,rows[child],0))
+    return tuple(closed)
+
+
 @dataclass
 class Frame:
     live: frozenset
     addresses: frozenset
     nodes: tuple
+    entries: frozenset
+    exits: frozenset
 
 
 class SummaryMachine:
-    def __init__(self, inst):
+    def __init__(self, inst, directional=True):
         self.inst=inst
         n=len(inst.blocks)
         # Interval endpoints avoid retaining copies of the entire prefix.
@@ -42,8 +73,8 @@ class SummaryMachine:
             for a,b in ax.fixed:
                 la,lb=inst.layer[a],inst.layer[b]
                 delta[max(la,lb)].append((a,b))
-                if la<lb: retain(('boundary',a),la+1,lb)
-                if lb<la: retain(('boundary',b),lb+1,la)
+                if la<lb: retain(('exit',a),la+1,lb)
+                if lb<la: retain(('entry',b),lb+1,la)
             self.fixed_delta.append(delta)
         minmem,maxwrite={},{}
         for e in inst.events:
@@ -57,12 +88,18 @@ class SummaryMachine:
         for cut in range(n+1):
             active.difference_update(stops[cut]);active.update(starts[cut])
             live=frozenset(x for kind,x in active if kind=='live')
-            boundary={x for kind,x in active if kind=='boundary'}
+            entry={('e',x) for kind,x in active if kind=='entry'}
+            exit_nodes={('e',x) for kind,x in active if kind=='exit'}
             addresses=frozenset(x for kind,x in active if kind=='address')
-            nodes={('e',e) for e in live|boundary}
+            nodes={('e',e) for e in live}|entry|exit_nodes
             nodes.update(('in',cut,s) for s in live)
             nodes.update(('out',cut,x) for x in addresses)
-            self.frames.append(Frame(live,addresses,tuple(sorted(nodes,key=repr))))
+            entry.update(('in',cut,s) for s in live)
+            exit_nodes.update(('e',s) for s in live)
+            exit_nodes.update(('out',cut,x) for x in addresses)
+            if not directional: entry=nodes;exit_nodes=nodes
+            self.frames.append(Frame(live,addresses,tuple(sorted(nodes,key=repr)),
+                                     frozenset(entry),frozenset(exit_nodes)))
         self.empty=tuple(() for _ in inst.axioms)
         self.templates={};self.transition_cache={};self.cache_hits=0;self.cache_misses=0
 
@@ -117,7 +154,10 @@ class SummaryMachine:
         key=(i,tuple(sorted(rf.items())),co)
         if key not in self.templates: self.templates[key]=self.template(i,rf,co)
         template,projection=self.templates[key]
-        cachekey=(template,projection,state)
+        frame=self.frames[i+1]
+        entries=tuple(j for j,node in enumerate(frame.nodes) if node in frame.entries)
+        exits=tuple(j for j,node in enumerate(frame.nodes) if node in frame.exits)
+        cachekey=(template,projection,entries,exits,state)
         if cachekey in self.transition_cache:
             self.cache_hits+=1
             return self.transition_cache[cachekey]
@@ -127,13 +167,13 @@ class SummaryMachine:
             rows=list(base)
             # Old interface nodes occupy the first positions by construction.
             for j,row in enumerate(oldrows): rows[j] |= row
-            rows=close(rows)
-            if cyclic(rows):
+            rows=close_dag(rows)
+            if rows is None:
                 self.transition_cache[cachekey]=None
                 return None
-            projected=[]
-            for a in projection:
-                projected.append(sum(1<<j for j,b in enumerate(projection) if rows[a]&(1<<b)))
+            projected=[0]*len(projection)
+            for a in entries:
+                projected[a]=sum(1<<j for j in exits if rows[projection[a]]&(1<<projection[j]))
             result.append(tuple(projected))
         value=tuple(result);self.transition_cache[cachekey]=value
         return value

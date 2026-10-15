@@ -19,6 +19,7 @@ python -m venv .venv
 . .venv/bin/activate
 pip install -r requirements.txt
 python -m wmcheck --rounds 4
+python -m wmcheck --rounds 4 --backend cnf
 python -m wmcheck --rounds 2 --export-instance instance.json --dimacs memory.cnf
 python -m unittest discover -s tests -v
 ```
@@ -38,6 +39,12 @@ protocol trace structure before applying the semantic reduction.
   renaming. This cache is exact and independent of SAT assumptions.
 - Layered support CNF with complete original-variable propagation on the scoped
   input, plus a forward/backward reference propagator.
+- Directional entry-to-exit history kernels, exact backward suffix-language
+  minimization, and shared label tests in the support CNF. These preserve the
+  original-variable completeness contract; see `docs/optimization_proofs.txt`.
+- A direct graph backend (the CLI default) returns conflicts and all forced
+  original literals without constructing SAT auxiliaries. It reuses its index
+  but recomputes reachability per query; it is not a general Boolean solver.
 - One sufficient explanation per derived literal or conflict. A reversible
   Python session recomputes propagation after `push`/`pop`; it is **not** an
   optimized incremental trail engine. MiniSat supplies actual incremental SAT
@@ -97,6 +104,33 @@ read-register equalities. It rejects other syntax explicitly. Public benchmark
 sources are **not** included; records contain their paths and content hashes.
 
 ## Read the results
+
+The follow-up implementation and controlled before/after experiments are in
+`GAP_RESULTS.zh.txt` and `results/gap/`. They preserve the earlier results below.
+The new experiment separately measures (a) SAT answers and (b) the same complete
+forced-literal query for every backend. Ordinary/weak SAT encodings use incremental
+search with countermodel reuse to obtain all forced literals; this avoids
+comparing partial answers with complete ones. Baseline sources are still excluded.
+
+To reproduce the follow-up, first extract the **project's own** original code at
+commit `fc28999afa20d5ba8267c7e46f3cf9d221590b49` into a separate `../wm-v1`
+directory. Run these sequentially on the Linux experiment server, with no other
+experiment jobs during the single-worker measurements:
+
+```sh
+python experiments/validate.py --out results/gap/validation.json
+python experiments/propagation_audit.py --out results/gap/propagation_audit.json
+python experiments/gap_suite.py --reference-root ../wm-v1 --out results/gap/serial
+python experiments/gap_forced.py
+python experiments/gap_suite.py --mode ablation --out results/gap/ablation
+python experiments/gap_suite.py --mode wide --out results/gap/wide --jobs 2 --repeats 1
+python experiments/analyze_gap.py --plots
+```
+
+`wide` is a parallel sensitivity run, not an isolated timing confirmation.
+Server environment metadata and per-run source hashes are retained. Historical raw data use the
+implementation then present; rerunning an old command on the current code tests
+the optimized implementation. Do not describe it as a rerun of the old version.
 
 `CONCLUSIONS.zh.txt` gives the measured conclusions and limitations in Chinese.
 `docs/METHOD.md` specifies the implementation and experimental contracts.

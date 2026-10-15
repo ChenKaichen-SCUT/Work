@@ -1,0 +1,298 @@
+{
+  "instrumented": true,
+  "parameters": {
+    "rounds": 3,
+    "threads": 5
+  },
+  "source_sha256": {
+    "__init__.py": "9c4775364484bcf8b84574c47fd35aecf23b0126bb8e3e3eb2aa0064889a2ef3",
+    "recognize.py": "da7e484c46384fae50d91bee0fb2455b249e531a3a52d4ccfbc553d95415e2fb",
+    "__main__.py": "7679007f9ed22c497357d34499334531964027dc5f86a5473997b240ac023823",
+    "propagation.py": "4d13411068af5cb66c2f914d632b6488d86777acdb2bf640b8ca4d4d3c3ba9f8",
+    "generators.py": "a4312de8a37a9ba52b513284cac70f0f6f393f2de0464ddd952bd94c03e8a41d",
+    "summary.py": "354074841d31c3cfa21838e6884ccf225bf1fa2df68c3a8a9b8821ba92f50a58",
+    "model.py": "ab02593c2bb90ba120dd7ae98a09c950747352d83c6a98e2f2c3a9c058d6e2b3",
+    "compiler.py": "f0ee14604da8584cd88d5ea5a93c05ca8559e452c155b55fd6f3e8c272e3f5ee",
+    "oracle.py": "ecc1a6b018237f0c3996fe973f2f2b9c543d0021a895239d0246965a384c72ea",
+    "eager.py": "4ff66d575e4bbb3074338a006dc6f464e34bd293a8a56bf4d037bb48335a053b",
+    "litmus.py": "622ab7e71a5c7811141e106fac1930e714e204137cea8ca19b13ba0691d3059a"
+  },
+  "compile_stats": {
+    "compile_seconds": 41.51506366900048,
+    "states": 159,
+    "transitions": 22477,
+    "attempted_transitions": 44941,
+    "layer_states": [
+      1,
+      1,
+      12,
+      144,
+      1
+    ],
+    "max_layer_states": 144,
+    "max_interface": 49,
+    "interface_sizes": [
+      0,
+      11,
+      49,
+      49,
+      0
+    ],
+    "local_choices": [
+      1,
+      12,
+      288,
+      288
+    ],
+    "original_variables": 94,
+    "cnf_variables": 90320,
+    "clauses": 899457,
+    "merge": true,
+    "strong": true,
+    "transition_cache_hits": 0,
+    "transition_cache_misses": 44941
+  },
+  "profile_total_seconds": 41.496899146000004,
+  "functions": [
+    {
+      "file": "compiler.py",
+      "line": 62,
+      "function": "compile_instance",
+      "calls": 1,
+      "own_seconds": 0.09656679400000001,
+      "cumulative_seconds": 41.51510021
+    },
+    {
+      "file": "summary.py",
+      "line": 116,
+      "function": "step",
+      "calls": 44941,
+      "own_seconds": 0.9248859110000001,
+      "cumulative_seconds": 40.760441056000005
+    },
+    {
+      "file": "summary.py",
+      "line": 5,
+      "function": "close",
+      "calls": 81674,
+      "own_seconds": 37.229984210000005,
+      "cumulative_seconds": 37.502640017000004
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.sum>",
+      "calls": 255214,
+      "own_seconds": 0.10484444700000001,
+      "cumulative_seconds": 1.195040609
+    },
+    {
+      "file": "summary.py",
+      "line": 136,
+      "function": "<genexpr>",
+      "calls": 1346690,
+      "own_seconds": 1.090196162,
+      "cumulative_seconds": 1.090196162
+    },
+    {
+      "file": "summary.py",
+      "line": 14,
+      "function": "cyclic",
+      "calls": 81674,
+      "own_seconds": 0.058267107000000005,
+      "cumulative_seconds": 0.951830516
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.any>",
+      "calls": 81750,
+      "own_seconds": 0.31228737,
+      "cumulative_seconds": 0.891472397
+    },
+    {
+      "file": "compiler.py",
+      "line": 30,
+      "function": "support_cnf",
+      "calls": 1,
+      "own_seconds": 0.359001032,
+      "cumulative_seconds": 0.619747265
+    },
+    {
+      "file": "summary.py",
+      "line": 15,
+      "function": "<genexpr>",
+      "calls": 5515978,
+      "own_seconds": 0.5813349,
+      "cumulative_seconds": 0.5813349
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.len>",
+      "calls": 7130936,
+      "own_seconds": 0.274556846,
+      "cumulative_seconds": 0.274556846
+    },
+    {
+      "file": "summary.py",
+      "line": 69,
+      "function": "template",
+      "calls": 589,
+      "own_seconds": 0.059357465000000005,
+      "cumulative_seconds": 0.124804172
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'append' of 'list' objects>",
+      "calls": 2068421,
+      "own_seconds": 0.09336000000000001,
+      "cumulative_seconds": 0.09336000000000001
+    },
+    {
+      "file": "compiler.py",
+      "line": 41,
+      "function": "<listcomp>",
+      "calls": 22477,
+      "own_seconds": 0.053642902000000006,
+      "cumulative_seconds": 0.08094266600000001
+    },
+    {
+      "file": "compiler.py",
+      "line": 36,
+      "function": "imply",
+      "calls": 134862,
+      "own_seconds": 0.06311912800000001,
+      "cumulative_seconds": 0.068393217
+    },
+    {
+      "file": "summary.py",
+      "line": 80,
+      "function": "real",
+      "calls": 128064,
+      "own_seconds": 0.020262062,
+      "cumulative_seconds": 0.044377234
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.sorted>",
+      "calls": 45025,
+      "own_seconds": 0.040056464,
+      "cumulative_seconds": 0.040080794
+    },
+    {
+      "file": "compiler.py",
+      "line": 32,
+      "function": "atom",
+      "calls": 157658,
+      "own_seconds": 0.036557185,
+      "cumulative_seconds": 0.036557185
+    },
+    {
+      "file": "summary.py",
+      "line": 79,
+      "function": "edge",
+      "calls": 166838,
+      "own_seconds": 0.032137454,
+      "cumulative_seconds": 0.032137454
+    },
+    {
+      "file": "compiler.py",
+      "line": 58,
+      "function": "<listcomp>",
+      "calls": 188,
+      "own_seconds": 0.031996293,
+      "cumulative_seconds": 0.031996293
+    },
+    {
+      "file": "model.py",
+      "line": 120,
+      "function": "local_choices",
+      "calls": 593,
+      "own_seconds": 0.006525379,
+      "cumulative_seconds": 0.008515666
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'get' of 'dict' objects>",
+      "calls": 40594,
+      "own_seconds": 0.006787558000000001,
+      "cumulative_seconds": 0.006787558000000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'items' of 'dict' objects>",
+      "calls": 46146,
+      "own_seconds": 0.003961444000000001,
+      "cumulative_seconds": 0.003961444000000001
+    },
+    {
+      "file": "summary.py",
+      "line": 74,
+      "function": "<dictcomp>",
+      "calls": 589,
+      "own_seconds": 0.0035740850000000003,
+      "cumulative_seconds": 0.0035740850000000003
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method fromkeys>",
+      "calls": 589,
+      "own_seconds": 0.0028244760000000002,
+      "cumulative_seconds": 0.0028244760000000002
+    },
+    {
+      "file": "summary.py",
+      "line": 73,
+      "function": "<genexpr>",
+      "calls": 22352,
+      "own_seconds": 0.002673897,
+      "cumulative_seconds": 0.002673897
+    },
+    {
+      "file": "summary.py",
+      "line": 75,
+      "function": "<listcomp>",
+      "calls": 589,
+      "own_seconds": 0.001995442,
+      "cumulative_seconds": 0.001995442
+    },
+    {
+      "file": "summary.py",
+      "line": 114,
+      "function": "<genexpr>",
+      "calls": 15300,
+      "own_seconds": 0.0014269390000000001,
+      "cumulative_seconds": 0.0014269390000000001
+    },
+    {
+      "file": "generators.py",
+      "line": 33,
+      "function": "make_instance",
+      "calls": 1,
+      "own_seconds": 1.1521e-05,
+      "cumulative_seconds": 0.0013411100000000002
+    },
+    {
+      "file": "compiler.py",
+      "line": 51,
+      "function": "<listcomp>",
+      "calls": 158,
+      "own_seconds": 0.001250769,
+      "cumulative_seconds": 0.001250769
+    },
+    {
+      "file": "compiler.py",
+      "line": 50,
+      "function": "<listcomp>",
+      "calls": 158,
+      "own_seconds": 0.0011636840000000001,
+      "cumulative_seconds": 0.0011636840000000001
+    }
+  ]
+}

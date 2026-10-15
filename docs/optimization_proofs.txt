@@ -1,0 +1,138 @@
+Exact optimizations between propagation completeness and implementation cost
+==========================================================================
+
+Scope
+-----
+These are mathematical proof arguments, not proof-assistant certificates.
+They assume the input and original history-interface theorem in proof_audit.txt:
+fixed event sets, static candidates, certified cross-block coherence order,
+and no decisions on private CNF auxiliaries. No program-model restrictions are
+silently weakened. Construction may still hit a resource limit, which is UNKNOWN.
+
+1. Directional interface lemma
+------------------------------
+At a cut let P be the already checked, acyclic prefix graph, B its retained
+interface, and F any admissible future extension. Let I and O be static sets
+such that every future edge entering P ends in I, and every edge leaving P
+for the future starts in O. Vertices may belong to both sets. Define
+
+    K(P) = reach(P) intersect (I x O).
+
+Keep the interface vertices and replace the internal prefix by K(P).
+Then P union F is acyclic iff K(P) union F is acyclic.
+
+Proof. A mixed directed cycle in P union F decomposes into maximal nonempty
+prefix paths between future segments. Each such path enters at I and leaves
+at O, so replace it by its K edge. A zero-length segment at a shared vertex
+needs no K edge. A cycle entirely in F survives unchanged. A cycle entirely
+in P is excluded by the hypothesis. Conversely, expand every K edge on a
+cycle into its witnessing prefix path. The expansion is a directed closed
+walk, which contains a directed cycle. This proves both directions. The same
+path replacement preserves all future-observable reachability, not merely
+the satisfiability of one chosen continuation.
+
+Instantiation in SummaryMachine, conservatively unioned across axioms:
+  I: old endpoints of fixed edges directed from future to past, and live-source
+     entry ports. A future read selecting an old source enters its FR port.
+  O: old endpoints of fixed edges directed from past to future, live RF sources,
+     and address exit ports. These supply fixed, RF, CO and FR edges to the future.
+  Port carry: new source entry -> old source entry; old address exit -> new exit.
+No other step-template edge connects to the old interface. Role lifetimes are
+computed from the entire fixed input, never from reversible SAT assumptions.
+An old event still required as a later entry/exit already has that role at the
+current cut; newly created events and port generations are included explicitly.
+
+Induction over blocks now uses the lemma in place of the full B x B matrix.
+Each transition first checks ALL vertices for cycles, then restricts the result
+to the new I x O. This restriction cannot conceal a cycle already present.
+Old and new port generations remain distinct. Exact equality of directional
+kernels is therefore a sufficient, possibly nonminimal continuation equivalence.
+
+For m axioms with a common conservative role interface, the number of Boolean
+kernel entries is at most m|I||O|, giving at most 2^(m|I||O|) raw kernels at a
+fixed cut before graph-realizability restrictions. This refines the k^2 matrix
+parameter; it is still exponential and does not promise cheap wide instances.
+
+2. Backward labelled-language quotient
+-------------------------------------
+For a state q in a layered deterministic graph define its suffix language L(q)
+as the sequences of complete local assignments along accepting paths. All final
+states have language {epsilon}. Process layers backwards and give q the signature
+
+    sorted set of (complete edge label, class(successor))
+
+over edges whose successor has a nonempty language. States with no such edges
+are dead (retain an explicit dead start if necessary). Equal signatures imply
+equal suffix languages, by backward induction. Merging their states and dropping
+duplicate labelled edges preserves the entire accepted assignment language.
+
+Every original variable belongs to exactly one layer, and a label assigns all
+variables at that layer. Restricting labels by any original-variable assumption
+therefore preserves exactly the same accepted completions, supported values and
+conflicts before and after quotienting. Combining histories cannot create a
+spurious completion: prefixes entering the same class have identical legal suffix
+languages. Quotienting is static; it is not computed from a temporary SAT trail.
+It reduces later encoding/query cost, but does not avoid the initial graph build.
+
+3. Factored support encoding
+---------------------------
+The original encoding duplicated a local label's incompatibility test for each
+edge. Equal labels now share D(label), with clauses (literal OR D) for every
+literal in the label. Thus falsifying any label literal propagates D.
+Per-edge prefix/suffix death and per-state dead-path clauses are unchanged.
+Let Z(edge) record that an edge cannot lie on an accepting enabled path. For each
+label introduce Ldead with (AND over Z of its edges) -> Ldead. For each original
+literal l retain (AND over Ldead of labels supporting l) -> NOT l.
+
+Soundness: whenever all supporting paths for a value are dead, that value cannot
+occur in a completion. Existential CNF equivalence follows by assigning auxiliary
+variables their actual incompatibility/dead-path meaning; the ordinary complete-
+assignment path consistency constraint still excludes assignments with no path.
+Completeness of UP follows in layer order for forward death and reverse layer
+order for backward death. Every unsupported edge's Z, unsupported label's Ldead,
+and then unsupported original value is derived. Missing every accepting path
+still derives a conflict at the start. Sharing D cannot lose a derivation, since
+every edge of that label has exactly the same incompatibility condition.
+
+If E is the number of edges, Q the number of distinct labels and b their maximum
+length, encoding literal occurrences are O(E + Q*b), replacing repeated O(E*b)
+label tests/support incidences. Original-variable propagation completeness is
+preserved; completeness under arbitrary auxiliary assignments is not claimed.
+
+4. Direct graph backend
+-----------------------
+Under an original partial assignment alpha, disable incompatible labelled edges.
+Compute forward reachability from the start and backward reachability from final
+states. No complete path exists iff the start has no accepting suffix. A literal
+has a completion support iff some edge bearing it has a reachable source and a
+co-reachable target. Joining the prefix, edge and suffix is safe because the graph
+is layered and every variable has one layer. A value is forced iff its opposite
+has no support. This proves soundness and complete original-literal propagation.
+
+An accepting witness is obtained by following enabled edges with co-reachable
+targets; this is path extraction after dynamic programming, not completion search.
+GraphSolver reuses a literal-to-label bit index between queries, but recomputes
+path reachability. It is not a new incremental CDCL trail engine. The direct
+backend avoids auxiliary CNF/SAT search for this theory-only interface. Arbitrary
+external Boolean constraints still need an appropriate combined solver.
+
+5. Acyclic closure implementation
+--------------------------------
+The iterative DFS visits every vertex. An edge to an active stack vertex proves
+a cycle. A finished vertex's closure is the union of its children and their
+already finished closures. Skipping a pending child already contained in that
+union is safe: it belongs to a completed acyclic subgraph and all its successors
+are already included. An active ancestor can never be skipped in this way without
+having first been detected in the completed traversal. Induction on completion
+order gives exact closure for DAGs. The explicit stack avoids recursion limits.
+This changes the closure algorithm, not the memory-model semantics.
+
+Validation boundary
+-------------------
+Tests compare closure against the previous all-pairs algorithm on all 512 directed
+3-vertex graphs and 500 random graphs, including self-cycles, and a 2,000-vertex
+chain. 120 generic multi-block instances exercise both forward/backward fixed
+edges, multiple axioms and relation filters, comparing all 3^4 partial assignments
+with an independent complete-execution oracle. Protocol tests and the 2,001-query
+propagation audit additionally check dense TSO semantics. These are finite audits;
+the universal justification is the arguments above and the original theorem.

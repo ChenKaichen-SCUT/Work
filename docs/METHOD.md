@@ -33,6 +33,16 @@ ports have distinct generations. A transition combines the old reachability
 matrix with local choices, detects cycles, and only then projects to the new
 interface. Full prefix graphs are absent from the production algorithm.
 
+The follow-up implementation stores only static future-entry to future-exit
+reachability inside this interface. Every vertex still participates in cycle
+detection before projection. A backward labelled-language quotient then trims
+dead suffixes and merges states with identical possible continuations. The CNF
+shares incompatibility and support groups for identical labels. These exact
+transformations and their preservation arguments are in `optimization_proofs.txt`.
+`raw_states`/`raw_transitions` describe the graph before the backward quotient;
+`states`/`transitions` describe the graph actually used for queries. The direct
+graph backend returns the same complete relation information without SAT search.
+
 A layer contains one node per reachable summary. Its edges carry complete local
 variable labels. Forward and backward dead-path information produces a support
 CNF. The strong version adds clauses excluding values with no surviving path.

@@ -3,6 +3,8 @@ from pathlib import Path
 import sys
 import time
 import unittest
+import argparse
+parser=argparse.ArgumentParser();parser.add_argument('--out',default='results/validation.json');args=parser.parse_args()
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 start=time.perf_counter()
@@ -14,5 +16,6 @@ report={'tests_run':result.testsRun,'failures':len(result.failures),'errors':len
         'partial_assignments':sum(r['partial_assignments'] for r in records),
         'scope':'Finite software validation, not a universal proof or proof-assistant certification.'}
 (ROOT/'results').mkdir(exist_ok=True)
-(ROOT/'results'/'validation.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+dest=ROOT/args.out;dest.parent.mkdir(parents=True,exist_ok=True)
+dest.write_text(json.dumps(report,indent=2),encoding='utf-8')
 sys.exit(not result.wasSuccessful())
