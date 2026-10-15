@@ -23,8 +23,9 @@ class RAInstance:
         flat = [v for t in self.threads for v in t]
         if len(flat) != len(set(flat)) or set(flat) & initial or set(flat) | initial != set(self.event):
             raise ValueError('Threads and initialization must partition events')
-        if any(e.kind not in ('R', 'W') or e.loc is None or e.value is None for e in self.events):
-            raise ValueError('Only fixed-value atomic release/acquire R/W events')
+        if any(e.kind not in ('R', 'W') or e.loc is None or
+               (e.kind == 'W' and e.value is None) for e in self.events):
+            raise ValueError('Only fixed-address RA events and constant writes are supported')
         locs = {e.loc for e in self.events}
         if len(initial) != len(locs) or {self.event[i].loc for i in initial} != locs:
             raise ValueError('Exactly one initialization write per address')
@@ -41,7 +42,8 @@ class RAInstance:
         self.reads = tuple(e.id for e in self.events if e.kind == 'R')
         self.candidates = {r: tuple(w for w in self.writes
                                    if self.event[w].loc == self.event[r].loc
-                                   and self.event[w].value == self.event[r].value) for r in self.reads}
+                                   and (self.event[r].value is None or
+                                        self.event[w].value == self.event[r].value)) for r in self.reads}
         self.sb = {(a, b) for t in self.threads for a, b in zip(t, t[1:])}
 
 

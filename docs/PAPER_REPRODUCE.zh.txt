@@ -1,0 +1,138 @@
+论文实验复现说明
+
+结果查看与重算
+
+results/paper/analysis.json 为审计后的聚合统计，tables.txt 为可读表格。
+MANIFEST.json 包含每个原始文件的字节数、SHA256 和存储位置。
+archives/ 中是无损 gzip JSONL，每行包含原路径及原文件字节的 base64。
+大归档按256KiB分片，解包脚本按清单拼回并验证整个 gzip 的摘要。
+下载后，在仓库根目录运行：
+  python experiments/paper_unpack.py --out results/paper_restored
+  python experiments/paper_analyze.py --root results/paper_restored
+分析器保留每个失败，并核对精确查询答案、原始变量/性质哈希及程序结果。
+它也报告实际不同部分赋值数；512 次重复根查询不能计为512个不同验证场景。
+pilot 与 primary_setup 只作开发记录，绝不混入正式性能表。
+
+运行环境
+
+使用 Linux，Python 3.10.12；安装 requirements-paper.txt。CUDD 必须可用：
+  python -c 'from dd.cudd import BDD; print(BDD())'
+重绘科学图表另安装 requirements-plots.txt。
+本轮为单台 8 vCPU、约30 GiB内存服务器。具体 CPU、OS、编译器、工具二进制
+哈希和源码版本记录于 results/paper/provenance/environment.json；每个正式
+活动还有单独 environment.json。计时进程固定一核，活动依次运行。不能
+把多个活动同时启动后的耗时作为本轮隔离结果的复现。
+
+默认目录 /root/wm-research/project 为本仓库，/root/wm-research/runtime 为
+虚拟环境，/root/wm-research/baselines 为外部基线。若改变目录，重新 prepare
+以生成正确绝对路径；既有原始记录保留实验当时路径，分析器会按文件名查找
+解包后的查询输入。独立原始计时数据不应被覆盖。
+
+外部基线（代码和二进制不在本仓库）
+
+GenMC: https://github.com/MPI-SWS/genmc
+  v0.19.0 / 9f6c4c0772d0c42b325681581acc6a0f3eb9b5f7。
+  使用 LLVM/Clang 19.1.7、g++14、CMake、Ninja、libffi/libedit/zlib 开发库。
+  cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_CXX_COMPILER=g++-14 -DCMAKE_C_COMPILER=gcc-14 \
+    -DCMAKE_PREFIX_PATH=/usr/lib/llvm-19/cmake
+  cmake --build build -j3
+  以实际 --version 输出为准；该源码配置显示 RelWithDebInfo，不据参数伪称其他版本。
+  主命令 --rc11 --disable-estimation；记录工具实际采用的自动 RA 优化。
+
+Dartagnan: https://github.com/hernanponcedeleon/Dat3M
+  b81ec6c55503e824bb0ddc4ebac6c6f0a63d56d8。
+  按该版本 README 构建 dartagnan/target/dartagnan.jar 及 libs；本轮使用
+  Java 环境见 provenance，C 前端 PATH 指向 /usr/lib/llvm-19/bin。
+  使用 cat/rc11.cat、--target=c11、--property=program_spec、--bound=4，
+  分别 --method=lazy/eager。所有 C 测试为展开的有限直线程序，不含循环。
+  JVM -Xmx2g -XX:ActiveProcessorCount=1 -XX:+UseSerialGC。
+
+Poct: https://doi.org/10.5281/zenodo.18616443
+  使用公开 artifact 的 zord_sc_solver 二进制；这是 Poct，不是另一个版本的 Zord。
+  artifact 内 poct-fm26.tar 的 SHA256：
+  e0984b7ccf8b1b570ba2ccb80b6340d43b4ede39e1f148462bcc5c7c1b675fe2。
+  可以使用原容器，或将二进制和 Boost 1.74 运行库放入 baselines/poct/
+  和 baselines/poct/lib/，设 LD_LIBRARY_PATH。无需复制下载的源码进本仓库。
+  先完成64个原始部分赋值的适配器校准，再运行 --show-statistics 及 --no-prop。
+  Poct 仅比较有 RA=SC 线性化证明的单地址纯生产者/读者族。
+
+Zord 的官方项目页仍可读取：https://thufv.github.io/research/zord 。
+该页链接的旧源码 https://cloud.tsinghua.edu.cn/f/1dba0066f68c44f1a174/?dl=1
+在本轮访问中返回“Link does not exist.”。因此没有编造 Zord 运行结果，
+也没有把 Poct 或 Deagle 改名为 Zord。若后续获得对应源码/二进制，应作为
+新的明确版本补充对照；该页描述的旧 SC 实现也不能冒充2023年的TSO/PSO版本。
+
+实验顺序
+
+  python experiments/paper_suite.py --prepare
+  python experiments/paper_suite.py --suite pilot --out results/paper/pilot --repeats 1 --jobs 3
+  python experiments/paper_suite.py --suite primary --out results/paper/primary --repeats 5 --jobs 1 --censored-once
+  python experiments/paper_external.py --out results/paper/external --repeats 5
+  python experiments/paper_suite.py --suite ablation --out results/paper/ablation --repeats 5 --jobs 1 --censored-once
+  python -m unittest discover -s tests -v
+  python experiments/paper_bdd_direct.py
+  python experiments/paper_poct.py
+  python experiments/paper_stress.py
+  python experiments/paper_frontier_pruning.py
+  python experiments/paper_external_direct.py
+  python experiments/paper_external_repair.py
+  python experiments/paper_sat_strong.py
+  python experiments/paper_bdd_coherence.py
+  python experiments/paper_analyze.py
+  python experiments/paper_plot.py
+
+冻结版本与诊断后的优化
+
+主实验的 ra_frontier.py 快照保存为 provenance/ra_frontier_frozen.py，哈希与
+活动 environment.json 可核对。后续新增 early_degrees=False 的可选剪枝；
+默认关闭，原有调用仍执行相同构造。只有 pruning 活动显式开启，且保持
+同样的20万状态、60万边、120秒构造、180秒进程和4GiB预算。
+随后增加 co_mode='direct'，原 CO 方向直接生成闭包，不再猜测辅助相邻写；
+pruning 和 external_direct 使用此变体。CLI 可指定 --algorithm frontier-direct。
+旧完整构造保留为 --algorithm frontier，便于复现和消融。
+以上命令直接使用当前源码可重跑同一算法合同。若要逐版本复现历史活动，
+在独立副本中先保存当前 ra_frontier.py、ra_bdd_relational.py、paper_external.py，
+再分别用 provenance 中对应 frozen 快照覆盖：primary/ablation/stress 使用旧F，
+bdd_relational/stress 使用旧BDD，原external使用旧包装器。完成这些活动后恢复
+当前文件，再跑 pruning、external_direct、external_repair、sat_strong 和
+bdd_coherence。完整新测试只在恢复当前版本后运行；不能把新接口测试用于旧快照。
+解析器修订是历史审计轨迹，直接用当前包装器重跑时不会重新出现那11个误分类。
+SAT/CUDD 没有内部可中断的120秒构造检查，统一由180秒总进程预算限制，
+这项差异必须保留，不把其152秒编译记录误报为违反180秒总预算。
+
+支持图/SAT/CUDD 后端记录进程最大 RSS（getrusage）；外部工具记录20ms采样
+的整个进程树 RSS，短进程可能未采到，缺失值不是零内存。外部工具耗时通过
+阻塞 wait 捕捉退出时刻，RSS 监视器在另一线程，避免50ms轮询量化掩盖短任务。
+外部 C 前端、我们的有限事件解析、Poct 的直接 SMT 输入不是相同前端成本；
+完整命令、输入、stdout/stderr、性质哈希均保留以供分别解释。
+硬超时前未保存的峰值RSS保留为缺失值；不从现有记录反推不存在的测量。
+
+五次重复仅适用于成功配置。pilot 被截尾的配置先做一次完整正式预算尝试；
+其他配置首个正式资源失败后停止重复，明确记录实际 n。未完成结果不是 UNSAT。
+若用单次成功配置作主要速度比，必须补足五次，不从 n=1 声称稳定加速。
+
+GenMC 结果解析修订：v0.19.0 将断言反例打印为 Safety violation。本轮依据
+ERROR 事件中的文件名和行号，确认它指向生成程序的最终 assert，才记为
+性质可达。原未识别 JSON 分类归档于 provenance/result_parser_original，
+原 stdout/stderr 不修改；补充四次运行位于 external_repair，聚合时与原有效
+一次合并为五次。其他安全错误不能据此当作指定性质可达。
+
+sat_strong 同时运行两个固定策略：原生 UP 后的普通增量反模型搜索，以及
+偏向翻转尚未解决原始位的 phase 策略。phase 只是 SAT 搜索偏好，不改变约束。
+表格保留两种策略。图中若标记 best of 2，表示逐配置取两个完整固定策略中
+较小的中位数，未收费的 oracle 选择对基线有利；不把它包装为新的可执行选择器。
+
+bdd_coherence 对全部28个主配置与6个压力配置使用直接符号关系构造，先施加
+coherence 再施加 CO 传递性，初始变量顺序按事件序号排列并启用动态重排。
+传递性按每个无序三元组的两条不同子句构造，删除六个有序蕴含中的重复项。
+旧版本快照见 provenance/ra_bdd_relational_frozen.py。图表使用已测构造中较小
+的中位数时，同样注明未计费的事后选择；完整表保留各构造的实际结果和失败。
+
+新旧 F 的宽度来自各自实际候选组，不能因相同程序而假定相同。小流水线的
+全序投影计数另外由 paper_projection_diagnostic.py 独立计算，是诊断
+数据；它不是构造算法，也不参与构造或查询的主要计时。
+
+CUDD的浮点模型计数仅在不超过512个原始位时请求，用于小实例诊断。
+超过2^53的计数只保存为estimate，不把舍入后的大整数报告为精确计数；
+大接口不请求该可选统计。完整支持查询不使用模型计数。

@@ -1,0 +1,36 @@
+{
+  "spec": {
+    "name": "non_sc_chain_4",
+    "litmus": "/root/wm-research/project/results/paper/external/inputs/non_sc_chain_4.litmus",
+    "c": "/root/wm-research/project/results/paper/external/inputs/non_sc_chain_4.c",
+    "case": {
+      "family": "non_sc_chain",
+      "n": 4
+    },
+    "dynamic_certificate": false,
+    "events": 32,
+    "litmus_sha256": "76e484694daa5998f5b0a6d152a22a5971da5e80659af626dd7ed5a79598a14d",
+    "c_sha256": "de38c274f8a29cb1ee6b8db950b8da3aac4cdb6f193ec5258e49f6460a46522a",
+    "method": "genmc",
+    "repeat": 0
+  },
+  "status": "ERROR",
+  "process": {
+    "status": "finished",
+    "reason": null,
+    "exit_code": 42,
+    "wall_seconds": 2.244627442998535,
+    "process_tree_peak_rss_kib": 124112.0,
+    "rss_sample_interval_seconds": 0.02,
+    "command": [
+      "/root/wm-research/baselines/genmc/build/bin/genmc",
+      "--rc11",
+      "--disable-estimation",
+      "/root/wm-research/project/results/paper/external/inputs/non_sc_chain_4.c"
+    ],
+    "stdout": "0272.stdout.txt",
+    "stderr": "0272.stderr.txt"
+  },
+  "reason": "unrecognized_GenMC_result",
+  "executions": 43690
+}

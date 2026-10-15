@@ -1,0 +1,36 @@
+{
+  "spec": {
+    "name": "producer_32_11",
+    "litmus": "/root/wm-research/project/results/paper/external/inputs/producer_32_11.litmus",
+    "c": "/root/wm-research/project/results/paper/external/inputs/producer_32_11.c",
+    "case": {
+      "family": "producers",
+      "n": 32
+    },
+    "dynamic_certificate": true,
+    "events": 67,
+    "litmus_sha256": "6b190710e35033e02d63d8334fcb4fe5579d6dab41d8127554d40ee70b3fd56f",
+    "c_sha256": "84f5b3ed2128f842edc97c72d7e2de36f52fb05ef2b4546c82b8a1c89eecc1be",
+    "method": "genmc",
+    "repeat": 0
+  },
+  "status": "ERROR",
+  "process": {
+    "status": "finished",
+    "reason": null,
+    "exit_code": 42,
+    "wall_seconds": 0.05106593900018197,
+    "process_tree_peak_rss_kib": 106076.0,
+    "rss_sample_interval_seconds": 0.02,
+    "command": [
+      "/root/wm-research/baselines/genmc/build/bin/genmc",
+      "--rc11",
+      "--disable-estimation",
+      "/root/wm-research/project/results/paper/external/inputs/producer_32_11.c"
+    ],
+    "stdout": "0479.stdout.txt",
+    "stderr": "0479.stderr.txt"
+  },
+  "reason": "unrecognized_GenMC_result",
+  "executions": 65
+}

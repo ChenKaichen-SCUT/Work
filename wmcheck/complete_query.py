@@ -7,9 +7,14 @@ It is not the proposed propagation algorithm.
 
 
 def forced_by_search(solver,variables,assumptions=(),known=()):
+    variables=set(variables)
+    # An original variable may be unconstrained (e.g. the order of two writes
+    # with one unobserved read). Reserve its ID without restricting either
+    # value; SAT libraries otherwise omit never-mentioned trailing variables.
+    largest=max(variables,default=0)
+    if largest>solver.nof_vars(): solver.add_clause([largest,-largest])
     calls=1
     if not solver.solve(assumptions=list(assumptions)): return False,set(),calls
-    variables=set(variables)
     base={abs(l):l for l in solver.get_model() if abs(l) in variables}
     if set(base)!=variables: raise ValueError('SAT model omitted original variables')
     forced=set(known)|set(assumptions)

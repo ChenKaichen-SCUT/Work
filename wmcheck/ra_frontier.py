@@ -11,7 +11,10 @@ from .regular_monitor import ra_monitors, update
 
 
 def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=30000,
-                     max_edges=200000, max_seconds=90, chain=True, incremental=True, compact=True):
+                     max_edges=200000, max_seconds=90, chain=True, incremental=True, compact=True,
+                     sparse_init=True, early_degrees=False, co_mode='successor'):
+    if co_mode not in ('successor','direct'):
+        raise ValueError('Expected successor or direct CO generators')
     begin = perf_counter(); registry = RARegistry(inst); cert = recognize(inst, chain=chain)
     constants, groups = [], []
     if cert['status'] == 'PROVED_UNSAT':
@@ -29,10 +32,14 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
         fixed('s', a, b)
     # Initialization is HB-before every non-initial event. Do not install H/L
     # dense closures as graph edges: only sb adjacency, init and mandatory RF.
+    # sb adjacency already reaches every later event of the same thread.
+    # Initial-to-first edges therefore have exactly the same transitive HB
+    # closure as initial-to-all edges, without artificially dense frontiers.
+    init_targets = [t[0] for t in inst.threads if t] if sparse_init else [
+        e.id for e in inst.events if e.id not in inst.initial]
     for i in inst.initial:
-        for e in inst.events:
-            if e.id not in inst.initial:
-                fixed('s', i, e.id)
+        for target in init_targets:
+            fixed('s', i, target)
     for v, (kind, a, b) in registry.by_id.items():
         if kind == 'rf':
             if a not in D[b]:
@@ -45,9 +52,18 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
         elif (a, b) in L or (b, a) in L:
             constants.append(v if (a, b) in L else -v)
         else:
-            groups.append(((a, b), [((v,), (('q', a, b),), ()), ((-v,), (('q', b, a),), ())]))
-    for a, b in sorted(cert['successors']):
-        groups.append(((a, b), [((), (), ()), ((), (('c', a, b),), ((a, 2), (b, 1)))]))
+            symbol = 'c' if co_mode == 'direct' else 'q'
+            groups.append(((a, b), [((v,), ((symbol, a, b),), ()), ((-v,), ((symbol, b, a),), ())]))
+    if co_mode == 'direct':
+        # The chosen original CO directions and a cover of mandatory L generate
+        # a total reachability relation. Acyclicity makes its closure a strict
+        # total order; no separate final-successor witness needs to be guessed.
+        for a, b in sorted(L):
+            if not any((a,z) in L and (z,b) in L for z in inst.writes):
+                fixed('c',a,b)
+    else:
+        for a, b in sorted(cert['successors']):
+            groups.append(((a, b), [((), (), ()), ((), (('c', a, b),), ((a, 2), (b, 1)))]))
     # Isolated vertices also need their final degree checks.
     for e in inst.events:
         groups.append(((e.id,), [((), (), ())]))
@@ -58,7 +74,21 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
     rank = {v: i for i, v in enumerate(order)}
     groups.sort(key=lambda g: (max(rank[v] for v in g[0]), min(rank[v] for v in g[0])))
     last = {v: i for i, (vertices, _) in enumerate(groups) for v in vertices}
+    # A required degree can become impossible before its vertex is forgotten.
+    # No suffix can repair degree zero after its last possible increment.
+    degree_deadline = {}
+    if early_degrees:
+        for step, (_, alternatives) in enumerate(groups):
+            for _, _, increments in alternatives:
+                for v, field in increments:
+                    if field == 0 or (field == 1 and v not in inst.initial):
+                        degree_deadline[v, field] = step
+    due = {}
+    for key, step in degree_deadline.items():
+        due.setdefault(step, []).append(key)
     monitors = ra_monitors(compact=compact)
+    if co_mode == 'direct':
+        monitors = monitors[:2]  # RA coherence and CO acyclicity; no Q/c binding.
     recognition_seconds = perf_counter()-begin
     layers, edges = [[0], [1]], [Transition(0, 0, 1, tuple(constants))]
     empty = tuple(() for _ in monitors)
@@ -85,10 +115,12 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
                     local[v] = tuple(current)
                 if reject:
                     continue
+                if early_degrees and any(local[v][field] != 1 for v, field in due.get(step, ())):
+                    continue
                 for v in forgotten:
                     if inst.event[v].kind == 'R' and local[v][0] != 1:
                         reject = True
-                    if inst.event[v].kind == 'W' and v not in inst.initial and local[v][1] != 1:
+                    if co_mode != 'direct' and inst.event[v].kind == 'W' and v not in inst.initial and local[v][1] != 1:
                         reject = True
                 if reject:
                     continue
@@ -108,9 +140,17 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
                         by_summary[state] = target
                 edges.append(Transition(step+1, source, target, label))
                 if nextid > max_states or len(edges) > max_edges:
-                    raise ResourceLimit('Frontier state/edge limit')
+                    error = ResourceLimit('Frontier state/edge limit')
+                    error.stats = dict(states=nextid, transitions=len(edges), step=step,
+                        groups=len(groups), max_interface=width, current_interface=len(active),
+                        max_layer_states=max(max_layer,len(layer)), early_degrees=early_degrees, co_mode=co_mode)
+                    raise error
             if perf_counter()-begin > max_seconds:
-                raise ResourceLimit('Frontier compile time limit')
+                error = ResourceLimit('Frontier compile time limit')
+                error.stats = dict(states=nextid, transitions=len(edges), step=step,
+                    groups=len(groups), max_interface=width, current_interface=len(active),
+                    max_layer_states=max(max_layer,len(layer)), early_degrees=early_degrees, co_mode=co_mode)
+                raise error
         layers.append(layer); states = newstates; before = after; max_layer = max(max_layer, len(layer))
     graph_seconds = perf_counter()-begin
     clauses, nvars = support_cnf(registry, layers, edges) if cnf else ([], registry.nvars)
@@ -127,4 +167,9 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
                  successor_candidates=len(cert['successors']), recognition_steps=len(cert['trace']))
     stats['incremental_closure'] = incremental
     stats['compact_rotation'] = compact
+    stats['sparse_initialization'] = sparse_init
+    stats['early_degrees'] = early_degrees
+    stats['co_mode'] = co_mode
+    if co_mode == 'direct':
+        stats['algorithm'] = 'frontier-direct-co'
     return Compiled(registry, layers, edges, clauses, nvars, stats)

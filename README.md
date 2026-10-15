@@ -33,7 +33,23 @@ their original scope; new RA experiments are recorded separately below.
 
 ## RA construction algorithms
 
-[Construction results](CONSTRUCTION_RESULTS.zh.txt) report the new server runs.
+The expanded [paper evaluation report](PAPER_RESULTS.zh.txt) and
+[reproduction guide](docs/PAPER_REPRODUCE.zh.txt) are the current comparison.
+They add stronger complete SAT and symbolic BDD baselines, native GenMC/
+Dartagnan/Poct checks, and the direct-CO construction improvement. Earlier
+speed ratios against the original SAT baseline are historical measurements;
+they must not be carried forward as claims against the strengthened baseline.
+
+The expanded paper evaluation uses `experiments/paper_suite.py`,
+`paper_external.py`, `paper_bdd_direct.py`, `paper_poct.py`, and `paper_stress.py`.
+Its [protocol](docs/PAPER_EXPERIMENT_PROTOCOL.zh.txt) separates the general RA
+frontier F, the certified single-address specialization D, and range labels G.
+The [adapter proofs](docs/PAPER_EVALUATION_PROOFS.zh.txt) state exactly which
+observable tasks are shared with native tools. Install `requirements-paper.txt`
+for this Linux experiment harness. Downloaded external baselines are excluded
+from the repository.
+
+[Construction results](CONSTRUCTION_RESULTS.zh.txt) preserve the earlier server runs.
 The separate RA entry point supports fixed atomic release/acquire events, with
 no RMW, fences, SC operations, nonatomics or dynamic addresses:
 
@@ -41,6 +57,7 @@ no RMW, fences, SC operations, nonatomics or dynamic addresses:
 python -m wmcheck.ra_cli --family producers --size 32
 python -m wmcheck.ra_cli --family producers --size 32 --dimacs ra.cnf --registry variables.json
 python -m wmcheck.ra_cli --family pipeline --size 1
+python -m wmcheck.ra_cli --family pipeline --size 2 --algorithm frontier-direct
 python -m wmcheck.ra_cli --input ra-instance.json --algorithm frontier
 ```
 
@@ -56,6 +73,9 @@ python -m wmcheck.ra_cli --input ra-instance.json --algorithm frontier
 - Incremental transitive closure and paired rotation acceptance reduce product
   matrix costs. They preserve exact common-witness semantics; the backend still
   has potentially exponential state growth and explicit resource limits.
+- `--algorithm frontier-direct` uses original CO directions as closure
+  generators, avoiding separate final-successor guesses. Its equivalence proof
+  and post-diagnosis comparisons are kept separate from the frozen main run.
 - All original RF/CO bits remain queryable, including recognized constants.
   Unsupported specialization is `OUTSIDE_CERTIFICATE`; resource exhaustion is
   `UNKNOWN`. Completed graphs return all forced original literals without

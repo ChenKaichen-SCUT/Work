@@ -1,0 +1,36 @@
+{
+  "spec": {
+    "name": "sb_1",
+    "litmus": "/root/wm-research/project/results/paper/external/inputs/sb_1.litmus",
+    "c": "/root/wm-research/project/results/paper/external/inputs/sb_1.c",
+    "case": {
+      "family": "sb",
+      "n": 1
+    },
+    "dynamic_certificate": false,
+    "events": 6,
+    "litmus_sha256": "d484ae55791b283a2d40de48a7b62207c16dd0f1cacab4db568ad0ddd6cf45dd",
+    "c_sha256": "223d38c497f6ec8cc99d4aee645d6336e4242af34c3db3d33da0018376196f5d",
+    "method": "genmc",
+    "repeat": 0
+  },
+  "status": "ERROR",
+  "process": {
+    "status": "finished",
+    "reason": null,
+    "exit_code": 42,
+    "wall_seconds": 0.043546496000089974,
+    "process_tree_peak_rss_kib": 127172.0,
+    "rss_sample_interval_seconds": 0.02,
+    "command": [
+      "/root/wm-research/baselines/genmc/build/bin/genmc",
+      "--rc11",
+      "--disable-estimation",
+      "/root/wm-research/project/results/paper/external/inputs/sb_1.c"
+    ],
+    "stdout": "0158.stdout.txt",
+    "stderr": "0158.stderr.txt"
+  },
+  "reason": "unrecognized_GenMC_result",
+  "executions": 0
+}

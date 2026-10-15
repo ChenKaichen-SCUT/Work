@@ -1,0 +1,83 @@
+{
+  "platform": "Linux-5.15.0-186-generic-x86_64-with-glibc2.35",
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "cpu_affinity": [
+    7
+  ],
+  "commands": {
+    "cpu": {
+      "command": [
+        "lscpu"
+      ],
+      "returncode": 0,
+      "output": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           52 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  8\nOn-line CPU(s) list:                     0-7\nVendor ID:                               AuthenticAMD\nModel name:                              General Purpose Processor\nCPU family:                              25\nModel:                                   17\nThread(s) per core:                      2\nCore(s) per socket:                      4\nSocket(s):                               1\nStepping:                                1\nBogoMIPS:                                4799.98\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core invpcid_single ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx512_bf16 clzero xsaveerptr wbnoinvd arat avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               128 KiB (4 instances)\nL1i cache:                               128 KiB (4 instances)\nL2 cache:                                4 MiB (4 instances)\nL3 cache:                                32 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-7\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Mitigation; safe RET, no microcode\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl and seccomp\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP conditional; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Vulnerable: Clear CPU buffers attempted, no microcode\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected\n"
+    },
+    "os": {
+      "command": [
+        "cat",
+        "/etc/os-release"
+      ],
+      "returncode": 0,
+      "output": "PRETTY_NAME=\"Ubuntu 22.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"22.04\"\nVERSION=\"22.04.5 LTS (Jammy Jellyfish)\"\nVERSION_CODENAME=jammy\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=jammy\n"
+    },
+    "kernel": {
+      "command": [
+        "uname",
+        "-srmo"
+      ],
+      "returncode": 0,
+      "output": "Linux 5.15.0-186-generic x86_64 GNU/Linux\n"
+    },
+    "memory": {
+      "command": [
+        "free",
+        "-b"
+      ],
+      "returncode": 0,
+      "output": "               total        used        free      shared  buff/cache   available\nMem:     32254509056   466575360 28662022144     2711552  3125911552 31324717056\nSwap:              0           0           0\n"
+    },
+    "python_packages": {
+      "command": [
+        "/root/wm-research/runtime/bin/python",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "returncode": 0,
+      "output": "astutils==0.0.6\ndd==0.5.7\nnetworkx==3.4.2\nply==3.10\npsutil==7.2.2\npydot==4.0.1\npyparsing==3.3.3\npython-sat==1.8.dev30\nsix==1.17.0\n"
+    },
+    "java": {
+      "command": [
+        "java",
+        "-version"
+      ],
+      "returncode": 0,
+      "output": "openjdk version \"17.0.20.1\" 2026-08-18\nOpenJDK Runtime Environment (build 17.0.20.1+1-1-22.04-Ubuntu)\nOpenJDK 64-Bit Server VM (build 17.0.20.1+1-1-22.04-Ubuntu, mixed mode, sharing)\n"
+    },
+    "clang": {
+      "command": [
+        "/usr/lib/llvm-19/bin/clang",
+        "--version"
+      ],
+      "returncode": 0,
+      "output": "Ubuntu clang version 19.1.7 (++20250114103320+cd708029e0b2-1~exp1~20250114103432.75)\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/lib/llvm-19/bin\n"
+    },
+    "genmc_version": {
+      "command": [
+        "/root/wm-research/baselines/genmc/build/bin/genmc",
+        "--version"
+      ],
+      "returncode": 0,
+      "output": "GenMC (https://plv.mpi-sws.org/genmc):\n  GenMC v0.19.0 (commit #9f6c4c0)\n  Built with LLVM 19.1.7 (RelWithDebInfo)\n"
+    }
+  },
+  "baseline_revisions": {
+    "genmc": "9f6c4c0772d0c42b325681581acc6a0f3eb9b5f7",
+    "Dat3M": "b81ec6c55503e824bb0ddc4ebac6c6f0a63d56d8"
+  },
+  "baseline_binaries_sha256": {
+    "genmc": "e993296f2a7188aa25a4861ee4649b4037a94707955d3ddb4fe1bd4b32a25327",
+    "dartagnan": "6f5e57864e978657c315d526fb304e285375d9a52132e46ea3dab5446ab0e17e",
+    "poct": "cb28fe4d26f43de2e131597d5022e260c060b73e77e2f6803727b1ea6f136ea8"
+  }
+}

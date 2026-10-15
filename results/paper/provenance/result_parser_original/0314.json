@@ -1,0 +1,53 @@
+{
+  "spec": {
+    "name": "imm-E3.8",
+    "litmus": "/root/wm-research/project/results/paper/external/inputs/imm-E3.8.litmus",
+    "c": "/root/wm-research/project/results/paper/external/inputs/imm-E3.8.c",
+    "case": {
+      "family": "public",
+      "input": "/root/wm-research/project/results/paper/inputs/public_8587e8934270.json",
+      "name": "imm-E3.8",
+      "id": "c027",
+      "events": 8,
+      "variables": 6,
+      "queries": "/root/wm-research/project/results/paper/inputs/c027_queries.json",
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb",
+      "dynamic_certificate": false,
+      "recognition": {
+        "status": "RECOGNIZED",
+        "initial_rf": 4,
+        "certified_rf": 4,
+        "steps": 4
+      },
+      "interface": {
+        "width": 5,
+        "groups": 24
+      }
+    },
+    "dynamic_certificate": false,
+    "events": 8,
+    "litmus_sha256": "adbe8d35c93e6f37fe52e2cbf561494b7e7f4aad6a7baf341f15581999f511f4",
+    "c_sha256": "c382ef0425fe68982ebde0ad4813016d9efeb3b827681424cd8a10a288b60cd7",
+    "method": "genmc",
+    "repeat": 0
+  },
+  "status": "ERROR",
+  "process": {
+    "status": "finished",
+    "reason": null,
+    "exit_code": 42,
+    "wall_seconds": 0.044486873999630916,
+    "process_tree_peak_rss_kib": 128584.0,
+    "rss_sample_interval_seconds": 0.02,
+    "command": [
+      "/root/wm-research/baselines/genmc/build/bin/genmc",
+      "--rc11",
+      "--disable-estimation",
+      "/root/wm-research/project/results/paper/external/inputs/imm-E3.8.c"
+    ],
+    "stdout": "0314.stdout.txt",
+    "stderr": "0314.stderr.txt"
+  },
+  "reason": "unrecognized_GenMC_result",
+  "executions": 10
+}
