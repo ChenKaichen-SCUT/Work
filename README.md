@@ -40,6 +40,14 @@ Dartagnan/Poct checks, and the direct-CO construction improvement. Earlier
 speed ratios against the original SAT baseline are historical measurements;
 they must not be carried forward as claims against the strengthened baseline.
 
+The subsequent [future-port algorithm and proof](docs/FUTURE_PORT_THEOREMS.zh.txt)
+refine the general RA summary to future incoming/outgoing product ports, while
+preserving exactly-one-mark conflict paths and original RF/CO support. Its
+[development validation](results/ports_development/comparison.json) is separate
+from the frozen paper campaign; single development timings are not final speed
+estimates. [When compilation pays off](docs/COMPILATION_ECONOMICS.zh.txt) analyses
+every measured query prefix in the existing data without assuming amortization.
+
 The expanded paper evaluation uses `experiments/paper_suite.py`,
 `paper_external.py`, `paper_bdd_direct.py`, `paper_poct.py`, and `paper_stress.py`.
 Its [protocol](docs/PAPER_EXPERIMENT_PROTOCOL.zh.txt) separates the general RA
@@ -58,6 +66,7 @@ python -m wmcheck.ra_cli --family producers --size 32
 python -m wmcheck.ra_cli --family producers --size 32 --dimacs ra.cnf --registry variables.json
 python -m wmcheck.ra_cli --family pipeline --size 1
 python -m wmcheck.ra_cli --family pipeline --size 2 --algorithm frontier-direct
+python -m wmcheck.ra_cli --family pipeline --size 3 --algorithm frontier-ports
 python -m wmcheck.ra_cli --input ra-instance.json --algorithm frontier
 ```
 
@@ -76,6 +85,9 @@ python -m wmcheck.ra_cli --input ra-instance.json --algorithm frontier
 - `--algorithm frontier-direct` uses original CO directions as closure
   generators, avoiding separate final-successor guesses. Its equivalence proof
   and post-diagnosis comparisons are kept separate from the frozen main run.
+- `--algorithm frontier-ports` projects the direct-CO summaries to future edge
+  targets and sources. It merges histories during construction and retains
+  joint ordinary/one-mark paths; it does not enumerate complete assignments.
 - All original RF/CO bits remain queryable, including recognized constants.
   Unsupported specialization is `OUTSIDE_CERTIFICATE`; resource exhaustion is
   `UNKNOWN`. Completed graphs return all forced original literals without

@@ -8,13 +8,21 @@ from time import perf_counter
 from .ra import RARegistry, recognize
 from .compiler import Compiled, Transition, ResourceLimit, support_cnf
 from .regular_monitor import ra_monitors, update
+from .port_monitor import ra_port_monitors, plan_ports
 
 
 def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=30000,
                      max_edges=200000, max_seconds=90, chain=True, incremental=True, compact=True,
-                     sparse_init=True, early_degrees=False, co_mode='successor'):
+                     sparse_init=True, early_degrees=False, co_mode='successor',
+                     summary_mode='full'):
     if co_mode not in ('successor','direct'):
         raise ValueError('Expected successor or direct CO generators')
+    if summary_mode not in ('full', 'ports'):
+        raise ValueError('Expected full or ports summary')
+    if summary_mode == 'ports' and co_mode != 'direct':
+        raise ValueError('Future-port summaries currently require direct CO generators')
+    if summary_mode == 'ports' and (not incremental or not compact):
+        raise ValueError('Future-port summaries use their own incremental one-mark monitor encoding')
     begin = perf_counter(); registry = RARegistry(inst); cert = recognize(inst, chain=chain)
     constants, groups = [], []
     if cert['status'] == 'PROVED_UNSAT':
@@ -89,23 +97,29 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
     monitors = ra_monitors(compact=compact)
     if co_mode == 'direct':
         monitors = monitors[:2]  # RA coherence and CO acyclicity; no Q/c binding.
+    port_plans = None
+    if summary_mode == 'ports':
+        monitors = ra_port_monitors()
+        port_plans = plan_ports(monitors, groups)
     recognition_seconds = perf_counter()-begin
     layers, edges = [[0], [1]], [Transition(0, 0, 1, tuple(constants))]
-    empty = tuple(() for _ in monitors)
+    empty = tuple(((), ()) if port_plans is not None else () for _ in monitors)
     states, nextid = {1: (empty, ())}, 2
     before = (); attempts = 0; width = 0; layer_width = []; max_layer = 1
+    monitor_updates = 0; monitor_cache_hits = 0
     for step, (vertices, alternatives) in enumerate(groups):
         active = tuple(sorted(set(before) | set(vertices), key=rank.get))
         after = tuple(v for v in active if last[v] != step)
         forgotten = set(active)-set(after)
         width = max(width, len(active)); layer_width.append(len(active))
         newstates, by_summary, layer = {}, {}, []
+        monitor_caches = [{} for _ in monitors]
         for source in layers[-1]:
             matrices, degrees = states[source]
             counts = dict(zip(before, degrees))
             for v in active:
                 counts.setdefault(v, (0, 0, 0))
-            for label, additions, increments in alternatives:
+            for alternative_index, (label, additions, increments) in enumerate(alternatives):
                 attempts += 1
                 local = dict(counts); reject = False
                 for v, field in increments:
@@ -125,8 +139,18 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
                 if reject:
                     continue
                 newmat = []
-                for monitor, matrix in zip(monitors, matrices):
-                    result = update(monitor, matrix, before, active, after, additions, incremental=incremental)
+                for monitor_index, (monitor, matrix) in enumerate(zip(monitors, matrices)):
+                    if port_plans is None:
+                        result = update(monitor, matrix, before, active, after, additions, incremental=incremental)
+                        monitor_updates += 1
+                    else:
+                        cache = monitor_caches[monitor_index]
+                        key = (matrix, alternative_index)
+                        if key in cache:
+                            result = cache[key]; monitor_cache_hits += 1
+                        else:
+                            result = port_plans[monitor_index][step].update(matrix, alternative_index)
+                            cache[key] = result; monitor_updates += 1
                     if result is None:
                         reject = True; break
                     newmat.append(result)
@@ -143,13 +167,15 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
                     error = ResourceLimit('Frontier state/edge limit')
                     error.stats = dict(states=nextid, transitions=len(edges), step=step,
                         groups=len(groups), max_interface=width, current_interface=len(active),
-                        max_layer_states=max(max_layer,len(layer)), early_degrees=early_degrees, co_mode=co_mode)
+                        max_layer_states=max(max_layer,len(layer)), early_degrees=early_degrees,
+                        co_mode=co_mode, summary_mode=summary_mode)
                     raise error
             if perf_counter()-begin > max_seconds:
                 error = ResourceLimit('Frontier compile time limit')
                 error.stats = dict(states=nextid, transitions=len(edges), step=step,
                     groups=len(groups), max_interface=width, current_interface=len(active),
-                    max_layer_states=max(max_layer,len(layer)), early_degrees=early_degrees, co_mode=co_mode)
+                    max_layer_states=max(max_layer,len(layer)), early_degrees=early_degrees,
+                    co_mode=co_mode, summary_mode=summary_mode)
                 raise error
         layers.append(layer); states = newstates; before = after; max_layer = max(max_layer, len(layer))
     graph_seconds = perf_counter()-begin
@@ -166,10 +192,20 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
                  initial_rf=sum(map(len, inst.candidates.values())), mandatory_rf=len(mandatory),
                  successor_candidates=len(cert['successors']), recognition_steps=len(cert['trace']))
     stats['incremental_closure'] = incremental
-    stats['compact_rotation'] = compact
+    stats['compact_rotation'] = compact if port_plans is None else None
+    stats['monitor_encoding'] = 'one-mark-ports' if port_plans is not None else 'rotation'
     stats['sparse_initialization'] = sparse_init
     stats['early_degrees'] = early_degrees
     stats['co_mode'] = co_mode
+    stats['summary_mode'] = summary_mode
+    stats['monitor_updates'] = monitor_updates
+    stats['monitor_cache_hits'] = monitor_cache_hits
     if co_mode == 'direct':
         stats['algorithm'] = 'frontier-direct-co'
+    if port_plans is not None:
+        stats['algorithm'] = 'frontier-ports'
+        stats['max_port_coordinates'] = max((sum(
+            (1 if plans[step].acyclic else 2) * len(plans[step].after_inputs) * len(plans[step].after_outputs)
+            for plans in port_plans) for step in range(len(groups))), default=0)
+        stats['max_product_vertices'] = [max((p.width for p in plans), default=0) for plans in port_plans]
     return Compiled(registry, layers, edges, clauses, nvars, stats)

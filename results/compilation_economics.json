@@ -1,0 +1,3778 @@
+{
+  "source_analysis_sha256": "a295235937b80fc65681fca507f5d3c474b952201ed732a75a2276daef788952",
+  "interpretation": "Measured ordered prefixes only. Five successful repeats per strategy. No inference beyond 512 or to other workloads.",
+  "comparator": "Pointwise best measured strategy, selection cost uncharged; not an implementable online selection claim.",
+  "new_ports_algorithm_included": false,
+  "rows": [
+    {
+      "id": "c000",
+      "case": {
+        "family": "producers",
+        "n": 2,
+        "id": "c000",
+        "events": 7,
+        "variables": 18,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 8,
+          "certified_rf": 8,
+          "steps": 0
+        },
+        "interface": {
+          "width": 6,
+          "groups": 37
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 8,
+      "sustained_through_512_from": 8,
+      "winning_prefixes": 505,
+      "checkpoints": {
+        "1": {
+          "ours": 0.0003049179995286977,
+          "baseline": 0.00015751399951113854
+        },
+        "8": {
+          "ours": 0.0004525120002654148,
+          "baseline": 0.00045970100109116174
+        },
+        "64": {
+          "ours": 0.0014429990078497212,
+          "baseline": 0.002103770999383414
+        },
+        "512": {
+          "ours": 0.00925093001114874,
+          "baseline": 0.015563253986329073
+        }
+      },
+      "source_records": [
+        "primary/0213.json",
+        "primary/0331.json",
+        "primary/0371.json",
+        "primary/0421.json",
+        "primary/0482.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0005.json",
+        "sat_strong/0006.json",
+        "sat_strong/0007.json",
+        "sat_strong/0008.json",
+        "sat_strong/0009.json",
+        "sat_strong/0000.json",
+        "sat_strong/0001.json",
+        "sat_strong/0002.json",
+        "sat_strong/0003.json",
+        "sat_strong/0004.json"
+      ],
+      "query_sha256": "9b95f90a2affd8cb00fe030e877cd55fcb244032e5592c0e3284425083495d45"
+    },
+    {
+      "id": "c000",
+      "case": {
+        "family": "producers",
+        "n": 2,
+        "id": "c000",
+        "events": 7,
+        "variables": 18,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 8,
+          "certified_rf": 8,
+          "steps": 0
+        },
+        "interface": {
+          "width": 6,
+          "groups": 37
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.0003049179995286977,
+          "baseline": 0.011131217999718501
+        },
+        "8": {
+          "ours": 0.0004525120002654148,
+          "baseline": 0.011707932000717847
+        },
+        "64": {
+          "ours": 0.0014429990078497212,
+          "baseline": 0.01553629999034456
+        },
+        "512": {
+          "ours": 0.00925093001114874,
+          "baseline": 0.04786392900859937
+        }
+      },
+      "source_records": [
+        "primary/0213.json",
+        "primary/0331.json",
+        "primary/0371.json",
+        "primary/0421.json",
+        "primary/0482.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0000.json",
+        "bdd_coherence/0001.json",
+        "bdd_coherence/0002.json",
+        "bdd_coherence/0003.json",
+        "bdd_coherence/0004.json"
+      ],
+      "query_sha256": "9b95f90a2affd8cb00fe030e877cd55fcb244032e5592c0e3284425083495d45"
+    },
+    {
+      "id": "c001",
+      "case": {
+        "family": "producers",
+        "n": 4,
+        "id": "c001",
+        "events": 11,
+        "variables": 52,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 16,
+          "certified_rf": 16,
+          "steps": 0
+        },
+        "interface": {
+          "width": 9,
+          "groups": 93
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 19,
+      "sustained_through_512_from": 19,
+      "winning_prefixes": 494,
+      "checkpoints": {
+        "1": {
+          "ours": 0.0010835559996849042,
+          "baseline": 0.00038319899795169476
+        },
+        "8": {
+          "ours": 0.0015038639999147563,
+          "baseline": 0.0012026399999740534
+        },
+        "64": {
+          "ours": 0.0043607650013655075,
+          "baseline": 0.005860509001649916
+        },
+        "512": {
+          "ours": 0.027204696002627315,
+          "baseline": 0.04575248600849591
+        }
+      },
+      "source_records": [
+        "primary/0008.json",
+        "primary/0012.json",
+        "primary/0269.json",
+        "primary/0418.json",
+        "primary/0523.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0015.json",
+        "sat_strong/0016.json",
+        "sat_strong/0017.json",
+        "sat_strong/0018.json",
+        "sat_strong/0019.json",
+        "sat_strong/0010.json",
+        "sat_strong/0011.json",
+        "sat_strong/0012.json",
+        "sat_strong/0013.json",
+        "sat_strong/0014.json"
+      ],
+      "query_sha256": "0481c0d0ecb777d67cf7fed0781bf8b9549477a33a602d1d9703fd1cd908462b"
+    },
+    {
+      "id": "c001",
+      "case": {
+        "family": "producers",
+        "n": 4,
+        "id": "c001",
+        "events": 11,
+        "variables": 52,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 16,
+          "certified_rf": 16,
+          "steps": 0
+        },
+        "interface": {
+          "width": 9,
+          "groups": 93
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.0010835559996849042,
+          "baseline": 0.02795115099979739
+        },
+        "8": {
+          "ours": 0.0015038639999147563,
+          "baseline": 0.03119922299811151
+        },
+        "64": {
+          "ours": 0.0043607650013655075,
+          "baseline": 0.05389143599495583
+        },
+        "512": {
+          "ours": 0.027204696002627315,
+          "baseline": 0.2521213849904598
+        }
+      },
+      "source_records": [
+        "primary/0008.json",
+        "primary/0012.json",
+        "primary/0269.json",
+        "primary/0418.json",
+        "primary/0523.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0005.json",
+        "bdd_coherence/0006.json",
+        "bdd_coherence/0007.json",
+        "bdd_coherence/0008.json",
+        "bdd_coherence/0009.json"
+      ],
+      "query_sha256": "0481c0d0ecb777d67cf7fed0781bf8b9549477a33a602d1d9703fd1cd908462b"
+    },
+    {
+      "id": "c002",
+      "case": {
+        "family": "producers",
+        "n": 8,
+        "id": "c002",
+        "events": 19,
+        "variables": 168,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 32,
+          "certified_rf": 32,
+          "steps": 0
+        },
+        "interface": {
+          "width": 17,
+          "groups": 277
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 20,
+      "sustained_through_512_from": 20,
+      "winning_prefixes": 493,
+      "checkpoints": {
+        "1": {
+          "ours": 0.004661171999487124,
+          "baseline": 0.0013454629988700617
+        },
+        "8": {
+          "ours": 0.005872129999261233,
+          "baseline": 0.004035589001432527
+        },
+        "64": {
+          "ours": 0.014373042004081071,
+          "baseline": 0.023551315001896
+        },
+        "512": {
+          "ours": 0.0841853810052271,
+          "baseline": 0.18349316500643909
+        }
+      },
+      "source_records": [
+        "primary/0022.json",
+        "primary/0373.json",
+        "primary/0379.json",
+        "primary/0380.json",
+        "primary/0405.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0025.json",
+        "sat_strong/0026.json",
+        "sat_strong/0027.json",
+        "sat_strong/0028.json",
+        "sat_strong/0029.json",
+        "sat_strong/0020.json",
+        "sat_strong/0021.json",
+        "sat_strong/0022.json",
+        "sat_strong/0023.json",
+        "sat_strong/0024.json"
+      ],
+      "query_sha256": "e79391cea836af906c4b62022fcef0113ab0fb4576995a32bd7a8a84cd9309d5"
+    },
+    {
+      "id": "c002",
+      "case": {
+        "family": "producers",
+        "n": 8,
+        "id": "c002",
+        "events": 19,
+        "variables": 168,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 32,
+          "certified_rf": 32,
+          "steps": 0
+        },
+        "interface": {
+          "width": 17,
+          "groups": 277
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.004661171999487124,
+          "baseline": 2.889204497998435
+        },
+        "8": {
+          "ours": 0.005872129999261233,
+          "baseline": 2.915247017997899
+        },
+        "64": {
+          "ours": 0.014373042004081071,
+          "baseline": 3.0956029599892645
+        },
+        "512": {
+          "ours": 0.0841853810052271,
+          "baseline": 4.724634964008146
+        }
+      },
+      "source_records": [
+        "primary/0022.json",
+        "primary/0373.json",
+        "primary/0379.json",
+        "primary/0380.json",
+        "primary/0405.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0010.json",
+        "bdd_coherence/0011.json",
+        "bdd_coherence/0012.json",
+        "bdd_coherence/0013.json",
+        "bdd_coherence/0014.json"
+      ],
+      "query_sha256": "e79391cea836af906c4b62022fcef0113ab0fb4576995a32bd7a8a84cd9309d5"
+    },
+    {
+      "id": "c003",
+      "case": {
+        "family": "producers",
+        "n": 16,
+        "id": "c003",
+        "events": 35,
+        "variables": 592,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 64,
+          "certified_rf": 64,
+          "steps": 0
+        },
+        "interface": {
+          "width": 33,
+          "groups": 933
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 11,
+      "sustained_through_512_from": 11,
+      "winning_prefixes": 502,
+      "checkpoints": {
+        "1": {
+          "ours": 0.021357188999900245,
+          "baseline": 0.005903219996980624
+        },
+        "8": {
+          "ours": 0.025579555000149412,
+          "baseline": 0.022104797997599235
+        },
+        "64": {
+          "ours": 0.05574662699291366,
+          "baseline": 0.12889885399818013
+        },
+        "512": {
+          "ours": 0.3030895780057108,
+          "baseline": 0.9892346189953969
+        }
+      },
+      "source_records": [
+        "primary/0150.json",
+        "primary/0264.json",
+        "primary/0414.json",
+        "primary/0444.json",
+        "primary/0498.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0035.json",
+        "sat_strong/0036.json",
+        "sat_strong/0037.json",
+        "sat_strong/0038.json",
+        "sat_strong/0039.json",
+        "sat_strong/0030.json",
+        "sat_strong/0031.json",
+        "sat_strong/0032.json",
+        "sat_strong/0033.json",
+        "sat_strong/0034.json"
+      ],
+      "query_sha256": "912946a9ced5ad002b4d9a2c9df7ee8ff88e92ede6f68c2986149ba629a80e8b"
+    },
+    {
+      "id": "c004",
+      "case": {
+        "family": "producers",
+        "n": 32,
+        "id": "c004",
+        "events": 67,
+        "variables": 2208,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 128,
+          "certified_rf": 128,
+          "steps": 0
+        },
+        "interface": {
+          "width": 65,
+          "groups": 3397
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 11,
+      "sustained_through_512_from": 11,
+      "winning_prefixes": 502,
+      "checkpoints": {
+        "1": {
+          "ours": 0.12743942399993102,
+          "baseline": 0.03392715799964208
+        },
+        "8": {
+          "ours": 0.14394423799785727,
+          "baseline": 0.14172450399746594
+        },
+        "64": {
+          "ours": 0.2633759510008531,
+          "baseline": 0.8393692100034968
+        },
+        "512": {
+          "ours": 1.2206348719928428,
+          "baseline": 6.538205286004086
+        }
+      },
+      "source_records": [
+        "primary/0100.json",
+        "primary/0149.json",
+        "primary/0217.json",
+        "primary/0314.json",
+        "primary/0514.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0045.json",
+        "sat_strong/0046.json",
+        "sat_strong/0047.json",
+        "sat_strong/0048.json",
+        "sat_strong/0049.json",
+        "sat_strong/0040.json",
+        "sat_strong/0041.json",
+        "sat_strong/0042.json",
+        "sat_strong/0043.json",
+        "sat_strong/0044.json"
+      ],
+      "query_sha256": "b80da9b76c9de74b5abc6038e74e15647ff67f5674ec3b99169b59f68b4197f7"
+    },
+    {
+      "id": "c005",
+      "case": {
+        "family": "producers",
+        "n": 64,
+        "id": "c005",
+        "events": 131,
+        "variables": 8512,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 256,
+          "certified_rf": 256,
+          "steps": 0
+        },
+        "interface": {
+          "width": 129,
+          "groups": 12933
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 8,
+      "sustained_through_512_from": 8,
+      "winning_prefixes": 505,
+      "checkpoints": {
+        "1": {
+          "ours": 0.8327085529999749,
+          "baseline": 0.22823111499747029
+        },
+        "8": {
+          "ours": 0.901200304001577,
+          "baseline": 0.9247157429999788
+        },
+        "64": {
+          "ours": 1.418097161003061,
+          "baseline": 5.531508759995631
+        },
+        "512": {
+          "ours": 5.596819556989431,
+          "baseline": 51.24166383700867
+        }
+      },
+      "source_records": [
+        "primary/0154.json",
+        "primary/0159.json",
+        "primary/0184.json",
+        "primary/0199.json",
+        "primary/0453.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0055.json",
+        "sat_strong/0056.json",
+        "sat_strong/0057.json",
+        "sat_strong/0058.json",
+        "sat_strong/0059.json",
+        "sat_strong/0050.json",
+        "sat_strong/0051.json",
+        "sat_strong/0052.json",
+        "sat_strong/0053.json",
+        "sat_strong/0054.json"
+      ],
+      "query_sha256": "dcaa727446e9ae386c0f31f05684fc66eac1500d8bb2400c7d0a2a9256c386d4"
+    },
+    {
+      "id": "c007",
+      "case": {
+        "family": "producers",
+        "n": 4,
+        "writers": 3,
+        "id": "c007",
+        "events": 15,
+        "variables": 102,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 24,
+          "certified_rf": 24,
+          "steps": 0
+        },
+        "interface": {
+          "width": 13,
+          "groups": 209
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.011544160999619635,
+          "baseline": 0.003245799998694565
+        },
+        "8": {
+          "ours": 0.014326324000649038,
+          "baseline": 0.00474710500020592
+        },
+        "64": {
+          "ours": 0.033914598998308065,
+          "baseline": 0.016227895002884907
+        },
+        "512": {
+          "ours": 0.19739832000414026,
+          "baseline": 0.11443511699690134
+        }
+      },
+      "source_records": [
+        "primary/0182.json",
+        "primary/0272.json",
+        "primary/0279.json",
+        "primary/0424.json",
+        "primary/0525.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0067.json",
+        "sat_strong/0068.json",
+        "sat_strong/0069.json",
+        "sat_strong/0070.json",
+        "sat_strong/0071.json",
+        "sat_strong/0062.json",
+        "sat_strong/0063.json",
+        "sat_strong/0064.json",
+        "sat_strong/0065.json",
+        "sat_strong/0066.json"
+      ],
+      "query_sha256": "608d1fc5edc6f27d186f4cdc63523b5c7be047cbfdf8953c363467cb75bb015d"
+    },
+    {
+      "id": "c007",
+      "case": {
+        "family": "producers",
+        "n": 4,
+        "writers": 3,
+        "id": "c007",
+        "events": 15,
+        "variables": 102,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 24,
+          "certified_rf": 24,
+          "steps": 0
+        },
+        "interface": {
+          "width": 13,
+          "groups": 209
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.011544160999619635,
+          "baseline": 4.84482892199776
+        },
+        "8": {
+          "ours": 0.014326324000649038,
+          "baseline": 4.996650182998565
+        },
+        "64": {
+          "ours": 0.033914598998308065,
+          "baseline": 5.866122004008503
+        },
+        "512": {
+          "ours": 0.19739832000414026,
+          "baseline": 12.756461203998697
+        }
+      },
+      "source_records": [
+        "primary/0182.json",
+        "primary/0272.json",
+        "primary/0279.json",
+        "primary/0424.json",
+        "primary/0525.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0019.json",
+        "bdd_coherence/0020.json",
+        "bdd_coherence/0021.json",
+        "bdd_coherence/0022.json",
+        "bdd_coherence/0023.json"
+      ],
+      "query_sha256": "608d1fc5edc6f27d186f4cdc63523b5c7be047cbfdf8953c363467cb75bb015d"
+    },
+    {
+      "id": "c008",
+      "case": {
+        "family": "producers",
+        "n": 4,
+        "writers": 4,
+        "id": "c008",
+        "events": 19,
+        "variables": 168,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 32,
+          "certified_rf": 32,
+          "steps": 0
+        },
+        "interface": {
+          "width": 17,
+          "groups": 373
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.11782470300022396,
+          "baseline": 0.007496913000068162
+        },
+        "8": {
+          "ours": 0.13824154899975838,
+          "baseline": 0.010504878000574536
+        },
+        "64": {
+          "ours": 0.2821891060002599,
+          "baseline": 0.03482553099820507
+        },
+        "512": {
+          "ours": 1.4880340990002878,
+          "baseline": 0.24190566001016123
+        }
+      },
+      "source_records": [
+        "primary/0090.json",
+        "primary/0187.json",
+        "primary/0335.json",
+        "primary/0491.json",
+        "primary/0512.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0077.json",
+        "sat_strong/0078.json",
+        "sat_strong/0079.json",
+        "sat_strong/0080.json",
+        "sat_strong/0081.json",
+        "sat_strong/0072.json",
+        "sat_strong/0073.json",
+        "sat_strong/0074.json",
+        "sat_strong/0075.json",
+        "sat_strong/0076.json"
+      ],
+      "query_sha256": "0799566b52ec1750b13671f8cfc3812615cccf7fa0ea393dadd38143eac3646b"
+    },
+    {
+      "id": "c009",
+      "case": {
+        "family": "producers",
+        "n": 8,
+        "readers": 2,
+        "id": "c009",
+        "events": 21,
+        "variables": 200,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 64,
+          "certified_rf": 64,
+          "steps": 0
+        },
+        "interface": {
+          "width": 19,
+          "groups": 313
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 327,
+      "sustained_through_512_from": 331,
+      "winning_prefixes": 183,
+      "checkpoints": {
+        "1": {
+          "ours": 0.013699507999717753,
+          "baseline": 0.002445120000629686
+        },
+        "8": {
+          "ours": 0.017698762000236457,
+          "baseline": 0.006710302001010859
+        },
+        "64": {
+          "ours": 0.04605671799981792,
+          "baseline": 0.03644217600231059
+        },
+        "512": {
+          "ours": 0.2676997949915858,
+          "baseline": 0.2850261940056953
+        }
+      },
+      "source_records": [
+        "primary/0004.json",
+        "primary/0024.json",
+        "primary/0113.json",
+        "primary/0443.json",
+        "primary/0549.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0087.json",
+        "sat_strong/0088.json",
+        "sat_strong/0089.json",
+        "sat_strong/0090.json",
+        "sat_strong/0091.json",
+        "sat_strong/0082.json",
+        "sat_strong/0083.json",
+        "sat_strong/0084.json",
+        "sat_strong/0085.json",
+        "sat_strong/0086.json"
+      ],
+      "query_sha256": "1aaed4adf56f65e8daea3c1ae0c3ba990b0541ed0d6b38e47b16f55babe227f0"
+    },
+    {
+      "id": "c009",
+      "case": {
+        "family": "producers",
+        "n": 8,
+        "readers": 2,
+        "id": "c009",
+        "events": 21,
+        "variables": 200,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 64,
+          "certified_rf": 64,
+          "steps": 0
+        },
+        "interface": {
+          "width": 19,
+          "groups": 313
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.013699507999717753,
+          "baseline": 55.696631202999924
+        },
+        "8": {
+          "ours": 0.017698762000236457,
+          "baseline": 55.836515953000344
+        },
+        "64": {
+          "ours": 0.04605671799981792,
+          "baseline": 57.11963650499092
+        },
+        "512": {
+          "ours": 0.2676997949915858,
+          "baseline": 67.67455237100512
+        }
+      },
+      "source_records": [
+        "primary/0004.json",
+        "primary/0024.json",
+        "primary/0113.json",
+        "primary/0443.json",
+        "primary/0549.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0025.json",
+        "bdd_coherence/0026.json",
+        "bdd_coherence/0027.json",
+        "bdd_coherence/0028.json",
+        "bdd_coherence/0029.json"
+      ],
+      "query_sha256": "1aaed4adf56f65e8daea3c1ae0c3ba990b0541ed0d6b38e47b16f55babe227f0"
+    },
+    {
+      "id": "c010",
+      "case": {
+        "family": "producers",
+        "n": 8,
+        "reads": 8,
+        "id": "c010",
+        "events": 25,
+        "variables": 264,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 128,
+          "certified_rf": 128,
+          "steps": 0
+        },
+        "interface": {
+          "width": 23,
+          "groups": 385
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 7,
+      "sustained_through_512_from": 7,
+      "winning_prefixes": 506,
+      "checkpoints": {
+        "1": {
+          "ours": 0.012893168998743931,
+          "baseline": 0.004840556999624823
+        },
+        "8": {
+          "ours": 0.016096646998448705,
+          "baseline": 0.018372186003034585
+        },
+        "64": {
+          "ours": 0.03944828400199185,
+          "baseline": 0.1308088800014957
+        },
+        "512": {
+          "ours": 0.22677770799327845,
+          "baseline": 0.9745269440008997
+        }
+      },
+      "source_records": [
+        "primary/0110.json",
+        "primary/0147.json",
+        "primary/0230.json",
+        "primary/0254.json",
+        "primary/0472.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0097.json",
+        "sat_strong/0098.json",
+        "sat_strong/0099.json",
+        "sat_strong/0100.json",
+        "sat_strong/0101.json",
+        "sat_strong/0092.json",
+        "sat_strong/0093.json",
+        "sat_strong/0094.json",
+        "sat_strong/0095.json",
+        "sat_strong/0096.json"
+      ],
+      "query_sha256": "001ca0cdb339b9df80cd549e103b3543603d482516c317bf2be73f04be8a8055"
+    },
+    {
+      "id": "c018",
+      "case": {
+        "family": "handoff",
+        "n": 4,
+        "id": "c018",
+        "events": 9,
+        "variables": 26,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 16,
+          "certified_rf": 16,
+          "steps": 0
+        },
+        "interface": {
+          "width": 6,
+          "groups": 37
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 3,
+      "sustained_through_512_from": 3,
+      "winning_prefixes": 510,
+      "checkpoints": {
+        "1": {
+          "ours": 0.0002700669992918847,
+          "baseline": 0.00020883399884041864
+        },
+        "8": {
+          "ours": 0.0004289919988877955,
+          "baseline": 0.0006054949953977484
+        },
+        "64": {
+          "ours": 0.0015724940058134962,
+          "baseline": 0.002944657000625739
+        },
+        "512": {
+          "ours": 0.010466540995366813,
+          "baseline": 0.021717543020713492
+        }
+      },
+      "source_records": [
+        "primary/0076.json",
+        "primary/0250.json",
+        "primary/0258.json",
+        "primary/0465.json",
+        "primary/0487.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0177.json",
+        "sat_strong/0178.json",
+        "sat_strong/0179.json",
+        "sat_strong/0180.json",
+        "sat_strong/0181.json",
+        "sat_strong/0172.json",
+        "sat_strong/0173.json",
+        "sat_strong/0174.json",
+        "sat_strong/0175.json",
+        "sat_strong/0176.json"
+      ],
+      "query_sha256": "c3530c0b7bf6a7fbd570432c4f90f3fdcae16a44a4670a875c6f98e274cef9c9"
+    },
+    {
+      "id": "c018",
+      "case": {
+        "family": "handoff",
+        "n": 4,
+        "id": "c018",
+        "events": 9,
+        "variables": 26,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 16,
+          "certified_rf": 16,
+          "steps": 0
+        },
+        "interface": {
+          "width": 6,
+          "groups": 37
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.0002700669992918847,
+          "baseline": 0.01121008699919912
+        },
+        "8": {
+          "ours": 0.0004289919988877955,
+          "baseline": 0.01176035100252193
+        },
+        "64": {
+          "ours": 0.0015724940058134962,
+          "baseline": 0.015506873001868371
+        },
+        "512": {
+          "ours": 0.010466540995366813,
+          "baseline": 0.04647002702404279
+        }
+      },
+      "source_records": [
+        "primary/0076.json",
+        "primary/0250.json",
+        "primary/0258.json",
+        "primary/0465.json",
+        "primary/0487.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0066.json",
+        "bdd_coherence/0067.json",
+        "bdd_coherence/0068.json",
+        "bdd_coherence/0069.json",
+        "bdd_coherence/0070.json"
+      ],
+      "query_sha256": "c3530c0b7bf6a7fbd570432c4f90f3fdcae16a44a4670a875c6f98e274cef9c9"
+    },
+    {
+      "id": "c019",
+      "case": {
+        "family": "handoff",
+        "n": 16,
+        "id": "c019",
+        "events": 21,
+        "variables": 200,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 64,
+          "certified_rf": 64,
+          "steps": 0
+        },
+        "interface": {
+          "width": 6,
+          "groups": 121
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.0012428780000846018,
+          "baseline": 0.0020636610006476985
+        },
+        "8": {
+          "ours": 0.001781079001375474,
+          "baseline": 0.005420263001724379
+        },
+        "64": {
+          "ours": 0.005691634000868362,
+          "baseline": 0.02995225600898266
+        },
+        "512": {
+          "ours": 0.03818817600222246,
+          "baseline": 0.2752417890005745
+        }
+      },
+      "source_records": [
+        "primary/0035.json",
+        "primary/0077.json",
+        "primary/0146.json",
+        "primary/0358.json",
+        "primary/0451.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0187.json",
+        "sat_strong/0188.json",
+        "sat_strong/0189.json",
+        "sat_strong/0190.json",
+        "sat_strong/0191.json",
+        "sat_strong/0182.json",
+        "sat_strong/0183.json",
+        "sat_strong/0184.json",
+        "sat_strong/0185.json",
+        "sat_strong/0186.json"
+      ],
+      "query_sha256": "093e282421d2c3ac3cfa57cb0c9640423b99262c5428546be985017249363f67"
+    },
+    {
+      "id": "c019",
+      "case": {
+        "family": "handoff",
+        "n": 16,
+        "id": "c019",
+        "events": 21,
+        "variables": 200,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 64,
+          "certified_rf": 64,
+          "steps": 0
+        },
+        "interface": {
+          "width": 6,
+          "groups": 121
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.0012428780000846018,
+          "baseline": 0.08864006600197172
+        },
+        "8": {
+          "ours": 0.001781079001375474,
+          "baseline": 0.09147824400133686
+        },
+        "64": {
+          "ours": 0.005691634000868362,
+          "baseline": 0.11211219099095615
+        },
+        "512": {
+          "ours": 0.03818817600222246,
+          "baseline": 0.287251584997648
+        }
+      },
+      "source_records": [
+        "primary/0035.json",
+        "primary/0077.json",
+        "primary/0146.json",
+        "primary/0358.json",
+        "primary/0451.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0071.json",
+        "bdd_coherence/0072.json",
+        "bdd_coherence/0073.json",
+        "bdd_coherence/0074.json",
+        "bdd_coherence/0075.json"
+      ],
+      "query_sha256": "093e282421d2c3ac3cfa57cb0c9640423b99262c5428546be985017249363f67"
+    },
+    {
+      "id": "c020",
+      "case": {
+        "family": "handoff",
+        "n": 64,
+        "id": "c020",
+        "events": 69,
+        "variables": 2336,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 256,
+          "certified_rf": 256,
+          "steps": 0
+        },
+        "interface": {
+          "width": 6,
+          "groups": 457
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.009203528999933042,
+          "baseline": 0.047521504000542336
+        },
+        "8": {
+          "ours": 0.012337552999269974,
+          "baseline": 0.1855455089953466
+        },
+        "64": {
+          "ours": 0.0334914530021706,
+          "baseline": 0.9513072060053673
+        },
+        "512": {
+          "ours": 0.20368494400645432,
+          "baseline": 8.115885170002002
+        }
+      },
+      "source_records": [
+        "primary/0053.json",
+        "primary/0073.json",
+        "primary/0268.json",
+        "primary/0311.json",
+        "primary/0539.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0197.json",
+        "sat_strong/0198.json",
+        "sat_strong/0199.json",
+        "sat_strong/0200.json",
+        "sat_strong/0201.json",
+        "sat_strong/0192.json",
+        "sat_strong/0193.json",
+        "sat_strong/0194.json",
+        "sat_strong/0195.json",
+        "sat_strong/0196.json"
+      ],
+      "query_sha256": "e7399b86dafdab8b9285878454949999034bb6bfb84805316616a7a3367b5d02"
+    },
+    {
+      "id": "c020",
+      "case": {
+        "family": "handoff",
+        "n": 64,
+        "id": "c020",
+        "events": 69,
+        "variables": 2336,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 256,
+          "certified_rf": 256,
+          "steps": 0
+        },
+        "interface": {
+          "width": 6,
+          "groups": 457
+        },
+        "query_count": 512,
+        "repetitions_planned": 5,
+        "compile_seconds": 120
+      },
+      "method": "dynamic",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.009203528999933042,
+          "baseline": 34.877537148000556
+        },
+        "8": {
+          "ours": 0.012337552999269974,
+          "baseline": 34.90455211900189
+        },
+        "64": {
+          "ours": 0.0334914530021706,
+          "baseline": 35.09348707499885
+        },
+        "512": {
+          "ours": 0.20368494400645432,
+          "baseline": 36.67145078600697
+        }
+      },
+      "source_records": [
+        "primary/0053.json",
+        "primary/0073.json",
+        "primary/0268.json",
+        "primary/0311.json",
+        "primary/0539.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0076.json",
+        "bdd_coherence/0077.json",
+        "bdd_coherence/0078.json",
+        "bdd_coherence/0079.json",
+        "bdd_coherence/0080.json"
+      ],
+      "query_sha256": "e7399b86dafdab8b9285878454949999034bb6bfb84805316616a7a3367b5d02"
+    },
+    {
+      "id": "a002",
+      "case": {
+        "id": "a002",
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/stress/inputs/a002.json",
+        "n": 2,
+        "query_count": 512,
+        "workload": "nested push/pop with alternative branches; synthetic, not native solver traces",
+        "stress_family": "repeated_iriw",
+        "dynamic_certificate": false,
+        "events": 10,
+        "variables": 12,
+        "successor_interface": {
+          "width": 7,
+          "groups": 32
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.009146059999693534,
+          "baseline": 0.0019006450002052588
+        },
+        "8": {
+          "ours": 0.009256671997718513,
+          "baseline": 0.0021013009991293075
+        },
+        "64": {
+          "ours": 0.010041942006864701,
+          "baseline": 0.003288638001322397
+        },
+        "512": {
+          "ours": 0.016584496999712428,
+          "baseline": 0.012927545007187291
+        }
+      },
+      "source_records": [
+        "pruning/0085.json",
+        "pruning/0086.json",
+        "pruning/0087.json",
+        "pruning/0088.json",
+        "pruning/0089.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0277.json",
+        "sat_strong/0278.json",
+        "sat_strong/0279.json",
+        "sat_strong/0280.json",
+        "sat_strong/0281.json",
+        "sat_strong/0272.json",
+        "sat_strong/0273.json",
+        "sat_strong/0274.json",
+        "sat_strong/0275.json",
+        "sat_strong/0276.json"
+      ],
+      "query_sha256": "efe7c0fbe56a1a6ce3e196d655dd03ec17fdf037aed249ce53b9db8724bf86df"
+    },
+    {
+      "id": "a002",
+      "case": {
+        "id": "a002",
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/stress/inputs/a002.json",
+        "n": 2,
+        "query_count": 512,
+        "workload": "nested push/pop with alternative branches; synthetic, not native solver traces",
+        "stress_family": "repeated_iriw",
+        "dynamic_certificate": false,
+        "events": 10,
+        "variables": 12,
+        "successor_interface": {
+          "width": 7,
+          "groups": 32
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.009146059999693534,
+          "baseline": 0.010339847998693585
+        },
+        "8": {
+          "ours": 0.009256671997718513,
+          "baseline": 0.010521090998736327
+        },
+        "64": {
+          "ours": 0.010041942006864701,
+          "baseline": 0.011605165997025324
+        },
+        "512": {
+          "ours": 0.016584496999712428,
+          "baseline": 0.020417327004906838
+        }
+      },
+      "source_records": [
+        "pruning/0085.json",
+        "pruning/0086.json",
+        "pruning/0087.json",
+        "pruning/0088.json",
+        "pruning/0089.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0116.json",
+        "bdd_coherence/0117.json",
+        "bdd_coherence/0118.json",
+        "bdd_coherence/0119.json",
+        "bdd_coherence/0120.json"
+      ],
+      "query_sha256": "efe7c0fbe56a1a6ce3e196d655dd03ec17fdf037aed249ce53b9db8724bf86df"
+    },
+    {
+      "id": "a004",
+      "case": {
+        "id": "a004",
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/stress/inputs/a004.json",
+        "n": 4,
+        "query_count": 512,
+        "workload": "nested push/pop with alternative branches; synthetic, not native solver traces",
+        "stress_family": "repeated_iriw",
+        "dynamic_certificate": false,
+        "events": 14,
+        "variables": 30,
+        "successor_interface": {
+          "width": 7,
+          "groups": 48
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.03343471000152931,
+          "baseline": 0.005368870002712356
+        },
+        "8": {
+          "ours": 0.03382527000394475,
+          "baseline": 0.006019305999870994
+        },
+        "64": {
+          "ours": 0.036330469001768506,
+          "baseline": 0.008842108007229399
+        },
+        "512": {
+          "ours": 0.05641594702501607,
+          "baseline": 0.0341956570136972
+        }
+      },
+      "source_records": [
+        "pruning/0095.json",
+        "pruning/0096.json",
+        "pruning/0097.json",
+        "pruning/0098.json",
+        "pruning/0099.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0287.json",
+        "sat_strong/0288.json",
+        "sat_strong/0289.json",
+        "sat_strong/0290.json",
+        "sat_strong/0291.json",
+        "sat_strong/0282.json",
+        "sat_strong/0283.json",
+        "sat_strong/0284.json",
+        "sat_strong/0285.json",
+        "sat_strong/0286.json"
+      ],
+      "query_sha256": "2d769001ac1524b60dcf9057da2d5e9101556d1e3192743f258d53e40f716b28"
+    },
+    {
+      "id": "a004",
+      "case": {
+        "id": "a004",
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/stress/inputs/a004.json",
+        "n": 4,
+        "query_count": 512,
+        "workload": "nested push/pop with alternative branches; synthetic, not native solver traces",
+        "stress_family": "repeated_iriw",
+        "dynamic_certificate": false,
+        "events": 14,
+        "variables": 30,
+        "successor_interface": {
+          "width": 7,
+          "groups": 48
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.03343471000152931,
+          "baseline": 0.010757688000012422
+        },
+        "8": {
+          "ours": 0.03382527000394475,
+          "baseline": 0.011189949000254273
+        },
+        "64": {
+          "ours": 0.036330469001768506,
+          "baseline": 0.013614228993901634
+        },
+        "512": {
+          "ours": 0.05641594702501607,
+          "baseline": 0.033614557982218685
+        }
+      },
+      "source_records": [
+        "pruning/0095.json",
+        "pruning/0096.json",
+        "pruning/0097.json",
+        "pruning/0098.json",
+        "pruning/0099.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0121.json",
+        "bdd_coherence/0122.json",
+        "bdd_coherence/0123.json",
+        "bdd_coherence/0124.json",
+        "bdd_coherence/0125.json"
+      ],
+      "query_sha256": "2d769001ac1524b60dcf9057da2d5e9101556d1e3192743f258d53e40f716b28"
+    },
+    {
+      "id": "a008",
+      "case": {
+        "id": "a008",
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/stress/inputs/a008.json",
+        "n": 8,
+        "query_count": 512,
+        "workload": "nested push/pop with alternative branches; synthetic, not native solver traces",
+        "stress_family": "repeated_iriw",
+        "dynamic_certificate": false,
+        "events": 22,
+        "variables": 90,
+        "successor_interface": {
+          "width": 7,
+          "groups": 80
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.1287925099986751,
+          "baseline": 0.022460583997599315
+        },
+        "8": {
+          "ours": 0.13030613699629612,
+          "baseline": 0.02572641399819986
+        },
+        "64": {
+          "ours": 0.1396411109926703,
+          "baseline": 0.03835438599162444
+        },
+        "512": {
+          "ours": 0.21312597298674518,
+          "baseline": 0.13545761201930873
+        }
+      },
+      "source_records": [
+        "pruning/0105.json",
+        "pruning/0106.json",
+        "pruning/0107.json",
+        "pruning/0108.json",
+        "pruning/0109.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0297.json",
+        "sat_strong/0298.json",
+        "sat_strong/0299.json",
+        "sat_strong/0300.json",
+        "sat_strong/0301.json",
+        "sat_strong/0292.json",
+        "sat_strong/0293.json",
+        "sat_strong/0294.json",
+        "sat_strong/0295.json",
+        "sat_strong/0296.json"
+      ],
+      "query_sha256": "32074910a29f5e3e32149941a4190c31efd306612659984fb59531bfc4ad2b96"
+    },
+    {
+      "id": "a008",
+      "case": {
+        "id": "a008",
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/stress/inputs/a008.json",
+        "n": 8,
+        "query_count": 512,
+        "workload": "nested push/pop with alternative branches; synthetic, not native solver traces",
+        "stress_family": "repeated_iriw",
+        "dynamic_certificate": false,
+        "events": 22,
+        "variables": 90,
+        "successor_interface": {
+          "width": 7,
+          "groups": 80
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.1287925099986751,
+          "baseline": 0.016250447999482276
+        },
+        "8": {
+          "ours": 0.13030613699629612,
+          "baseline": 0.01738836599724891
+        },
+        "64": {
+          "ours": 0.1396411109926703,
+          "baseline": 0.024472082010106533
+        },
+        "512": {
+          "ours": 0.21312597298674518,
+          "baseline": 0.08044215203335625
+        }
+      },
+      "source_records": [
+        "pruning/0105.json",
+        "pruning/0106.json",
+        "pruning/0107.json",
+        "pruning/0108.json",
+        "pruning/0109.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0126.json",
+        "bdd_coherence/0127.json",
+        "bdd_coherence/0128.json",
+        "bdd_coherence/0129.json",
+        "bdd_coherence/0130.json"
+      ],
+      "query_sha256": "32074910a29f5e3e32149941a4190c31efd306612659984fb59531bfc4ad2b96"
+    },
+    {
+      "id": "a016",
+      "case": {
+        "id": "a016",
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/stress/inputs/a016.json",
+        "n": 16,
+        "query_count": 512,
+        "workload": "nested push/pop with alternative branches; synthetic, not native solver traces",
+        "stress_family": "repeated_iriw",
+        "dynamic_certificate": false,
+        "events": 38,
+        "variables": 306,
+        "successor_interface": {
+          "width": 7,
+          "groups": 144
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 408,
+      "sustained_through_512_from": 480,
+      "winning_prefixes": 56,
+      "checkpoints": {
+        "1": {
+          "ours": 0.37483535099818255,
+          "baseline": 0.12792293900020013
+        },
+        "8": {
+          "ours": 0.3791842649970931,
+          "baseline": 0.14860054200107697
+        },
+        "64": {
+          "ours": 0.39642944400475244,
+          "baseline": 0.16215709201242134
+        },
+        "512": {
+          "ours": 0.6060462899822596,
+          "baseline": 0.6588207470013003
+        }
+      },
+      "source_records": [
+        "pruning/0115.json",
+        "pruning/0116.json",
+        "pruning/0117.json",
+        "pruning/0118.json",
+        "pruning/0119.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0307.json",
+        "sat_strong/0308.json",
+        "sat_strong/0309.json",
+        "sat_strong/0310.json",
+        "sat_strong/0311.json",
+        "sat_strong/0302.json",
+        "sat_strong/0303.json",
+        "sat_strong/0304.json",
+        "sat_strong/0305.json",
+        "sat_strong/0306.json"
+      ],
+      "query_sha256": "6ad6f7acddf7a1f356448cb115c79358014a60c138021e3ff921ed7134d51c98"
+    },
+    {
+      "id": "a016",
+      "case": {
+        "id": "a016",
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/stress/inputs/a016.json",
+        "n": 16,
+        "query_count": 512,
+        "workload": "nested push/pop with alternative branches; synthetic, not native solver traces",
+        "stress_family": "repeated_iriw",
+        "dynamic_certificate": false,
+        "events": 38,
+        "variables": 306,
+        "successor_interface": {
+          "width": 7,
+          "groups": 144
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.37483535099818255,
+          "baseline": 0.06100721999973757
+        },
+        "8": {
+          "ours": 0.3791842649970931,
+          "baseline": 0.06491282300339662
+        },
+        "64": {
+          "ours": 0.39642944400475244,
+          "baseline": 0.0805665200095973
+        },
+        "512": {
+          "ours": 0.6060462899822596,
+          "baseline": 0.27830590501980623
+        }
+      },
+      "source_records": [
+        "pruning/0115.json",
+        "pruning/0116.json",
+        "pruning/0117.json",
+        "pruning/0118.json",
+        "pruning/0119.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0131.json",
+        "bdd_coherence/0132.json",
+        "bdd_coherence/0133.json",
+        "bdd_coherence/0134.json",
+        "bdd_coherence/0135.json"
+      ],
+      "query_sha256": "6ad6f7acddf7a1f356448cb115c79358014a60c138021e3ff921ed7134d51c98"
+    },
+    {
+      "id": "c001",
+      "case": {
+        "family": "producers",
+        "n": 4,
+        "id": "c001",
+        "events": 11,
+        "variables": 52,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 16,
+          "certified_rf": 16,
+          "steps": 0
+        },
+        "successor_interface": {
+          "width": 9,
+          "groups": 93
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 6.328059466000923,
+          "baseline": 0.00038319899795169476
+        },
+        "8": {
+          "ours": 6.355437244999848,
+          "baseline": 0.0012026399999740534
+        },
+        "64": {
+          "ours": 6.543899025993596,
+          "baseline": 0.005860509001649916
+        },
+        "512": {
+          "ours": 8.081574400992395,
+          "baseline": 0.04575248600849591
+        }
+      },
+      "source_records": [
+        "pruning/0000.json",
+        "pruning/0001.json",
+        "pruning/0002.json",
+        "pruning/0003.json",
+        "pruning/0004.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0015.json",
+        "sat_strong/0016.json",
+        "sat_strong/0017.json",
+        "sat_strong/0018.json",
+        "sat_strong/0019.json",
+        "sat_strong/0010.json",
+        "sat_strong/0011.json",
+        "sat_strong/0012.json",
+        "sat_strong/0013.json",
+        "sat_strong/0014.json"
+      ],
+      "query_sha256": "0481c0d0ecb777d67cf7fed0781bf8b9549477a33a602d1d9703fd1cd908462b"
+    },
+    {
+      "id": "c001",
+      "case": {
+        "family": "producers",
+        "n": 4,
+        "id": "c001",
+        "events": 11,
+        "variables": 52,
+        "dynamic_certificate": true,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 16,
+          "certified_rf": 16,
+          "steps": 0
+        },
+        "successor_interface": {
+          "width": 9,
+          "groups": 93
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 6.328059466000923,
+          "baseline": 0.02795115099979739
+        },
+        "8": {
+          "ours": 6.355437244999848,
+          "baseline": 0.03119922299811151
+        },
+        "64": {
+          "ours": 6.543899025993596,
+          "baseline": 0.05389143599495583
+        },
+        "512": {
+          "ours": 8.081574400992395,
+          "baseline": 0.2521213849904598
+        }
+      },
+      "source_records": [
+        "pruning/0000.json",
+        "pruning/0001.json",
+        "pruning/0002.json",
+        "pruning/0003.json",
+        "pruning/0004.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0005.json",
+        "bdd_coherence/0006.json",
+        "bdd_coherence/0007.json",
+        "bdd_coherence/0008.json",
+        "bdd_coherence/0009.json"
+      ],
+      "query_sha256": "0481c0d0ecb777d67cf7fed0781bf8b9549477a33a602d1d9703fd1cd908462b"
+    },
+    {
+      "id": "c011",
+      "case": {
+        "family": "pipeline",
+        "n": 1,
+        "id": "c011",
+        "events": 14,
+        "variables": 14,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 6,
+          "certified_rf": 6,
+          "steps": 2
+        },
+        "successor_interface": {
+          "width": 9,
+          "groups": 48
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.01568396400216443,
+          "baseline": 0.004560011000648956
+        },
+        "8": {
+          "ours": 0.015849238003283972,
+          "baseline": 0.004832717999306624
+        },
+        "64": {
+          "ours": 0.016997895998429158,
+          "baseline": 0.006848175993582117
+        },
+        "512": {
+          "ours": 0.026522344996919855,
+          "baseline": 0.022208727023098618
+        }
+      },
+      "source_records": [
+        "pruning/0006.json",
+        "pruning/0007.json",
+        "pruning/0008.json",
+        "pruning/0009.json",
+        "pruning/0010.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0107.json",
+        "sat_strong/0108.json",
+        "sat_strong/0109.json",
+        "sat_strong/0110.json",
+        "sat_strong/0111.json",
+        "sat_strong/0102.json",
+        "sat_strong/0103.json",
+        "sat_strong/0104.json",
+        "sat_strong/0105.json",
+        "sat_strong/0106.json"
+      ],
+      "query_sha256": "50daaf6581abffae80b6fc02bf42624f32003c9bd5ce0a7bb723602198c5f959"
+    },
+    {
+      "id": "c011",
+      "case": {
+        "family": "pipeline",
+        "n": 1,
+        "id": "c011",
+        "events": 14,
+        "variables": 14,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 6,
+          "certified_rf": 6,
+          "steps": 2
+        },
+        "successor_interface": {
+          "width": 9,
+          "groups": 48
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.01568396400216443,
+          "baseline": 0.009970586999770603
+        },
+        "8": {
+          "ours": 0.015849238003283972,
+          "baseline": 0.010173880997172091
+        },
+        "64": {
+          "ours": 0.016997895998429158,
+          "baseline": 0.011416560997531633
+        },
+        "512": {
+          "ours": 0.026522344996919855,
+          "baseline": 0.021166543981962604
+        }
+      },
+      "source_records": [
+        "pruning/0006.json",
+        "pruning/0007.json",
+        "pruning/0008.json",
+        "pruning/0009.json",
+        "pruning/0010.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0031.json",
+        "bdd_coherence/0032.json",
+        "bdd_coherence/0033.json",
+        "bdd_coherence/0034.json",
+        "bdd_coherence/0035.json",
+        "bdd_relational/0000.json",
+        "bdd_relational/0001.json",
+        "bdd_relational/0002.json",
+        "bdd_relational/0003.json",
+        "bdd_relational/0004.json"
+      ],
+      "query_sha256": "50daaf6581abffae80b6fc02bf42624f32003c9bd5ce0a7bb723602198c5f959"
+    },
+    {
+      "id": "c012",
+      "case": {
+        "family": "pipeline",
+        "n": 2,
+        "id": "c012",
+        "events": 24,
+        "variables": 48,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 22,
+          "certified_rf": 16,
+          "steps": 10
+        },
+        "successor_interface": {
+          "width": 13,
+          "groups": 102
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.8821154059987748,
+          "baseline": 0.02465134200065222
+        },
+        "8": {
+          "ours": 0.8844989019980858,
+          "baseline": 0.025700694997794926
+        },
+        "64": {
+          "ours": 0.9012491529938416,
+          "baseline": 0.03354281799511227
+        },
+        "512": {
+          "ours": 1.0390456070435903,
+          "baseline": 0.09371722401192528
+        }
+      },
+      "source_records": [
+        "pruning/0016.json",
+        "pruning/0017.json",
+        "pruning/0018.json",
+        "pruning/0019.json",
+        "pruning/0020.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0117.json",
+        "sat_strong/0118.json",
+        "sat_strong/0119.json",
+        "sat_strong/0120.json",
+        "sat_strong/0121.json",
+        "sat_strong/0112.json",
+        "sat_strong/0113.json",
+        "sat_strong/0114.json",
+        "sat_strong/0115.json",
+        "sat_strong/0116.json"
+      ],
+      "query_sha256": "057ba7ef045e4599e0e2eebf1d1882099e5e5882d42892f469fa74a235aba216"
+    },
+    {
+      "id": "c012",
+      "case": {
+        "family": "pipeline",
+        "n": 2,
+        "id": "c012",
+        "events": 24,
+        "variables": 48,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 22,
+          "certified_rf": 16,
+          "steps": 10
+        },
+        "successor_interface": {
+          "width": 13,
+          "groups": 102
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.8821154059987748,
+          "baseline": 0.017246780000277795
+        },
+        "8": {
+          "ours": 0.8844989019980858,
+          "baseline": 0.01795527699869126
+        },
+        "64": {
+          "ours": 0.9012491529938416,
+          "baseline": 0.023154850992796128
+        },
+        "512": {
+          "ours": 1.0390456070435903,
+          "baseline": 0.06387680699663179
+        }
+      },
+      "source_records": [
+        "pruning/0016.json",
+        "pruning/0017.json",
+        "pruning/0018.json",
+        "pruning/0019.json",
+        "pruning/0020.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0036.json",
+        "bdd_coherence/0037.json",
+        "bdd_coherence/0038.json",
+        "bdd_coherence/0039.json",
+        "bdd_coherence/0040.json",
+        "bdd_relational/0005.json",
+        "bdd_relational/0006.json",
+        "bdd_relational/0007.json",
+        "bdd_relational/0008.json",
+        "bdd_relational/0009.json"
+      ],
+      "query_sha256": "057ba7ef045e4599e0e2eebf1d1882099e5e5882d42892f469fa74a235aba216"
+    },
+    {
+      "id": "c013",
+      "case": {
+        "family": "pipeline",
+        "n": 3,
+        "id": "c013",
+        "events": 34,
+        "variables": 102,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 48,
+          "certified_rf": 26,
+          "steps": 28
+        },
+        "successor_interface": {
+          "width": 15,
+          "groups": 160
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 16.6118016420005,
+          "baseline": 0.07296098200095003
+        },
+        "8": {
+          "ours": 16.634463728998526,
+          "baseline": 0.07534672100155149
+        },
+        "64": {
+          "ours": 16.805787217001125,
+          "baseline": 0.09234308699888061
+        },
+        "512": {
+          "ours": 18.1678607909962,
+          "baseline": 0.22351548001461197
+        }
+      },
+      "source_records": [
+        "pruning/0023.json",
+        "pruning/0024.json",
+        "pruning/0025.json",
+        "pruning/0026.json",
+        "pruning/0027.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0127.json",
+        "sat_strong/0128.json",
+        "sat_strong/0129.json",
+        "sat_strong/0130.json",
+        "sat_strong/0131.json",
+        "sat_strong/0122.json",
+        "sat_strong/0123.json",
+        "sat_strong/0124.json",
+        "sat_strong/0125.json",
+        "sat_strong/0126.json"
+      ],
+      "query_sha256": "1e318ff39e17d25cc885326cba14e937a0a9226591191d384b6917f8941ad389"
+    },
+    {
+      "id": "c013",
+      "case": {
+        "family": "pipeline",
+        "n": 3,
+        "id": "c013",
+        "events": 34,
+        "variables": 102,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 48,
+          "certified_rf": 26,
+          "steps": 28
+        },
+        "successor_interface": {
+          "width": 15,
+          "groups": 160
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 16.6118016420005,
+          "baseline": 0.08028722700146318
+        },
+        "8": {
+          "ours": 16.634463728998526,
+          "baseline": 0.08170472100027837
+        },
+        "64": {
+          "ours": 16.805787217001125,
+          "baseline": 0.09212742300405807
+        },
+        "512": {
+          "ours": 18.1678607909962,
+          "baseline": 0.17791302203477244
+        }
+      },
+      "source_records": [
+        "pruning/0023.json",
+        "pruning/0024.json",
+        "pruning/0025.json",
+        "pruning/0026.json",
+        "pruning/0027.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0041.json",
+        "bdd_coherence/0042.json",
+        "bdd_coherence/0043.json",
+        "bdd_coherence/0044.json",
+        "bdd_coherence/0045.json",
+        "bdd_relational/0010.json",
+        "bdd_relational/0011.json",
+        "bdd_relational/0012.json",
+        "bdd_relational/0013.json",
+        "bdd_relational/0014.json"
+      ],
+      "query_sha256": "1e318ff39e17d25cc885326cba14e937a0a9226591191d384b6917f8941ad389"
+    },
+    {
+      "id": "c014",
+      "case": {
+        "family": "non_sc_chain",
+        "n": 1,
+        "id": "c014",
+        "events": 8,
+        "variables": 6,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 4,
+          "certified_rf": 4,
+          "steps": 4
+        },
+        "successor_interface": {
+          "width": 5,
+          "groups": 24
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.003247958002248197,
+          "baseline": 0.0009267930017813342
+        },
+        "8": {
+          "ours": 0.0033169890029967064,
+          "baseline": 0.0010179350047110347
+        },
+        "64": {
+          "ours": 0.0037325770063034724,
+          "baseline": 0.0016525550054211635
+        },
+        "512": {
+          "ours": 0.0071997829854808515,
+          "baseline": 0.006596037990675541
+        }
+      },
+      "source_records": [
+        "pruning/0030.json",
+        "pruning/0031.json",
+        "pruning/0032.json",
+        "pruning/0033.json",
+        "pruning/0034.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0137.json",
+        "sat_strong/0138.json",
+        "sat_strong/0139.json",
+        "sat_strong/0140.json",
+        "sat_strong/0141.json",
+        "sat_strong/0132.json",
+        "sat_strong/0133.json",
+        "sat_strong/0134.json",
+        "sat_strong/0135.json",
+        "sat_strong/0136.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c014",
+      "case": {
+        "family": "non_sc_chain",
+        "n": 1,
+        "id": "c014",
+        "events": 8,
+        "variables": 6,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 4,
+          "certified_rf": 4,
+          "steps": 4
+        },
+        "successor_interface": {
+          "width": 5,
+          "groups": 24
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.003247958002248197,
+          "baseline": 0.00944163500025752
+        },
+        "8": {
+          "ours": 0.0033169890029967064,
+          "baseline": 0.009528886999760289
+        },
+        "64": {
+          "ours": 0.0037325770063034724,
+          "baseline": 0.010147441002118285
+        },
+        "512": {
+          "ours": 0.0071997829854808515,
+          "baseline": 0.0147513039974001
+        }
+      },
+      "source_records": [
+        "pruning/0030.json",
+        "pruning/0031.json",
+        "pruning/0032.json",
+        "pruning/0033.json",
+        "pruning/0034.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0046.json",
+        "bdd_coherence/0047.json",
+        "bdd_coherence/0048.json",
+        "bdd_coherence/0049.json",
+        "bdd_coherence/0050.json",
+        "bdd_relational/0015.json",
+        "bdd_relational/0016.json",
+        "bdd_relational/0017.json",
+        "bdd_relational/0018.json",
+        "bdd_relational/0019.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c015",
+      "case": {
+        "family": "non_sc_chain",
+        "n": 2,
+        "id": "c015",
+        "events": 16,
+        "variables": 12,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 8,
+          "certified_rf": 8,
+          "steps": 8
+        },
+        "successor_interface": {
+          "width": 8,
+          "groups": 52
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 192,
+      "sustained_through_512_from": 192,
+      "winning_prefixes": 321,
+      "checkpoints": {
+        "1": {
+          "ours": 0.008413861000008183,
+          "baseline": 0.006644571998549509
+        },
+        "8": {
+          "ours": 0.0085065229995962,
+          "baseline": 0.006816256995080039
+        },
+        "64": {
+          "ours": 0.009268071005863021,
+          "baseline": 0.008097404996078694
+        },
+        "512": {
+          "ours": 0.01504106999891519,
+          "baseline": 0.018233747008707724
+        }
+      },
+      "source_records": [
+        "pruning/0035.json",
+        "pruning/0036.json",
+        "pruning/0037.json",
+        "pruning/0038.json",
+        "pruning/0039.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0147.json",
+        "sat_strong/0148.json",
+        "sat_strong/0149.json",
+        "sat_strong/0150.json",
+        "sat_strong/0151.json",
+        "sat_strong/0142.json",
+        "sat_strong/0143.json",
+        "sat_strong/0144.json",
+        "sat_strong/0145.json",
+        "sat_strong/0146.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c015",
+      "case": {
+        "family": "non_sc_chain",
+        "n": 2,
+        "id": "c015",
+        "events": 16,
+        "variables": 12,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 8,
+          "certified_rf": 8,
+          "steps": 8
+        },
+        "successor_interface": {
+          "width": 8,
+          "groups": 52
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.008413861000008183,
+          "baseline": 0.009963286998754484
+        },
+        "8": {
+          "ours": 0.0085065229995962,
+          "baseline": 0.010113770998941618
+        },
+        "64": {
+          "ours": 0.009268071005863021,
+          "baseline": 0.011180475990840932
+        },
+        "512": {
+          "ours": 0.01504106999891519,
+          "baseline": 0.019508041003064136
+        }
+      },
+      "source_records": [
+        "pruning/0035.json",
+        "pruning/0036.json",
+        "pruning/0037.json",
+        "pruning/0038.json",
+        "pruning/0039.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0051.json",
+        "bdd_coherence/0052.json",
+        "bdd_coherence/0053.json",
+        "bdd_coherence/0054.json",
+        "bdd_coherence/0055.json",
+        "bdd_relational/0020.json",
+        "bdd_relational/0021.json",
+        "bdd_relational/0022.json",
+        "bdd_relational/0023.json",
+        "bdd_relational/0024.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c016",
+      "case": {
+        "family": "non_sc_chain",
+        "n": 4,
+        "id": "c016",
+        "events": 32,
+        "variables": 24,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 16,
+          "certified_rf": 16,
+          "steps": 16
+        },
+        "successor_interface": {
+          "width": 11,
+          "groups": 108
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.026903204001428094,
+          "baseline": 0.05491890199846239
+        },
+        "8": {
+          "ours": 0.02706936800132098,
+          "baseline": 0.055454073002692894
+        },
+        "64": {
+          "ours": 0.028412230996764265,
+          "baseline": 0.05959289299607917
+        },
+        "512": {
+          "ours": 0.039218095982505474,
+          "baseline": 0.09230239401222207
+        }
+      },
+      "source_records": [
+        "pruning/0040.json",
+        "pruning/0041.json",
+        "pruning/0042.json",
+        "pruning/0043.json",
+        "pruning/0044.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0157.json",
+        "sat_strong/0158.json",
+        "sat_strong/0159.json",
+        "sat_strong/0160.json",
+        "sat_strong/0161.json",
+        "sat_strong/0152.json",
+        "sat_strong/0153.json",
+        "sat_strong/0154.json",
+        "sat_strong/0155.json",
+        "sat_strong/0156.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c016",
+      "case": {
+        "family": "non_sc_chain",
+        "n": 4,
+        "id": "c016",
+        "events": 32,
+        "variables": 24,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 16,
+          "certified_rf": 16,
+          "steps": 16
+        },
+        "successor_interface": {
+          "width": 11,
+          "groups": 108
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.026903204001428094,
+          "baseline": 0.012404094999510562
+        },
+        "8": {
+          "ours": 0.02706936800132098,
+          "baseline": 0.012683772001764737
+        },
+        "64": {
+          "ours": 0.028412230996764265,
+          "baseline": 0.014737148008862277
+        },
+        "512": {
+          "ours": 0.039218095982505474,
+          "baseline": 0.03118622998590581
+        }
+      },
+      "source_records": [
+        "pruning/0040.json",
+        "pruning/0041.json",
+        "pruning/0042.json",
+        "pruning/0043.json",
+        "pruning/0044.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0056.json",
+        "bdd_coherence/0057.json",
+        "bdd_coherence/0058.json",
+        "bdd_coherence/0059.json",
+        "bdd_coherence/0060.json",
+        "bdd_relational/0025.json",
+        "bdd_relational/0026.json",
+        "bdd_relational/0027.json",
+        "bdd_relational/0028.json",
+        "bdd_relational/0029.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c017",
+      "case": {
+        "family": "non_sc_chain",
+        "n": 8,
+        "id": "c017",
+        "events": 64,
+        "variables": 48,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 32,
+          "certified_rf": 32,
+          "steps": 32
+        },
+        "successor_interface": {
+          "width": 11,
+          "groups": 220
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.07002130399814632,
+          "baseline": 0.48360672000126215
+        },
+        "8": {
+          "ours": 0.07035103199996229,
+          "baseline": 0.4855774859988742
+        },
+        "64": {
+          "ours": 0.07295125799646485,
+          "baseline": 0.5005607849943772
+        },
+        "512": {
+          "ours": 0.09341434096313606,
+          "baseline": 0.6178336060020229
+        }
+      },
+      "source_records": [
+        "pruning/0045.json",
+        "pruning/0046.json",
+        "pruning/0047.json",
+        "pruning/0048.json",
+        "pruning/0049.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0167.json",
+        "sat_strong/0168.json",
+        "sat_strong/0169.json",
+        "sat_strong/0170.json",
+        "sat_strong/0171.json",
+        "sat_strong/0162.json",
+        "sat_strong/0163.json",
+        "sat_strong/0164.json",
+        "sat_strong/0165.json",
+        "sat_strong/0166.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c017",
+      "case": {
+        "family": "non_sc_chain",
+        "n": 8,
+        "id": "c017",
+        "events": 64,
+        "variables": 48,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 32,
+          "certified_rf": 32,
+          "steps": 32
+        },
+        "successor_interface": {
+          "width": 11,
+          "groups": 220
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.07002130399814632,
+          "baseline": 0.023398405999614624
+        },
+        "8": {
+          "ours": 0.07035103199996229,
+          "baseline": 0.023898328001450864
+        },
+        "64": {
+          "ours": 0.07295125799646485,
+          "baseline": 0.02780405100020289
+        },
+        "512": {
+          "ours": 0.09341434096313606,
+          "baseline": 0.05876585298028658
+        }
+      },
+      "source_records": [
+        "pruning/0045.json",
+        "pruning/0046.json",
+        "pruning/0047.json",
+        "pruning/0048.json",
+        "pruning/0049.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0061.json",
+        "bdd_coherence/0062.json",
+        "bdd_coherence/0063.json",
+        "bdd_coherence/0064.json",
+        "bdd_coherence/0065.json",
+        "bdd_relational/0030.json",
+        "bdd_relational/0031.json",
+        "bdd_relational/0032.json",
+        "bdd_relational/0033.json",
+        "bdd_relational/0034.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c021",
+      "case": {
+        "family": "iriw",
+        "n": 1,
+        "id": "c021",
+        "events": 8,
+        "variables": 6,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 4,
+          "certified_rf": 4,
+          "steps": 4
+        },
+        "successor_interface": {
+          "width": 5,
+          "groups": 24
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.003243606997784809,
+          "baseline": 0.0009008519991766661
+        },
+        "8": {
+          "ours": 0.003300607999335625,
+          "baseline": 0.0009954949982784456
+        },
+        "64": {
+          "ours": 0.003722029001437477,
+          "baseline": 0.0016435790003015427
+        },
+        "512": {
+          "ours": 0.007001997020779527,
+          "baseline": 0.006522886014863616
+        }
+      },
+      "source_records": [
+        "pruning/0050.json",
+        "pruning/0051.json",
+        "pruning/0052.json",
+        "pruning/0053.json",
+        "pruning/0054.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0207.json",
+        "sat_strong/0208.json",
+        "sat_strong/0209.json",
+        "sat_strong/0210.json",
+        "sat_strong/0211.json",
+        "sat_strong/0202.json",
+        "sat_strong/0203.json",
+        "sat_strong/0204.json",
+        "sat_strong/0205.json",
+        "sat_strong/0206.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c021",
+      "case": {
+        "family": "iriw",
+        "n": 1,
+        "id": "c021",
+        "events": 8,
+        "variables": 6,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 4,
+          "certified_rf": 4,
+          "steps": 4
+        },
+        "successor_interface": {
+          "width": 5,
+          "groups": 24
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.003243606997784809,
+          "baseline": 0.009465985000133514
+        },
+        "8": {
+          "ours": 0.003300607999335625,
+          "baseline": 0.009555928001645952
+        },
+        "64": {
+          "ours": 0.003722029001437477,
+          "baseline": 0.010160449997783871
+        },
+        "512": {
+          "ours": 0.007001997020779527,
+          "baseline": 0.01484681398505927
+        }
+      },
+      "source_records": [
+        "pruning/0050.json",
+        "pruning/0051.json",
+        "pruning/0052.json",
+        "pruning/0053.json",
+        "pruning/0054.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0081.json",
+        "bdd_coherence/0082.json",
+        "bdd_coherence/0083.json",
+        "bdd_coherence/0084.json",
+        "bdd_coherence/0085.json",
+        "bdd_relational/0035.json",
+        "bdd_relational/0036.json",
+        "bdd_relational/0037.json",
+        "bdd_relational/0038.json",
+        "bdd_relational/0039.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c022",
+      "case": {
+        "family": "sb",
+        "n": 1,
+        "id": "c022",
+        "events": 6,
+        "variables": 4,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 2,
+          "certified_rf": 2,
+          "steps": 2
+        },
+        "successor_interface": {
+          "width": 5,
+          "groups": 16
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.00245959799940465,
+          "baseline": 0.0004216999986965675
+        },
+        "8": {
+          "ours": 0.002518969002267113,
+          "baseline": 0.0005075810004200321
+        },
+        "64": {
+          "ours": 0.0028364359986881027,
+          "baseline": 0.0010429359899717383
+        },
+        "512": {
+          "ours": 0.005363712993130321,
+          "baseline": 0.005192211016037618
+        }
+      },
+      "source_records": [
+        "pruning/0055.json",
+        "pruning/0056.json",
+        "pruning/0057.json",
+        "pruning/0058.json",
+        "pruning/0059.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0217.json",
+        "sat_strong/0218.json",
+        "sat_strong/0219.json",
+        "sat_strong/0220.json",
+        "sat_strong/0221.json",
+        "sat_strong/0212.json",
+        "sat_strong/0213.json",
+        "sat_strong/0214.json",
+        "sat_strong/0215.json",
+        "sat_strong/0216.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c022",
+      "case": {
+        "family": "sb",
+        "n": 1,
+        "id": "c022",
+        "events": 6,
+        "variables": 4,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 2,
+          "certified_rf": 2,
+          "steps": 2
+        },
+        "successor_interface": {
+          "width": 5,
+          "groups": 16
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.00245959799940465,
+          "baseline": 0.009327861000201665
+        },
+        "8": {
+          "ours": 0.002518969002267113,
+          "baseline": 0.0093947620025574
+        },
+        "64": {
+          "ours": 0.0028364359986881027,
+          "baseline": 0.009848941996096983
+        },
+        "512": {
+          "ours": 0.005363712993130321,
+          "baseline": 0.013230872977146646
+        }
+      },
+      "source_records": [
+        "pruning/0055.json",
+        "pruning/0056.json",
+        "pruning/0057.json",
+        "pruning/0058.json",
+        "pruning/0059.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0086.json",
+        "bdd_coherence/0087.json",
+        "bdd_coherence/0088.json",
+        "bdd_coherence/0089.json",
+        "bdd_coherence/0090.json",
+        "bdd_relational/0040.json",
+        "bdd_relational/0041.json",
+        "bdd_relational/0042.json",
+        "bdd_relational/0043.json",
+        "bdd_relational/0044.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c023",
+      "case": {
+        "family": "mp",
+        "n": 1,
+        "id": "c023",
+        "events": 6,
+        "variables": 4,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "PROVED_UNSAT",
+          "initial_rf": 2,
+          "certified_rf": 1,
+          "steps": 3
+        },
+        "successor_interface": {
+          "width": 0,
+          "groups": 0
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.00015225400238705333,
+          "baseline": 0.00039091999860829674
+        },
+        "8": {
+          "ours": 0.00016259400035778526,
+          "baseline": 0.00042408000081195496
+        },
+        "64": {
+          "ours": 0.00022610500673181377,
+          "baseline": 0.0006268960023589898
+        },
+        "512": {
+          "ours": 0.0007266900065587834,
+          "baseline": 0.0022128820019133855
+        }
+      },
+      "source_records": [
+        "pruning/0060.json",
+        "pruning/0061.json",
+        "pruning/0062.json",
+        "pruning/0063.json",
+        "pruning/0064.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0227.json",
+        "sat_strong/0228.json",
+        "sat_strong/0229.json",
+        "sat_strong/0230.json",
+        "sat_strong/0231.json",
+        "sat_strong/0222.json",
+        "sat_strong/0223.json",
+        "sat_strong/0224.json",
+        "sat_strong/0225.json",
+        "sat_strong/0226.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c023",
+      "case": {
+        "family": "mp",
+        "n": 1,
+        "id": "c023",
+        "events": 6,
+        "variables": 4,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "PROVED_UNSAT",
+          "initial_rf": 2,
+          "certified_rf": 1,
+          "steps": 3
+        },
+        "successor_interface": {
+          "width": 0,
+          "groups": 0
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.00015225400238705333,
+          "baseline": 0.009274071002437267
+        },
+        "8": {
+          "ours": 0.00016259400035778526,
+          "baseline": 0.00928089100671059
+        },
+        "64": {
+          "ours": 0.00022610500673181377,
+          "baseline": 0.0093126410174591
+        },
+        "512": {
+          "ours": 0.0007266900065587834,
+          "baseline": 0.009553494013744057
+        }
+      },
+      "source_records": [
+        "pruning/0060.json",
+        "pruning/0061.json",
+        "pruning/0062.json",
+        "pruning/0063.json",
+        "pruning/0064.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0091.json",
+        "bdd_coherence/0092.json",
+        "bdd_coherence/0093.json",
+        "bdd_coherence/0094.json",
+        "bdd_coherence/0095.json",
+        "bdd_relational/0045.json",
+        "bdd_relational/0046.json",
+        "bdd_relational/0047.json",
+        "bdd_relational/0048.json",
+        "bdd_relational/0049.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c024",
+      "case": {
+        "family": "lb",
+        "n": 1,
+        "id": "c024",
+        "events": 6,
+        "variables": 4,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "PROVED_UNSAT",
+          "initial_rf": 2,
+          "certified_rf": 2,
+          "steps": 2
+        },
+        "successor_interface": {
+          "width": 0,
+          "groups": 0
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.0001136030005000066,
+          "baseline": 0.00038508899888256565
+        },
+        "8": {
+          "ours": 0.00012465299914765637,
+          "baseline": 0.00041817999590421095
+        },
+        "64": {
+          "ours": 0.00018807298692991026,
+          "baseline": 0.0006285929957812186
+        },
+        "512": {
+          "ours": 0.0006705450086883502,
+          "baseline": 0.002216735001638881
+        }
+      },
+      "source_records": [
+        "pruning/0065.json",
+        "pruning/0066.json",
+        "pruning/0067.json",
+        "pruning/0068.json",
+        "pruning/0069.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0237.json",
+        "sat_strong/0238.json",
+        "sat_strong/0239.json",
+        "sat_strong/0240.json",
+        "sat_strong/0241.json",
+        "sat_strong/0232.json",
+        "sat_strong/0233.json",
+        "sat_strong/0234.json",
+        "sat_strong/0235.json",
+        "sat_strong/0236.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c024",
+      "case": {
+        "family": "lb",
+        "n": 1,
+        "id": "c024",
+        "events": 6,
+        "variables": 4,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "PROVED_UNSAT",
+          "initial_rf": 2,
+          "certified_rf": 2,
+          "steps": 2
+        },
+        "successor_interface": {
+          "width": 0,
+          "groups": 0
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.0001136030005000066,
+          "baseline": 0.009339892998468713
+        },
+        "8": {
+          "ours": 0.00012465299914765637,
+          "baseline": 0.009346722998088808
+        },
+        "64": {
+          "ours": 0.00018807298692991026,
+          "baseline": 0.009379153007103014
+        },
+        "512": {
+          "ours": 0.0006705450086883502,
+          "baseline": 0.009628020021409611
+        }
+      },
+      "source_records": [
+        "pruning/0065.json",
+        "pruning/0066.json",
+        "pruning/0067.json",
+        "pruning/0068.json",
+        "pruning/0069.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0096.json",
+        "bdd_coherence/0097.json",
+        "bdd_coherence/0098.json",
+        "bdd_coherence/0099.json",
+        "bdd_coherence/0100.json",
+        "bdd_relational/0050.json",
+        "bdd_relational/0051.json",
+        "bdd_relational/0052.json",
+        "bdd_relational/0053.json",
+        "bdd_relational/0054.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c025",
+      "case": {
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/inputs/public_ce1aaf0fd61e.json",
+        "name": "cppmem_iriw_relacq",
+        "id": "c025",
+        "events": 8,
+        "variables": 6,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 4,
+          "certified_rf": 4,
+          "steps": 4
+        },
+        "successor_interface": {
+          "width": 5,
+          "groups": 24
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.003270147999501205,
+          "baseline": 0.0009130630023719277
+        },
+        "8": {
+          "ours": 0.003327209000417497,
+          "baseline": 0.0010053650039481
+        },
+        "64": {
+          "ours": 0.003745287000128883,
+          "baseline": 0.0016365620012948057
+        },
+        "512": {
+          "ours": 0.0069956869974703295,
+          "baseline": 0.00656690100004198
+        }
+      },
+      "source_records": [
+        "pruning/0070.json",
+        "pruning/0071.json",
+        "pruning/0072.json",
+        "pruning/0073.json",
+        "pruning/0074.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0247.json",
+        "sat_strong/0248.json",
+        "sat_strong/0249.json",
+        "sat_strong/0250.json",
+        "sat_strong/0251.json",
+        "sat_strong/0242.json",
+        "sat_strong/0243.json",
+        "sat_strong/0244.json",
+        "sat_strong/0245.json",
+        "sat_strong/0246.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c025",
+      "case": {
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/inputs/public_ce1aaf0fd61e.json",
+        "name": "cppmem_iriw_relacq",
+        "id": "c025",
+        "events": 8,
+        "variables": 6,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 4,
+          "certified_rf": 4,
+          "steps": 4
+        },
+        "successor_interface": {
+          "width": 5,
+          "groups": 24
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.003270147999501205,
+          "baseline": 0.009420393002073979
+        },
+        "8": {
+          "ours": 0.003327209000417497,
+          "baseline": 0.009509395000350196
+        },
+        "64": {
+          "ours": 0.003745287000128883,
+          "baseline": 0.010089570007039583
+        },
+        "512": {
+          "ours": 0.0069956869974703295,
+          "baseline": 0.014718459997311584
+        }
+      },
+      "source_records": [
+        "pruning/0070.json",
+        "pruning/0071.json",
+        "pruning/0072.json",
+        "pruning/0073.json",
+        "pruning/0074.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0101.json",
+        "bdd_coherence/0102.json",
+        "bdd_coherence/0103.json",
+        "bdd_coherence/0104.json",
+        "bdd_coherence/0105.json",
+        "bdd_relational/0055.json",
+        "bdd_relational/0056.json",
+        "bdd_relational/0057.json",
+        "bdd_relational/0058.json",
+        "bdd_relational/0059.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c026",
+      "case": {
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/inputs/public_0dc91e9c5c62.json",
+        "name": "imm-E3.4",
+        "id": "c026",
+        "events": 6,
+        "variables": 4,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "PROVED_UNSAT",
+          "initial_rf": 2,
+          "certified_rf": 2,
+          "steps": 2
+        },
+        "successor_interface": {
+          "width": 0,
+          "groups": 0
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.00010784300138766412,
+          "baseline": 0.0003918899965356104
+        },
+        "8": {
+          "ours": 0.00011908300075447187,
+          "baseline": 0.0004237220000504749
+        },
+        "64": {
+          "ours": 0.0001882539982034359,
+          "baseline": 0.0006247590008570114
+        },
+        "512": {
+          "ours": 0.0006728610169375315,
+          "baseline": 0.0022065469893277623
+        }
+      },
+      "source_records": [
+        "pruning/0075.json",
+        "pruning/0076.json",
+        "pruning/0077.json",
+        "pruning/0078.json",
+        "pruning/0079.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0257.json",
+        "sat_strong/0258.json",
+        "sat_strong/0259.json",
+        "sat_strong/0260.json",
+        "sat_strong/0261.json",
+        "sat_strong/0252.json",
+        "sat_strong/0253.json",
+        "sat_strong/0254.json",
+        "sat_strong/0255.json",
+        "sat_strong/0256.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c026",
+      "case": {
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/inputs/public_0dc91e9c5c62.json",
+        "name": "imm-E3.4",
+        "id": "c026",
+        "events": 6,
+        "variables": 4,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "PROVED_UNSAT",
+          "initial_rf": 2,
+          "certified_rf": 2,
+          "steps": 2
+        },
+        "successor_interface": {
+          "width": 0,
+          "groups": 0
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.00010784300138766412,
+          "baseline": 0.009284071000365657
+        },
+        "8": {
+          "ours": 0.00011908300075447187,
+          "baseline": 0.009290430998589727
+        },
+        "64": {
+          "ours": 0.0001882539982034359,
+          "baseline": 0.009322362007878837
+        },
+        "512": {
+          "ours": 0.0006728610169375315,
+          "baseline": 0.009568584000589908
+        }
+      },
+      "source_records": [
+        "pruning/0075.json",
+        "pruning/0076.json",
+        "pruning/0077.json",
+        "pruning/0078.json",
+        "pruning/0079.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0106.json",
+        "bdd_coherence/0107.json",
+        "bdd_coherence/0108.json",
+        "bdd_coherence/0109.json",
+        "bdd_coherence/0110.json",
+        "bdd_relational/0060.json",
+        "bdd_relational/0061.json",
+        "bdd_relational/0062.json",
+        "bdd_relational/0063.json",
+        "bdd_relational/0064.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c027",
+      "case": {
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/inputs/public_8587e8934270.json",
+        "name": "imm-E3.8",
+        "id": "c027",
+        "events": 8,
+        "variables": 6,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 4,
+          "certified_rf": 4,
+          "steps": 4
+        },
+        "successor_interface": {
+          "width": 5,
+          "groups": 24
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "strong-SAT",
+      "first_observed_crossover": null,
+      "sustained_through_512_from": null,
+      "winning_prefixes": 0,
+      "checkpoints": {
+        "1": {
+          "ours": 0.003174205998220714,
+          "baseline": 0.0009227729988197098
+        },
+        "8": {
+          "ours": 0.0032365969964303076,
+          "baseline": 0.001015022997307824
+        },
+        "64": {
+          "ours": 0.0036610649949579965,
+          "baseline": 0.001650937994781998
+        },
+        "512": {
+          "ours": 0.006908293005835731,
+          "baseline": 0.0065858050002134405
+        }
+      },
+      "source_records": [
+        "pruning/0080.json",
+        "pruning/0081.json",
+        "pruning/0082.json",
+        "pruning/0083.json",
+        "pruning/0084.json"
+      ],
+      "baseline_records": [
+        "sat_strong/0267.json",
+        "sat_strong/0268.json",
+        "sat_strong/0269.json",
+        "sat_strong/0270.json",
+        "sat_strong/0271.json",
+        "sat_strong/0262.json",
+        "sat_strong/0263.json",
+        "sat_strong/0264.json",
+        "sat_strong/0265.json",
+        "sat_strong/0266.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    },
+    {
+      "id": "c027",
+      "case": {
+        "family": "public",
+        "input": "/root/wm-research/project/results/paper/inputs/public_8587e8934270.json",
+        "name": "imm-E3.8",
+        "id": "c027",
+        "events": 8,
+        "variables": 6,
+        "dynamic_certificate": false,
+        "recognition": {
+          "status": "RECOGNIZED",
+          "initial_rf": 4,
+          "certified_rf": 4,
+          "steps": 4
+        },
+        "successor_interface": {
+          "width": 5,
+          "groups": 24
+        }
+      },
+      "method": "frontier-direct-co",
+      "baseline": "relational-BDD",
+      "first_observed_crossover": 1,
+      "sustained_through_512_from": 1,
+      "winning_prefixes": 512,
+      "checkpoints": {
+        "1": {
+          "ours": 0.003174205998220714,
+          "baseline": 0.009394743998200283
+        },
+        "8": {
+          "ours": 0.0032365969964303076,
+          "baseline": 0.00950272599766322
+        },
+        "64": {
+          "ours": 0.0036610649949579965,
+          "baseline": 0.010103226990395342
+        },
+        "512": {
+          "ours": 0.006908293005835731,
+          "baseline": 0.014701407992106397
+        }
+      },
+      "source_records": [
+        "pruning/0080.json",
+        "pruning/0081.json",
+        "pruning/0082.json",
+        "pruning/0083.json",
+        "pruning/0084.json"
+      ],
+      "baseline_records": [
+        "bdd_coherence/0111.json",
+        "bdd_coherence/0112.json",
+        "bdd_coherence/0113.json",
+        "bdd_coherence/0114.json",
+        "bdd_coherence/0115.json",
+        "bdd_relational/0065.json",
+        "bdd_relational/0066.json",
+        "bdd_relational/0067.json",
+        "bdd_relational/0068.json",
+        "bdd_relational/0069.json"
+      ],
+      "query_sha256": "cddb402977218080c9871764406b8c294edf7b16f30cdd16eca252ee268f49bb"
+    }
+  ]
+}

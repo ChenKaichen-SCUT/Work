@@ -17,7 +17,7 @@ def main():
     p.add_argument('--input', help='JSON with events, threads, initial fields')
     p.add_argument('--family', choices=('producers', 'pipeline'), default='producers')
     p.add_argument('--size', type=int, default=4, help='Writes per producer or pipeline stages')
-    p.add_argument('--algorithm', choices=('auto', 'grid', 'dynamic', 'frontier', 'frontier-direct'), default='auto')
+    p.add_argument('--algorithm', choices=('auto', 'grid', 'dynamic', 'frontier', 'frontier-direct', 'frontier-ports'), default='auto')
     p.add_argument('--seconds', type=float, default=60)
     p.add_argument('--states', type=int, default=100000)
     p.add_argument('--assume', type=int, nargs='*', default=[])
@@ -46,8 +46,10 @@ def main():
         else:
             fn = compile_schedule if method == 'dynamic' else compile_frontier
             options = {}
-            if method == 'frontier-direct':
+            if method in ('frontier-direct', 'frontier-ports'):
                 options.update(co_mode='direct',early_degrees=True)
+            if method == 'frontier-ports':
+                options['summary_mode'] = 'ports'
             if method.startswith('frontier') and not a.input and a.family == 'pipeline':
                 options['order'] = inst.initial+tuple(v for stage in range(1, a.size+1) for t in inst.threads
                                                       for v in t if v.split('_')[1] == str(stage))
