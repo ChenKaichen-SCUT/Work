@@ -1,0 +1,11 @@
+{
+  "payload": "epoch",
+  "n": 32,
+  "method": "sat-demand",
+  "status": "ERROR",
+  "log_sha256": "5049f78ef4cd1ad13b44dafe924b9d9feb0fc20374cabb20f3a4b187cd619b4d",
+  "reports": [],
+  "reason": "worker_exit",
+  "returncode": 1,
+  "stderr": "Traceback (most recent call last):\n  File \"/root/wm-research/support-task-20261016/wmcheck/ra_sat.py\", line 19, in clause\n    xs = list(dict.fromkeys(x for x in xs if x is not False))\nMemoryError\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/root/wm-research/support-task-20261016/experiments/support_task_demand.py\", line 61, in worker\n    engine=DemandSAT(inst);result['build_setup_seconds']=time.perf_counter()-start\n  File \"/root/wm-research/support-task-20261016/experiments/support_task_demand.py\", line 20, in __init__\n    enc=encode_ra(inst);self.reg=enc.registry;self.stats=enc.stats\nMemoryError\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/root/wm-research/support-task-20261016/experiments/support_task_demand.py\", line 122, in <module>\n    if args.worker:worker(args)\n  File \"/root/wm-research/support-task-20261016/experiments/support_task_demand.py\", line 72, in worker\n    result.update(status='UNKNOWN' if isinstance(exc,MemoryError) else 'ERROR',reason=str(exc),traceback=traceback.format_exc())\n  File \"/usr/lib/python3.10/traceback.py\", line 183, in format_exc\n    return \"\".join(format_exception(*sys.exc_info(), limit=limit, chain=chain))\n  File \"/usr/lib/python3.10/traceback.py\", line 136, in format_exception\n    return list(te.format(chain=chain))\n  File \"/usr/lib/python3.10/traceback.py\", line 691, in format\n    yield from exc.stack.format()\nMemoryError\n"
+}

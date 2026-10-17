@@ -1,0 +1,50 @@
+{
+  "rf": {
+    "t0_1_read": "t0_1_x",
+    "t0_1_wait": "ifb",
+    "t0_2_read": "t0_2_x",
+    "t0_2_wait": "t1_1_pub0",
+    "t1_1_read": "t1_1_y",
+    "t1_1_wait": "ifa",
+    "t1_2_read": "t1_2_y",
+    "t1_2_wait": "t0_1_pub0"
+  },
+  "orders": {
+    "x": [
+      "ix",
+      "t1_1_x",
+      "t0_1_x",
+      "t1_2_x",
+      "t0_2_x"
+    ],
+    "y": [
+      "iy",
+      "t0_1_y",
+      "t1_1_y",
+      "t0_2_y",
+      "t1_2_y"
+    ],
+    "fa": [
+      "ifa",
+      "t0_1_pub0",
+      "t0_1_pub1",
+      "t0_2_pub0",
+      "t0_2_pub1"
+    ],
+    "fb": [
+      "ifb",
+      "t1_1_pub0",
+      "t1_1_pub1",
+      "t1_2_pub0",
+      "t1_2_pub1"
+    ]
+  },
+  "independent_ra_valid": true,
+  "non_sc_cycle": [
+    "t0_1_x",
+    "t0_1_y",
+    "t1_1_y",
+    "t1_1_x",
+    "t0_1_x"
+  ]
+}

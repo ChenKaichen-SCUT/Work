@@ -1,0 +1,71 @@
+% Compile with XeLaTeX; original Springer LLNCS class is supplied unchanged.
+\documentclass[runningheads]{llncs}
+\usepackage[UTF8,fontset=none,scheme=plain]{ctex}
+\setCJKmainfont{Noto Serif CJK SC}[BoldFont=Noto Serif CJK SC Bold,ItalicFont=Noto Serif CJK SC,BoldItalicFont=Noto Serif CJK SC Bold]
+\setCJKsansfont{Noto Sans CJK SC}[BoldFont=Noto Sans CJK SC Bold]
+\setCJKmonofont{Noto Sans Mono CJK SC}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{Latin Modern Mono}[Scale=MatchLowercase]
+\usepackage{amsmath,amssymb,mathtools,booktabs,array,tabularx,longtable}
+\usepackage{graphicx,xcolor,enumitem,placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit}
+\usepackage[unicode,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue!55!black]{hyperref}
+\usepackage{bookmark}
+\hypersetup{pdftitle={来源未定的 Release--Acquire 发布网络：候选局部化与精确支持编译},pdfauthor={匿名作者},pdfsubject={中文完整研究稿}}
+\renewcommand{\abstractname}{摘要}
+\renewcommand{\keywordname}{关键词}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\refname}{参考文献}
+\spnewtheorem{cthm}{定理}{\bfseries}{\rmfamily}
+\spnewtheorem{clemma}[cthm]{引理}{\bfseries}{\rmfamily}
+\spnewtheorem{cprop}[cthm]{命题}{\bfseries}{\rmfamily}
+\spnewtheorem{cdef}{定义}{\bfseries}{\rmfamily}
+\newenvironment{cproof}{\par\noindent\textbf{证明.}\ }{\hfill$\square$\par}
+\newcommand{\RF}{\mathsf{RF}}
+\newcommand{\CO}{\mathsf{CO}}
+\newcommand{\HB}{\mathsf{HB}}
+\newcommand{\FR}{\mathsf{FR}}
+\newcommand{\ECO}{\mathsf{ECO}}
+\newcommand{\SB}{\mathsf{sb}}
+\newcommand{\init}{\mathsf{init}}
+\newcommand{\Cov}{\mathop{\mathrm{Cov}}}
+\newcommand{\supp}{\mathop{\mathrm{Supp}}}
+\newcommand{\Lit}{\mathop{\mathrm{Lit}}}
+\newcommand{\ka}{K_{\forall}}
+\newcommand{\pv}{P_{\mathrm v}}
+\newcommand{\unk}{\textsc{unknown}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\setlist{nosep,leftmargin=1.6em}
+\setlength{\emergencystretch}{2em}
+\makeatletter
+\let\tableinput\@@input
+\makeatother
+\graphicspath{{figures/}}
+\begin{document}
+\raggedbottom
+\title{来源未定的 Release--Acquire 发布网络：\\候选局部化与精确支持编译}
+\titlerunning{来源未定的 RA 发布网络中的精确支持编译}
+\author{匿名作者}
+\authorrunning{匿名作者}
+\institute{中文完整研究稿}
+\maketitle
+\begin{abstract}
+弱内存执行日志通常只记录读值，不能确定读自哪一次同值写，也不能确定不同线程写入的相对顺序。一次一致性检查虽能给出某个补全，却不能说明每个来源和写序方向是否仍然可能。本文研究固定事件的 Release--Acquire 片段，给出一个面向重复发布网络的候选局部化定理：在完整交替观测、有界阶段密度及有界写覆盖间隔下，来源块可以被锁定而块内身份仍未决；对全部候选来源量化共同前序，可认证跨网络因果分隔，并同时局部化来源边、未决写序与固定写序的覆盖边。所得事件接口界只依赖阶段密度、网络直径、写覆盖间隔和初始化地址数，与阶段总数无关。结合联合关系端口摘要和标准支持编码，该表示保留任意原始来源／写序假设下的全部支持。我们用同值早、晚发布改变写序支持的实例说明身份保留的必要性，并实现不完整来源日志的冲突解释与全部单字段修复。原生 Dat3M 分析对照表明，共同前序规则可以作为已有过滤框架的扩展，新增结论在于明确程序条件所蕴含的整体候选界。实验覆盖双线程交换和多线程有向环；版本载荷的完整诊断任务完成至 32 轮，并对 53 个场景、826 个目标文字进行独立核对。恒定载荷六轮及三线程环四轮的状态超限表明，有界接口并不保证实际编译始终便宜。
+\keywords{弱内存 \and Release--Acquire \and 来源分析 \and 知识编译 \and 完整支持 \and 执行日志诊断}
+\end{abstract}
+\input{01_intro}
+\input{02_model}
+\input{03_theorem}
+\input{04_compilation}
+\input{05_task}
+\input{06_experiments}
+\input{07_related}
+\bibliographystyle{splncs04}
+\bibliography{references}
+\clearpage
+\appendix
+\input{08_appendix}
+\end{document}

@@ -80,7 +80,7 @@ def closure(edges):
     return result
 
 
-def recognize(inst, *, chain=True):
+def recognize(inst, *, chain=True, source_covers=False):
     """Permanent, sound necessary-condition kernel; never reads query assumptions.
 
     The returned transcript can be replayed by recomputing this deterministic
@@ -88,11 +88,13 @@ def recognize(inst, *, chain=True):
     """
     D = {r: set(ws) for r, ws in inst.candidates.items()}
     mandatory = set()
+    covered_hb = set()
     trace = []
     init_edges = {(i, e.id) for i in inst.initial for e in inst.events if e.id not in inst.initial}
     while True:
-        old = (frozenset(mandatory), tuple((r, tuple(sorted(D[r]))) for r in inst.reads))
-        H = closure(inst.sb | mandatory | init_edges)
+        old = (frozenset(mandatory), frozenset(covered_hb),
+               tuple((r, tuple(sorted(D[r]))) for r in inst.reads))
+        H = closure(inst.sb | mandatory | init_edges | covered_hb)
         L = closure({(a, b) for a, b in H if a in inst.writes and b in inst.writes
                      and inst.event[a].loc == inst.event[b].loc})
         if any(a == b for a, b in H) or any(not D[r] for r in D):
@@ -134,13 +136,32 @@ def recognize(inst, *, chain=True):
                 w = next(iter(D[r]))
                 if (w, r) not in mandatory:
                     mandatory.add((w, r)); trace.append(('must-rf', w, r))
-        new = (frozenset(mandatory), tuple((r, tuple(sorted(D[r]))) for r in inst.reads))
+        if source_covers:
+            # Every legal source has the same predecessor, although no source
+            # identity need be mandatory. Use only already certified H facts;
+            # derived edges are closed in the next iteration, never assumed
+            # circularly. The saved domain is the universal witness obligation.
+            predecessors = {v: {v} for v in inst.event}
+            for u, v in H:
+                predecessors[v].add(u)
+            for r in inst.reads:
+                domain = tuple(sorted(D[r]))
+                if not domain:
+                    continue
+                common = set.intersection(*(predecessors[w] for w in domain))
+                for u in sorted(common):
+                    if (u, r) not in H and (u, r) not in covered_hb:
+                        covered_hb.add((u, r))
+                        trace.append(('source-cover', u, r, domain))
+        new = (frozenset(mandatory), frozenset(covered_hb),
+               tuple((r, tuple(sorted(D[r]))) for r in inst.reads))
         if old == new:
             break
     c = {(a, b) for a in inst.writes for b in inst.writes
          if a != b and b not in inst.initial and inst.event[a].loc == inst.event[b].loc
          and (b, a) not in L and not any((a, z) in L and (z, b) in L for z in inst.writes)}
-    return dict(status='RECOGNIZED', domains=D, H=H, L=L, mandatory=mandatory, successors=c, trace=trace)
+    return dict(status='RECOGNIZED', domains=D, H=H, L=L, mandatory=mandatory,
+                successors=c, trace=trace, source_cover_edges=covered_hb)
 
 
 def producers(lengths=(2, 2), reader_values=((1, 1),), write_values=None):

@@ -1,5 +1,10 @@
 # Bounded-interface weak-memory solver
 
+**2026-10-17 server backup:** [Chinese recovery guide](SERVER_RECOVERY.zh.txt)
+provides fresh-machine setup, full experiment checks, pinned upstream tools,
+and restoration of all 6,929 archived research files. The [Chinese manuscript](artifacts/FM_Chinese_Manuscript.pdf)
+and [editable sources](fm_chinese_paper/) are included.
+
 Research implementation of a compiler from a restricted relational memory
 theory and a certified event decomposition to exact history summaries and a
 propagation encoding. The first semantic recognizer covers the alternating-flag
@@ -9,6 +14,33 @@ x86-TSO execution subclass described in `docs/proof_audit.txt`.
 The complete-propagation contract applies to original relation assumptions on
 the accepted fixed event instance. It does not cover arbitrary auxiliary
 decisions, dynamic addresses, RMWs, or general control-flow activation.
+
+The latest [FM preparation evidence](FM_READINESS_RESULTS.zh.txt) adds an
+[adversarial proof audit](docs/FM_PROOF_AUDIT.zh.txt), three/four-worker directed
+rings, and an independent incidence-based RA encoding with CaDiCaL. At 32 rounds,
+53 scenarios and 826 selected literal supports agree with the graph; 81 complete
+witnesses are independently checked. This is selected-query evidence, not a full
+support audit at that size. A three-worker four-round construction failure is
+retained. The [artifact guide](docs/FM_ARTIFACT.zh.txt) provides portable quick
+checks and bounded Linux reproduction; the [manuscript plan](docs/FM_MANUSCRIPT_PLAN.zh.txt)
+separates the central theorem from existing compilation machinery.
+
+The preceding [support-task delivery](SUPPORT_TASK_RESULTS.zh.txt) connects the
+publication theorem to incomplete provenance-log diagnosis and all single-field
+repairs. It includes a [native Dat3M analysis audit](docs/CLOSEST_ANALYSIS_AUDIT.zh.txt),
+[proof addendum](docs/SUPPORT_TASK_THEOREM_ADDENDUM.zh.txt), and
+[frozen measurements](results/support_task_20261016/summary.json). Version-tagged
+payloads complete 32 rounds with three repeats and a separate 64-round stress
+point; constant payloads still fail at six rounds. These are controlled protocol
+kernels, not industrial traces or a general performance claim.
+
+Run a small diagnosis with `python -m wmcheck.trace_cli --publication 2 --payload epoch`.
+For an independent fixed RA JSON, use `--input fixed_ra.json --log observations.json`,
+where observations is a list of original RF/CO literal IDs. The optional Linux
+accelerator builds with `python experiments/build_port_native.py`; enable it with
+`WMCHECK_NATIVE_PORTS=1`. Without the extension the same semantics run in Python.
+The measured source snapshot, full-support checks, task-specific SAT comparator,
+resource failures, and reproduction commands are documented in the latest report.
 
 The [novelty audit](docs/NOVELTY_AUDIT.zh.txt) compares the current claims with
 primary literature through 2026-10-15. The [theory agenda](docs/THEORY_AGENDA.zh.txt)
@@ -33,8 +65,8 @@ their original scope; new RA experiments are recorded separately below.
 
 ## RA construction algorithms
 
-The expanded [paper evaluation report](PAPER_RESULTS.zh.txt) and
-[reproduction guide](docs/PAPER_REPRODUCE.zh.txt) are the current comparison.
+The earlier [paper evaluation report](PAPER_RESULTS.zh.txt) and
+[reproduction guide](docs/PAPER_REPRODUCE.zh.txt) retain their frozen comparison.
 They add stronger complete SAT and symbolic BDD baselines, native GenMC/
 Dartagnan/Poct checks, and the direct-CO construction improvement. Earlier
 speed ratios against the original SAT baseline are historical measurements;
@@ -47,6 +79,18 @@ preserving exactly-one-mark conflict paths and original RF/CO support. Its
 from the frozen paper campaign; single development timings are not final speed
 estimates. [When compilation pays off](docs/COMPILATION_ECONOMICS.zh.txt) analyses
 every measured query prefix in the existing data without assuming amortization.
+The [certificate-to-port bridge](docs/FUTURE_PORT_CERTIFICATE_BRIDGE.zh.txt)
+shows how the existing relation certificates also bound the direct-CO port
+construction, while keeping this corollary separate from novelty claims.
+
+The [publication core theorem](docs/PUBLICATION_CORE_THEOREM.zh.txt) derives
+bounded candidate interfaces from synchronization with unresolved source
+identities. Its executable publication family keeps competing payload writes
+and source-sensitive CO queries. The [focused results](PUBLICATION_RESULTS.zh.txt)
+include five-repeat SAT/BDD comparisons, independent witnesses, GenMC outcome
+checks, and construction failures. The optional `--source-covers` recognizer
+infers common HB predecessors without fixing an individual RF source; defaults
+and the frozen earlier campaigns remain unchanged.
 
 The expanded paper evaluation uses `experiments/paper_suite.py`,
 `paper_external.py`, `paper_bdd_direct.py`, `paper_poct.py`, and `paper_stress.py`.
@@ -67,6 +111,7 @@ python -m wmcheck.ra_cli --family producers --size 32 --dimacs ra.cnf --registry
 python -m wmcheck.ra_cli --family pipeline --size 1
 python -m wmcheck.ra_cli --family pipeline --size 2 --algorithm frontier-direct
 python -m wmcheck.ra_cli --family pipeline --size 3 --algorithm frontier-ports
+python -m wmcheck.ra_cli --family publication --size 2 --algorithm frontier-ports --source-covers
 python -m wmcheck.ra_cli --input ra-instance.json --algorithm frontier
 ```
 

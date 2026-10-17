@@ -1,0 +1,30 @@
+{
+  "payload": "constant",
+  "n": 3,
+  "method": "ports-binary",
+  "status": "UNKNOWN",
+  "budget_states": 200000,
+  "events": 40,
+  "original_variables": 140,
+  "log_sha256": "dd08f9de0502bd46d48ee2974bfbd12a0f0f1cb838bc01a2c34a7ab33f93b1b1",
+  "queries": [],
+  "reports": [],
+  "examples": [],
+  "diagnosis_seconds": 0,
+  "reason": "Frontier state/edge limit",
+  "failure_stats": {
+    "states": 200001,
+    "transitions": 202883,
+    "step": 128,
+    "groups": 158,
+    "max_interface": 19,
+    "current_interface": 16,
+    "max_layer_states": 15060,
+    "early_degrees": true,
+    "co_mode": "direct",
+    "summary_mode": "ports"
+  },
+  "traceback": "Traceback (most recent call last):\n  File \"/root/wm-research/support-task-20261016/experiments/support_task_study.py\", line 45, in worker\n    c=compile_frontier(inst,order=publication_layout(inst,n),co_mode='direct',summary_mode='ports',\n  File \"/root/wm-research/support-task-20261016/wmcheck/ra_frontier.py\", line 189, in compile_frontier\n    raise error\nwmcheck.compiler.ResourceLimit: Frontier state/edge limit\n",
+  "elapsed_seconds": 2.8596692369992525,
+  "peak_rss_kib": 116280
+}

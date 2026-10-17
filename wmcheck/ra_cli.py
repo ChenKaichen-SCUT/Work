@@ -10,15 +10,18 @@ from .ra_frontier import compile_frontier
 from .compiler import ResourceLimit
 from .owned_dag import OwnedGraphSolver
 from .ra_grid import compile_grid, GridSolver, grid_cnf
+from .ra_publication import publication_exchange, publication_layout
 
 
 def main():
     p = argparse.ArgumentParser(description='Fixed-event release/acquire support compiler')
     p.add_argument('--input', help='JSON with events, threads, initial fields')
-    p.add_argument('--family', choices=('producers', 'pipeline'), default='producers')
+    p.add_argument('--family', choices=('producers', 'pipeline', 'publication'), default='producers')
     p.add_argument('--size', type=int, default=4, help='Writes per producer or pipeline stages')
     p.add_argument('--algorithm', choices=('auto', 'grid', 'dynamic', 'frontier', 'frontier-direct', 'frontier-ports'), default='auto')
     p.add_argument('--seconds', type=float, default=60)
+    p.add_argument('--source-covers', action='store_true', help='Infer common HB predecessors of ambiguous RF domains')
+    p.add_argument('--rf-mode', choices=('binary', 'atomic'), default='binary', help='Process each RF bit or one complete source choice per read')
     p.add_argument('--states', type=int, default=100000)
     p.add_argument('--assume', type=int, nargs='*', default=[])
     p.add_argument('--dimacs'); p.add_argument('--export-instance'); p.add_argument('--registry')
@@ -30,7 +33,8 @@ def main():
         inst = RAInstance(tuple(Event(**e) for e in data['events']),
                           tuple(tuple(t) for t in data['threads']), tuple(data['initial']))
     else:
-        inst = producers((a.size, a.size)) if a.family == 'producers' else pipeline(a.size)
+        inst = (producers((a.size, a.size)) if a.family == 'producers' else
+                publication_exchange(a.size) if a.family == 'publication' else pipeline(a.size))
     if a.export_instance:
         Path(a.export_instance).write_text(json.dumps(asdict(inst), indent=2))
     method = a.algorithm
@@ -50,6 +54,11 @@ def main():
                 options.update(co_mode='direct',early_degrees=True)
             if method == 'frontier-ports':
                 options['summary_mode'] = 'ports'
+            if method.startswith('frontier'):
+                options['source_covers'] = a.source_covers
+                options['rf_mode'] = a.rf_mode
+            if method.startswith('frontier') and not a.input and a.family == 'publication':
+                options['order'] = publication_layout(inst, a.size)
             if method.startswith('frontier') and not a.input and a.family == 'pipeline':
                 options['order'] = inst.initial+tuple(v for stage in range(1, a.size+1) for t in inst.threads
                                                       for v in t if v.split('_')[1] == str(stage))

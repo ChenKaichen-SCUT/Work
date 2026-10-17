@@ -1,0 +1,20 @@
+{
+  "payload": "epoch",
+  "n": 32,
+  "method": "sat-phase",
+  "status": "UNKNOWN",
+  "budget_states": 1000000,
+  "events": 388,
+  "original_variables": 10528,
+  "log_sha256": "5049f78ef4cd1ad13b44dafe924b9d9feb0fc20374cabb20f3a4b187cd619b4d",
+  "queries": [],
+  "reports": [],
+  "examples": [],
+  "diagnosis_seconds": 0,
+  "reason": "worker_memory_failure_4GiB",
+  "returncode": 1,
+  "parent_classified": true,
+  "evidence": "Observed worker stderr: MemoryError in ra_sat.py encode_ra, followed by MemoryError importing ResourceLimit in the exception handler. Parent aborted with RuntimeError worker exit 1. No answers were produced.",
+  "peak_rss_kib": null,
+  "elapsed_seconds": null
+}

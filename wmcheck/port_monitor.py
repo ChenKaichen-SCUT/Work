@@ -6,6 +6,11 @@ edge targets need rows and only future edge sources need columns. This module
 does not use SAT, completion search, or enumeration of conflict supports.
 """
 from dataclasses import dataclass
+import os
+try:
+    from . import _port_native
+except ImportError:
+    _port_native = None
 
 
 @dataclass(frozen=True)
@@ -39,8 +44,11 @@ class PortStep:
     tests: tuple
     alternatives: tuple
     acyclic: bool
+    native_plan: object = None
 
     def update(self, state, alternative):
+        if self.native_plan is not None:
+            return _port_native.update(self.native_plan,state,alternative)
         old_r, old_t = state
         r = [1 << i for i in range(self.width)]
         t = [0] * self.width
@@ -134,5 +142,8 @@ def plan_ports(monitors, groups):
                 monitor.acyclic,
             ))
             before_i, before_o = after_i, after_o
+        if _port_native is not None and os.environ.get('WMCHECK_NATIVE_PORTS')=='1':
+            from dataclasses import replace
+            plans=[replace(plan,native_plan=_port_native.prepare(plan)) for plan in plans]
         result.append(plans)
     return tuple(result)

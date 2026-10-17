@@ -1,0 +1,56 @@
+\section{语义与完整支持问题}\label{sec:model}
+\subsection{固定事件的 RA 片段}
+输入由有限事件集合 $E$、线程内程序序 $\SB$、固定地址和固定读写值组成。每个非初始化写都是 release，每个读都是 acquire；每地址有一个初始化写。本文不包含 RMW、fence、SC 操作、非原子访问、动态地址／值或可选事件激活。阶段号属于输入结构，不是执行的全局时间戳，也不要求不同线程的同阶段事件互相同步。
+
+一个完整赋值 $J$ 选择每个读 $r$ 的唯一同址同值来源 $w$，得到 $\RF_J$；并为每地址的写选择严格全序 $\CO_J$，初始化写最小。关系组合 $A;B$ 表示先走 $A$ 再走 $B$，$A^+$、$A^*$ 分别表示传递与自反传递闭包，$A^?$ 为 $A$ 加恒等关系。定义
+\begin{align}
+ \HB_J &= (\SB\cup\RF_J\cup\init)^+,\label{eq:hb}\\
+ \FR_J &= \RF_J^{-1};\CO_J,\qquad
+ \ECO_J=(\RF_J\cup\CO_J\cup\FR_J)^+.
+\end{align}
+其中 $\init$ 将初始化事件置于线程事件之前。合法性要求
+\begin{equation}
+ \operatorname{irreflexive}(\HB_J;\ECO_J^?).\label{eq:ra}
+\end{equation}
+它同时要求 HB 无环与四类 WW、WR、RW、RR coherence。本文所有算法、实例与独立核对均使用这个明示片段，不借助不同 RA／RC11 变体之间的语义差异比较性能。将 RF 固定后，CO 仍需满足该公理；将 CO 固定后，RF 也未必合法。
+
+\subsection{原始变量与查询合同}
+令 $X$ 包含每个输入 RF 候选的布尔位，以及每个同址无序写对的一个 CO 方向位。方向位的正负分别表示两种次序。预处理证明为常量的位仍属于 $X$，不能从用户接口中删除。合法完整赋值集合记为 $\mathcal V$。
+
+\begin{cdef}[原始支持]
+对任意原始文字集合 $\alpha\subseteq\Lit(X)$，定义
+\[
+ \supp(\alpha)=\{\lambda\in\Lit(X)\mid
+       \exists J\in\mathcal V:\ J\models\alpha\cup\{\lambda\}\}.
+\]
+若不存在满足 $\alpha$ 的 $J$，查询报告 UNSAT；否则返回每个变量两个方向的支持，等价地返回全部必然原始文字。
+\end{cdef}
+
+这里的“完整”针对当前假设下的每个原始位，不表示枚举所有完整模型。撤销假设后重新查询同一表示；永久识别不读取 $\alpha$。传播保证仅限于从原始变量假设开始的纯单位传播（UP）。我们不主张任意辅助变量决策或任意外部公式合取之后的全局传播完备。
+
+\subsection{可靠识别核}
+识别器保存来源上界 $D(r)$、必选来源 $M$、公共 HB 下界 $H$ 和固定 CO 下界 $L$。不变式是，对任意 $J\in\mathcal V$，真实来源属于 $D(r)$，且 $M\subseteq\RF_J$、$H\subseteq\HB_J$、$L\subseteq\CO_J$。若发现空域、HB 环或固定 CO 环，可靠地拒绝输入。
+
+旧核 $K_0$ 从单例来源得到 $M$，令 $H=(\SB\cup\init\cup M)^+$，由同址写之间的 $H$ 更新 $L$ 并求闭包。若 $H(r,w)$，则 $w$ 不能供 $r$ 读取；若存在同址写 $v$ 使 $L(w,v)$ 且 $H(v,r)$，选择 $w$ 将形成 $r\,\FR\,v\,\HB\,r$，也应删去。对 $L$ 已全序的地址，按同线程读序执行非降来源链过滤，实施 RR coherence。以上步骤迭代到不动点。
+
+新核 $\ka$ 额外保存经认证的公共前序 $B_{\forall}$，将其加入 $H$ 的闭包，并加入规则
+\begin{equation}
+\frac{D(r)\ne\varnothing\qquad
+      \forall w\in D(r):\ u=w\ \lor\ H(u,w)}
+     {B_{\forall}(u,r)}.\tag{$R_{\forall}$}\label{eq:cover}
+\end{equation}
+每次应用只使用此前已经证明的 $H$ 和可靠域；新事实在下一轮参与闭包。$B_{\forall}$ 是 HB 事实，不能伪装为 RF 选择。
+
+\begin{clemma}[来源量化的可靠性]\label{lem:cover}
+$R_{\forall}$ 保持上述不变式，且不要求 $D(r)$ 为单例。
+\end{clemma}
+\begin{cproof}
+任取合法 $J$，其唯一来源 $w_J\in D(r)$。规则前提给出 $u=w_J$ 或 $\HB_J(u,w_J)$；接上 $\RF_J(w_J,r)$ 即得 $\HB_J(u,r)$。对推导轮数归纳即可，故不存在循环使用待证结论的问题。
+\end{cproof}
+
+规则捕获的关键区别是
+\[
+ (\SB\cup\bigcap_J\RF_J)^+
+ \ \subsetneq\ \bigcap_J(\SB\cup\RF_J)^+
+\]
+可能成立。例如 $a\,\SB\,b$，读 $r$ 只可能来自同值写 $a,b$；两个 RF 选择都不必然，但 $\HB(a,r)$ 必然。这个规则适合已有 may/must 语义过滤框架~\cite{haas2023}。本文新增的核心证明是接下来从发布条件推出\emph{所有候选}的局部性，而非把该过滤器视作全新的抽象解释框架。

@@ -1,0 +1,428 @@
+[
+  {
+    "rounds": 1,
+    "queries": 512,
+    "distinct_assumptions": 177,
+    "exact_answer_agreement": true,
+    "compared_methods": 7,
+    "sat_queries": 475,
+    "methods": {
+      "bdd": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.009729225999990376,
+        "setup_median": 0,
+        "total_median": 0.024433975998363167,
+        "query_median": 0.014718489998358564,
+        "peak_rss_kib_median": 84400,
+        "bdd_nodes": 21
+      },
+      "bdd-coherence": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.009704415999976845,
+        "setup_median": 0,
+        "total_median": 0.024225277002869916,
+        "query_median": 0.01452086100289307,
+        "peak_rss_kib_median": 84400,
+        "bdd_nodes": 21
+      },
+      "full-cover": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.017724692000001596,
+        "setup_median": 3.8441000015154714e-05,
+        "total_median": 0.03012455100065381,
+        "query_median": 0.012373599000738977,
+        "peak_rss_kib_median": 84400,
+        "states": 122,
+        "attempted_transitions": 141,
+        "max_interface": 8
+      },
+      "ports": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.005585529999962091,
+        "setup_median": 3.297100010968279e-05,
+        "total_median": 0.016507988001876583,
+        "query_median": 0.010851714999262185,
+        "peak_rss_kib_median": 84400,
+        "states": 99,
+        "attempted_transitions": 117,
+        "max_interface": 8,
+        "max_port_coordinates": 358
+      },
+      "ports-cover": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.005649851000043782,
+        "setup_median": 3.24110001201916e-05,
+        "total_median": 0.01661018599656927,
+        "query_median": 0.010931903996606707,
+        "peak_rss_kib_median": 84400,
+        "states": 99,
+        "attempted_transitions": 117,
+        "max_interface": 8,
+        "max_port_coordinates": 358
+      },
+      "sat-phase": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.00559042000008958,
+        "setup_median": 0.0009924329999648762,
+        "total_median": 0.02762756700190039,
+        "query_median": 0.020992689998820424,
+        "peak_rss_kib_median": 84400
+      },
+      "sat-up": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.005590980000079071,
+        "setup_median": 0.0009956629999123834,
+        "total_median": 0.029990748998216077,
+        "query_median": 0.0232357980028155,
+        "peak_rss_kib_median": 84400
+      }
+    },
+    "amortization": {
+      "sat": {
+        "first_win": 1,
+        "stable_through_512": 1,
+        "winning_prefixes": 512,
+        "baseline": "post-hoc best of completed strategies"
+      },
+      "bdd": {
+        "first_win": 1,
+        "stable_through_512": 1,
+        "winning_prefixes": 512,
+        "baseline": "post-hoc best of completed strategies"
+      }
+    }
+  },
+  {
+    "rounds": 2,
+    "queries": 512,
+    "distinct_assumptions": 402,
+    "exact_answer_agreement": true,
+    "compared_methods": 7,
+    "sat_queries": 496,
+    "methods": {
+      "bdd": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.020245430999921155,
+        "setup_median": 0,
+        "total_median": 0.10105212600524283,
+        "query_median": 0.08064088100536537,
+        "peak_rss_kib_median": 84400,
+        "bdd_nodes": 122
+      },
+      "bdd-coherence": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.02038648400002785,
+        "setup_median": 0,
+        "total_median": 0.10049879499797498,
+        "query_median": 0.08009096999808207,
+        "peak_rss_kib_median": 84400,
+        "bdd_nodes": 122
+      },
+      "full-cover": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 2.9861950409999736,
+        "setup_median": 0.002132050000000163,
+        "total_median": 3.432010089998812,
+        "query_median": 0.4444717500016395,
+        "peak_rss_kib_median": 84400,
+        "states": 6602,
+        "attempted_transitions": 9116,
+        "max_interface": 14
+      },
+      "ports": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.34623781400000553,
+        "setup_median": 0.0011702970000442292,
+        "total_median": 0.6808487730002071,
+        "query_median": 0.3333774980014823,
+        "peak_rss_kib_median": 84400,
+        "states": 5077,
+        "attempted_transitions": 6914,
+        "max_interface": 14,
+        "max_port_coordinates": 1376
+      },
+      "ports-cover": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.35032244900003207,
+        "setup_median": 0.0011703970001235575,
+        "total_median": 0.6878165490004449,
+        "query_median": 0.33316993000039474,
+        "peak_rss_kib_median": 84400,
+        "states": 5077,
+        "attempted_transitions": 6914,
+        "max_interface": 14,
+        "max_port_coordinates": 1376
+      },
+      "sat-phase": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.032389233000003514,
+        "setup_median": 0.005432697000060216,
+        "total_median": 0.15746710600319602,
+        "query_median": 0.1199258920032662,
+        "peak_rss_kib_median": 84400
+      },
+      "sat-up": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.03244049399995674,
+        "setup_median": 0.005484657999886622,
+        "total_median": 0.24403312400272625,
+        "query_median": 0.2061381470005017,
+        "peak_rss_kib_median": 84400
+      }
+    },
+    "amortization": {
+      "sat": {
+        "first_win": null,
+        "stable_through_512": null,
+        "winning_prefixes": 0,
+        "baseline": "post-hoc best of completed strategies"
+      },
+      "bdd": {
+        "first_win": null,
+        "stable_through_512": null,
+        "winning_prefixes": 0,
+        "baseline": "post-hoc best of completed strategies"
+      }
+    }
+  },
+  {
+    "rounds": 3,
+    "queries": 512,
+    "distinct_assumptions": 436,
+    "exact_answer_agreement": true,
+    "compared_methods": 4,
+    "sat_queries": 497,
+    "methods": {
+      "bdd": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.2128032149998944,
+        "setup_median": 0,
+        "total_median": 0.48864179099882676,
+        "query_median": 0.2756756330011285,
+        "peak_rss_kib_median": 84400,
+        "bdd_nodes": 458
+      },
+      "bdd-coherence": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.2502373859999807,
+        "setup_median": 0,
+        "total_median": 0.5270965519946458,
+        "query_median": 0.27813833600134785,
+        "peak_rss_kib_median": 84400,
+        "bdd_nodes": 482
+      },
+      "full-cover": {
+        "statuses": [
+          "UNKNOWN"
+        ],
+        "successful_repeats": 0,
+        "failures": [
+          {
+            "reason": "Frontier compile time limit",
+            "stats": {
+              "states": 94803,
+              "transitions": 94802,
+              "step": 105,
+              "groups": 158,
+              "max_interface": 18,
+              "current_interface": 18,
+              "max_layer_states": 10048,
+              "early_degrees": true,
+              "co_mode": "direct",
+              "summary_mode": "full"
+            }
+          }
+        ]
+      },
+      "ports": {
+        "statuses": [
+          "UNKNOWN"
+        ],
+        "successful_repeats": 0,
+        "failures": [
+          {
+            "reason": "Frontier state/edge limit",
+            "stats": {
+              "states": 200001,
+              "transitions": 202965,
+              "step": 127,
+              "groups": 158,
+              "max_interface": 19,
+              "current_interface": 16,
+              "max_layer_states": 16131,
+              "early_degrees": true,
+              "co_mode": "direct",
+              "summary_mode": "ports"
+            }
+          }
+        ]
+      },
+      "ports-cover": {
+        "statuses": [
+          "UNKNOWN"
+        ],
+        "successful_repeats": 0,
+        "failures": [
+          {
+            "reason": "Frontier state/edge limit",
+            "stats": {
+              "states": 200001,
+              "transitions": 202883,
+              "step": 128,
+              "groups": 158,
+              "max_interface": 19,
+              "current_interface": 16,
+              "max_layer_states": 15060,
+              "early_degrees": true,
+              "co_mode": "direct",
+              "summary_mode": "ports"
+            }
+          }
+        ]
+      },
+      "sat-phase": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.10068345000013323,
+        "setup_median": 0.01634061700019629,
+        "total_median": 0.5089753310012384,
+        "query_median": 0.39249729800121713,
+        "peak_rss_kib_median": 84400
+      },
+      "sat-up": {
+        "statuses": [
+          "ok",
+          "ok",
+          "ok",
+          "ok",
+          "ok"
+        ],
+        "successful_repeats": 5,
+        "compile_median": 0.10051817700013999,
+        "setup_median": 0.016140886000130195,
+        "total_median": 0.8812598570034424,
+        "query_median": 0.7632085030033977,
+        "peak_rss_kib_median": 84400
+      }
+    },
+    "amortization": {}
+  }
+]

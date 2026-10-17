@@ -1,0 +1,40 @@
+[
+  {
+    "n": 2,
+    "model": "rc11",
+    "status": "ok",
+    "command": [
+      "/root/wm-research/baselines/genmc/build/bin/genmc",
+      "--rc11",
+      "--disable-estimation",
+      "--",
+      "results/support_task_20261016/inputs/epoch_2.c"
+    ],
+    "returncode": 42,
+    "outcome_reachable": true,
+    "contract": "observable fixed values only; not a full-support comparison",
+    "sha256": "160053b0c38e6c8df772401e29c82df6f777b118c514277b71cdbea377bd9e46"
+  },
+  {
+    "n": 4,
+    "model": "rc11",
+    "status": "UNKNOWN",
+    "reason": "timeout_60s"
+  },
+  {
+    "n": 2,
+    "model": "sc",
+    "status": "ok",
+    "command": [
+      "/root/wm-research/baselines/genmc/build/bin/genmc",
+      "--sc",
+      "--disable-estimation",
+      "--",
+      "results/support_task_20261016/inputs/epoch_2.c"
+    ],
+    "returncode": 0,
+    "outcome_reachable": false,
+    "contract": "observable fixed values only; not a full-support comparison",
+    "sha256": "160053b0c38e6c8df772401e29c82df6f777b118c514277b71cdbea377bd9e46"
+  }
+]

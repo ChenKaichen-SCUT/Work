@@ -1,0 +1,236 @@
+{
+  "events": [
+    {
+      "id": "ix",
+      "kind": "W",
+      "loc": "x",
+      "thread": -1,
+      "value": 0
+    },
+    {
+      "id": "iy",
+      "kind": "W",
+      "loc": "y",
+      "thread": -1,
+      "value": 0
+    },
+    {
+      "id": "ifa",
+      "kind": "W",
+      "loc": "fa",
+      "thread": -1,
+      "value": 0
+    },
+    {
+      "id": "ifb",
+      "kind": "W",
+      "loc": "fb",
+      "thread": -1,
+      "value": 0
+    },
+    {
+      "id": "t0_1_x",
+      "kind": "W",
+      "loc": "x",
+      "thread": 0,
+      "value": 1
+    },
+    {
+      "id": "t0_1_pub0",
+      "kind": "W",
+      "loc": "fa",
+      "thread": 0,
+      "value": 1
+    },
+    {
+      "id": "t0_1_y",
+      "kind": "W",
+      "loc": "y",
+      "thread": 0,
+      "value": 1
+    },
+    {
+      "id": "t0_1_pub1",
+      "kind": "W",
+      "loc": "fa",
+      "thread": 0,
+      "value": 1
+    },
+    {
+      "id": "t0_1_wait",
+      "kind": "R",
+      "loc": "fb",
+      "thread": 0,
+      "value": 0
+    },
+    {
+      "id": "t0_1_read",
+      "kind": "R",
+      "loc": "x",
+      "thread": 0,
+      "value": 1
+    },
+    {
+      "id": "t0_2_x",
+      "kind": "W",
+      "loc": "x",
+      "thread": 0,
+      "value": 2
+    },
+    {
+      "id": "t0_2_pub0",
+      "kind": "W",
+      "loc": "fa",
+      "thread": 0,
+      "value": 0
+    },
+    {
+      "id": "t0_2_y",
+      "kind": "W",
+      "loc": "y",
+      "thread": 0,
+      "value": 2
+    },
+    {
+      "id": "t0_2_pub1",
+      "kind": "W",
+      "loc": "fa",
+      "thread": 0,
+      "value": 0
+    },
+    {
+      "id": "t0_2_wait",
+      "kind": "R",
+      "loc": "fb",
+      "thread": 0,
+      "value": 1
+    },
+    {
+      "id": "t0_2_read",
+      "kind": "R",
+      "loc": "x",
+      "thread": 0,
+      "value": 2
+    },
+    {
+      "id": "t1_1_y",
+      "kind": "W",
+      "loc": "y",
+      "thread": 1,
+      "value": 1
+    },
+    {
+      "id": "t1_1_pub0",
+      "kind": "W",
+      "loc": "fb",
+      "thread": 1,
+      "value": 1
+    },
+    {
+      "id": "t1_1_x",
+      "kind": "W",
+      "loc": "x",
+      "thread": 1,
+      "value": 1
+    },
+    {
+      "id": "t1_1_pub1",
+      "kind": "W",
+      "loc": "fb",
+      "thread": 1,
+      "value": 1
+    },
+    {
+      "id": "t1_1_wait",
+      "kind": "R",
+      "loc": "fa",
+      "thread": 1,
+      "value": 0
+    },
+    {
+      "id": "t1_1_read",
+      "kind": "R",
+      "loc": "y",
+      "thread": 1,
+      "value": 1
+    },
+    {
+      "id": "t1_2_y",
+      "kind": "W",
+      "loc": "y",
+      "thread": 1,
+      "value": 2
+    },
+    {
+      "id": "t1_2_pub0",
+      "kind": "W",
+      "loc": "fb",
+      "thread": 1,
+      "value": 0
+    },
+    {
+      "id": "t1_2_x",
+      "kind": "W",
+      "loc": "x",
+      "thread": 1,
+      "value": 2
+    },
+    {
+      "id": "t1_2_pub1",
+      "kind": "W",
+      "loc": "fb",
+      "thread": 1,
+      "value": 0
+    },
+    {
+      "id": "t1_2_wait",
+      "kind": "R",
+      "loc": "fa",
+      "thread": 1,
+      "value": 1
+    },
+    {
+      "id": "t1_2_read",
+      "kind": "R",
+      "loc": "y",
+      "thread": 1,
+      "value": 2
+    }
+  ],
+  "threads": [
+    [
+      "t0_1_x",
+      "t0_1_pub0",
+      "t0_1_y",
+      "t0_1_pub1",
+      "t0_1_wait",
+      "t0_1_read",
+      "t0_2_x",
+      "t0_2_pub0",
+      "t0_2_y",
+      "t0_2_pub1",
+      "t0_2_wait",
+      "t0_2_read"
+    ],
+    [
+      "t1_1_y",
+      "t1_1_pub0",
+      "t1_1_x",
+      "t1_1_pub1",
+      "t1_1_wait",
+      "t1_1_read",
+      "t1_2_y",
+      "t1_2_pub0",
+      "t1_2_x",
+      "t1_2_pub1",
+      "t1_2_wait",
+      "t1_2_read"
+    ]
+  ],
+  "initial": [
+    "ix",
+    "iy",
+    "ifa",
+    "ifb"
+  ]
+}

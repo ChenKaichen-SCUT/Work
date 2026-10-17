@@ -1,0 +1,24 @@
+C publication_1
+{
+[x2] = 0;
+[x3] = 0;
+[x0] = 0;
+[x1] = 0;
+}
+P0 (atomic_int* x0, atomic_int* x1, atomic_int* x2, atomic_int* x3) {
+atomic_store_explicit(x2, 1, memory_order_release);
+atomic_store_explicit(x0, 1, memory_order_release);
+atomic_store_explicit(x3, 1, memory_order_release);
+atomic_store_explicit(x0, 1, memory_order_release);
+int r4 = atomic_load_explicit(x1, memory_order_acquire);
+int r5 = atomic_load_explicit(x2, memory_order_acquire);
+}
+P1 (atomic_int* x0, atomic_int* x1, atomic_int* x2, atomic_int* x3) {
+atomic_store_explicit(x3, 1, memory_order_release);
+atomic_store_explicit(x1, 1, memory_order_release);
+atomic_store_explicit(x2, 1, memory_order_release);
+atomic_store_explicit(x1, 1, memory_order_release);
+int r4 = atomic_load_explicit(x0, memory_order_acquire);
+int r5 = atomic_load_explicit(x3, memory_order_acquire);
+}
+exists (0:r4=0 /\ 0:r5=1 /\ 1:r4=0 /\ 1:r5=1)

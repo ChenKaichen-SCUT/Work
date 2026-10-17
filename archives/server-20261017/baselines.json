@@ -1,0 +1,295 @@
+{
+  "Dat3M": {
+    "origin": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/Dat3M",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "returncode": 0,
+      "output": "https://github.com/hernanponcedeleon/Dat3M.git\n"
+    },
+    "head": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/Dat3M",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "output": "b81ec6c55503e824bb0ddc4ebac6c6f0a63d56d8\n"
+    },
+    "status": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/Dat3M",
+        "status",
+        "--porcelain"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    "diff": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/Dat3M",
+        "diff",
+        "HEAD",
+        "--binary"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    "submodules": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/Dat3M",
+        "submodule",
+        "status",
+        "--recursive"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    "untracked": []
+  },
+  "genmc": {
+    "origin": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/genmc",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "returncode": 0,
+      "output": "https://github.com/MPI-SWS/genmc.git\n"
+    },
+    "head": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/genmc",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "output": "9f6c4c0772d0c42b325681581acc6a0f3eb9b5f7\n"
+    },
+    "status": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/genmc",
+        "status",
+        "--porcelain"
+      ],
+      "returncode": 0,
+      "output": "?? build/\n"
+    },
+    "diff": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/genmc",
+        "diff",
+        "HEAD",
+        "--binary"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    "submodules": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/genmc",
+        "submodule",
+        "status",
+        "--recursive"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    "untracked": [
+      "build/.ninja_deps",
+      "build/.ninja_log",
+      "build/DartConfiguration.tcl",
+      "build/bin/genmc",
+      "build/build.ninja",
+      "build/include/genmc/lli_config.h"
+    ]
+  },
+  "herdtools7": {
+    "origin": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/herdtools7",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "returncode": 0,
+      "output": "https://github.com/herd/herdtools7.git\n"
+    },
+    "head": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/herdtools7",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "output": "9574394fc4b2bcb1a7ba23dd7877f46bb28ebb34\n"
+    },
+    "status": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/herdtools7",
+        "status",
+        "--porcelain"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    "diff": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/herdtools7",
+        "diff",
+        "HEAD",
+        "--binary"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    "submodules": {
+      "argv": [
+        "git",
+        "-C",
+        "/root/wm-research/baselines/herdtools7",
+        "submodule",
+        "status",
+        "--recursive"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    "untracked": []
+  },
+  "poct": {
+    "url": "https://doi.org/10.5281/zenodo.18616443",
+    "artifact_url": "https://zenodo.org/api/records/18616443/files/paper168-artifact.zip/content",
+    "tar_sha256": "e0984b7ccf8b1b570ba2ccb80b6340d43b4ede39e1f148462bcc5c7c1b675fe2",
+    "files": [
+      {
+        "path": "README.pdf",
+        "bytes": 672627,
+        "allocated_bytes": 675840,
+        "sha256": "949266ffb55b047188d3128145197425530904dafac55f9c309d91f75ad5c6a2"
+      },
+      {
+        "path": "archive_manifest.json",
+        "bytes": 481,
+        "allocated_bytes": 4096,
+        "sha256": "246a96ecf395296828d4bcc29bc9327c8797924e18f0a11f3876d9afaf27b923"
+      },
+      {
+        "path": "artifact.zip",
+        "bytes": 2615597088,
+        "allocated_bytes": 0,
+        "excluded_reason": "Incomplete sparse download; fetch the published DOI artifact instead."
+      },
+      {
+        "path": "calibration.smt",
+        "bytes": 1478,
+        "allocated_bytes": 4096,
+        "sha256": "1f240b19e736c1e87b3dd575dfac68f655600a343e5b3ea27a5a7ae729a55ea9"
+      },
+      {
+        "path": "lib/libboost_atomic.so.1.74.0",
+        "bytes": 14344,
+        "allocated_bytes": 16384,
+        "sha256": "77120cfb7db51eb2dff7df15683e86dcc1bbc6d78a1eebe611193992fd5b7006"
+      },
+      {
+        "path": "lib/libboost_chrono.so.1.74.0",
+        "bytes": 39080,
+        "allocated_bytes": 40960,
+        "sha256": "dbc86224db88ac068e029c49500efe600744195e755b0307c0b04a69569a307e"
+      },
+      {
+        "path": "lib/libboost_date_time.so.1.74.0",
+        "bytes": 13960,
+        "allocated_bytes": 16384,
+        "sha256": "41d12417c079c573d1c936eb77b20fbfed1c014ad3befe3f95c636d3887c890d"
+      },
+      {
+        "path": "lib/libboost_filesystem.so.1.74.0",
+        "bytes": 125112,
+        "allocated_bytes": 126976,
+        "sha256": "545886948b178af06160dfd7590ee8be108bd1e28263bf63816e4a2c43cd0a59"
+      },
+      {
+        "path": "lib/libboost_log.so.1.74.0",
+        "bytes": 699040,
+        "allocated_bytes": 700416,
+        "sha256": "0501f7561ac691941b7f4fcc86170b31643cf638b2b853386715378f17459d4d"
+      },
+      {
+        "path": "lib/libboost_log_setup.so.1.74.0",
+        "bytes": 637288,
+        "allocated_bytes": 638976,
+        "sha256": "36e3b03222ca734b662b7fc486e480cc0dfbd24a2d8c623605d7187a4c8641a3"
+      },
+      {
+        "path": "lib/libboost_regex.so.1.74.0",
+        "bytes": 989872,
+        "allocated_bytes": 991232,
+        "sha256": "e2b8b67932a6ab53544c7da1e6421fe7e75571feae5218d586b5c69d62ea1c49"
+      },
+      {
+        "path": "lib/libboost_serialization.so.1.74.0",
+        "bytes": 264536,
+        "allocated_bytes": 266240,
+        "sha256": "fc22380106a12299c1ffb7d13e1bec2db0e2bf265cf41d9b2fdde35bdae4403c"
+      },
+      {
+        "path": "lib/libboost_system.so.1.74.0",
+        "bytes": 13960,
+        "allocated_bytes": 16384,
+        "sha256": "2bd48b490e7bbd65bd855dafa209c28d028855fe1f7f97904af46bf0445bbc07"
+      },
+      {
+        "path": "lib/libboost_thread.so.1.74.0",
+        "bytes": 133312,
+        "allocated_bytes": 135168,
+        "sha256": "41c8fe93ef58c42bc46798ce7bb84cbb964185b7529547dec7e501f15bd8a2a0"
+      },
+      {
+        "path": "lib/libboost_wserialization.so.1.74.0",
+        "bytes": 178520,
+        "allocated_bytes": 180224,
+        "sha256": "55308626a1fbc8590c3c533ce416d6b33f0690ff83cda971cb3bf35736f6cfb9"
+      },
+      {
+        "path": "zord_sc_solver",
+        "bytes": 22799240,
+        "allocated_bytes": 22802432,
+        "sha256": "cb28fe4d26f43de2e131597d5022e260c060b73e77e2f6803727b1ea6f136ea8"
+      }
+    ]
+  }
+}

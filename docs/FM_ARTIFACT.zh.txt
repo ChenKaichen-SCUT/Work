@@ -1,0 +1,50 @@
+FM 论文证据包：安装、复现与结果解释
+=================================
+此包对应 FM_READINESS_RESULTS.zh.txt，不覆盖旧论文所有实验。支持 Python 3.10+。
+源代码不含服务器地址、登录凭据或预编译扩展；manifest.json 列出包内各文件摘要。
+正式构造在 Linux x86_64 / Python 3.10.12 完成，Windows 可运行快速核查。
+
+解压后进入包根目录，安装依赖：
+  python -m venv .venv
+  .venv/bin/python -m pip install -r requirements-fm.txt
+Windows 对应 .venv/Scripts/python.exe。所有命令只操作本地文件，无需原服务器。
+
+快速核查（无需编译器）：
+  .venv/bin/python experiments/fm_reproduce.py --out replay-quick
+检查独立 SAT 编码的小输入全部部分赋值、环族见证和来源块；再运行12个结构
+实例、3360个整数窗口位置、缺失后续观测/写覆盖的反例检查。输出目录必须新建。
+
+完整核查（Linux，推荐至少8 GiB可用内存、g++及匹配CPython开发头文件）：
+  .venv/bin/python experiments/fm_reproduce.py --out replay-full --full
+脚本从源码构建 C++ 扩展、运行全部测试、结构审计、32轮独立选定查询、6个环族
+配置。运行串行，子进程限制会保留预期 UNKNOWN。总耗时取决于机器，脚本各步骤
+有有界等待；不是长期任务。不要把新结果写入包内冻结 results/ 目录。
+
+只核对32轮：
+  .venv/bin/python experiments/build_port_native.py
+  .venv/bin/python experiments/fm_large_audit.py --out replay-large \
+      --frozen reference/support_task_20261016
+reference/ 中是旧批次的必要子集：32轮同一固定输入、一次原始图运行记录以及
+旧汇总/失败记录。它不是重新发布完整旧批次。查询身份和答案摘要逐项核对。
+
+预期结果：
+  · large32.json：status=ok，53个假设场景，826个目标文字支持检查，879次SAT
+    调用；41个场景的完整图答案匹配旧批次摘要。每项可行支持带完整RA见证。
+  · ring_summary.json：5个配置ok，三线程四轮为预期UNKNOWN（100万状态上限）。
+    三线程二/三轮、非均匀发布二轮、四线程二轮全部原始支持相等。
+  · 不装 CUDD 时，其历史测试跳过；不得将跳过写成已通过BDD验证。
+  · reproduction_receipt.json 包含命令、退出码、运行环境与源码摘要。
+    命令日志保留具体通过/跳过数量。
+
+不同机器的时间和SAT见证可能不同。比较语义结论、配置状态、图规模和查询
+数量，不要求复现每个浮点计时或每个模型的字节序列。包中的原始测量、失败和
+旧负面结果不因本次复跑改变；新CaDiCaL编码没有被混入旧Minisat计时表。
+
+关键限制：32轮只是选定查询/文字，不是穷尽全部支持；新环族未声称来自工业
+代码；三线程四轮失败保留；恒定载荷六轮失败、四轮SAT更快、版本值缩小来源域
+均仍有效。代码采用固定事件RA，无RMW、动态地址/值和任意控制流激活。
+
+本包已在全新目录、全新venv中实际完整复跑；最小环境安装 python-sat==1.8.dev30
+及其依赖six，51项测试为50通过/1项CUDD跳过。回执和原始输出保存在
+results/fm_evidence_20261016/clean_reproduction/。最终包的算法与复现源码
+与该次复跑逐摘要一致，后续加入的文档/回执不改变运行实现。

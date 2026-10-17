@@ -1,0 +1,93 @@
+{
+  "payload": "constant",
+  "n": 2,
+  "method": "sat-demand",
+  "status": "ok",
+  "log_sha256": "c5858c217164bab37946c89087f160b743884820276d074fcd1d4150f57e786c",
+  "reports": [
+    {
+      "name": "unobserved",
+      "answer_sha256": "ef245d450c8cfce25bdb9ec5fc32c79fe43650bd1c26cf6166685cddcb4aba92",
+      "consistent": true,
+      "conflict_size": 0,
+      "repair_fields": 0,
+      "replacements": 0
+    },
+    {
+      "name": "s2_t0_early",
+      "answer_sha256": "9dce00b898ca85f08995cfb187b7952a5ecdd2aa0789d9f6a8341f02312eaf81",
+      "consistent": true,
+      "conflict_size": 0,
+      "repair_fields": 0,
+      "replacements": 0
+    },
+    {
+      "name": "s2_t0_late",
+      "answer_sha256": "fe401606db6ff329e6c98e6663072bf3d69899472ba26223a27504b364374258",
+      "consistent": true,
+      "conflict_size": 0,
+      "repair_fields": 0,
+      "replacements": 0
+    },
+    {
+      "name": "s2_t0_early_inverted",
+      "answer_sha256": "f1c81940257ee1b9d9e3923a364060bbdcad9a2d6b6dbea300b0916577ffa339",
+      "consistent": true,
+      "conflict_size": 0,
+      "repair_fields": 0,
+      "replacements": 0
+    },
+    {
+      "name": "s2_t0_late_inverted",
+      "answer_sha256": "30d9230bb32768902f138fd4a1b6d3999483c80b978bfe68ca842cd9e13d0445",
+      "consistent": false,
+      "conflict_size": 3,
+      "repair_fields": 3,
+      "replacements": 4
+    },
+    {
+      "name": "s2_t1_early",
+      "answer_sha256": "5fcf1eb3f1dc7dc98e64ec9d49587f29b3ae31ea3a4185b11801728ad1ec2962",
+      "consistent": true,
+      "conflict_size": 0,
+      "repair_fields": 0,
+      "replacements": 0
+    },
+    {
+      "name": "s2_t1_late",
+      "answer_sha256": "ad503e6e74aff038690a7838bcfe6242878e2ef37b63f6e9e88c60c23924c4d8",
+      "consistent": true,
+      "conflict_size": 0,
+      "repair_fields": 0,
+      "replacements": 0
+    },
+    {
+      "name": "s2_t1_early_inverted",
+      "answer_sha256": "3ad23cfa1b7cd1dba8f22516a3a4a2818a87c52f11cc1dc87bae9619c84d8afd",
+      "consistent": true,
+      "conflict_size": 0,
+      "repair_fields": 0,
+      "replacements": 0
+    },
+    {
+      "name": "s2_t1_late_inverted",
+      "answer_sha256": "95eaba3ef8c90441acab2bf5069c1c287ee45b0f7d9cd33a0fdd4998b37d4e42",
+      "consistent": false,
+      "conflict_size": 3,
+      "repair_fields": 3,
+      "replacements": 4
+    }
+  ],
+  "build_setup_seconds": 0.04630505800014362,
+  "stats": {
+    "algorithm": "ra-sat",
+    "compile_seconds": 0.03202863099977549,
+    "original_variables": 66,
+    "cnf_variables": 822,
+    "clauses": 20860
+  },
+  "diagnosis_seconds": 0.0035544279980967985,
+  "sat_calls": 84,
+  "elapsed_seconds": 0.050247605999174993,
+  "peak_rss_kib": 27608
+}

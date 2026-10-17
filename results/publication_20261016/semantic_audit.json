@@ -1,0 +1,776 @@
+{
+  "co_query": [
+    "co",
+    "t0_1_y",
+    "t1_2_y"
+  ],
+  "co_literal": 53,
+  "queries": [
+    {
+      "name": "root",
+      "assumptions": [],
+      "consistent": true,
+      "co_forced": false,
+      "forced_original_literals": [
+        -25,
+        -20,
+        -18,
+        -16,
+        -15,
+        -10,
+        -7,
+        -5,
+        -3,
+        -2,
+        1,
+        14,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51,
+        54,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "graph_sat_pure_up_agree": true,
+      "witness": {
+        "rf": {
+          "t0_1_wait": "ifb",
+          "t0_1_read": "t0_1_x",
+          "t0_2_wait": "t1_1_pub1",
+          "t0_2_read": "t1_1_x",
+          "t1_1_wait": "ifa",
+          "t1_1_read": "t1_1_y",
+          "t1_2_wait": "t0_1_pub1",
+          "t1_2_read": "t1_2_y"
+        },
+        "orders": {
+          "fa": [
+            "ifa",
+            "t0_1_pub0",
+            "t0_1_pub1",
+            "t0_2_pub0",
+            "t0_2_pub1"
+          ],
+          "fb": [
+            "ifb",
+            "t1_1_pub0",
+            "t1_1_pub1",
+            "t1_2_pub0",
+            "t1_2_pub1"
+          ],
+          "x": [
+            "ix",
+            "t0_1_x",
+            "t0_2_x",
+            "t1_1_x",
+            "t1_2_x"
+          ],
+          "y": [
+            "iy",
+            "t0_1_y",
+            "t0_2_y",
+            "t1_1_y",
+            "t1_2_y"
+          ]
+        },
+        "independent_ra_valid": true
+      }
+    },
+    {
+      "name": "first_publication",
+      "assumptions": [
+        26,
+        21
+      ],
+      "consistent": true,
+      "co_forced": false,
+      "forced_original_literals": [
+        -25,
+        -24,
+        -23,
+        -22,
+        -20,
+        -18,
+        -16,
+        -15,
+        -10,
+        -7,
+        -5,
+        -3,
+        -2,
+        1,
+        14,
+        21,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51,
+        54,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "graph_sat_pure_up_agree": true,
+      "witness": {
+        "rf": {
+          "t0_1_wait": "ifb",
+          "t0_1_read": "t0_1_x",
+          "t0_2_wait": "t1_1_pub0",
+          "t0_2_read": "t0_2_x",
+          "t1_1_wait": "ifa",
+          "t1_1_read": "t1_1_y",
+          "t1_2_wait": "t0_1_pub0",
+          "t1_2_read": "t1_2_y"
+        },
+        "orders": {
+          "fa": [
+            "ifa",
+            "t0_1_pub0",
+            "t0_1_pub1",
+            "t0_2_pub0",
+            "t0_2_pub1"
+          ],
+          "fb": [
+            "ifb",
+            "t1_1_pub0",
+            "t1_1_pub1",
+            "t1_2_pub0",
+            "t1_2_pub1"
+          ],
+          "x": [
+            "ix",
+            "t1_1_x",
+            "t1_2_x",
+            "t0_1_x",
+            "t0_2_x"
+          ],
+          "y": [
+            "iy",
+            "t1_1_y",
+            "t1_2_y",
+            "t0_1_y",
+            "t0_2_y"
+          ]
+        },
+        "independent_ra_valid": true
+      }
+    },
+    {
+      "name": "second_publication",
+      "assumptions": [
+        26,
+        22
+      ],
+      "consistent": true,
+      "co_forced": true,
+      "forced_original_literals": [
+        -25,
+        -24,
+        -23,
+        -21,
+        -20,
+        -18,
+        -16,
+        -15,
+        -10,
+        -7,
+        -5,
+        -3,
+        -2,
+        1,
+        14,
+        22,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51,
+        53,
+        54,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "graph_sat_pure_up_agree": true,
+      "witness": {
+        "rf": {
+          "t0_1_wait": "ifb",
+          "t0_1_read": "t0_1_x",
+          "t0_2_wait": "t1_1_pub1",
+          "t0_2_read": "t1_2_x",
+          "t1_1_wait": "ifa",
+          "t1_1_read": "t1_1_y",
+          "t1_2_wait": "t0_1_pub1",
+          "t1_2_read": "t1_2_y"
+        },
+        "orders": {
+          "fa": [
+            "ifa",
+            "t0_1_pub0",
+            "t0_1_pub1",
+            "t0_2_pub0",
+            "t0_2_pub1"
+          ],
+          "fb": [
+            "ifb",
+            "t1_1_pub0",
+            "t1_1_pub1",
+            "t1_2_pub0",
+            "t1_2_pub1"
+          ],
+          "x": [
+            "ix",
+            "t0_1_x",
+            "t0_2_x",
+            "t1_1_x",
+            "t1_2_x"
+          ],
+          "y": [
+            "iy",
+            "t0_1_y",
+            "t0_2_y",
+            "t1_1_y",
+            "t1_2_y"
+          ]
+        },
+        "independent_ra_valid": true
+      }
+    },
+    {
+      "name": "first_with_inverted_co",
+      "assumptions": [
+        26,
+        21,
+        -53
+      ],
+      "consistent": true,
+      "co_forced": false,
+      "forced_original_literals": [
+        -58,
+        -57,
+        -53,
+        -52,
+        -25,
+        -24,
+        -23,
+        -22,
+        -20,
+        -18,
+        -17,
+        -16,
+        -15,
+        -10,
+        -7,
+        -5,
+        -3,
+        -2,
+        1,
+        14,
+        19,
+        21,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51,
+        54,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "graph_sat_pure_up_agree": true,
+      "witness": {
+        "rf": {
+          "t0_1_wait": "ifb",
+          "t0_1_read": "t0_1_x",
+          "t0_2_wait": "t1_1_pub0",
+          "t0_2_read": "t0_2_x",
+          "t1_1_wait": "ifa",
+          "t1_1_read": "t1_1_y",
+          "t1_2_wait": "t0_1_pub0",
+          "t1_2_read": "t1_2_y"
+        },
+        "orders": {
+          "fa": [
+            "ifa",
+            "t0_1_pub0",
+            "t0_1_pub1",
+            "t0_2_pub0",
+            "t0_2_pub1"
+          ],
+          "fb": [
+            "ifb",
+            "t1_1_pub0",
+            "t1_1_pub1",
+            "t1_2_pub0",
+            "t1_2_pub1"
+          ],
+          "x": [
+            "ix",
+            "t1_1_x",
+            "t1_2_x",
+            "t0_1_x",
+            "t0_2_x"
+          ],
+          "y": [
+            "iy",
+            "t1_1_y",
+            "t1_2_y",
+            "t0_1_y",
+            "t0_2_y"
+          ]
+        },
+        "independent_ra_valid": true
+      }
+    },
+    {
+      "name": "second_with_inverted_co",
+      "assumptions": [
+        26,
+        22,
+        -53
+      ],
+      "consistent": false,
+      "co_forced": null,
+      "forced_original_literals": [],
+      "graph_sat_pure_up_agree": true
+    },
+    {
+      "name": "withdraw_source",
+      "assumptions": [
+        26
+      ],
+      "consistent": true,
+      "co_forced": false,
+      "forced_original_literals": [
+        -25,
+        -24,
+        -23,
+        -20,
+        -18,
+        -16,
+        -15,
+        -10,
+        -7,
+        -5,
+        -3,
+        -2,
+        1,
+        14,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51,
+        54,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "graph_sat_pure_up_agree": true,
+      "witness": {
+        "rf": {
+          "t0_1_wait": "ifb",
+          "t0_1_read": "t0_1_x",
+          "t0_2_wait": "t1_1_pub1",
+          "t0_2_read": "t1_1_x",
+          "t1_1_wait": "ifa",
+          "t1_1_read": "t1_1_y",
+          "t1_2_wait": "t0_1_pub0",
+          "t1_2_read": "t1_2_y"
+        },
+        "orders": {
+          "fa": [
+            "ifa",
+            "t0_1_pub0",
+            "t0_1_pub1",
+            "t0_2_pub0",
+            "t0_2_pub1"
+          ],
+          "fb": [
+            "ifb",
+            "t1_1_pub0",
+            "t1_1_pub1",
+            "t1_2_pub0",
+            "t1_2_pub1"
+          ],
+          "x": [
+            "ix",
+            "t0_1_x",
+            "t0_2_x",
+            "t1_1_x",
+            "t1_2_x"
+          ],
+          "y": [
+            "iy",
+            "t0_1_y",
+            "t0_2_y",
+            "t1_1_y",
+            "t1_2_y"
+          ]
+        },
+        "independent_ra_valid": true
+      }
+    },
+    {
+      "name": "withdraw_all",
+      "assumptions": [],
+      "consistent": true,
+      "co_forced": false,
+      "forced_original_literals": [
+        -25,
+        -20,
+        -18,
+        -16,
+        -15,
+        -10,
+        -7,
+        -5,
+        -3,
+        -2,
+        1,
+        14,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51,
+        54,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "graph_sat_pure_up_agree": true,
+      "witness": {
+        "rf": {
+          "t0_1_wait": "ifb",
+          "t0_1_read": "t0_1_x",
+          "t0_2_wait": "t1_1_pub0",
+          "t0_2_read": "t0_2_x",
+          "t1_1_wait": "ifa",
+          "t1_1_read": "t1_1_y",
+          "t1_2_wait": "t0_1_pub1",
+          "t1_2_read": "t0_2_y"
+        },
+        "orders": {
+          "fa": [
+            "ifa",
+            "t0_1_pub0",
+            "t0_1_pub1",
+            "t0_2_pub0",
+            "t0_2_pub1"
+          ],
+          "fb": [
+            "ifb",
+            "t1_1_pub0",
+            "t1_1_pub1",
+            "t1_2_pub0",
+            "t1_2_pub1"
+          ],
+          "x": [
+            "ix",
+            "t1_1_x",
+            "t1_2_x",
+            "t0_1_x",
+            "t0_2_x"
+          ],
+          "y": [
+            "iy",
+            "t1_1_y",
+            "t1_2_y",
+            "t0_1_y",
+            "t0_2_y"
+          ]
+        },
+        "independent_ra_valid": true
+      }
+    },
+    {
+      "name": "first_with_forward_co",
+      "assumptions": [
+        26,
+        21,
+        53
+      ],
+      "consistent": true,
+      "co_forced": true,
+      "forced_original_literals": [
+        -25,
+        -24,
+        -23,
+        -22,
+        -20,
+        -18,
+        -16,
+        -15,
+        -10,
+        -7,
+        -5,
+        -3,
+        -2,
+        1,
+        14,
+        21,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        51,
+        53,
+        54,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "graph_sat_pure_up_agree": true,
+      "witness": {
+        "rf": {
+          "t0_1_wait": "ifb",
+          "t0_1_read": "t0_1_x",
+          "t0_2_wait": "t1_1_pub1",
+          "t0_2_read": "t1_1_x",
+          "t1_1_wait": "ifa",
+          "t1_1_read": "t1_1_y",
+          "t1_2_wait": "t0_1_pub0",
+          "t1_2_read": "t1_2_y"
+        },
+        "orders": {
+          "fa": [
+            "ifa",
+            "t0_1_pub0",
+            "t0_1_pub1",
+            "t0_2_pub0",
+            "t0_2_pub1"
+          ],
+          "fb": [
+            "ifb",
+            "t1_1_pub0",
+            "t1_1_pub1",
+            "t1_2_pub0",
+            "t1_2_pub1"
+          ],
+          "x": [
+            "ix",
+            "t0_1_x",
+            "t0_2_x",
+            "t1_1_x",
+            "t1_2_x"
+          ],
+          "y": [
+            "iy",
+            "t0_1_y",
+            "t0_2_y",
+            "t1_1_y",
+            "t1_2_y"
+          ]
+        },
+        "independent_ra_valid": true
+      }
+    }
+  ],
+  "finite_family": [
+    {
+      "rounds": 1,
+      "publications": 2,
+      "independently_checked_distinct_models": 4,
+      "staged_non_sc_witness": true,
+      "exact_flag_domains": true
+    },
+    {
+      "rounds": 2,
+      "publications": 2,
+      "independently_checked_distinct_models": 64,
+      "staged_non_sc_witness": true,
+      "exact_flag_domains": true
+    },
+    {
+      "rounds": 3,
+      "publications": 2,
+      "independently_checked_distinct_models": 1024,
+      "staged_non_sc_witness": true,
+      "exact_flag_domains": true
+    },
+    {
+      "rounds": 2,
+      "publications": 3,
+      "independently_checked_distinct_models": 144,
+      "staged_non_sc_witness": true,
+      "exact_flag_domains": true
+    }
+  ],
+  "source_sha256": {
+    "experiments/publication_semantics.py": "5e83e5610bc77bd394bf9d8b38c0fd478fa17ede9727e362bfd689354f1f9b9a",
+    "wmcheck/ra_publication.py": "e5277c8467108bd324758c830ccc173c8555b560c6396bbe44c1a82445664f73",
+    "wmcheck/ra.py": "29510d66a73442b8f707d29fb323ec080a98f91f2cb1cb4e08c844915e51b622"
+  }
+}

@@ -1,0 +1,134 @@
+服务器退役前备份与后续实验恢复（2026-10-17）
+==========================================
+
+一、最短恢复路径
+
+本仓库根目录就是可继续开发的最新项目。论文 PDF 在
+artifacts/FM_Chinese_Manuscript.pdf；可编辑源码在 fm_chinese_paper/，
+另有 artifacts/FM_Chinese_Source.zip。实验数据、失败记录和理论文档均已保留。
+下载 GitHub 的 main 分支 ZIP 并解压，或：
+
+  git clone https://github.com/ChenKaichen-SCUT/Work.git
+  cd Work
+
+Linux（Ubuntu 22.04 / Python 3.10 是原测量环境）：
+
+  sudo apt-get update
+  sudo apt-get install -y python3-venv python3-dev build-essential
+  bash scripts/setup_reproduction.sh
+  .venv/bin/python experiments/fm_reproduce.py --out replay-full --full
+
+完整核查从源码编译 C++ 扩展、执行全部单元测试、结构审计、32轮独立核对和
+6个环族配置。推荐至少8 GiB可用内存；不需要原服务器、其 IP 或登录凭据。
+输出目录必须是新目录。只跑快速核查可去掉 --full；Windows：
+
+  python -m venv .venv
+  .venv\Scripts\python.exe -m pip install -r requirements-fm.txt
+  .venv\Scripts\python.exe experiments/fm_reproduce.py --out replay-quick
+
+最小环境不安装 CUDD，因此历史 CUDD 测试有1项跳过；这不等于验证了 BDD。
+原始完整环境包版本另存 archives/server-20261017/requirements-runtime.lock。
+如需历史 BDD 比较，在 Linux 的独立虚拟环境安装该 lock；绘图另安装
+requirements-plots.txt。不要把新的计时覆盖到 results/ 中的冻结测量。
+
+二、服务器原始研究目录的完整恢复
+
+archives/server-20261017/ 保存了退役时 /root/wm-research 下的研究文件，
+包含 6,929 个文件、292,416,199 字节；内容去重后有4,596个对象，压缩为
+71,349,883字节，分9片存储。它与仓库根目录的“最新版本”分别保留，避免
+把原实验使用的历史源码替换成事后改进版本。
+
+仅核验归档、所有分片及每个文件摘要：
+
+  python scripts/restore_server_backup.py
+
+恢复完整历史目录（新目录必须不存在；脚本不会覆盖现有目录）：
+
+  python scripts/restore_server_backup.py --out ../wm-research-restored
+
+恢复后的目录保留原相对路径、权限和时间。原始结果中的绝对路径只是当时的
+运行记录，恢复不会自动创建原来的 root 账户或原服务器环境。继续做新实验
+应使用 GitHub 仓库根目录的当前代码；逐版本审计时才选用恢复后的历史目录。
+
+保存范围包括：project、v1、publication-20261016、support-task-20261016、
+fm-evidence-20261016、fm-clean-reproduction-20261016、paper-delivery-final、
+fm-paper-zh、dat3m-calibration、incoming_final、incoming_pruning、所有根目录
+实验脚本/日志/完成标记/传输归档，以及第三方构建的关键配置日志。
+未同步的 native-audit-v2/v3 等开发中间结果也保留，不混入正式性能统计。
+
+清单：manifest.json 逐文件记录 SHA-256、长度、权限与时间；package.json
+记录分片和元数据摘要；summary.json 记录原始总量；environment.json 记录
+系统、CPU、编译器、APT/Python/OCaml 包版本。collect_server_backup.py 是
+实际采集脚本。credential_scan.json 记录发布前扫描结果，不保存任何凭据。
+
+不备份操作系统、SSH密钥、用户配置、shell历史、虚拟环境、包缓存和第三方
+可重新构建的产物。三个 Git 基线的工作树没有源码改动；精确来源、提交、
+状态及补丁检查在 baselines.json。Poct 的 artifact.zip 是未完成的稀疏下载，
+不能作为可用制品；清单保留其状态，重新下载官方 DOI 制品即可。
+Poct 已使用二进制和运行库的 SHA-256 也已保存，用于重建后的版本核对。
+
+三、继续新实验
+
+小规模完整支持诊断：
+
+  .venv/bin/python -m wmcheck.trace_cli --publication 2 --payload epoch
+
+只重新核对32轮选定查询：
+
+  .venv/bin/python experiments/build_port_native.py
+  .venv/bin/python experiments/fm_large_audit.py --out replay-large \
+      --frozen results/support_task_20261016
+
+重新生成完整支持任务的实验批次（较长，串行执行，需 CUDD）：
+
+  .venv/bin/python -m pip install -r requirements-paper.txt
+  .venv/bin/python experiments/build_port_native.py
+  export WMCHECK_NATIVE_PORTS=1
+  .venv/bin/python experiments/support_task_study.py --out replay-support --run --repeats 3
+  .venv/bin/python experiments/support_task_study.py --out replay-support --analyze
+
+环族/结构审计、32轮核对的复现契约见 docs/FM_ARTIFACT.zh.txt。
+恒定载荷六轮失败、四轮 SAT 更快、版本值缩小 RF 域、三线程四轮 UNKNOWN、
+64轮仅一次压力测量等边界必须继续保留。复跑结果不要求浮点计时或 SAT 见证
+逐字节一致，应核对语义答案、图规模、场景数和失败类别。
+
+四、第三方基线恢复
+
+精确拉取三个基线源码（不要使用自动跟踪最新分支的旧 bootstrap.sh）：
+
+  python scripts/fetch_pinned_baselines.py --out ../wm-baselines
+
+Dat3M: b81ec6c55503e824bb0ddc4ebac6c6f0a63d56d8，Java17、Maven3.6.3。
+在该源码目录执行（将 /path/to/Work 替换成实际仓库绝对路径）：
+
+  mvn -B -s /path/to/Work/scripts/maven-settings.xml -pl dartagnan -am package -DskipTests
+
+然后回到本仓库根目录：
+
+  .venv/bin/python experiments/dat3m_support_audit.py \
+      --dat3m ../wm-baselines/Dat3M --out replay-native-analysis
+
+GenMC: 9f6c4c0772d0c42b325681581acc6a0f3eb9b5f7。
+安装 LLVM/Clang19、g++14、cmake、ninja、libffi/libedit/zlib 开发包后：
+
+  cmake -S ../wm-baselines/genmc -B ../wm-baselines/genmc/build -G Ninja \
+      -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++-14 \
+      -DCMAKE_C_COMPILER=gcc-14 -DCMAKE_PREFIX_PATH=/usr/lib/llvm-19/cmake
+  cmake --build ../wm-baselines/genmc/build -j3
+
+herdtools7: 9574394fc4b2bcb1a7ba23dd7877f46bb28ebb34；OCaml4.14.2，
+依赖锁定在 archives/server-20261017/herd.opam.export，可通过 opam switch
+import 恢复到新 switch。构建步骤见 scripts/build_baselines.sh 的 herd 分支。
+Poct 从 https://doi.org/10.5281/zenodo.18616443 恢复，适配和校准步骤见
+docs/PAPER_REPRODUCE.zh.txt；这里没有把 Poct 误称为旧版 Zord。
+这些第三方工具仍需从公开上游下载，其源码/发行包不依赖将被删除的服务器。
+
+五、论文与历史证据
+
+中文论文重编译说明在 fm_chinese_paper/README.zh.txt。其图表由冻结 JSON
+生成；旧的完整实验包在 artifacts/fm_submission_20261016.zip。历史 TSO/RA
+测量原始字节另有 results/paper/MANIFEST.json，可用 experiments/paper_unpack.py
+解包。服务器归档也保留了这些旧包，后续可按原始版本核查。
+
+本次上传与从 GitHub 重新下载后的核验回执保存在
+archives/server-20261017/github_recovery_verification.json（完成验证后写入）。

@@ -1,0 +1,90 @@
+\section{见证与模型数下界的细节}
+\subsection{身份敏感查询的完整见证}\label{app:witness}
+使用第~\ref{sec:separation}节 $P(2,2)$ 或 $\pv(2,2)$ 的事件命名：$A_i:x$ 表示 A 第 $i$ 轮对 $x$ 的写，$i_x$ 为初始化。对于 $\{d,e,\neg q\}$，选择
+\begin{align*}
+ x:&\quad i_x < B_1:x < B_2:x < A_1:x < A_2:x,\\
+ y:&\quad i_y < B_1:y < B_2:y < A_1:y < A_2:y.
+\end{align*}
+标志 CO 为初始化后按各自程序序排列。全部数据读选择本线程本轮写；首轮等待读初始化，第二轮两次等待都读对方第一轮的早发布。由 $B_2:y<A_1:y$ 得到 $\neg q$。这些边的完整 HB／ECO 闭包通过独立 RA 检查。正向 $q$ 的见证由按轮拼接 CO 的构造给出。因此两个方向确实各有支持，而不是静态近似保留了两个方向。
+
+三种修复的来源候选由恰一 RF 约束解释。固定晚发布与倒置 CO 时，B 第二轮数据读若继续选自身写将违反 WR coherence；改选 A 第二轮同值写可恢复一致。固定自身数据来源与倒置 CO 时，改成早发布解除相应跨线程 HB。固定两项来源时，只剩 CO 正向可行。独立完整支持核对排除了其他单字段替换。
+
+\subsection{按轮见证族的 coherence 分类}\label{app:models}
+命题~\ref{prop:separation} 中，数据读取自身本轮写，跨线程 RF 只连接上轮发布与本轮等待。故所有 HB 边不倒退轮号；同轮跨线程 HB 不存在。数据 CO 按轮拼接，每轮两位线程写的次序独立任选。
+
+对同址写 $w\,\HB\,v$，二者若来自不同线程，则必须严格增轮，CO 按轮序一致；同线程则由程序序和轮序一致，满足 WW。对 $w\,\HB\,r$，$r$ 的来源是其线程本轮写；同轮唯一可能 HB-先于 $r$ 的同址数据写就是这个来源，较早轮的写均在其 CO 之前，满足 WR。对 $r\,\HB\,w$，$w$ 必处于更晚轮或同线程后续轮，而来源写在本轮，满足 RW。对 $r\,\HB\,r'$，两个数据读的来源轮次按序增加，满足 RR。
+
+标志写由单线程全序排列。阶段 $i$ 等待选择上轮某次发布，来自该写线程的 HB 前驱不可能晚于所选来源：同阶段更晚发布无法通过另一条不增轮的跨线程路径返回这个等待。其同址 HB 后继写位于后续块。两个 HB 有序等待的来源块不减。因此标志同样满足四类 coherence。初始化最小，且所有基本 HB 边有上述无环分层，故整个执行满足式~\eqref{eq:ra}。同轮 CO 的两向选择和块内来源身份由原始变量区分，模型数量下界成立。
+
+\section{联合端口的增量更新}\label{app:update}
+普通关系 $R$ 含恒等路径。插入普通边 $u\to v$ 前，若 $T(v,u)$ 则立即形成恰一标记环，应拒绝。否则使用插入前关系计算
+\begin{align}
+R'&=R\cup R(*,u)\times R(v,*),\\
+T'&=T\cup T(*,u)\times R(v,*)
+        \cup R(*,u)\times T(v,*).
+\end{align}
+可能两次使用新边且在中间经过标记的额外路径，必须含 $T(v,u)$，已在拒绝条件中排除；仅重复普通回路不改变可达性。插入标记边 $u\to v$ 时，若 $R(v,u)$ 则拒绝，否则
+\[
+ T'=T\cup R(*,u)\times R(v,*),\qquad R'=R.
+\]
+新标记不能与已有 $T$ 片段连接，否则将错误地允许两个标记。
+
+处理完一组后，投影到新端口 $I_{j+1}\times O_{j+1}$。重新装载矩阵时，只填回已保留关系及普通恒等关系，新端点初始没有其他历史路径。保留项的起点在 $I$、终点在 $O$，任意可组合的两项仍落在同一矩形中；原闭包已包含其组合。引理~\ref{lem:ports} 的路径分解说明，其他删除项以后不会重新变得可观察。CO 无环监视器只需普通 $R$：插边前检查 $R(v,u)$，随后作同样普通更新。
+
+一个最小反例说明标记计数的重要性。普通边为 $0\to3$、$2\to1$，标记边为 $1\to0$、$3\to2$。所有边形成一个含两个标记的环，却不存在恰一标记的闭合游走。若把普通边与标记边混合求闭包，或使用 $T;T$，就会错误拒绝。该反例在实现测试中固定保留。
+
+\section{独立 incidence SAT 编码}\label{app:oracle}
+独立 oracle 使用原始 RF、CO 位和附加布尔关系 $H$。对于固定 RF 赋值，令实际基本边 $B=\SB\cup\RF\cup\init$。编码加入
+\begin{align}
+ B(a,b)&\Rightarrow H(a,b),\\
+ H(a,b)\land B(b,c)&\Rightarrow H(a,c),\label{eq:incidence}\\
+ \neg H(a,a)&.
+\end{align}
+RF 基本边使用对应条件文字，固定边条件为真。与对任意中间关系项构造稠密传递约束相比，式~\eqref{eq:incidence} 只沿实际候选基本边右扩展，并流式加入求解器。
+
+\begin{clemma}[oracle 的存在性等价]
+配合相同 RF 恰一、CO 全序及 WW／WR／RW／RR 条件，上述编码对原始变量的可满足投影恰为式~\eqref{eq:ra} 的合法赋值。
+\end{clemma}
+\begin{cproof}
+固定 RF 后，按路径长度归纳可得 $B^+\subseteq H$。所有 coherence 限制中 $H$ 都以负极性出现，即“若某 HB 对存在，则相应 CO／RF 条件必须满足”。因此即使满足赋值的 $H$ 含额外事实，把它缩小为 $B^+$ 不会破坏这些限制。对角为假保证 $B^+$ 无环，故得到标准 RA 执行。反之，合法执行取 $H=B^+$ 立即满足基本边、右扩展与 coherence 全部子句。
+\end{cproof}
+
+例如 WW 限制要求 $H(w,w')\Rightarrow\CO(w,w')$；WR 要求若 $H(w,r)$ 且 $\RF(v,r)$，则 $w=v$ 或 $\CO(w,v)$；RW 要求若 $H(r,w)$ 且 $\RF(v,r)$，则 $\CO(v,w)$；RR 要求若 $H(r,r')$ 且分别读自 $v,v'$，则 $v=v'$ 或 $\CO(v,v')$。它们均满足上述负极性条件。独立核对不导入 $\ka$ 的任何证书，因此没有用待验证的来源删域帮助 oracle 得出同一答案。
+
+\section{完整结果与制品入口}\label{app:artifact}
+论文图表由 \texttt{make\_results.py} 从冻结 JSON 自动生成。\texttt{data/provenance.json} 记录每个输入文件的原路径与 SHA-256；\texttt{data/measurements.csv} 保留成功与失败状态。图表脚本仅整理结果，不重跑算法，不改写原批次。表~\ref{tab:ablation} 补充机制消融，区分累计构造状态和后缀商后的状态。
+
+\begin{table}[ht]
+\caption{版本载荷的机制消融。时间为三次中位数（秒）；状态数在重复中相同。}\label{tab:ablation}
+\centering\small\begin{tabular}{rlrrrr}\toprule
+$n$ & 方法 & 累计状态 & 商后状态 & 构造 & 完整任务\\\midrule
+4 & 原子 RF & 31,930 & 1,890 & 0.384 & 0.408\\
+4 & 二元 RF & 45,761 & 2,122 & 0.552 & 0.580\\
+4 & 无共同前序 & 150,847 & 1,921 & 2.352 & 2.374\\
+4 & Python 更新 & 31,930 & 1,890 & 2.852 & 2.875\\
+8 & 原子 RF & 128,666 & 4,842 & 1.639 & 1.782\\
+8 & 二元 RF & 185,337 & 5,414 & 2.461 & 2.624\\
+8 & 无共同前序 & $>10^6$ & -- & -- & UNK\\
+8 & Python 更新 & 128,666 & 4,842 & 12.615 & 12.758\\\bottomrule
+\end{tabular}
+\end{table}
+
+主计时批次有 102 条记录，其中 95 条完成、7 条 UNKNOWN，包含额外预算消融与 64 轮单次项；按需 SAT 批次 25 条，24 条完成、1 条内存错误异常。恒定载荷三轮还保留同一 20 万状态预算下二元组失败、原子组以 43,467 状态完成的对照。正文表取标准预算配置，不以不同预算混算中位数。所有失败详细日志保留在原结果目录。
+
+实验结果的主要对应关系如下：\texttt{support\_task\_20261016} 保存正式完整任务、按需基线与原生分析；\texttt{fm\_evidence\_20261016} 保存 32 轮独立核对、环族、结构审计及干净环境复跑；\texttt{publication\_20261016} 保存较早语义见证与边界记录。每轮构造、查询、完整客户端的中位数分别统计，故不要求分项中位数相加精确等于总中位数。
+
+\subsection{最小复现流程}
+自包含证据包为 \texttt{fm\_submission\_20261016.zip}，不含服务器凭据或预编译二进制。解压后在包根目录运行（Linux，Python 3.10+）：
+\begin{verbatim}
+python -m venv .venv
+.venv/bin/python -m pip install -r requirements-fm.txt
+.venv/bin/python experiments/fm_reproduce.py --out replay-quick
+\end{verbatim}
+快速模式验证独立编码、小例、结构条件、整数窗口和前提反例。完整模式需 g++、匹配 CPython 开发头文件及建议至少 8 GiB 可用内存：
+\begin{verbatim}
+.venv/bin/python experiments/fm_reproduce.py \
+    --out replay-full --full
+\end{verbatim}
+完整模式从源码编译扩展，运行测试、32 轮选定核对和全部六个环配置；三线程四轮的 UNKNOWN 是预期保留结果。输出目录必须为新目录。不同主机的时间和 SAT 见证可以不同，复现比较语义结论、配置状态、图规模与查询数，不要求浮点时间或见证字节完全相同。
+
+逐文件清单、命令、退出码、环境与源码摘要保存在包内 manifest 与复现回执。论文源文件另附图表重建脚本、冻结数据摘录及原始 LNCS 类；使用 XeLaTeX 和 Noto CJK 字体编译。本文数学证明尚未在证明助手中形式化；代码审计、独立 oracle 和干净复跑提供互补证据，不能替代该项形式保证。

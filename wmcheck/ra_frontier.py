@@ -14,7 +14,9 @@ from .port_monitor import ra_port_monitors, plan_ports
 def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=30000,
                      max_edges=200000, max_seconds=90, chain=True, incremental=True, compact=True,
                      sparse_init=True, early_degrees=False, co_mode='successor',
-                     summary_mode='full'):
+                     summary_mode='full', source_covers=False, rf_mode='binary'):
+    if rf_mode not in ('binary', 'atomic'):
+        raise ValueError('Expected binary or atomic RF groups')
     if co_mode not in ('successor','direct'):
         raise ValueError('Expected successor or direct CO generators')
     if summary_mode not in ('full', 'ports'):
@@ -23,7 +25,8 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
         raise ValueError('Future-port summaries currently require direct CO generators')
     if summary_mode == 'ports' and (not incremental or not compact):
         raise ValueError('Future-port summaries use their own incremental one-mark monitor encoding')
-    begin = perf_counter(); registry = RARegistry(inst); cert = recognize(inst, chain=chain)
+    begin = perf_counter(); registry = RARegistry(inst)
+    cert = recognize(inst, chain=chain, source_covers=source_covers)
     constants, groups = [], []
     if cert['status'] == 'PROVED_UNSAT':
         clauses = [[]] if cnf else []
@@ -54,7 +57,7 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
                 constants.append(-v)
             elif (a, b) in mandatory:
                 constants.append(v); fixed('r', a, b, ((b, 0),))
-            else:
+            elif rf_mode == 'binary':
                 groups.append(((a, b), [((-v,), (), ()),
                                         ((v,), (('r', a, b), ('R', b, a)), ((b, 0),))]))
         elif (a, b) in L or (b, a) in L:
@@ -62,6 +65,20 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
         else:
             symbol = 'c' if co_mode == 'direct' else 'q'
             groups.append(((a, b), [((v,), ((symbol, a, b),), ()), ((-v,), ((symbol, b, a),), ())]))
+    if rf_mode == 'atomic':
+        # One-hot source choice is a single transition. All original RF bits
+        # remain owned and labelled; this eliminates incomplete choices only.
+        for read, domain in D.items():
+            if len(domain) <= 1:
+                continue
+            writers = sorted(domain, key=inst.writes.index)
+            alternatives = []
+            for selected in writers:
+                label = tuple(registry.literal(('rf', w, read)) *
+                              (1 if w == selected else -1) for w in writers)
+                alternatives.append((label, (('r', selected, read), ('R', read, selected)),
+                                     ((read, 0),)))
+            groups.append(((read, *writers), alternatives))
     if co_mode == 'direct':
         # The chosen original CO directions and a cover of mandatory L generate
         # a total reachability relation. Acyclicity makes its closure a strict
@@ -198,12 +215,17 @@ def compile_frontier(inst, *, order=None, cnf=False, merge=True, max_states=3000
     stats['early_degrees'] = early_degrees
     stats['co_mode'] = co_mode
     stats['summary_mode'] = summary_mode
+    stats['rf_mode'] = rf_mode
+    stats['source_covers'] = source_covers
+    stats['source_cover_edges'] = len(cert.get('source_cover_edges', ()))
     stats['monitor_updates'] = monitor_updates
     stats['monitor_cache_hits'] = monitor_cache_hits
     if co_mode == 'direct':
         stats['algorithm'] = 'frontier-direct-co'
     if port_plans is not None:
         stats['algorithm'] = 'frontier-ports'
+        stats['native_port_steps'] = sum(p.native_plan is not None for plans in port_plans for p in plans)
+        stats['total_port_steps'] = sum(map(len,port_plans))
         stats['max_port_coordinates'] = max((sum(
             (1 if plans[step].acyclic else 2) * len(plans[step].after_inputs) * len(plans[step].after_outputs)
             for plans in port_plans) for step in range(len(groups))), default=0)

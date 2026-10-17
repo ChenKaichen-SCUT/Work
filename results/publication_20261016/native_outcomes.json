@@ -1,0 +1,48 @@
+{
+  "version": "GenMC (https://plv.mpi-sws.org/genmc):\n  GenMC v0.19.0 (commit #9f6c4c0)\n  Built with LLVM 19.1.7 (RelWithDebInfo)\n",
+  "contract": "observable read values only",
+  "runs": [
+    {
+      "rounds": 1,
+      "command": [
+        "/root/wm-research/baselines/genmc/build/bin/genmc",
+        "--rc11",
+        "--disable-estimation",
+        "--",
+        "/root/wm-research/publication-20261016/results/study/inputs/n1.c"
+      ],
+      "exit_code": 42,
+      "outcome_reachable": true,
+      "status": "checked",
+      "c_sha256": "b3640d208a9cca2c836da3b1905fd6103471a881df21df7496ea011c1eabb1aa"
+    },
+    {
+      "rounds": 2,
+      "command": [
+        "/root/wm-research/baselines/genmc/build/bin/genmc",
+        "--rc11",
+        "--disable-estimation",
+        "--",
+        "/root/wm-research/publication-20261016/results/study/inputs/n2.c"
+      ],
+      "exit_code": 42,
+      "outcome_reachable": true,
+      "status": "checked",
+      "c_sha256": "5914109484ee948e1df3e89a8c0256e075096a6f0f1b118f490140697d975bf7"
+    },
+    {
+      "rounds": 3,
+      "command": [
+        "/root/wm-research/baselines/genmc/build/bin/genmc",
+        "--rc11",
+        "--disable-estimation",
+        "--",
+        "/root/wm-research/publication-20261016/results/study/inputs/n3.c"
+      ],
+      "exit_code": 42,
+      "outcome_reachable": true,
+      "status": "checked",
+      "c_sha256": "33685ac3e650f13fc4ada41bb5c24c60fc9359f4ff442ba0daa5bd2680b74c5c"
+    }
+  ]
+}
