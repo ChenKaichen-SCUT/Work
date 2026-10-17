@@ -1,0 +1,68 @@
+C ring_p4_n2_i0_cover1
+{
+[x4] = 0;
+[x5] = 0;
+[x6] = 0;
+[x7] = 0;
+[x0] = 0;
+[x1] = 0;
+[x2] = 0;
+[x3] = 0;
+}
+P0 (atomic_int* x0, atomic_int* x1, atomic_int* x2, atomic_int* x3, atomic_int* x4, atomic_int* x5, atomic_int* x6, atomic_int* x7) {
+atomic_store_explicit(x4, 1, memory_order_release);
+atomic_store_explicit(x0, 1, memory_order_release);
+atomic_store_explicit(x5, 1, memory_order_release);
+atomic_store_explicit(x0, 1, memory_order_release);
+int r4 = atomic_load_explicit(x3, memory_order_acquire);
+int r5 = atomic_load_explicit(x4, memory_order_acquire);
+atomic_store_explicit(x4, 2, memory_order_release);
+atomic_store_explicit(x0, 0, memory_order_release);
+atomic_store_explicit(x5, 2, memory_order_release);
+atomic_store_explicit(x0, 0, memory_order_release);
+int r10 = atomic_load_explicit(x3, memory_order_acquire);
+int r11 = atomic_load_explicit(x4, memory_order_acquire);
+}
+P1 (atomic_int* x0, atomic_int* x1, atomic_int* x2, atomic_int* x3, atomic_int* x4, atomic_int* x5, atomic_int* x6, atomic_int* x7) {
+atomic_store_explicit(x5, 1, memory_order_release);
+atomic_store_explicit(x1, 1, memory_order_release);
+atomic_store_explicit(x6, 1, memory_order_release);
+atomic_store_explicit(x1, 1, memory_order_release);
+int r4 = atomic_load_explicit(x0, memory_order_acquire);
+int r5 = atomic_load_explicit(x5, memory_order_acquire);
+atomic_store_explicit(x5, 2, memory_order_release);
+atomic_store_explicit(x1, 0, memory_order_release);
+atomic_store_explicit(x6, 2, memory_order_release);
+atomic_store_explicit(x1, 0, memory_order_release);
+int r10 = atomic_load_explicit(x0, memory_order_acquire);
+int r11 = atomic_load_explicit(x5, memory_order_acquire);
+}
+P2 (atomic_int* x0, atomic_int* x1, atomic_int* x2, atomic_int* x3, atomic_int* x4, atomic_int* x5, atomic_int* x6, atomic_int* x7) {
+atomic_store_explicit(x6, 1, memory_order_release);
+atomic_store_explicit(x2, 1, memory_order_release);
+atomic_store_explicit(x7, 1, memory_order_release);
+atomic_store_explicit(x2, 1, memory_order_release);
+int r4 = atomic_load_explicit(x1, memory_order_acquire);
+int r5 = atomic_load_explicit(x6, memory_order_acquire);
+atomic_store_explicit(x6, 2, memory_order_release);
+atomic_store_explicit(x2, 0, memory_order_release);
+atomic_store_explicit(x7, 2, memory_order_release);
+atomic_store_explicit(x2, 0, memory_order_release);
+int r10 = atomic_load_explicit(x1, memory_order_acquire);
+int r11 = atomic_load_explicit(x6, memory_order_acquire);
+}
+P3 (atomic_int* x0, atomic_int* x1, atomic_int* x2, atomic_int* x3, atomic_int* x4, atomic_int* x5, atomic_int* x6, atomic_int* x7) {
+atomic_store_explicit(x7, 1, memory_order_release);
+atomic_store_explicit(x3, 1, memory_order_release);
+atomic_store_explicit(x4, 1, memory_order_release);
+atomic_store_explicit(x3, 1, memory_order_release);
+int r4 = atomic_load_explicit(x2, memory_order_acquire);
+int r5 = atomic_load_explicit(x7, memory_order_acquire);
+atomic_store_explicit(x7, 2, memory_order_release);
+atomic_store_explicit(x3, 0, memory_order_release);
+atomic_store_explicit(x4, 2, memory_order_release);
+atomic_store_explicit(x3, 0, memory_order_release);
+int r10 = atomic_load_explicit(x2, memory_order_acquire);
+int r11 = atomic_load_explicit(x7, memory_order_acquire);
+}
+exists (0:r4=0 /\ 0:r5=1 /\ 0:r10=1 /\ 0:r11=2 /\ 1:r4=0 /\ 1:r5=1 /\ 1:r10=1 /\ 1:r11=2 /\ 2:r4=0 /\ 2:r5=1 /\ 2:r10=1 /\ 2:r11=2 /\ 3:r4=0 /\ 3:r5=1 /\ 3:r10=1 /\ 3:r11=2)

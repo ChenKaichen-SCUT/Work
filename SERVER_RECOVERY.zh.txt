@@ -130,5 +130,11 @@ docs/PAPER_REPRODUCE.zh.txt；这里没有把 Poct 误称为旧版 Zord。
 测量原始字节另有 results/paper/MANIFEST.json，可用 experiments/paper_unpack.py
 解包。服务器归档也保留了这些旧包，后续可按原始版本核查。
 
-本次上传与从 GitHub 重新下载后的核验回执保存在
-archives/server-20261017/github_recovery_verification.json（完成验证后写入）。
+本次已从 GitHub 提交 f79c16ee222f7f773116c74c76c4135cbfa42d38 重新下载，
+核对全部1,858个仓库文件组成的 Git 文件树，恢复6,929个历史文件，并在全新
+venv中实际完整复跑。51项测试50通过/1项CUDD跳过；32轮53场景、826项文字
+核对及41项旧答案摘要匹配；环族5成功、1预期UNKNOWN。最后重读原服务器
+全部清单文件，未发现快照后变化或缺失。
+回执在 archives/server-20261017/github_recovery_verification.json，原始
+复跑输出在相邻 github-replay-full/。后续提交只加入这次核验记录和恢复说明，
+没有改变已经核验的算法、冻结实验或论文。原服务器不再是项目数据的唯一副本。
