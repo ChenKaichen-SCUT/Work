@@ -1,5 +1,24 @@
 # Bounded-interface weak-memory solver
 
+**2026-10-28 parameter range, on-demand diagnosis, and negative-support audit:**
+the [latest Chinese report](CAUSAL_EVIDENCE_RESULTS.zh.txt) completes the three
+requested evidence additions. Branch-buffer scans separate history length from
+capacity: at capacity 3, 4–32 rounds retain at most 30 reachable states per layer;
+at 8 rounds, capacity 6 hits the 200,000-state construction budget. SAT baselines
+remain competitive for that failed configuration. Diagnosis permits SAT-only
+consistency checks and targeted field support: component SAT wins the buffer's
+final-snapshot workload, while compilation wins with frequent full snapshots.
+An unfiltered RA encoding confirms 494 selected negative-support claims, including
+134 cross-stage conditional exclusions, with 323 positive controls checked against
+the dense RA definition. These are scoped checks, not an exhaustive large-instance
+proof or an industrial-log claim. See the [task contract](docs/CAUSAL_DIAGNOSTIC_TASK.zh.txt),
+[tables and figures](results/causal_evidence_20261028/), and
+[reproduction guide](docs/CAUSAL_EVIDENCE_REPRODUCE.zh.txt).
+The separate [artifact](artifacts/causal_evidence_20261028.zip) preserves measured
+source hashes. A Windows launcher memory-monitor issue is disclosed: completed
+runs use worker OS peaks; all six timeouts were rechecked with process-tree limits.
+Earlier archives, failures, and the manuscript PDF remain unchanged.
+
 **2026-10-28 novelty and decomposition follow-up:** the
 [new Chinese report](CAUSAL_FOLLOWUP_RESULTS.zh.txt) measures 1,000 complete-support
 requests with 21/100/500/1,000 distinct irredundant original assumptions, and adds

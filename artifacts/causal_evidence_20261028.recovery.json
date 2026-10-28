@@ -1,0 +1,93 @@
+{
+  "archive_sha256": "8c71ca852f32c2e79e7633e4c4b0ca629af340d94900c4f9bdd7c411e29e7187",
+  "verified_members": 619,
+  "destination": "E:\\2-sc-theory-weak-memory-theory\\2-sc-theory-weak-memory-theory\\work\\causal-evidence-replay-20261028-final",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "reused_installed_environment": true,
+  "tests": 84,
+  "skipped": 3,
+  "test_log_sha256": "7003df2b266817d397f1ca3f1c8097e531cba312c815044057b977a93268ef20",
+  "raw_checks": [
+    {
+      "case": {
+        "family": "barrier",
+        "rounds": 8
+      },
+      "status": "OK",
+      "negative_checks": 72,
+      "positive_controls": 49,
+      "sha256": "1d6623b7f092b08a45e454c51ef58d9430cc90411bd8857822872630e6aa37c8"
+    },
+    {
+      "case": {
+        "family": "buffer",
+        "rounds": 16,
+        "capacity": 3
+      },
+      "status": "OK",
+      "negative_checks": 72,
+      "positive_controls": 49,
+      "sha256": "334396d1f573d91d41456167a2946b82aaabb850ce84a3e905df79ea1bcf91fd"
+    },
+    {
+      "case": {
+        "family": "buffer",
+        "rounds": 8,
+        "capacity": 2
+      },
+      "status": "OK",
+      "negative_checks": 72,
+      "positive_controls": 49,
+      "sha256": "f78def8ace5dfdf0960a486164c6279d396fdd5e3a0b85177272f30b5ecb623e"
+    },
+    {
+      "case": {
+        "family": "buffer",
+        "rounds": 8,
+        "capacity": 3
+      },
+      "status": "OK",
+      "negative_checks": 72,
+      "positive_controls": 49,
+      "sha256": "d191c139be9a292432c4bc1a87da415340b85ab1078668b9bc3059165bb379bb"
+    },
+    {
+      "case": {
+        "family": "buffer",
+        "rounds": 8,
+        "capacity": 3,
+        "failures": 1,
+        "tail_failures": 2
+      },
+      "status": "OK",
+      "negative_checks": 62,
+      "positive_controls": 29,
+      "sha256": "ed5643f66590eac071edae0a1b03104fa75f04d9252aab043abb2596e02f7371"
+    },
+    {
+      "case": {
+        "family": "buffer",
+        "rounds": 8,
+        "capacity": 3,
+        "partial": true
+      },
+      "status": "OK",
+      "negative_checks": 72,
+      "positive_controls": 49,
+      "sha256": "abbbd78104f1fa93c71543c94055cd6fbf8d06d104d8795abff5ba57a5885eec"
+    },
+    {
+      "case": {
+        "family": "buffer",
+        "rounds": 8,
+        "capacity": 4
+      },
+      "status": "OK",
+      "negative_checks": 72,
+      "positive_controls": 49,
+      "sha256": "38125adbab17a98df19d86c6c91cb5e85b718f1a1f4f10cbd49507e788f59488"
+    }
+  ],
+  "all_raw_checks_ok": true,
+  "scope": "Byte-verified fresh extraction, full unit tests and rerun original RA negative checks; not a fresh OS dependency installation or performance rerun."
+}

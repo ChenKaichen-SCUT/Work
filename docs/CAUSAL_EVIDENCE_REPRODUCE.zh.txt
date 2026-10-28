@@ -1,0 +1,95 @@
+跨阶段范围、按需诊断与独立排除核查：复现说明
+2026-10-28
+
+1. 材料与运行环境
+本轮报告为CAUSAL_EVIDENCE_RESULTS.zh.txt，原始数据为
+results/causal_evidence_20261028/，单独制品为
+artifacts/causal_evidence_20261028.zip。之前两个causal制品、旧实验和论文PDF
+不被替换。包内MANIFEST.json列出每个成员的长度及SHA256；包外清单记录
+ZIP的SHA256。environment.json保存所有被测wmcheck源码及本轮生成器/控制器
+的字节哈希，四个source_verification文件记录各批次结束时源码未变。
+
+使用Python 3.12和requirements-causal.txt固定依赖，CaDiCaL195。
+  python -m pip install -r requirements-causal.txt
+全部命令从solver目录运行，无需旧服务器、SSH凭据或协议在线下载。
+计时在Windows本机单CPU亲和上进行，禁用原生端口加速；性能任务目标限额为
+60秒、1GiB。B2另有200000状态、600000转移、50秒编译预算。
+硬上限包含启动和审计IO；表内算法成本不含哈希与审计文件写入。
+全支持服务计入排序形成完整列表；诊断任务另计完整结果JSON序列化。
+
+2. 快速验收和制品恢复
+  python -m unittest discover -s tests -v
+  python experiments/causal_evidence_recover.py --destination ../replay-evidence-new
+恢复目录必须尚不存在。恢复脚本逐成员核查归档哈希，再在解包副本运行
+全套测试和七组无证书负支持核查。它真正重新调用原始SAT，不复用旧核查
+结果。恢复新输出位于副本solver/recovery_runs，回执与测试日志在artifacts。
+恢复复用当前安装的Python；它不等于全新操作系统安装或再次性能测量。
+可选旧BDD模块缺失时三个相关测试允许跳过，新协议/按需诊断测试不跳过。
+
+3. 重新运行矩阵
+正式结果冻结保留。应先复制项目到独立目录，备份该副本的
+results/causal_evidence_20261028，再创建空的同名目录。不要在正式目录中
+删除或覆盖原始记录。随后依次执行：
+  python experiments/causal_evidence_suite.py prepare
+  python -m experiments.causal_evidence_negative
+  python experiments/causal_evidence_resources.py --phase negative
+  python experiments/causal_evidence_resources.py --phase scan
+  python experiments/causal_evidence_resources.py --phase tasks
+  python experiments/causal_evidence_resources.py --phase robustness
+  python experiments/causal_evidence_report.py
+prepare生成7个主输入的查询池及两份诊断日志。第二条生成7组负核查的
+固定抽样清单；第三条才用不导入D/H/L的原始RA编码检查它们。
+scan运行固定C3的4/8/16/32轮及固定8轮的C2/3/4/6，两条线共享8轮C3。
+tasks运行屏障8轮、缓冲8轮C3的稀疏/频繁快照诊断。
+robustness先保存选点规则和结果，然后使用两个新增独立池、各两种顺序。
+主扫描与诊断成功点3次独立进程重复；稳健性成功点2次；首次失败即保留
+该记录，不通过重复尝试寻找成功。不要同时启动两个性能批次。
+
+已有非RUNNING结果会复用；存在RUNNING记录时明确拒绝覆盖。要重测，应
+在工作副本另存该输出及对应job文件，而不是把原始失败改成成功。
+每个job.json对应一个独立worker任务，原始结果保留最后完成的查询前缀。
+直接使用runner --job ... --out ...没有父控制器的1GiB监控，不应冒称完整
+复现正式资源边界。正式复跑使用上述resources包装器，替换suite的控制器，
+算法和固定任务不变。
+
+本轮原控制器在Windows上只采样到虚拟环境启动器RSS，内存硬限制因而没有
+正确覆盖子进程。成功运行均另存worker自身OS峰值，报告内存据此修正，且
+全部低于1GiB；原始启动器RSS保留但不再用于结论。六个超时点另存于
+resource_audit的进程树复核，采样整个树并在超限时终止树。原计时及原失败
+记录不覆盖；resource_controller.json保存修复控制器哈希。可独立重跑：
+  python experiments/causal_evidence_resources.py --phase audit
+
+4. 请求与任务的含义
+workloads中保存原始alpha、SAT预期、池/序列哈希和候选规模。
+每池目标为990个长度4的逐文字非冗余SAT条件、10个不同最小冲突对；条件
+来自仍有两种支持的原始RF/CO位，同一二源RF字段只使用一个坐标代表。
+不足时如实减少不同alpha数；不使用排列、固定常量、冗余文字制造新条件。
+完整请求数仍为1000，缓存命中数单列。生成过程不计入算法时间。
+
+diagnostic_inputs保存程序族派生的部分来源日志；不是工业采集日志。
+诊断合同见docs/CAUSAL_DIAGNOSTIC_TASK.zh.txt。删除冲突只需一致性，
+修复只需字段支持；B0/B1/BD均可按需调用。最终冲突、全部单字段修复、
+实际编辑及指定完整快照逐项比对。diagnostic_outputs保存首重复的完整
+任务结果，tasks各行保存所有实际调用类型、缓存、内部统计和结果哈希。
+
+5. 独立排除证据
+negative_inputs先用固定SHA256排序和边界标签选择至多24个删除RF、24个
+固定CO的反向、24个条件无支持文字。条件中的alpha和目标文字各自有支持，
+并排除同一字段的一选一冲突。样本不足不补造。
+negative原始worker只从原事件和branch guards编码；certificate=None，
+不导入待验D/H/L事实。条件核查后分别检查alpha及撤销alpha后的目标文字
+可满足，并按dense HB/ECO定义检查原始完整赋值。资源失败记UNKNOWN。
+负结论依赖CaDiCaL的UNSAT判定，未生成可独立验证的DRAT/LRAT日志；这不是
+对全实例全部负支持的穷尽证明，也不代替结构定理。
+
+6. 派生表、图与重新打包
+  python experiments/causal_evidence_report.py
+  python experiments/causal_evidence_package.py
+报告器仅从已存结果生成紧凑summary、tables及figures，不重测性能。
+summary不重复逐查询与见证的大体积数据；每条原始记录仍完整保留。
+成功耗时报告中位数与重复范围，失败不插补时间或加速比。恢复回执在包外
+生成，避免归档自包含自身哈希。只有新交付时才打包，已发布ZIP应冻结。
+
+本轮新增target_support、BD按需一致性/字段支持缓存和任务客户端。
+此前性能测量的精确源码从各自旧ZIP恢复；当前源码兼容不表示与旧快照逐字
+节一致。当前实现不包含新的内存模型、协议、组合前端或通用编译器对照。

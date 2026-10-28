@@ -1,0 +1,6 @@
+{
+  "source_sha256": "9029ec08a12f8b73feee80bb989a859dea81c4346546102d59ac700e5e182ca9",
+  "measured_algorithm_sources_unchanged": true,
+  "original_limitation": "Original external sampled RSS covered only the Windows venv launcher. Successful workers separately recorded their own OS peak working set. Timeout rows had no worker peak.",
+  "reporting": "Use worker OS peak for completed original runs; separately report tree-aware resource rechecks. Never substitute launcher RSS as solver memory."
+}

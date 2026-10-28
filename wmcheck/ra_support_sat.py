@@ -243,6 +243,36 @@ class SupportSAT:
 
     supports = all_support
 
+    def target_support(self, variables, assumptions=()):
+        """Exact support only for requested original coordinates, not all RF/CO."""
+        variables = frozenset(variables)
+        if any(type(v) is not int or v not in self.registry.by_id for v in variables):
+            raise ValueError('Targets must be positive original variable IDs')
+        alpha = self._alpha(assumptions)
+        started, before = perf_counter(), self.solve_calls
+        supported = set()
+        sat = self._solve(alpha)
+        if sat:
+            supported = {l for l in self.model_original() if abs(l) in variables}
+            unknown = {l for v in variables for l in (v, -v)} - supported
+            while unknown:
+                self.nv += 1
+                selector = self.nv
+                self._raw_clause([-selector, *sorted(unknown)])
+                try:
+                    found = self._solve(alpha + (selector,))
+                    witness = {l for l in self.model_original() if abs(l) in variables} if found else set()
+                finally:
+                    self._raw_clause([-selector])
+                if not found:
+                    break
+                assert witness & unknown
+                supported.update(witness)
+                unknown.difference_update(witness)
+        self.last_query_stats = dict(task='target-support', calls=self.solve_calls-before,
+            target_variables=len(variables), output_literals=len(supported), seconds=perf_counter()-started)
+        return sat, supported
+
     def propagate(self, assumptions=()):
         sat, supported = self.all_support(assumptions)
         return sat, {lit for lit in supported if -lit not in supported} if sat else set()

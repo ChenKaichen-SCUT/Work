@@ -186,6 +186,98 @@ class ComponentSAT:
                                         (a-b for a,b in zip(after,before))))
         return answer
 
+    def _local_sat(self, item, alpha):
+        cache = item.setdefault('consistency_cache', {})
+        if alpha in item['cache']:
+            self.total_local_hits += 1
+            return item['cache'][alpha][0]
+        if alpha in cache:
+            self.total_local_hits += 1
+            return cache[alpha]
+        self.total_local_misses += 1
+        self.total_sat_calls += 1
+        mapping = item['mapping']
+        answer = item['solver'].solve(assumptions=[mapping[abs(l)]*(1 if l>0 else -1) for l in alpha])
+        cache[alpha] = answer
+        return answer
+
+    def _local_target(self, item, alpha, variables):
+        if variables == item['originals']:
+            return self._local_support(item, alpha)
+        if alpha in item['cache']:
+            self.total_local_hits += 1
+            sat, supported = item['cache'][alpha]
+            return sat, {l for l in supported if abs(l) in variables}
+        cache = item.setdefault('target_cache', {})
+        key = alpha, tuple(sorted(variables))
+        if key in cache:
+            self.total_local_hits += 1
+            return cache[key]
+        self.total_local_misses += 1
+        solver, mapping, inverse = item['solver'], item['mapping'], item['inverse']
+        local = lambda lit: mapping[abs(lit)]*(1 if lit>0 else -1)
+        assumptions = [local(l) for l in alpha]
+        self.total_sat_calls += 1
+        sat = solver.solve(assumptions=assumptions)
+        item.setdefault('consistency_cache', {})[alpha] = sat
+        supported = set()
+        if sat:
+            def model():
+                return {inverse[abs(l)]*(1 if l>0 else -1) for l in solver.get_model()
+                        if abs(l) in inverse and inverse[abs(l)] in variables}
+            supported = model()
+            unknown = {l for v in variables for l in (v,-v)} - supported
+            while unknown:
+                item['nv'] += 1
+                selector = item['nv']
+                solver.add_clause([-selector]+[local(l) for l in sorted(unknown)])
+                self.total_sat_calls += 1
+                found = solver.solve(assumptions=assumptions+[selector])
+                witness = model() if found else set()
+                solver.add_clause([-selector])
+                if not found:break
+                assert witness & unknown
+                supported.update(witness);unknown.difference_update(witness)
+        answer = sat, frozenset(supported)
+        cache[key] = answer
+        return answer
+
+    def target_support(self, variables, assumptions=()):
+        """Query targets locally; other components receive consistency calls only."""
+        variables, alpha = frozenset(variables), set(assumptions)
+        if any(type(v) is not int or v not in self.registry.by_id for v in variables):
+            raise ValueError('Targets must be positive original variable IDs')
+        if any(type(l) is not int or abs(l) not in self.registry.by_id for l in alpha):
+            raise ValueError('Only original RF/CO assumptions')
+        before = self.total_local_hits,self.total_local_misses,self.total_sat_calls
+        if self.base_unsat or any(-l in alpha or -l in self.constants for l in alpha):
+            answer = False,set()
+        else:
+            local_alpha, targets = defaultdict(list),defaultdict(set)
+            for l in sorted(alpha):
+                if abs(l) in self.owner:local_alpha[self.owner[abs(l)]].append(l)
+            for v in variables:
+                if v in self.owner:targets[self.owner[v]].add(v)
+            supported = {l for l in self.constants if abs(l) in variables}
+            answer = True,supported
+            for i,item in enumerate(self.engines):
+                if not item['originals']:continue
+                a = tuple(local_alpha[i])
+                if targets[i]:sat, local = self._local_target(item,a,targets[i])
+                else:sat, local = self._local_sat(item,a),()
+                if not sat:
+                    answer = False,set();break
+                supported.update(local)
+        after = self.total_local_hits,self.total_local_misses,self.total_sat_calls
+        self.last_query_stats = dict(task='target-support',target_variables=len(variables),
+            **dict(zip(('local_hits','local_misses','sat_calls'),(a-b for a,b in zip(after,before)))))
+        return answer
+
+    def solve(self, assumptions=()):
+        answer = self.target_support((),assumptions)[0]
+        self.last_query_stats['task'] = 'consistency'
+        return answer
+
     def close(self):
         for item in self.engines:
             item['solver'].delete()
