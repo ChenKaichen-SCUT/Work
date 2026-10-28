@@ -1,0 +1,114 @@
+新主线的实质对照：已有协议知识与新增候选空间结论
+核对日期：2026-10-27；仅理论定位，不引入性能或新颖性优先权结论
+
+0. 要比较的是结论，不是关键词
+=============================
+本轮的候选中心结论是：具体 RA 反馈协议的任意有限逐线程前缀，产生对全部合法
+补全共同成立的证书；证书把尚未确定的同址因果关系限制在可计数的前沿；老写
+仅保留各地址的 H 极大代表；因而尚未选定 RF/CO 时，其联合候选表示已有统一
+接口界，且保留任意原始 RF/CO 部分赋值下的支持。
+
+这里任何单独一环都不能自动承担“新框架”的主张。尤其：程序协议逻辑、共同
+知识、may/must、图宽参数化、路径摘要和传播编码都有先例。应把新增的证明义务
+集中在同一证书覆盖全部候选、CO 不被隐藏、协议参数推出界以及身份投影保持。
+
+1. GPS 与 iGPS：协议知识及资源复用是已有思想
+================================================
+GPS：Turon、Vafeiadis、Dreyer，OOPSLA 2014，
+GPS: Navigating Weak Memory with Ghosts, Protocols, and Separation。
+原文：https://software.imdea.org/advent-project/pubs/oopsla2014-gps.pdf
+核对：读规则（PDF p8）、循环缓冲讨论及 Fig.5/6（PDF p11–13，0-based 页号）。
+GPS 已用协议与 ghost 信息证明循环缓冲复用；读规则获取所有适用协议状态共同
+保证的知识。本文不能把“未唯一识别来源也能获得知识”或代数计数视为首创。
+本轮以 Fig.6 为可追溯控制骨架，明确更换非原子 payload 的建模；没有覆盖原版
+NA 语义，也没有重新宣称缓冲功能正确性是新结果。
+
+iGPS：Kaiser 等，ECOOP 2017，Strong Logic for Weak Memory: Reasoning About
+Release-Acquire Consistency in Iris。
+作者入口：https://plv.mpi-sws.org/igps/
+正式记录：https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2017.17
+其 RA+NA 逻辑、机制化证明及组合能力均已存在。本文目前只是手工数学证明，
+不能借引用 iGPS 暗示新定理已在 Coq 中认证。
+
+本轮新增义务：从具体控制骨架推出所有原始来源的窗口与共同 HB，给出候选并图
+接口及任意身份查询投影。已有 Hoare 正确性本身没有给出本文这份候选/成本合同；
+但仍可用 GPS/iGPS 作为证明前端，不应声称其框架无法表达本轮协议论证。
+
+2. OOPSLA 2023：R∀ 可进入已有 may/must 分析
+============================================
+Haas、Maseli、Meyer、Ponce de León，Static Analysis of Memory Models for SMT
+Encodings。原文：https://hernanponcedeleon.github.io/pdfs/oopsla2023.pdf
+核对：§2.4 may/must，§3 filter semantics、Theorem 3.1，§4 抽象过滤。
+已有：模型关系上下界、过滤与程序语义信息相结合，为编码提供可靠简化。
+新增的共同前序规则不是超出该抽象解释框架的能力；旧项目的原生分析审计也已
+展示扩展能恢复相同关系，不应逆转该结论。
+
+本轮新增义务：对不满足写覆盖、含失败尝试和不齐前缀的协议族，逐项证明生成
+的证书限制整个 RF/CO 候选并图，并证明其参数与运行总长度无关。这不是从一般
+过滤可靠性直接读出的结论，需要具体协议归纳和前沿代表引理。
+
+3. CONCUR 2026：与 Lemma 4 直接比较
+===================================
+Conrado、Pavlogiannis，An MSO Framework for Weak-Memory Verification and Robustness。
+正式正文：https://drops.dagstuhl.de/storage/00lipics/lipics-vol391-concur2026/LIPIcs.CONCUR.2026.25/LIPIcs.CONCUR.2026.25.pdf
+核对：§2 的 rf-graph，Lemma 1、Lemma 4、Theorem 9、Lemma 10、Theorem 17。
+其 rf-graph 是已指定 RF 的 (E,sb,rf)，MO 可存在量化；Lemma 4 把树宽与某个
+sb∪rf 拓扑序中 RF 跨过的同址写数量联系起来。Theorem 9 及 Lemma 10 给出 RA
+等模型的 MSO 可定义性；Theorem 17 还从 rf-robustness 得到程序分析结果。
+
+必须承认：该工作并非只“假设图窄”，已有结构证明；保留少量历史写也不应单独
+包装成原创。本轮证明对象不同：在选 RF 之前，对其全部候选及未决 CO 共同给出
+路径接口界；所有 CO 方向仍是可查询变量。由具体协议证明出来的 H 是输入证书，
+而不是选定 RF 后的 HB。两文模型定义需逐项匹配，不用名字相同代替语义对齐。
+
+一旦我们的稀疏候选图已构造，既有图宽/MSO 路线可能同样利用它。因此不能宣称
+突破一般树宽方法、不能以原始 CO 变量数量制造虚假的图宽分离。候选并图结果
+比逐执行 RF 图窄承担不同量词义务，但这不自动构成复杂度或算法最优性分离。
+
+4. PLDI 2023：存在 CO 与查询 CO 是两种合同
+=========================================
+Tunç 等，Optimal Reads-From Consistency Checking for C11-Style Memory Models。
+作者预印本：https://arxiv.org/abs/2304.03714
+核对摘要的输入/输出定义：事件、程序序、RF 已给定，判定存在合法 MO。
+本文保留未选 RF 与所有原始 CO 位，并在预编译后回答任意部分赋值支持。
+这不是未知 CO 的首个处理方法，也不是单次判定速度必然改进；区别是联合变量
+身份、重用查询合同及由协议导出的预编译界。
+
+5. POPL 2024 与 FM 2026：普通资源数不够
+=======================================
+Chakraborty 等，How Hard Is Weak-Memory Testing?，POPL 2024。
+https://cs.au.dk/~pavlogiannis/publications/papers/popl24a.pdf
+其主结论包含：若干弱内存模型的一致性在固定线程/地址/值域下仍可 NP-complete。
+不能因 p、a、小值域固定就宣称整个 RA 类可处理。
+
+Govind 等，Complexity of Consistency Testing for the Release-Acquire Semantics，
+FM 2026（作者完整版）：https://arxiv.org/abs/2604.09589
+摘要明确每地址单写者为多项式、两写者可 NP-hard，并有进一步参数下界。
+因此循环缓冲的单写者控制骨架不独立承担一般可处理性的贡献。第二协议允许
+有多写者并发数据区域，并提供 RF/CO 相关性及非 SC 见证；限制来自同步前沿，
+不是从单写者算法推成新的通用结果。
+
+6. 旧后端：明确作为复用步骤
+==========================
+本项目已有 FUTURE_PORT_THEOREMS 与 FUTURE_PORT_CERTIFICATE_BRIDGE 的联合
+路径摘要及原始支持合同。通用知识编译到传播编码也有已有理论，例如：
+Kučera、Savický，Propagation Complete Encodings of Smooth DNNF Theories，
+https://arxiv.org/abs/1909.06673 。
+本轮不新增通用编码的首创性主张。新证明到达稀疏候选袋界后，直接引用既有
+后端，分别列包含全部预处理的 T_pre、K、|X|、N；不把旧实验用于新协议正确性
+或运行时间结论。
+
+7. 可写进论文的贡献句与不可写的句子
+====================================
+可写（须连同本轮证明及范围）：
+  我们给出从可检查反馈协议证书到联合 RF/CO 候选接口的充分条件。历史事件
+  无须因年龄被全部移除；稳定写的有限代表允许无界写间隔。循环缓冲与屏障的
+  前缀证明分别实例化该条件，地址闭合且布局兼容的组合保留界和原始身份支持。
+
+不可写：
+  首次从未知来源取得共同知识；首次用协议/ghost 状态推理 RA；首次用图宽处理
+  弱内存；覆盖任意 Linux 缓冲/任意 RA 程序；已证明优于 SAT/BDD；本轮已机械
+  验证；已有文献都只分析唯一来源；已确立 FM/PLDI 首创性或接收把握。
+
+本文是对最近且直接相关原始文献的定理级核对，不是穷尽优先权检索。当前更强
+的贡献候选在“协议到全部候选空间”的完整证明链，最终新颖性仍需外部专家审查。

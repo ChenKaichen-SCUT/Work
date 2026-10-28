@@ -1,0 +1,236 @@
+弱内存精确支持编译项目：换机交接
+日期：2026-10-17
+
+2026-10-28 发布约定更新：用户要求将当前全部研究成果推送到 GitHub，后续每轮
+有改动的工作结束后也提交并推送；具体约定见 solver/AGENTS.md（仓库内为
+AGENTS.md）。下面历史交付的“仅本地/未推送”是当时冻结状态，后续发布以
+Git提交及远端分支为准。仓库根目录另存本交接文件，便于直接从GitHub恢复。
+
+2026-10-28 新假设与局部分解后续（优先于下面同日先前交付）：
+入口solver/CAUSAL_FOLLOWUP_RESULTS.zh.txt；规范/诊断/复现说明为docs中的
+CAUSAL_FOLLOWUP_SPEC、CAUSAL_DECOMPOSITION_DIAGNOSIS、CAUSAL_FOLLOWUP_REPRODUCE.zh.txt。
+本轮不扩大理论/协议范围。Q=1000，屏障8/16轮，U=21/100/500/1000；四方
+等全局缓存，新增通用CNF组件SAT及局部缓存。每个假设只用真正未定原始文字，
+SAT条件逐文字验证不可冗余；固定990SAT/10UNSAT的请求比例，全部失败保留。
+主屏障1/2/3轮原始完整投影分别9/81/729，与组件乘积和编译投影逐集合相同；
+8/16轮的实际CNF也按轮分解，不能再以它声称持续跨轮关联的性能优势。
+8轮U1000时组件SAT快于编译；局部新问题仅82个。既有branch缓冲8轮/C3
+具有经原始SAT及独立正见证核查的跨阶段关联，补作U100/1000性能变体。
+数据results/causal_followup_20261028；详细时延和机制账本以新报告为准。
+新增wmcheck/ra_component_sat.py，ra_support_sat提供可选clause sink，默认路径不变。
+82测试79通过3可选BDD跳过。制品causal_followup_20261028与旧pilot包分开；
+仅本地未提交/推送，旧PDF未更新，源哈希/恢复回执见artifacts对应清单。
+
+2026-10-28 最新实验交付（优先于下列理论冻结时状态）：
+入口 solver/CAUSAL_EXPERIMENT_RESULTS.zh.txt；复现说明
+solver/docs/CAUSAL_EXPERIMENT_REPRODUCE.zh.txt，数据 results/causal_20261028/。
+已实现ra_protocols屏障/缓冲前端、prepare_frontier外部证书/一般袋接口、
+独立ra_reference与强增量ra_support_sat。不是所有理论协议分支都已实现。
+语义验收36例完整模型集合投影、1152 Boolean赋值、808组查询；78测试75通过3跳过。
+多写者恒定值屏障2–32轮K=13/最大可达层状态10；32轮64个多源读及64个未决CO对。
+主性能100条96成功4超时，另9条三方等答案缓存对照，70条结构矩阵；保留所有失败。
+等缓存后8轮1000请求B0/B1/B2端到端中位数1.372/0.374/0.117秒；温态单文字B1更快。
+32轮B1已完成10组全部支持与B2一致，13个不同完整正见证经原始RA检查；不能称
+全部负支持已由无预处理参照独立穷尽。原始B0的32轮编码触及30秒上限。
+复现包 solver/artifacts/causal_pilot_20261028.zip；主计时源码哈希前后一致。
+当前仅本地，未提交/推送；旧论文PDF未更新；以下“尚未实现”指此前理论冻结状态。
+
+2026-10-28 最新理论合同收束（优先阅读）：
+按用户新指引，只核验与整理理论，不增加实验或修改求解器。
+主入口 solver/docs/CAUSAL_FRONTIER_MAIN_CONTRACT.zh.txt；其后阅读
+CAUSAL_FRONTIER_CONSTRUCTION、BACKEND_AUDIT、QUANTIFIER_AUDIT.zh.txt。
+统一证书 Gamma、全部候选图 G 和组/袋计划 pi 都由含协议语法合同的输入先确定，
+然后才量化合法完成 J 与临时假设 alpha；允许随 J 变化的只有证明用 ghost。
+给定证书编译与协议构造已分成两层，后者有有限规则、伪代码及保守
+T_pre=O(ell^8) 位界，ell 为显式输入与原始变量表规模；不计算全部语义蕴含。
+全赋值合同为 forall x: Phi_I(x) iff exists y A_I(x,y)，保留所有原始 RF/CO
+标签及相关性；完整值与分支观察分别有入口。删除 G 精确表述为参数分离。
+无反馈反例加强为：所有已选完成图各自袋大小至多3，而候选并图包含 K_(n,n)。
+范围仍区分二元/原子组、前沿/失败链袋展开、观测精度和地址/布局兼容组合。
+新证书与任意组计划尚未接入现有 compile_frontier API；复杂度为数学上界，
+不是实测或已实现承诺。旧PDF未更新；未机械化或外部认证；本地尚未提交/推送。
+
+2026-10-27 最新理论主线（优先于下列历史状态）：
+用户指定按粘贴指引改用“因果前沿＋稳定旧写代表”，明确仅理论、不实验。
+已交付 solver/CAUSAL_FRONTIER_RESULTS.zh.txt；先读该文件及它列出的各份
+CAUSAL_FRONTIER_* 结构、反馈、屏障、组合、文献和审查文件。
+核心二元界 K<=c+ap+p+a+1；旧网络删去写覆盖 G。自然协议主例是 GPS Fig.6
+模索引循环缓冲的明确 RA 化抽取，以及 MCS 到达/重置/唤醒架构的星形 RA 改编。
+来源界由 coherence 前缀归纳和反馈 HB 环推出，不靠完整日志终点；新主线不需
+RMW。已给共享地址/布局受约束的组合、完整原始支持投影及多源/未决CO/非SC见证。
+循环缓冲完整索引值会锁来源，branch-only 模式需要未实现的取值guard观测；
+无限失败链的袋界不得冒充原始 c 界参与组合。原子RF需额外域大小参数，已有反例。
+本轮没有实验、代码实现或新PDF；旧PDF和冻结实验保持原版本。理论经代理交叉
+逻辑审查，未机械化/外部认证，不作发表优先权保证。本地文件尚未提交/推送。
+10月19日RMW屏障草稿和splitter仅保留为不同方向的背景，不作为本轮证明前提。
+
+2026-10-19 最新研究方向（优先）：
+用户要求有可追溯来源的协议及必要的理论推广，并明确纠正：应通过逻辑推理
+扩展理论，不能以实验增长代替。已完成的 splitter 对象 DAG 分解和实验仅作
+补充，并未放宽旧发布网络 P2。当前主线 proof draft：
+solver/docs/BARRIER_PREFIX_LOCALIZATION.zh.txt。
+它分析 Rochester 作者规范中的可复用集中式 sense-reversing 屏障，明确增加
+acq_rel RMW 及其原子性/计数分支语义，用计数区间归纳和 HB 环排除未来来源，
+不使用完整有限交替序列末端计数。推导失败轮询可流式处理的 k<=6p+6，以及
+纯屏障原始支持排列图 O(|X|+n p^3 2^p)。这是待独立审查的数学证明稿，
+尚未接入现有固定写值、无 RMW 求解器；不能用旧实验声称已验证。
+补充交付入口 solver/PROTOCOL_GENERALIZATION_RESULTS.zh.txt，来源映射
+docs/SPLITTER_PROVENANCE.zh.txt，另一个定理 docs/OBJECT_LOCALIZATION_THEOREM.zh.txt。
+splitter 原始结果 results/splitter_20261019；新代码与测试均在本地，未推送。
+全套 58 项测试，55 通过、3 可选依赖跳过；这只覆盖已实现的 splitter/对象分解。
+原 PDF、原实验和服务器备份保持为各自冻结版本。本轮未使用服务器。
+
+服务器退役备份（当前最新）：
+GitHub https://github.com/ChenKaichen-SCUT/Work 的 main 已保存全部项目研究内容。
+最终提交 07dad42e806a98886b8631987efac265afb2aa13；本地 solver/main 与远端一致且干净。
+恢复入口 solver/SERVER_RECOVERY.zh.txt，完整服务器研究快照在
+solver/archives/server-20261017/：6,929文件，292,416,199字节，9个校验分片。
+包含所有原始实验/失败/日志/输入/历史源码；依赖环境和无修改上游基线可按版本重建。
+中文PDF和源码也已发布在仓库 artifacts/ 与 fm_chinese_paper/。
+已从GitHub独立下载提交 f79c16ee222f7f773116c74c76c4135cbfa42d38，完整文件树一致，
+6,929历史文件逐SHA256恢复成功，全新venv全套复跑：50测试通过、1 CUDD跳过；
+32轮53场景826文字通过，环族5成功1预期UNKNOWN。最终提交只补充回执和说明。
+回执 archives/server-20261017/github_recovery_verification.json，完整输出 github-replay-full/。
+旧本地并行提交历史保留在分支 archive/local-before-github-backup-20261017。
+后文的服务器路径仅是历史记录，用户准备删除原服务器；后续工作不应依赖其仍在线。
+
+中文完整论文稿交付（当前最新）：
+PDF：output/pdf/FM_Chinese_Manuscript.pdf，22页，5幅图、9张表、10条参考文献。
+可编辑项目：solver/fm_chinese_paper/main.tex；源文件与图表数据包见
+output/pdf/FM_Chinese_Source.zip。使用用户 Template 目录的原始 LNCS 类，中文 XeLaTeX 排版。
+参考 FM 2024/2026 已接收论文组织，全文含局部化主定理证明、联合端口、完整日志诊断、
+原生分析对照、32轮独立核对、不同拓扑、负面结果、相关工作和复现附录。
+图表从冻结JSON生成，数据摘要可核查；22页已渲染检查，无公式溢出、缺字或未解析引用。
+不改变实验数据和算法；作者使用匿名标记，未提交/发布。论文质量回执在
+solver/fm_chinese_paper/quality_report.json。服务器编译目录 /root/wm-research/fm-paper-zh。
+后面的“可开始完整稿”是上轮状态；当前中文稿已生成，可直接编辑全文。
+
+FM 完整稿前最终补强（优先阅读本段）：
+最新入口 solver/FM_READINESS_RESULTS.zh.txt，证明审查 docs/FM_PROOF_AUDIT.zh.txt，
+正文骨架 docs/FM_MANUSCRIPT_PLAN.zh.txt，制品说明 docs/FM_ARTIFACT.zh.txt。
+新增三/四线程有向环及非均匀发布，5配置完整支持核对通过，3线程4轮触及
+100万状态保留UNKNOWN。结构审计12项、整数窗口3360项、两个前提反例通过。
+32轮已用不调用识别/端口的独立RA编码+CaDiCaL核对53场景、826文字支持；
+81个完整见证经稠密RA定义重验。只是选定核对，不是32轮全部支持已穷尽。
+新SAT编码可以完成32轮核对，旧稠密编码的4GiB失败不可泛化到所有SAT方法。
+原服务器51测试全过；自包含包在新目录和新venv从源码重建后完整复跑通过，
+最小依赖环境50测试通过/1个CUDD跳过。原双线程负面结果及历史数据未改写。
+本轮数据 solver/results/fm_evidence_20261016，包 solver/artifacts/fm_submission_20261016.zip。
+可开始完整研究稿；修改仍未提交/发布。服务器工作目录
+/root/wm-research/fm-evidence-20261016；干净复跑目录
+/root/wm-research/fm-clean-reproduction-20261016。后文为前几轮历史状态。
+
+最新交付（三项补强完成，同日最后更新）：
+先读 solver/SUPPORT_TASK_RESULTS.zh.txt，再读
+solver/docs/CLOSEST_ANALYSIS_AUDIT.zh.txt 和 SUPPORT_TASK_THEOREM_ADDENDUM.zh.txt。
+数据为 solver/results/support_task_20261016/，原 publication_20261016 不改写。
+已真实调用 Dat3M 原生分析；外部 R∀+闭包在六个规模上恢复全部 H/L/RF 集合，
+不声称框架不可表达。已实现 trace_cli 的完整候选查看、极小冲突和全部单字段修复。
+版本载荷族完整任务已到 32 轮三次重复、64 轮单次；16 轮总耗时 5.267 秒，
+按需 SAT 26.908 秒。恒定载荷六轮仍失败；4 轮版本载荷 SAT 更快，保留负面结果。
+主批次 102 条（95 ok、7 UNKNOWN）；按需 SAT 25 条（24 ok、1 内存 ERROR）。
+49 项服务器测试全过；独立支持核对只到版本载荷 16 轮，32/64 不冒称独立确认。
+来源锁定还证明整个观测 SC 不可达；GenMC 两轮验证 RC11 可达、SC 不可达。
+measured_sources.zip 和 artifact_manifest.json 保存/核验计时源码；计时后只修了
+两个驱动的低内存报告，新审计另记哈希。下文旧“当前源码一致”等仅为当时状态。
+服务器目录 /root/wm-research/support-task-20261016；已检查无本次实验进程。
+修改尚未提交/发布。主线更完整，但不能据此断言达到 PLDI；下一研究重点是
+恒定载荷规模瓶颈、更多实际协议来源、来源量化相关工作的原创性核对。
+
+本机后续更新（2026-10-16，同日较晚交付）：
+服务器连接已恢复；新增核心理论 solver/docs/PUBLICATION_CORE_THEOREM.zh.txt，
+新增实验交付 solver/PUBLICATION_RESULTS.zh.txt，数据 solver/results/publication_20261016/。
+已实现 source_covers 共同前序识别与 publication 协议族；服务器44测试通过，
+正式93运行记录（90成功、3资源失败）、GenMC观测检查与旧1536查询回放均已保存。
+计时源码哈希已核对；全部实验结束。当前改动尚未提交/发布。后文为换机时的
+原始交接，涉及“服务器不可达/实例待做”的状态以本更新和 MIGRATION_RECOVERY.zh.txt 为准。
+
+这是一份工作交接摘要，不是完整聊天记录或官方会话导入文件。
+
+一、位置
+旧工作目录：C:/Users/28905/Documents/Codex/2026-10-15/2-sc-theory-weak-memory-theory
+solver/：Git仓库、代码、证明、测试、发布的实验数据。
+work/：本机辅助脚本、完整解包结果、开发材料、发布回执。
+outputs/：本机输出。
+参考PDF在项目之外：C:/Users/28905/Desktop/FM/A Refined Ordering Consistency Theory Full Sequential Consistency and Generalized Preventive Reasoning.pdf
+服务器项目：/root/wm-research/project
+服务器Python：/root/wm-research/runtime/bin/python
+服务器主机：124.71.101.87，用户名root。凭据另行安全提供，此文件不保存密码。
+旧本机Python：D:/python/python.exe。换机不要假定此路径仍存在。
+
+GitHub：https://github.com/ChenKaichen-SCUT/Work
+最新已核验远端提交：56973649dedb3a0f8e03f1f4fe36b77d58705afe
+对应本地提交：5aa8d2612030165f1c2803d9d131f61e5220b52d
+共同文件树：f9abe5c8121231b3af50aa2c9d09a1fc26d918f4
+远端发布采用API，因此本地/远端提交ID不同，但树已核验完全相同。
+不要未经检查直接pull合并这两段平行提交历史。可保留旧副本并在新路径clone远端。
+下载的基线源码/二进制不上传GitHub。服务器上的基线不因换电脑而消失。
+
+二、目标、范围和当前定位
+主线：可检查关系结构 -> 闭包稳定、保留相关性的历史摘要 -> 精确原始支持 -> 完备传播与成本界。
+目标可朝PLDI推进，但当前判断是方向契合，尚不能断言创新性已足够。
+要正面对照Kater、CAAT、Ax2Op、弱内存MSO/treewidth框架、知识编译与传播编码。
+自动化、遗忘历史、图到支持编码的一般思想已有先例。
+
+当前实现的通用范围：固定事件，全release写/acquire读，无RMW/fence/SC操作/非原子/
+动态地址、写值或事件激活。完整RC11/CAT自动综合尚未实现。
+全部原始RF/CO位（包括识别后常量）保持可查询；完备性相对任意这些原始位的部分赋值。
+不声称任意辅助变量决策、合取任意外部公式后的全局UP完备。
+SAT/BDD完整方法也能给出相同答案。普通SAT的UP只作传播强度消融。
+
+三、已完成交付
+旧正式评测：solver/PAPER_RESULTS.zh.txt。
+28主配置、6压力配置、18程序性质；完整数据和复现说明已发布。
+所有对齐答案审计通过。公开C11严格前端只接受3/137，不能宣传广泛C11工具。
+GenMC、Dartagnan、Poct已测；旧Zord下载链接不可用，未运行，不得冒名。
+
+最新算法F-ports：solver/wmcheck/port_monitor.py，ra_frontier.py。
+根据未来全部候选边的入/出关联，保存入口×出口的联合路径摘要。
+普通路径R与恰一标记路径T联合维护，保留起点遗忘后的冲突；不能合成两个标记。
+在生成阶段合并，保持RF/CO投影与完整支持，不枚举完整执行/冲突支持。
+证明稿：solver/docs/FUTURE_PORT_THEOREMS.zh.txt。
+交付说明：solver/PORT_ALGORITHM_RESULTS.zh.txt。
+服务器40测试通过；3个现有流水线的1536个查询位置新旧一致。
+三阶段旧29449状态/37062次尝试，新10379状态/13218次尝试。
+同机单次开发构造时间16.822秒 -> 0.742秒；不是正式重复评测速度比。
+新数据在solver/results/ports_development/，不能混入旧5次正式评测。
+通用无环约束的指数/线性分离只针对旧完整闭包与新端口构造，不是对SAT/BDD的下界；
+其中所有选择都合法，不能让这一辅助例子承担整篇论文的创新主张。
+
+D：单地址纯生产者/读者的显式标签特化，RA=SC可线性化。
+G：两生产者、一读线程的区间标签特化。D/G收益不等于一般弱内存收益。
+F-direct-co：删除辅助最终相邻写选择的旧通用改进；F-ports进一步细化其摘要。
+
+四、编译何时值得
+已重分析旧逐查询数据：solver/docs/COMPILATION_ECONOMICS.zh.txt。
+条件：后续查询累计节省超过识别+构造+初始化的额外成本。
+既有两生产者各8/32/64写负载，D从20/11/8次起到512次持续快于加强SAT策略包络。
+旧通用流水线在1..512所有前缀未胜加强SAT/BDD。阈值依赖固定查询序列，不普适。
+新F-ports正式摊销曲线尚未测。
+
+五、用户当前优先级及后续
+用户要求先做有证明的降低构造成本算法；完整机制诊断在最终实验记录；
+新真实交互实例族在算法优化后研究；编译收益先给结论，写论文再组织表达。
+最新对话讨论PLDI定位，结论：优先明确核心关系定理相对已有框架新增什么；
+需要同时包含弱同步、未决CO与多种原始支持的实际实例族。
+不以普遍更快为论文主张，不以增加模型名称/引理数量替代贡献。
+用户允许实验并行；不据此擅自并行代理。服务器内存不足应反馈。
+当前没有已承诺但仍在后台运行的实验。
+
+六、新电脑开始
+先读本文件及上述交付/证明文件，检查git状态和文件树，确认服务器连接，重新配置依赖。
+服务器已有Linux环境和基线，优先继续使用，避免重复下载或覆盖冻结实验数据。
+运行：python -m unittest discover -s tests -v
+新入口：python -m wmcheck.ra_cli --family pipeline --size 3 --algorithm frontier-ports
+完整实验依赖见requirements-paper.txt；本机Windows不保证CUDD可用。
+
+七、聊天备份与恢复边界
+旧Codex状态目录：C:/Users/28905/.codex
+本对话逻辑ID：01a13b76-e7ed-7443-8270-1d75dfc7b5f0
+已观察到跨2026/10/15和2026/10/16的分段rollout及history_base引用，不能只拷贝最新文件。
+完整备份应在退出Codex及相关进程后复制整个状态目录，避免运行中SQLite/WAL不一致。
+备份包含其他聊天和认证/敏感数据，只用于私人迁移，不上传公开仓库。
+官方确认sessions/archived_sessions存储位置及codex resume命令；本次未证实桌面跨机
+恢复的官方保证，不能承诺覆盖目录即可恢复侧栏。不要覆盖新机已有状态来试验。
+可先保存独立备份，兼容性确认后再恢复；需要时在新聊天读取交接文件和历史材料继续。
+摘要接续不等于原聊天界面迁移。迁移成功前保留旧机原始状态。

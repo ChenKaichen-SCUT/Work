@@ -1,0 +1,45 @@
+{
+  "config": {
+    "family": "applicability",
+    "case": "barrier_missing_wake"
+  },
+  "input_sha256": "931961789c3badcf5ad9712484abe332bd9b70b607e7e9aeb543c0f40d6d1ef8",
+  "events": 16,
+  "original_variables": 12,
+  "does_compile": false,
+  "status": "PROVED_UNSAT",
+  "pre_seconds": 0.00019519997294992208,
+  "source": "MCS1991 Fig12 architecture; star RA adaptation",
+  "observation": "fixed-values",
+  "contract_fields_generated": [
+    "B",
+    "family",
+    "positions",
+    "source",
+    "workers"
+  ],
+  "manual_annotation": "template selected; all fields generated",
+  "metrics": {
+    "B": 3,
+    "p": 3,
+    "a": 6,
+    "c_bound": 38,
+    "K_bound": 66,
+    "events": 16,
+    "original_variables": 12,
+    "c_actual": 3,
+    "retained_rf": 4,
+    "undecided_co": 2,
+    "failed_reads": 0,
+    "iterations": 1,
+    "H_pairs": 80,
+    "L_pairs": 6
+  },
+  "failed_event_ids": [],
+  "all_failed_events_in_original_input": true,
+  "certificate_replay": true,
+  "wall_seconds": 0.26963470003101975,
+  "peak_process_rss_bytes": 5529600,
+  "time_limit_seconds": 40.0,
+  "memory_limit_mib": 1024
+}

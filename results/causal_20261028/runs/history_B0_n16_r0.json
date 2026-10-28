@@ -1,0 +1,160 @@
+{
+  "status": "TIMEOUT",
+  "method": "B0",
+  "rounds": 16,
+  "failures": 0,
+  "long_gap": false,
+  "layout": "special",
+  "task": "all",
+  "repeat": 0,
+  "dense_co": false,
+  "limits": {
+    "seconds": 30.0,
+    "memory_mib": 1024,
+    "states": 200000,
+    "edges": 600000
+  },
+  "seed": 0,
+  "affinity": [
+    0
+  ],
+  "phase": "queries",
+  "queries": [
+    {
+      "index": 0,
+      "name": "root",
+      "seconds": 0.47888579999562353,
+      "sat": true,
+      "answer_sha256": "f6a8bc0848ecf9720cada06827b7854441568e8c9495111914cdaa3e4c6a3490",
+      "sat_calls": 35
+    },
+    {
+      "index": 1,
+      "name": "remote_source",
+      "seconds": 0.4143137999926694,
+      "sat": true,
+      "answer_sha256": "c8e0936a73180aa7750bfd1bbabfaec69874fb9fbfa50e45542a7321e984881e",
+      "sat_calls": 63
+    },
+    {
+      "index": 2,
+      "name": "correlated_conflict",
+      "seconds": 6.839999696239829e-05,
+      "sat": false,
+      "answer_sha256": "fe4c07f571f9e0563a1d33188d74a78fb10605439069b39b9cd1b622cf6f39b7",
+      "sat_calls": 1
+    },
+    {
+      "index": 3,
+      "name": "rollback",
+      "seconds": 0.4261689999839291,
+      "sat": true,
+      "answer_sha256": "c8e0936a73180aa7750bfd1bbabfaec69874fb9fbfa50e45542a7321e984881e",
+      "sat_calls": 64
+    },
+    {
+      "index": 4,
+      "name": "retired_co_query",
+      "seconds": 0.10202830005437136,
+      "sat": true,
+      "answer_sha256": "f6a8bc0848ecf9720cada06827b7854441568e8c9495111914cdaa3e4c6a3490",
+      "sat_calls": 19
+    },
+    {
+      "index": 5,
+      "name": "other_source",
+      "seconds": 0.3580041999812238,
+      "sat": true,
+      "answer_sha256": "37c1cafaa76872aefe5e291d70660d4afcd89ee68751e5c72a345128e60a9b02",
+      "sat_calls": 64
+    },
+    {
+      "index": 6,
+      "name": "deep_branch",
+      "seconds": 0.4984337000059895,
+      "sat": true,
+      "answer_sha256": "59154cac0d1a105afe3171c3217fc84b13c6ace6da738ea6919521598b96779c",
+      "sat_calls": 63
+    },
+    {
+      "index": 7,
+      "name": "deep_conflict",
+      "seconds": 8.030002936720848e-05,
+      "sat": false,
+      "answer_sha256": "fe4c07f571f9e0563a1d33188d74a78fb10605439069b39b9cd1b622cf6f39b7",
+      "sat_calls": 1
+    },
+    {
+      "index": 8,
+      "name": "restore_root",
+      "seconds": 0.3845867000054568,
+      "sat": true,
+      "answer_sha256": "f6a8bc0848ecf9720cada06827b7854441568e8c9495111914cdaa3e4c6a3490",
+      "sat_calls": 66
+    },
+    {
+      "index": 9,
+      "name": "co_to_source",
+      "seconds": 0.36293950001709163,
+      "sat": true,
+      "answer_sha256": "37c1cafaa76872aefe5e291d70660d4afcd89ee68751e5c72a345128e60a9b02",
+      "sat_calls": 64
+    }
+  ],
+  "input_seconds": 0.005520600010640919,
+  "events": 262,
+  "original_variables": 4192,
+  "input_sha256": "dd928ee8d934990ce3c39d418b40bd3b74d4565e19c2a7a336a1bfce3f013876",
+  "workload_sha256": "a97b943d561d39837de9c0f6ec1687fa63d861300e1ed934e5453805edb8960e",
+  "certificate_seconds": 1.100008375942707e-06,
+  "certificate_check_seconds": 1.00000761449337e-07,
+  "encoding_seconds": 8.617749499971978,
+  "sat_stats": {
+    "algorithm": "raw-incidence-sat",
+    "solver": "cadical195",
+    "original_variables": 4192,
+    "cnf_variables": 72574,
+    "clauses": 1874414,
+    "base_edges": 3597,
+    "build_seconds": 8.615248200017959,
+    "certificate_supplied": false,
+    "certificate_constants": 0,
+    "source_candidates": 1808,
+    "model_batching": true,
+    "query_solver_reused": true,
+    "protocol_inference": false
+  },
+  "cold_seconds": 8.623271299991757,
+  "cold_wall_including_audit_io_seconds": 8.634890500048641,
+  "ambiguity": {
+    "u_RF": 32,
+    "u_CO": 32
+  },
+  "controller_seconds": 30.023990999965463,
+  "peak_rss_sampled_bytes": 5529600,
+  "exit_code": 1,
+  "command": [
+    "E:\\2-sc-theory-weak-memory-theory\\2-sc-theory-weak-memory-theory\\work\\migration-venv\\Scripts\\python.exe",
+    "E:\\2-sc-theory-weak-memory-theory\\2-sc-theory-weak-memory-theory\\solver\\experiments\\causal_bench.py",
+    "--worker",
+    "--out",
+    "E:\\2-sc-theory-weak-memory-theory\\2-sc-theory-weak-memory-theory\\solver\\results\\causal_20261028\\runs\\history_B0_n16_r0.json",
+    "--seconds",
+    "30",
+    "--memory-mib",
+    "1024",
+    "--queries",
+    "100",
+    "--states",
+    "200000",
+    "--edges",
+    "600000",
+    "--rounds",
+    "16",
+    "--method",
+    "B0",
+    "--repeat",
+    "0"
+  ],
+  "reason": "controller hard resource limit"
+}

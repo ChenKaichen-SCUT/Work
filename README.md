@@ -1,5 +1,68 @@
 # Bounded-interface weak-memory solver
 
+**2026-10-28 novelty and decomposition follow-up:** the
+[new Chinese report](CAUSAL_FOLLOWUP_RESULTS.zh.txt) measures 1,000 complete-support
+requests with 21/100/500/1,000 distinct irredundant original assumptions, and adds
+a generic unit-propagation/CNF-component SAT baseline with local caches. The main
+barrier family factors by round in the audited instances; this materially narrows
+the attribution of its performance gains. At 8 rounds and 1,000 new assumptions,
+component SAT beats compilation. An existing branch-observed buffer supplies a
+variant with a checked cross-stage correlation. Detailed layout/state/cost ledgers,
+ordinary input-order long-gap controls, failures, and frozen workloads are included.
+See the [factorization diagnosis](docs/CAUSAL_DECOMPOSITION_DIAGNOSIS.zh.txt),
+[reproduction guide](docs/CAUSAL_FOLLOWUP_REPRODUCE.zh.txt), and
+[data and figures](results/causal_followup_20261028/). The earlier pilot archive and
+manuscript remain unchanged; this follow-up does not broaden the theory's scope.
+The large follow-up `summary.json` is stored losslessly as `summary.json.gz` to
+fit the GitHub API upload limit. Run `python scripts/restore_followup_summary.py`
+to restore and verify its exact bytes, or regenerate the aggregate from the
+committed per-run records with the report script. The complete artifact ZIP also
+contains the original JSON. This storage choice does not change any measurements.
+
+**2026-10-28 experimental pilot:** the [Chinese experiment report](CAUSAL_EXPERIMENT_RESULTS.zh.txt)
+documents complete-projection acceptance, checked barrier/buffer frontends, external
+certificate and arbitrary-bag interfaces, and raw SAT / preprocessed SAT / compiled
+support comparisons. The nontrivial barrier family reaches 32 rounds with actual
+interface 13 and at most 10 reachable states per layer. Equal complete-answer
+caching, warm single-literal queries, resource failures, and observation boundaries
+are reported explicitly. See the [reproduction guide](docs/CAUSAL_EXPERIMENT_REPRODUCE.zh.txt),
+[raw data](results/causal_20261028/), and [figures](results/causal_20261028/figures/).
+This implements the two protocol pilot frontends, not every theorem contract or
+general weak-memory verification. The frozen manuscript PDF is still unchanged.
+
+**2026-10-28 theorem contracts:** the [main theorem contract](docs/CAUSAL_FRONTIER_MAIN_CONTRACT.zh.txt)
+fixes one certificate, candidate graph, and processing plan before any RF/CO completion
+or query. The [constructive preprocessing proof](docs/CAUSAL_FRONTIER_CONSTRUCTION.zh.txt)
+gives finite protocol rules and a conservative polynomial bit-cost bound.
+The [backend audit](docs/CAUSAL_FRONTIER_BACKEND_AUDIT.zh.txt) proves projection for
+every assignment to all original RF/CO variables; the
+[quantifier audit](docs/CAUSAL_FRONTIER_QUANTIFIER_AUDIT.zh.txt) separates selected
+execution graphs from the common candidate graph and states both observation contracts.
+That earlier theory-only round had no implementation or experiments; the subsequent
+pilot above supplies a scoped implementation and evidence. Its PDF manuscript
+has not been revised to incorporate either round.
+
+**2026-10-27 theory follow-up:** [causal-frontier theory report](CAUSAL_FRONTIER_RESULTS.zh.txt)
+replaces bounded candidate-edge span with a certified causal frontier and stable
+write representatives. It removes write coverage, derives prefix certificates
+from a source-traceable circular buffer and a load/store barrier, and proves
+compatible composition and exact original RF/CO support. The proof files include
+explicit polling, observation, and atomic-RF grouping boundaries and cross-review
+notes. This is mathematical work only: the new protocol frontends are not
+implemented, no new experiments were run, and the frozen manuscript is unchanged.
+
+The earlier [RMW barrier draft](docs/BARRIER_PREFIX_LOCALIZATION.zh.txt) remains
+separate background work. The new main results do not rely on it or on the
+splitter experiments below.
+
+**2026-10-19 source-derived protocol extension:** the [splitter report](PROTOCOL_GENERALIZATION_RESULTS.zh.txt)
+documents a C11 release/acquire port of the Moir–Anderson one-time renaming grid,
+including its duplicate-name defect. The [source/extraction audit](docs/SPLITTER_PROVENANCE.zh.txt)
+and [acyclic-object factorization proof](docs/OBJECT_LOCALIZATION_THEOREM.zh.txt)
+give a second structural route to exact original RF/CO support, without complete
+alternating observations. Fresh-object batches are explicitly distinct from reuse;
+7/9-worker whole-trace construction failures remain in the results.
+
 **2026-10-17 server backup:** [Chinese recovery guide](SERVER_RECOVERY.zh.txt)
 provides fresh-machine setup, full experiment checks, pinned upstream tools,
 and restoration of all 6,929 archived research files. The [Chinese manuscript](artifacts/FM_Chinese_Manuscript.pdf)

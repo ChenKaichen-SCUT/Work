@@ -1,0 +1,120 @@
+有来源协议与必要推广：交付与复现
+2026-10-19
+
+后续方向纠正（同日）：用户明确要求以逻辑推理推进原理论，而非以规模实验
+代替推广。以下 splitter 工作保留为补充实例/另一充分条件，不声称已放宽原
+发布协议的 P2。当前主线证明稿为 docs/BARRIER_PREFIX_LOCALIZATION.zh.txt：
+从有出处的可复用 sense-reversing 屏障推导前缀稳定来源，明确增加 RMW 语义，
+尚未实现或经独立审查。它没有借用下面的实验数据作为证明。
+
+结论
+
+完成一个可追溯的协议案例及与之配套的结构推广。案例是 Moir–Anderson 1995
+一次性 splitter 重命名网格；分析的是明确标注的全 release/acquire 移植。
+共享写全部来自协议，不额外添加竞争写。移植允许重复名字；这个缺陷不归咎于
+原来的原子寄存器/SC 算法。案例不是生产库自动提取。
+
+新定理不靠完整交替观测计数：按真实地址归属划分对象，检查线程跨对象访问
+构成 DAG，即证明合法原始 RF/CO 赋值集合精确分解为对象局部集合的乘积。
+逐对象编译得到 k<=c+s；splitter 中 k<=4p+2，原子 RF 分组同界。直接全局
+对象布局另有 k<=5p+2 的界。界不依赖总对象数，但依赖单对象竞争规模 p。
+
+阅读入口
+
+  docs/SPLITTER_PROVENANCE.zh.txt
+    原论文、版本/校验、Figure 2/4 到 C/Python 的逐操作映射、保留观测、
+    旧 P1–P3 成立/不成立项、缺陷来源、缺失日志的具体支持任务。
+  docs/OBJECT_LOCALIZATION_THEOREM.zh.txt
+    初始化 HB 消去、禁止环定位、双向模型集合等式、原子组界、复杂度、
+    有环反例、与既有分析/知识编译的边界。
+  examples/splitter_grid.c
+    两种内存序的同一 C11 转录；SPLITTER_SC 选择 SC 参考。
+  wmcheck/ra_splitter.py / ra_object_layout.py / ra_objects.py
+    路径抽取器、对象证书检查、完整支持分解编译。
+  results/splitter_20261019/audit.json
+    原始规模、支持、耗时、失败及测量源码 SHA256。
+  results/splitter_20261019/root_probe.models.json
+    根前缀全部 RA/SC 原始赋值，连同变量表。
+  results/splitter_20261019/root_probe.witnesses.json
+    SAT 得到并经稠密 RA 定义重验的完整见证。
+  results/splitter_20261019/*.input.json / *.sc_witness.json
+    抽取输入及正常网格路径的 SC 调度见证；含完整原始事件身份。
+
+关键正确性结果
+
+三线程根日志有 12 个事件、21 个原始变量：
+  全部 RA 模型                         88
+  其中 SC 模型                         40
+  双 stop / 重复名字的 RA 模型          24
+  双 stop 的 SC 模型                    0
+  穷尽的选定六变量三态部分赋值         729
+  每个查询核对的原始变量支持            全部 21 个
+  独立 SAT 全支持场景                   14
+
+不宣称 3^21 个原始查询均已穷尽。729 个查询同时核对编译图和支持 CNF 的 UP；
+14 个场景用不调用识别器/编译器的 IncidenceSAT 核对。双 stop 下，两种门 RF
+来源×两种 Y 写序四组合均有完整合法见证。补录“A 读 B 的 X、B 读 A 的 X”
+产生极小冲突；两处各有自己/C 写两个替换来源，完整修复表保存在 audit.json。
+
+对象分解的检查包含：两地址随机固定输入与独立稠密枚举核对；全部小型部分
+赋值；跨对象随机 DAG；全局/局部编译比较；明确的 X→Y→X 反例，其两个
+局部问题可行而全局 HB 成环；路径/分支/网格边界拒绝测试。不是仅测成功样例。
+
+规模结果（单次本机 Python 测量，精确时间以 audit.json 为准）
+
+  单网格参与者   事件   完整编译结果   真正多来源读   未决原始 CO
+       3          24       成功              1              3
+       5          50       成功              2             16
+       7          84       UNKNOWN，20 秒上限
+       9         126       UNKNOWN，20 秒上限
+
+这些正常网格分支另有直接重放成功的 SC 调度，所以资源失败不表示输入无解。
+结构前提及全部原始候选接口已检查至 33 个参与者、1,254 个事件；这只是结构
+检查，不是该规模全部支持编译成功。
+
+三线程缺陷路径在互不别名的新网格上重复执行：
+
+  新网格批次   事件   对象分解图状态   实际最大接口
+       1        18          87               7
+       8       144         689               7
+      32       576        2753               7
+     128      2304       11009               7
+
+32 批次全局对象布局编译约 8 秒，对象分解约 0.2 秒；128 批次对象分解约 1 秒
+以内。这里只展示本项目整体编译与语义分解的差别；不是成熟工具的公平竞赛，
+不是多次重复统计，不把独立 SAT 核对时间混入编译时间。中等规模的所有根支持
+已独立 SAT 核对；32/128 批次没有逐个独立核对全部支持，不作相应声称。
+绘图脚本 splitter_plot.py 可从冻结结果生成图，标注 fresh objects，不称为
+原地复用轮数；转回理论工作后，本轮未继续运行绘图实验。
+
+重要消融：在交错对象布局上保留全局初始化到线程首事件的边，接口也可能
+有界（本批次达到 12），因为只需保留少量线程首事件。因此不能宣称“初始化
+消去是任何小界的必要条件”。它为精确语义分解提供了干净的证明，并减少
+全局监控工作；真正新的主张是模型集合的乘积相等式，而非某个特定布局更快。
+
+复现（在 solver 目录；Python 3.12，依赖 requirements-fm.txt）
+
+  python -m unittest discover -s tests -p test_object_protocol.py -v
+  python experiments/splitter_audit.py --out results/splitter_replay --quick
+  python experiments/splitter_audit.py --out results/splitter_replay_full
+  python experiments/splitter_plot.py --input results/splitter_replay_full/audit.json
+
+--quick 缩减整体编译的参与者/批次案例，但保留全部根日志支持核查及对象
+分解系列。完整脚本将 7/9 线程的 20 秒 UNKNOWN 保存为结果，并继续执行。
+计时脚本对源码做 SHA256；tests.log 是该交付版本的全套测试日志。
+可选 C 语法检查：
+  gcc -std=c11 -Wall -Wextra -Werror -fsyntax-only examples/splitter_grid.c
+  gcc -std=c11 -Wall -Wextra -Werror -DSPLITTER_SC -fsyntax-only examples/splitter_grid.c
+
+投稿定位和边界
+
+这次工作实质回答了“是否只能靠完整交替序列计数”及“竞争写是否人为添加”
+两点：新证书依据无环对象路由，真实竞争来自协议中的关门和争夺编号操作。
+但它没有证明旧 P1–P3 在反复复用共享状态的现代系统中经常成立。新案例有
+正式协议来源，仍不是当前生产代码；fresh-batch 增长不是 Figure 5 的复用协议。
+
+新稿正文应把两种结构条件并列，区分新增的语义分解/参数推导与原有关系分析、
+联合端口和知识编译。一般组合性、DAG/SCC 和图宽度思想不应包装成首次贡献；
+本次具体定理的文献原创性还需进一步核对，不能仅凭这个案例就宣称 FM 创新性
+已充足。原来的恒定载荷六轮失败、四轮 SAT 更快、版本值缩小来源域，以及
+大规模核对的范围限制均保留，旧数据/中文 PDF 未被重新计时或改写。

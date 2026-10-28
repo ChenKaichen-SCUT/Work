@@ -1,0 +1,89 @@
+{
+  "config": {
+    "family": "buffer",
+    "rounds": 3,
+    "capacity": 3,
+    "mode": "value",
+    "failures": 0,
+    "tail_failures": 0
+  },
+  "input_sha256": "3fb70733caef545e516c76bfffa399ac7b63074103435614a14fd5ed4b463873",
+  "events": 30,
+  "original_variables": 30,
+  "does_compile": false,
+  "status": "CERTIFIED",
+  "pre_seconds": 0.0007039000047370791,
+  "source": "GPS2014 Fig6; fixed RA payload adaptation",
+  "observation": "value",
+  "contract_fields_generated": [
+    "B",
+    "attempts",
+    "capacity",
+    "family",
+    "source"
+  ],
+  "manual_annotation": "template selected; all fields generated",
+  "metrics": {
+    "p": 2,
+    "a": 6,
+    "B": 1,
+    "C": 3,
+    "q": 0,
+    "c_bound": 40,
+    "K_bound": 61,
+    "K_chain_bound": 62,
+    "events": 30,
+    "original_variables": 30,
+    "c_actual": 0,
+    "retained_rf": 15,
+    "undecided_co": 0,
+    "failed_reads": 0,
+    "iterations": 1,
+    "H_pairs": 412,
+    "L_pairs": 15
+  },
+  "failed_event_ids": [],
+  "all_failed_events_in_original_input": true,
+  "bag_bound_kind": "failure-chain bag expansion; not causal-frontier bound",
+  "all_failed_events_in_bags": true,
+  "old_write_gap_G_lower_bound": null,
+  "special": {
+    "actual_K": 9,
+    "declared_K": 9,
+    "candidate_pairs": 55,
+    "groups": 88,
+    "candidate_span": 20,
+    "prepare_seconds": 0.0019268000032752752,
+    "semantic_candidate_edge_occurrences": {
+      "s": 34,
+      "r": 15,
+      "R": 15,
+      "c": 9
+    },
+    "schedule_kind": "bags",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "ordinary": {
+    "actual_K": 15,
+    "declared_K": null,
+    "candidate_pairs": 55,
+    "groups": 88,
+    "candidate_span": 20,
+    "prepare_seconds": 0.0007057000184431672,
+    "semantic_candidate_edge_occurrences": {
+      "s": 34,
+      "r": 15,
+      "R": 15,
+      "c": 9
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "total_seconds": 0.004377899982500821,
+  "wall_seconds": 0.2727749000187032,
+  "peak_process_rss_bytes": 5529600,
+  "time_limit_seconds": 40.0,
+  "memory_limit_mib": 1024
+}

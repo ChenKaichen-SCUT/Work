@@ -16,3 +16,12 @@ fm_chinese_paper/** -text
 results/fm_evidence_20261016/** -text
 results/publication_20261016/** -text
 results/support_task_20261016/** -text
+# Keep the 2026-10-28 measured source bytes and frozen evidence hashes intact.
+wmcheck/port_monitor.py -text
+wmcheck/ra_frontier.py -text
+results/causal_20261028/** -text
+results/causal_followup_20261028/** -text
+results/splitter_20261019/** -text
+artifacts/causal_*.json -text
+artifacts/causal_*.zip binary
+results/causal_followup_20261028/*.gz binary

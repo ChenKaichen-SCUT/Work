@@ -1,0 +1,51 @@
+{
+  "config": {
+    "family": "applicability",
+    "case": "buffer_false_full"
+  },
+  "input_sha256": "25df6c3347ad87fcb54cb1e1f02b3df359d862c257c0cdcc11bf0b04c32636e0",
+  "events": 7,
+  "original_variables": 2,
+  "does_compile": false,
+  "status": "PROVED_UNSAT",
+  "pre_seconds": 0.00011840002844110131,
+  "source": "GPS2014 Fig6; fixed RA payload adaptation",
+  "observation": "fixed-values",
+  "contract_fields_generated": [
+    "B",
+    "attempts",
+    "capacity",
+    "family",
+    "source"
+  ],
+  "manual_annotation": "template selected; all fields generated",
+  "metrics": {
+    "p": 2,
+    "a": 5,
+    "B": 1,
+    "C": 2,
+    "q": 1,
+    "c_bound": 48,
+    "K_bound": 66,
+    "K_chain_bound": 51,
+    "events": 7,
+    "original_variables": 2,
+    "c_actual": 0,
+    "retained_rf": 1,
+    "undecided_co": 0,
+    "failed_reads": 2,
+    "iterations": 1,
+    "H_pairs": 11,
+    "L_pairs": 0
+  },
+  "failed_event_ids": [
+    "P0_own",
+    "P0_peer"
+  ],
+  "all_failed_events_in_original_input": true,
+  "certificate_replay": true,
+  "wall_seconds": 0.2713729999959469,
+  "peak_process_rss_bytes": 5525504,
+  "time_limit_seconds": 40.0,
+  "memory_limit_mib": 1024
+}

@@ -1,0 +1,83 @@
+{
+  "config": {
+    "family": "barrier",
+    "rounds": 2,
+    "failures": 0,
+    "long_gap": true
+  },
+  "input_sha256": "749d1e0b7ad4f3d36781f35e0449d52f40d61feb9de21f38f4b071d98ac0222f",
+  "events": 41,
+  "original_variables": 79,
+  "does_compile": false,
+  "status": "CERTIFIED",
+  "pre_seconds": 0.002319799968972802,
+  "source": "MCS1991 Fig12 architecture; star RA adaptation",
+  "observation": "fixed-values",
+  "contract_fields_generated": [
+    "B",
+    "family",
+    "positions",
+    "source",
+    "workers"
+  ],
+  "manual_annotation": "template selected; all fields generated",
+  "metrics": {
+    "B": 4,
+    "p": 3,
+    "a": 7,
+    "c_bound": 44,
+    "K_bound": 76,
+    "events": 41,
+    "original_variables": 79,
+    "c_actual": 3,
+    "retained_rf": 16,
+    "undecided_co": 4,
+    "failed_reads": 0,
+    "iterations": 2,
+    "H_pairs": 732,
+    "L_pairs": 45
+  },
+  "failed_event_ids": [],
+  "all_failed_events_in_original_input": true,
+  "bag_bound_kind": "causal-frontier layout",
+  "old_write_gap_G_lower_bound": 1,
+  "special": {
+    "actual_K": 15,
+    "declared_K": null,
+    "candidate_pairs": 96,
+    "groups": 139,
+    "candidate_span": 23,
+    "prepare_seconds": 0.00271869997959584,
+    "semantic_candidate_edge_occurrences": {
+      "s": 52,
+      "c": 34,
+      "r": 16,
+      "R": 16
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "ordinary": {
+    "actual_K": 25,
+    "declared_K": null,
+    "candidate_pairs": 96,
+    "groups": 139,
+    "candidate_span": 33,
+    "prepare_seconds": 0.001415999955497682,
+    "semantic_candidate_edge_occurrences": {
+      "s": 52,
+      "c": 34,
+      "r": 16,
+      "R": 16
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "total_seconds": 0.00841539999237284,
+  "wall_seconds": 0.27065960003528744,
+  "peak_process_rss_bytes": 5525504,
+  "time_limit_seconds": 40.0,
+  "memory_limit_mib": 1024
+}

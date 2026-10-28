@@ -1,0 +1,66 @@
+新假设、局部分解与现有协议变体：复现说明
+2026-10-28
+
+1. 冻结材料与环境
+新增入口CAUSAL_FOLLOWUP_RESULTS.zh.txt；数据results/causal_followup_20261028/。
+与旧causal_20261028分开。新包artifacts/causal_followup_20261028.zip含当前源码、
+测试、查询、原始逐查询计时、图表及所引用的旧消融数据。每项SHA256列在包内
+MANIFEST.json。旧包causal_pilot_20261028.zip保存旧版精确源码，不被替换。
+本轮给ra_support_sat增加可选solver_factory以捕获同一CNF；默认B0/B1不变。
+不能将新包中的当前源码冒称为上一轮所有测量的原始快照。
+
+Python 3.12及requirements-causal.txt；记录中使用CaDiCaL195、Windows11。
+在独立环境安装依赖：python -m pip install -r requirements-causal.txt。
+全部命令从solver目录运行。无需旧服务器、SSH凭据或外部协议下载。
+CPU亲和取进程允许CPU中的第一个；硬资源上限包含启动及审计IO，表内算法
+耗时不含JSON落盘/答案哈希。计时使用Python端口后端，禁用原生端口加速。
+
+2. 先验收正确性
+  python -m unittest discover -s tests -v
+  python experiments/causal_decomposition_audit.py
+第二条会在当前副本重写decomposition.json，正式原件应另行保存。
+它穷尽1/2/3轮的原始投影，每个模型按独立RA定义检查，比较整集合、编译图
+投影与CNF组件乘积；另外检查8/16轮分区和缓冲跨轮相关条件。
+它不是对8/16轮原始全模型的暴力穷举，也不是机械化定理证明。
+新组件基线4项测试包括单轮全部3^6个部分赋值及恢复/冲突检查。
+可选旧BDD模块缺失允许跳过相关3项；新组件/协议测试不能跳过。
+
+3. 生成与核验假设
+  python experiments/causal_followup_inputs.py
+生成主屏障8/16轮及branch缓冲8轮的嵌套原始假设池，每池990个SAT条件、
+10个最小UNSAT对。每个SAT条件长度4且逐文字检查不可冗余，UNSAT长度2。
+Q=1000，U=21/100/500/1000；每序列990次SAT、10次UNSAT，固定顺序和种子。
+重生成会重写workloads目录，先在副本验证与冻结文件哈希一致。
+生成器利用B1选取任务；四种计时算法仅收到原始alpha，不收到语义oracle。
+
+4. 性能矩阵
+  python experiments/causal_followup_bench.py
+主屏障：n=8/16 × U=21/100/500/1000 × B0/B1/BD/B2。
+缓冲变体：n=8,C=3,branch × U=100/1000 × B0/B1/BD/B2。
+成功点3重复，失败点保留一次；每子进程60秒、1GiB。保存每20请求的前缀。
+源码哈希在批次开始/每次运行/结束检查。所有方法同输入与查询哈希。
+已有结果会复用。真正复跑须在另一份工作副本中把
+results/causal_followup_20261028/runs及summary.json移至备份位置；不要在正式
+目录覆盖或删除原始结果。RUNNING行会显式报错，须先另存该未完成记录。
+
+单点可直接运行worker，例如：
+  python experiments/causal_followup_bench.py --worker --family barrier --rounds 8 --unique 1000 --method BD --repeat 0 --out results/local_component.json
+此方式用于开发检查，没有父控制器的硬资源限制；正式计时用整批控制器。
+
+5. 消融与图表
+  python experiments/causal_followup_ablation.py
+  python experiments/causal_followup_report.py
+消融脚本读取旧冻结的稀疏/稠密/输入序结果，另测长写间隔n8/16/32的专门与
+普通输入事件序，各3次。不要与主矩阵同时运行。旧线程串接布局仅作历史
+结构压力参照，不等同于本次普通序。
+报告脚本生成tables.json、cumulative.json和figures/*.png/pdf；未完成行不
+补造耗时、不计成功加速比。曲线阴影为成功重复范围，不是置信区间。
+累计阈值仅针对固定实测序列和中位数轨迹；0表示冷启动起已更便宜，不能
+解读为任意实例或任意查询的普遍摊销阈值。
+
+6. 解包恢复
+  python experiments/causal_followup_package.py
+只在正式工作完成后打新包。原始环境复跑全部测试与分解审计的回执另存于
+artifacts/causal_followup_20261028.recovery.json，包外清单记录zip哈希。
+恢复验证复用已安装Python环境；它证明归档文件完整且源码能运行，不声称
+已经在全新操作系统完成依赖安装。旧制品和旧论文PDF均保留原版本。

@@ -1,0 +1,100 @@
+{
+  "config": {
+    "family": "barrier",
+    "rounds": 4,
+    "failures": 1,
+    "long_gap": true
+  },
+  "input_sha256": "0ebc5ee70061fc750d40c17f1027208547cc689261b265cbfe003d5d6816425d",
+  "events": 91,
+  "original_variables": 347,
+  "does_compile": false,
+  "status": "CERTIFIED",
+  "pre_seconds": 0.007757099985610694,
+  "source": "MCS1991 Fig12 architecture; star RA adaptation",
+  "observation": "fixed-values",
+  "contract_fields_generated": [
+    "B",
+    "family",
+    "positions",
+    "source",
+    "workers"
+  ],
+  "manual_annotation": "template selected; all fields generated",
+  "metrics": {
+    "B": 4,
+    "p": 3,
+    "a": 7,
+    "c_bound": 44,
+    "K_bound": 76,
+    "events": 91,
+    "original_variables": 347,
+    "c_actual": 4,
+    "retained_rf": 50,
+    "undecided_co": 8,
+    "failed_reads": 16,
+    "iterations": 2,
+    "H_pairs": 3698,
+    "L_pairs": 159
+  },
+  "failed_event_ids": [
+    "R1_1_f0",
+    "R1_2_f0",
+    "R1_3_f0",
+    "R1_4_f0",
+    "R2_1_f0",
+    "R2_2_f0",
+    "R2_3_f0",
+    "R2_4_f0",
+    "S1_1_f0",
+    "S1_2_f0",
+    "S1_3_f0",
+    "S1_4_f0",
+    "S2_1_f0",
+    "S2_2_f0",
+    "S2_3_f0",
+    "S2_4_f0"
+  ],
+  "all_failed_events_in_original_input": true,
+  "bag_bound_kind": "causal-frontier layout",
+  "old_write_gap_G_lower_bound": 3,
+  "special": {
+    "actual_K": 15,
+    "declared_K": null,
+    "candidate_pairs": 211,
+    "groups": 305,
+    "candidate_span": 63,
+    "prepare_seconds": 0.004907399998046458,
+    "semantic_candidate_edge_occurrences": {
+      "s": 102,
+      "c": 70,
+      "r": 50,
+      "R": 50
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "ordinary": {
+    "actual_K": 39,
+    "declared_K": null,
+    "candidate_pairs": 211,
+    "groups": 305,
+    "candidate_span": 69,
+    "prepare_seconds": 0.003848699969239533,
+    "semantic_candidate_edge_occurrences": {
+      "s": 102,
+      "r": 50,
+      "R": 50,
+      "c": 70
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "total_seconds": 0.0185600999975577,
+  "wall_seconds": 0.27221830002963543,
+  "peak_process_rss_bytes": 5521408,
+  "time_limit_seconds": 40.0,
+  "memory_limit_mib": 1024
+}

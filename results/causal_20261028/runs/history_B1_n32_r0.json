@@ -1,0 +1,177 @@
+{
+  "status": "TIMEOUT",
+  "method": "B1",
+  "rounds": 32,
+  "failures": 0,
+  "long_gap": false,
+  "layout": "special",
+  "task": "all",
+  "repeat": 0,
+  "dense_co": false,
+  "limits": {
+    "seconds": 30.0,
+    "memory_mib": 1024,
+    "states": 200000,
+    "edges": 600000
+  },
+  "seed": 0,
+  "affinity": [
+    0
+  ],
+  "phase": "queries",
+  "queries": [
+    {
+      "index": 0,
+      "name": "root",
+      "seconds": 0.2283622999675572,
+      "sat": true,
+      "answer_sha256": "fe1fc6df767660a63c1af862ad32ad3413ddbac267a8e36753347e6e3cd92105",
+      "sat_calls": 67
+    },
+    {
+      "index": 1,
+      "name": "remote_source",
+      "seconds": 0.5706803000066429,
+      "sat": true,
+      "answer_sha256": "f043f2718ee4061553db9c372c96c478e2e6152062646a908b3f2f9c44b3d36c",
+      "sat_calls": 127
+    },
+    {
+      "index": 2,
+      "name": "correlated_conflict",
+      "seconds": 0.0004589000018313527,
+      "sat": false,
+      "answer_sha256": "fe4c07f571f9e0563a1d33188d74a78fb10605439069b39b9cd1b622cf6f39b7",
+      "sat_calls": 1
+    },
+    {
+      "index": 3,
+      "name": "rollback",
+      "seconds": 0.5733023000066169,
+      "sat": true,
+      "answer_sha256": "f043f2718ee4061553db9c372c96c478e2e6152062646a908b3f2f9c44b3d36c",
+      "sat_calls": 128
+    },
+    {
+      "index": 4,
+      "name": "retired_co_query",
+      "seconds": 0.16120420000515878,
+      "sat": true,
+      "answer_sha256": "fe1fc6df767660a63c1af862ad32ad3413ddbac267a8e36753347e6e3cd92105",
+      "sat_calls": 35
+    },
+    {
+      "index": 5,
+      "name": "other_source",
+      "seconds": 0.5985237999702804,
+      "sat": true,
+      "answer_sha256": "848cdf19071c88137f4e4c756c9264e79edd5b1553eb7177c196f604a359e721",
+      "sat_calls": 128
+    },
+    {
+      "index": 6,
+      "name": "deep_branch",
+      "seconds": 0.6029586999793537,
+      "sat": true,
+      "answer_sha256": "465f36e750a2c4f0fc9a89b800804b6ea95c1058fa7b5e9935997536263f934c",
+      "sat_calls": 127
+    },
+    {
+      "index": 7,
+      "name": "deep_conflict",
+      "seconds": 0.0003522000042721629,
+      "sat": false,
+      "answer_sha256": "fe4c07f571f9e0563a1d33188d74a78fb10605439069b39b9cd1b622cf6f39b7",
+      "sat_calls": 1
+    },
+    {
+      "index": 8,
+      "name": "restore_root",
+      "seconds": 0.6104877000325359,
+      "sat": true,
+      "answer_sha256": "fe1fc6df767660a63c1af862ad32ad3413ddbac267a8e36753347e6e3cd92105",
+      "sat_calls": 130
+    },
+    {
+      "index": 9,
+      "name": "co_to_source",
+      "seconds": 0.5971815999946557,
+      "sat": true,
+      "answer_sha256": "848cdf19071c88137f4e4c756c9264e79edd5b1553eb7177c196f604a359e721",
+      "sat_calls": 128
+    }
+  ],
+  "input_seconds": 0.019742699980270118,
+  "events": 518,
+  "original_variables": 16576,
+  "input_sha256": "9219551be1d1322c86c349261ef3e790c3d7f82d05445200e6f506eb81126134",
+  "workload_sha256": "90a19fa4427bec7d0cd8114b1d41bc19d32e664fc7dd986bc16daa0f0d8d00ad",
+  "preprocessing": {
+    "B": 3,
+    "p": 3,
+    "a": 6,
+    "c_bound": 38,
+    "K_bound": 66,
+    "events": 518,
+    "original_variables": 16576,
+    "c_actual": 3,
+    "retained_rf": 256,
+    "undecided_co": 64,
+    "failed_reads": 0,
+    "iterations": 2,
+    "H_pairs": 132781,
+    "L_pairs": 9312
+  },
+  "pre_status": "CERTIFIED",
+  "certificate_seconds": 0.42196020000847057,
+  "certificate_check_seconds": 0.45213970000622794,
+  "encoding_seconds": 7.864780400006566,
+  "sat_stats": {
+    "algorithm": "certificate-incidence-sat",
+    "solver": "cadical195",
+    "original_variables": 16576,
+    "cnf_variables": 18820,
+    "clauses": 20611,
+    "base_edges": 3837,
+    "build_seconds": 7.851745499996468,
+    "certificate_supplied": true,
+    "certificate_constants": 16384,
+    "source_candidates": 256,
+    "model_batching": true,
+    "query_solver_reused": true,
+    "protocol_inference": false
+  },
+  "cold_seconds": 8.758623000001535,
+  "cold_wall_including_audit_io_seconds": 8.777744899969548,
+  "ambiguity": {
+    "u_RF": 64,
+    "u_CO": 64
+  },
+  "controller_seconds": 30.024790399998892,
+  "peak_rss_sampled_bytes": 5627904,
+  "exit_code": 1,
+  "command": [
+    "E:\\2-sc-theory-weak-memory-theory\\2-sc-theory-weak-memory-theory\\work\\migration-venv\\Scripts\\python.exe",
+    "E:\\2-sc-theory-weak-memory-theory\\2-sc-theory-weak-memory-theory\\solver\\experiments\\causal_bench.py",
+    "--worker",
+    "--out",
+    "E:\\2-sc-theory-weak-memory-theory\\2-sc-theory-weak-memory-theory\\solver\\results\\causal_20261028\\runs\\history_B1_n32_r0.json",
+    "--seconds",
+    "30",
+    "--memory-mib",
+    "1024",
+    "--queries",
+    "100",
+    "--states",
+    "200000",
+    "--edges",
+    "600000",
+    "--rounds",
+    "32",
+    "--method",
+    "B1",
+    "--repeat",
+    "0"
+  ],
+  "reason": "controller hard resource limit"
+}

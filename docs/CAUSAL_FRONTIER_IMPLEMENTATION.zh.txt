@@ -1,0 +1,88 @@
+新协议证书与统一组计划：最小后端接口
+2026-10-28；用于本轮实验，不改变冻结的内存模型与定理范围
+
+1. 固定输入接口
+================
+wmcheck.ra_frontier 新增 prepare_frontier(inst, certificate=..., order=...,
+bags=..., group_order=..., co_mode='direct', summary_mode='ports')。
+返回 FrontierPlan，包含注册表、证书快照、原始常量、所有候选组、固定顺序、
+事件首次/最后出现位置、监视器及未来端口计划。所有对象在编译状态搜索前
+构造；接口没有 alpha 或已选 RF/CO 参数。
+
+compile_frontier(inst, prepared=plan, ...) 重用该计划。资源上限、是否合并
+摘要及是否生成支持 CNF 可以按调用指定；计划内部的关系/分组选项为准。
+不同的输入事件、线程前缀或初始化不能使用原计划。查询/撤销仍由 GraphSolver
+在同一编译图上重扫，不宣称实现了增量局部更新或 CDCL 原因生成。
+
+没有 prepared 的旧调用保持可用：先按旧 recognize 生成证书再构造计划。
+此前的 elide_init_hb 选项保留，本轮默认仍包含真实的稀疏初始化边。
+历史函数默认仍是 successor/full；新协议调用必须显式给 direct/ports。
+为防把协议证书中尚未证明的 successor 集误当作完整候选，外部 certificate
+接口目前只允许 direct CO；错误组合立即拒绝，不生成误导性的 UNSAT。
+
+2. 三种静态调度入口
+===================
+order：事件的完整排列；按端点最大 rank 排序组。排列可以不是 SB 顺序。
+bags：各事件出现区间连续的袋序列；每个候选组的全部端点必须至少共袋一次。
+      把组安排到其第一个覆盖袋，固定平局顺序后计算实际候选寿命。
+group_order：全部规范组索引的完整排列。索引采用内部确定性的生成次序，
+             而非某条完成的已选组；无缺失、无重复。
+bags 与 group_order 不得同时给出。prepare 的 group_permutation 记录
+最终顺序到规范组索引的映射。
+
+后端始终生成全部真实 SB/RF/CO 组；外部调用者只能安排它们，不能用删组来
+伪造窄接口。袋检查拒绝不连续寿命、缺失事件或没有共袋覆盖的候选。实际
+事件寿命由第一个至最后一个关联组确定，因而退休后不重新引入。
+真实 SB 可以指向此前已经引入的右端点，监视器不把引入次序当成执行调度。
+
+dense_co_generators=True 是语义保持的结构消融：在 direct 模式下将已认证
+L 的全部方向作为固定生成边，而非只加 Cov(L)。两者的传递闭包相同，保留
+的原始位和未决方向也相同；稠密版本可能具有更大的实际接口。完整赋值等价
+测试另行覆盖此选项。它不是关闭 CO 约束，也不作为主算法默认值。
+
+3. 证书检查的准确强度
+====================
+prepare 核对 D 是非空原始候选子集，H/L 无自环且已传递闭合，H 包含 SB
+及初始化先行，L 含 H 的同址写部分，必选 RF 恰为单例域且属于 H。
+随后核对每个原始 RF/CO 位恰由一个常量或候选组拥有，各替代项赋值域相同，
+边/计数端点都在组中。所有后续删掉的原始位仍保留负常量标签。
+
+这仍是“给定有效证书”的后端接口。有限结构检查不能证明任意外部 H 语义
+可靠，也不读取任意程序 guard。调用者须先运行并核验协议构造器的规则，
+精确执行已化简的观测/guard；否则不能借这个接口声称证明了 Phi 的投影。
+PROVED_UNSAT 的可靠性同样来自上游证明；后端仅返回保留注册表的恒假制品。
+OUTSIDE 不能作为证书状态传给编译器，不等于 UNSAT。
+
+4. 计时与资源字段
+=================
+plan.stats：registry_seconds、certificate_seconds、check_seconds、group_seconds、
+plan_seconds、prepare_seconds；另含 actual_K、groups、candidate_pairs、
+layer_interfaces、event_first/last、schedule_kind、declared_K。
+certificate_seconds 仅计入此函数内部调用旧识别器的成本；给定新协议证书时，
+新协议构造耗时须从 build_protocol 的 pre_seconds 另计，不能遗漏。
+plan_seconds 包括静态调度、候选寿命及未来端口计划；check_seconds 是证书
+结构检查，组的标签/端点检查包含在 group_seconds 中。
+
+compiled.stats 的 state_build_seconds 单独记录可达状态与转移构造，
+cnf_seconds 是可选支持编码时间。compile_seconds 保持本调用的总耗时语义：
+未给 prepared 时包含准备；给 prepared 时不重复计入早先准备时间。
+因此实验用“协议构造＋prepare_seconds＋prepared 编译的 compile_seconds”
+统计冷启动，不能再次加完整 prepare 到未给 prepared 的 compile_seconds。
+layer_states/max_layer_states 记录实际按需可达状态；不会枚举理论状态全集。
+
+状态/边/时间上限触发 ResourceLimit，stats 返回 UNKNOWN、resource_reason、
+已消耗时间、部分状态/转移及完整计划 actual_K；不把失败当 UNSAT。
+运行进程的总峰值内存与外部墙钟限额由实验驱动记录，不以活动接口大小代替。
+
+5. 后端定向验收
+================
+tests/test_causal_backend.py 包含：
+  - 有未来写来源、相同值不同写及未决 CO 的9变量输入，全部512个布尔赋值
+    对照独立稠密 RA 合法完成；编译图和支持 CNF 均逐项相符；
+  - 真实右 SB 锚先于中间读引入，全部真实边仍交给联合监视器；
+  - 已排除 RF 位、固定初始化 CO 位仍可查询并触发冲突；
+  - 单独可支持但合取冲突的 RF/CO 关联，回退和另一分支后完整支持恢复；
+  - 不连续袋、缺失覆盖、错误组排列、非法证书的拒绝；
+  - 资源失败为 UNKNOWN，静态计划 K 与失败统计一致。
+旧 ports、原子 RF、CO、非 SC、初始化省略等测试同时回归，以防重构破坏
+历史调用。正式实验的最终测试计数以本轮结果报告及保存的日志为准。

@@ -1,0 +1,83 @@
+{
+  "config": {
+    "family": "barrier",
+    "rounds": 16,
+    "failures": 0,
+    "long_gap": false
+  },
+  "input_sha256": "dd928ee8d934990ce3c39d418b40bd3b74d4565e19c2a7a336a1bfce3f013876",
+  "events": 262,
+  "original_variables": 4192,
+  "does_compile": false,
+  "status": "CERTIFIED",
+  "pre_seconds": 0.10355800000252202,
+  "source": "MCS1991 Fig12 architecture; star RA adaptation",
+  "observation": "fixed-values",
+  "contract_fields_generated": [
+    "B",
+    "family",
+    "positions",
+    "source",
+    "workers"
+  ],
+  "manual_annotation": "template selected; all fields generated",
+  "metrics": {
+    "B": 3,
+    "p": 3,
+    "a": 6,
+    "c_bound": 38,
+    "K_bound": 66,
+    "events": 262,
+    "original_variables": 4192,
+    "c_actual": 3,
+    "retained_rf": 128,
+    "undecided_co": 32,
+    "failed_reads": 0,
+    "iterations": 2,
+    "H_pairs": 33629,
+    "L_pairs": 2352
+  },
+  "failed_event_ids": [],
+  "all_failed_events_in_original_input": true,
+  "bag_bound_kind": "causal-frontier layout",
+  "old_write_gap_G_lower_bound": null,
+  "special": {
+    "actual_K": 13,
+    "declared_K": null,
+    "candidate_pairs": 649,
+    "groups": 913,
+    "candidate_span": 21,
+    "prepare_seconds": 0.06698389997472987,
+    "semantic_candidate_edge_occurrences": {
+      "s": 271,
+      "c": 284,
+      "r": 128,
+      "R": 128
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "ordinary": {
+    "actual_K": 107,
+    "declared_K": null,
+    "candidate_pairs": 649,
+    "groups": 913,
+    "candidate_span": 184,
+    "prepare_seconds": 0.0616435999982059,
+    "semantic_candidate_edge_occurrences": {
+      "s": 271,
+      "c": 284,
+      "r": 128,
+      "R": 128
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "total_seconds": 0.24915200000395998,
+  "wall_seconds": 0.5547928000451066,
+  "peak_process_rss_bytes": 5525504,
+  "time_limit_seconds": 40.0,
+  "memory_limit_mib": 1024
+}

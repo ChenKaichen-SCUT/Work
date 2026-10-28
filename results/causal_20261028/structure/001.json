@@ -1,0 +1,88 @@
+{
+  "config": {
+    "family": "barrier",
+    "rounds": 1,
+    "failures": 1,
+    "long_gap": false
+  },
+  "input_sha256": "5fc49c68855139c00b7862ea4fef9ea98ca1f47d118fb13c09dd689143d7b0ba",
+  "events": 26,
+  "original_variables": 28,
+  "does_compile": false,
+  "status": "CERTIFIED",
+  "pre_seconds": 0.0009459999855607748,
+  "source": "MCS1991 Fig12 architecture; star RA adaptation",
+  "observation": "fixed-values",
+  "contract_fields_generated": [
+    "B",
+    "family",
+    "positions",
+    "source",
+    "workers"
+  ],
+  "manual_annotation": "template selected; all fields generated",
+  "metrics": {
+    "B": 3,
+    "p": 3,
+    "a": 6,
+    "c_bound": 38,
+    "K_bound": 66,
+    "events": 26,
+    "original_variables": 28,
+    "c_actual": 4,
+    "retained_rf": 12,
+    "undecided_co": 2,
+    "failed_reads": 4,
+    "iterations": 1,
+    "H_pairs": 249,
+    "L_pairs": 12
+  },
+  "failed_event_ids": [
+    "R1_1_f0",
+    "R2_1_f0",
+    "S1_1_f0",
+    "S2_1_f0"
+  ],
+  "all_failed_events_in_original_input": true,
+  "bag_bound_kind": "causal-frontier layout",
+  "old_write_gap_G_lower_bound": null,
+  "special": {
+    "actual_K": 12,
+    "declared_K": null,
+    "candidate_pairs": 56,
+    "groups": 85,
+    "candidate_span": 21,
+    "prepare_seconds": 0.0026136000524275005,
+    "semantic_candidate_edge_occurrences": {
+      "s": 35,
+      "c": 14,
+      "r": 12,
+      "R": 12
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "ordinary": {
+    "actual_K": 16,
+    "declared_K": null,
+    "candidate_pairs": 56,
+    "groups": 85,
+    "candidate_span": 22,
+    "prepare_seconds": 0.0010438000317662954,
+    "semantic_candidate_edge_occurrences": {
+      "s": 35,
+      "r": 12,
+      "R": 12,
+      "c": 14
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "total_seconds": 0.005682300019543618,
+  "wall_seconds": 0.2980364999966696,
+  "peak_process_rss_bytes": 5529600,
+  "time_limit_seconds": 40.0,
+  "memory_limit_mib": 1024
+}

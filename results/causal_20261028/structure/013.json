@@ -1,0 +1,92 @@
+{
+  "config": {
+    "family": "barrier",
+    "rounds": 2,
+    "failures": 1,
+    "long_gap": true
+  },
+  "input_sha256": "b3bbff90a675d97f5999881b5dd3dbb2a855fb1bb2b5e3f589f01cefd2bde3e4",
+  "events": 49,
+  "original_variables": 97,
+  "does_compile": false,
+  "status": "CERTIFIED",
+  "pre_seconds": 0.0032961000106297433,
+  "source": "MCS1991 Fig12 architecture; star RA adaptation",
+  "observation": "fixed-values",
+  "contract_fields_generated": [
+    "B",
+    "family",
+    "positions",
+    "source",
+    "workers"
+  ],
+  "manual_annotation": "template selected; all fields generated",
+  "metrics": {
+    "B": 4,
+    "p": 3,
+    "a": 7,
+    "c_bound": 44,
+    "K_bound": 76,
+    "events": 49,
+    "original_variables": 97,
+    "c_actual": 4,
+    "retained_rf": 24,
+    "undecided_co": 4,
+    "failed_reads": 8,
+    "iterations": 2,
+    "H_pairs": 985,
+    "L_pairs": 45
+  },
+  "failed_event_ids": [
+    "R1_1_f0",
+    "R1_2_f0",
+    "R2_1_f0",
+    "R2_2_f0",
+    "S1_1_f0",
+    "S1_2_f0",
+    "S2_1_f0",
+    "S2_2_f0"
+  ],
+  "all_failed_events_in_original_input": true,
+  "bag_bound_kind": "causal-frontier layout",
+  "old_write_gap_G_lower_bound": 1,
+  "special": {
+    "actual_K": 15,
+    "declared_K": null,
+    "candidate_pairs": 111,
+    "groups": 163,
+    "candidate_span": 27,
+    "prepare_seconds": 0.00281810003798455,
+    "semantic_candidate_edge_occurrences": {
+      "s": 60,
+      "c": 34,
+      "r": 24,
+      "R": 24
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "ordinary": {
+    "actual_K": 26,
+    "declared_K": null,
+    "candidate_pairs": 111,
+    "groups": 163,
+    "candidate_span": 39,
+    "prepare_seconds": 0.0016967999981716275,
+    "semantic_candidate_edge_occurrences": {
+      "s": 60,
+      "r": 24,
+      "R": 24,
+      "c": 34
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "total_seconds": 0.00933259999146685,
+  "wall_seconds": 0.2706521000363864,
+  "peak_process_rss_bytes": 5537792,
+  "time_limit_seconds": 40.0,
+  "memory_limit_mib": 1024
+}

@@ -1,0 +1,93 @@
+{
+  "config": {
+    "family": "applicability",
+    "case": "buffer_failed_tail"
+  },
+  "input_sha256": "6300f7c7d63193cf2bb717e616134d8abba7a7aa03d2bd5eade97098af3cc6ff",
+  "events": 13,
+  "original_variables": 8,
+  "does_compile": false,
+  "status": "CERTIFIED",
+  "pre_seconds": 0.00024369999300688505,
+  "source": "GPS2014 Fig6; fixed RA payload adaptation",
+  "observation": "fixed-values",
+  "contract_fields_generated": [
+    "B",
+    "attempts",
+    "capacity",
+    "family",
+    "source"
+  ],
+  "manual_annotation": "template selected; all fields generated",
+  "metrics": {
+    "p": 2,
+    "a": 5,
+    "B": 1,
+    "C": 2,
+    "q": 4,
+    "c_bound": 96,
+    "K_bound": 114,
+    "K_chain_bound": 51,
+    "events": 13,
+    "original_variables": 8,
+    "c_actual": 0,
+    "retained_rf": 8,
+    "undecided_co": 0,
+    "failed_reads": 8,
+    "iterations": 1,
+    "H_pairs": 68,
+    "L_pairs": 0
+  },
+  "failed_event_ids": [
+    "Q0_own",
+    "Q0_peer",
+    "Q1_own",
+    "Q1_peer",
+    "Q2_own",
+    "Q2_peer",
+    "Q3_own",
+    "Q3_peer"
+  ],
+  "all_failed_events_in_original_input": true,
+  "certificate_replay": true,
+  "bag_bound_kind": "failure-chain bag expansion; not causal-frontier bound",
+  "all_failed_events_in_bags": true,
+  "old_write_gap_G_lower_bound": null,
+  "special": {
+    "actual_K": 6,
+    "declared_K": 7,
+    "candidate_pairs": 19,
+    "groups": 33,
+    "candidate_span": 11,
+    "prepare_seconds": 0.0015226000105030835,
+    "semantic_candidate_edge_occurrences": {
+      "s": 12,
+      "r": 8,
+      "R": 8
+    },
+    "schedule_kind": "bags",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "ordinary": {
+    "actual_K": 6,
+    "declared_K": null,
+    "candidate_pairs": 19,
+    "groups": 33,
+    "candidate_span": 11,
+    "prepare_seconds": 0.0003861000295728445,
+    "semantic_candidate_edge_occurrences": {
+      "s": 12,
+      "r": 8,
+      "R": 8
+    },
+    "schedule_kind": "event-order",
+    "all_failed_events_scheduled": true,
+    "sb_inversions": 0
+  },
+  "total_seconds": 0.0029955999925732613,
+  "wall_seconds": 0.27038949995767325,
+  "peak_process_rss_bytes": 5541888,
+  "time_limit_seconds": 40.0,
+  "memory_limit_mib": 1024
+}

@@ -1,0 +1,59 @@
+因果前沿实验：复现入口
+2026-10-28
+
+这是冻结的有限 RA 协议实验，不需要旧服务器。正式结果目录为
+results/causal_20261028/，原来的 results/support_task_20261016 等保持不变。
+
+1. 环境
+Python 3.12，依赖记录在 requirements-causal.txt。原机器为 Windows 11，
+实际包版本、Python路径、源码SHA256见 results/causal_20261028/environment.json。
+编译器使用Python联合端口实现，未启用旧Linux原生加速器。SAT使用CaDiCaL 1.9.5。
+创建独立环境后安装依赖：
+  python -m pip install -r requirements-causal.txt
+命令均从 solver 项目根目录运行；不依赖本次机器的绝对目录。
+
+2. 先验收语义
+  python -m unittest discover -s tests -v
+  python experiments/causal_semantic_audit.py --out results/causal_20261028/semantic_audit.json
+完整测试的可选BDD依赖缺失可以跳过对应旧测试，但新causal测试不可跳过。
+独立参照逐完整赋值检查原始HB/ECO与guard；协议证书重放只是同核确定性
+重构比较，两者不是同一种证据。部分大一点的案例只做选定查询，输出有明确标志。
+
+3. 单点与正式批次
+  python experiments/causal_bench.py --out results/local_pilot/B2_n8.json --method B2 --rounds 8 --queries 100 --seconds 30 --memory-mib 1024
+方法换成B0/B1即使用同输入、同查询的两种增量SAT基线。
+--task sat / single / all 区分任务，默认all。默认显式二元RF分组。
+--long-gap、--failures 4、--layout ordinary、--dense-co 是相应机制/消融选项。
+
+  python experiments/causal_suite.py
+该命令运行冻结矩阵并保留逐点JSON、查询列表、输入和日志，成功点重复3次。
+已有同名结果会复用；在新机器做独立复现应先选择一个新的结果根目录（修改
+causal_suite.py中folder一行），或复制项目到没有旧结果的独立目录。
+不要把未完成RUNNING文件当作可复用成功结果；保留后另名重跑该点。
+控制器包括进程启动/审计IO的硬时间上限，报告冷启动与查询计时排除结果落盘。
+记录每条超限发生的phase，不能把对象内存计量阶段失败误当编译失败。
+
+4. 结构批次与图表
+  python experiments/causal_structure.py --out results/causal_20261028/structure --seconds 40 --memory-mib 1024
+默认70点；--quick是缩减矩阵。该脚本只生成证书与计划，不编译状态图。
+  python experiments/causal_report.py
+生成tables.json及PNG/PDF科学图。PDF仅是图的矢量导出，不是更新旧论文全文。
+另外两组验收/敏感性分析：
+  python experiments/causal_large_check.py
+  python experiments/causal_cache_sensitivity.py
+前者重验32轮选定正见证及B1已保存的完整支持前缀；不证明所有无支持文字。
+后者为三个方法同时添加完整答案缓存，避免重复alpha夸大重复求解收益。
+
+5. 如何读取结果
+semantic_audit.json：全赋值/模型集合双向投影、查询及前缀分类验收。
+summary.json、runs/*.json：每点实际接口、可达状态、阶段耗时、完整支持哈希、
+进程峰值；queries.json是同方法间复用的原始文字序列。
+tables.json：成功点中位数与范围；失败没有被填成虚构耗时或UNSAT。
+structure/summary.json：长写间隔、真实失败事件、缓冲两观测模式、无反馈边界。
+source_verification.json：主计时前后源码一致性；清单同时记录完整输入哈希。
+
+实际RSS包括Python及审计开销；另记录对象计量前的Windows峰值工作集。
+python_object_bytes只估计Python对象，不能计量SAT原生分配，也不能替代RSS。
+普通布局性能消融使用输入事件序；结构批次另使用线程串接序，两者须分别命名。
+外部任意证书的结构检查不是可靠性的语义证明；本实验只输入已验证模板构造器
+生成的证书。第三方接口使用者仍须承担证书有效性与guard精确化义务。
