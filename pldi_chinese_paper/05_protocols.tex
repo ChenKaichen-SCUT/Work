@@ -1,0 +1,196 @@
+\section{从同步协议构造证书与处理计划}\label{sec:protocols}
+定理~\ref{thm:frontier} 把问题转化为寻找可靠且较强的 $H$。本节研究两种已用于共享内存程序的同步机制：容量限制下的生产／消费反馈，以及所有参与者到达后的重置／唤醒。证明使用线程前缀和真实读写关系，不依赖有限日志最后一次读恰好锁定某个来源。阶段编号由程序位置确定，只用于推理和布局。
+
+\subsection{双索引循环缓冲的反馈窗口}\label{sec:buffer}
+GPS 的循环缓冲例子使用两个模索引控制单生产者和单消费者之间的槽复用~\cite{gps2014}。我们取其 Fig.~6 的控制结构，设有效容量为 $C\ge1$，数组长度及模数为 $m=C+1$，索引 $wp,rp$ 初始均为 $0$。生产者唯一写 $wp$，消费者唯一写 $rp$。一次生产尝试先读自身索引 $u\gets wp$，再读对端索引 $v\gets rp$；若 $(u+1)\bmod m=v$ 则返回满，否则执行槽写等至多 $B$ 个工作事件，再写 $wp\gets(u+1)\bmod m$。消费尝试先读 $u\gets wp$，再读自身索引 $v\gets rp$；若 $u=v$ 则返回空，否则执行槽读等工作事件，再写 $rp\gets(v+1)\bmod m$。工作代码不能访问两个控制索引。
+
+下面伪代码中，所有共享读写分别使用 acquire 和 release；\texttt{payload} 只访问载荷地址。
+\begin{center}
+\begin{minipage}[t]{.48\linewidth}\small
+\begin{verbatim}
+try_put(value):
+  u := load(wp)
+  v := load(rp)
+  if (u + 1) mod m = v:
+    return FULL
+  payload_put(u, value)
+  store(wp, (u + 1) mod m)
+  return OK
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\small
+\begin{verbatim}
+try_get():
+  u := load(wp)
+  v := load(rp)
+  if u = v:
+    return EMPTY
+  value := payload_get(v)
+  store(rp, (v + 1) mod m)
+  return value
+\end{verbatim}
+\end{minipage}
+\end{center}
+该抽取保留索引回绕、失败尝试、数组访问和部分调用。原 GPS 例子的数组访问为非原子操作；本节明确把载荷也放入第~\ref{sec:background}节的原子 RA 片段。我们验证这个规格化程序的有限观测。令 $W_t$ 为第 $t$ 次成功生产写入 $wp$ 的事件，$A_j$ 为第 $j$ 次成功消费写入 $rp$ 的事件，$W_0,A_0$ 为初始化。它们写入的物理值分别为 $t\bmod m,j\bmod m$。这些下标可以由已给出的控制前缀计算，无需观测额外版本号。
+
+下面推导使用式~\eqref{eq:ra} 的几个直接后果。同地址写若按 $\hb$ 有序，其 $\co$ 必须同向（WW）；写先于读时，该写不能晚于读源（WR）；读先于写时，读源必须严格早于该写（RW）；两个读按 $\hb$ 有序时，其来源不能在 $\co$ 中倒退（RR）。这些规则只比较来源及顺序，不预选它们。
+
+\begin{lemma}[全部尝试的来源窗口]\label{lem:bufferwindow}
+在任一合法完成中，生产者已完成 $t$ 次成功操作后，对 $rp$ 的任一次读取只可能来自
+\[
+ A_s,\quad \max(0,t-C)\le s\le t;
+\]
+消费者已完成 $j$ 次成功操作后，对 $wp$ 的任一次读取只可能来自
+\[
+ W_u,\quad j\le u\le j+C.
+\]
+结论包括失败尝试和尚未完成的最后一次调用。
+\end{lemma}
+\begin{proof}
+先确定自身索引读。两索引各只有一个写者，同线程更晚的写若被读到将形成 $\hb$ 环；早于自身最近一次写的来源又被 WR 一致性排除。因此生产者的自身读来自 $W_t$，消费者的自身读来自 $A_j$。
+
+先分别证明两个下界，不使用对方的上界。对生产者，$t\le C$ 时非负性已经足够。同地址连续读的来源按 RR 一致性不能倒退。若在 $t\ge C$ 时有来源下界 $s\ge t-C$，并且该尝试成功，成功守卫排除 $s=t-C$：因为
+\[
+ (t-C)\bmod(C+1)=(t+1)\bmod(C+1),
+\]
+这个端点恰使缓冲被观测为满。因此下次尝试的来源至少为 $t+1-C$。失败不增加成功计数，RR 保持原下界。对消费者，初始下界为 $u\ge0$；第 $j+1$ 次成功消费的非空守卫排除 $u=j$，RR 随后把下界提升到 $j+1$。这样得到所有尝试的生产下界 $\max(0,t-C)$ 和消费下界 $j$。
+
+现在排除过于超前的来源。设生产者当前对端读 $p$ 选择 $A_s$，其中 $s\ge t+1$。事件 $A_s$ 的存在要求消费者第 $s$ 次操作的成功对端读 $q_s$ 已存在；刚才证明的下界和成功守卫给出其来源 $W_u$ 满足 $u\ge s$。生产者当前读位于所有 $W_u$、$u\ge t+1$ 之前，于是
+\[
+ p\mathrel{\SB^+}W_u\mathrel{\rf}q_s
+   \mathrel{\SB^+}A_s\mathrel{\rf}p
+\]
+构成 $\hb$ 环。故 $s\le t$。
+
+设消费者当前对端读 $q$ 选择 $W_u$，其中 $u\ge j+C+1$。事件 $W_u$ 的存在要求生产者第 $u$ 次成功对端读 $p_u$ 已存在；其来源下界加成功守卫给出 $A_s$、$s\ge u-C\ge j+1$。由消费者前缀有
+\[
+ q\mathrel{\SB^+}A_s\mathrel{\rf}p_u
+   \mathrel{\SB^+}W_u\mathrel{\rf}q,
+\]
+再次成环。故 $u\le j+C$。两个反证都只使用已经存在的前缀事件和已证下界，没有假设当前尝试后来一定成功。\qedhere
+\end{proof}
+
+成功守卫进一步把第 $k$ 次成功操作的窗口收紧为
+\begin{equation}\label{eq:successwindow}
+ p_k:\ A_{\max(0,k-C)},\ldots,A_{k-1},
+ \qquad
+ q_k:\ W_k,\ldots,W_{k+C-1}.
+\end{equation}
+一个失败生产尝试在 $t\ge C$ 时只能读取 $A_{t-C}$；一个失败消费尝试只能读取 $W_j$。生产者 $t<C$ 时不可能观测为满。原因是引理窗口包含 $m$ 个连续逻辑索引，模 $m$ 映射在该窗口内一一对应，失败守卫恰选中一个值。
+
+这也说明观测精度如何影响支持。若全部索引返回值都记录，窗口与该值相交后至多剩一个来源。若只记录成功／失败分支，成功窗口可以保留多个不同逻辑代的来源。例如 $C=3$，生产与消费各前三次均成功。消费者第一次读取 $wp$ 可以来自 $W_1$：先生产一次、消费读槽后暂缓写 $A_1$，再生产第二、三次，随后完成消费；也可以来自 $W_3$：先生产三次再消费。两条 SC 调度具有相同分支观测，分别返回索引值 $1$ 与 $3$。全部值观测会区分它们，仅分支观测则不会。该例保留了协议本身允许的多来源，无需加入额外竞争写。
+
+式~\eqref{eq:successwindow} 的全部候选都有共同前序，因而 $R_\forall$ 给出
+\begin{equation}\label{eq:handoff}
+ H(W_k,q_k),\qquad H(A_{k-C},p_k)\quad(k>C).
+\end{equation}
+将某线程第 $k-1$ 次成功更新之后、至第 $k$ 次更新为止的事件称为阶段 $k$；未完成尾部沿用这个编号。若 $e$ 在生产者阶段 $i$，$f$ 在消费者阶段 $l\ge i+C+1$，$f$ 的存在要求 $A_{l-1}$ 及 $q_{l-1}$ 存在，后者又要求 $W_{l-1}$ 存在。因此
+\[
+ e\mathrel{\SB^*}W_i\mathrel{\SB^*}W_{l-1}
+ \mathrel H q_{l-1}\mathrel{\SB^+}A_{l-1}\mathrel{\SB^+}f.
+\]
+对反向交接，生产者阶段 $l$ 的前缀含 $W_{l-1}$；其成功读的所有来源编号至少为 $l-1-C\ge i$，故
+\[
+ e\mathrel{\SB^*}A_i\mathrel{\SB^*}A_{l-1-C}
+ \mathrel H p_{l-1}\mathrel{\SB^+}W_{l-1}\mathrel{\SB^+}f.
+\]
+所需中间事件由非空来源域与目标前缀强制存在。若它们不存在，得到的是观测矛盾，而不是补造事件。
+
+若每阶段每线程至多 $q$ 次失败尝试，阶段密度至多 $b=2(B+3+2q)$。按阶段排列事件并使用上述分隔，可取保守界
+\begin{equation}\label{eq:bufferbound}
+ c\le(C+2)b,\qquad K\le(C+2)b+3a+3.
+\end{equation}
+对于任意多次\emph{纯读}失败重试，可进一步使用固定来源读链展开。保留成功操作及最后未决定分支的调用作为规划骨架，把一串失败读的来源锚和左右线程端点连续保留到该串的处理位置，再逐个加入真实失败读；每次最多增加两个读端点。附录~\ref{app:chains} 证明
+\begin{equation}\label{eq:chainbound}
+ K\le 2(C+2)(B+3)+3a+4.
+\end{equation}
+式~\eqref{eq:chainbound} 是连续袋大小界。展开可能先引入线程后继再处理其中间读，因此不能把它改述为原始 $\SB$ 相容布局上无条件有界的 $c$。所有失败读的身份、RF 变量和真实线程边仍进入最终语义与支持输出。
+
+\subsection{由重置与唤醒控制的星形屏障}\label{sec:barrier}
+第二种机制取自 Mellor-Crummey 与 Scott 的到达树／唤醒树屏障~\cite{mcs1991}。原方案采用四叉汇聚和二叉唤醒；我们把两棵树规格化为同一协调者为根的星形，并将检查拆成逐地址 RA 读。这保留“工作者清到达位、协调者重置到达位、翻转唤醒位”的资源复用机制。总线程数为 $p$；每个工作者 $t$ 有到达地址 $a_t$，初值 $1$，以及唤醒地址 $g_t$，初值 $0$。应用代码不访问这些地址。
+
+在调用 $i$，工作者执行至多 $B$ 个应用事件，写 $A_{t,i}:a_t\gets0$，然后反复读 $g_t$ 直到得到 $v_i=i\bmod2$；成功读记为 $S_{t,i}$。协调者执行自己的应用区域，按固定工作者顺序反复读各 $a_t$ 直到得到 $0$，成功读记为 $R_{t,i}$；在全部到达以后依次写 $Z_{t,i}:a_t\gets1$，再依次写 $G_{t,i}:g_t\gets v_i$。参与者按调用顺序反复执行，输入可以在任意操作或等待中截断。
+\begin{center}
+\begin{minipage}[t]{.48\linewidth}\small
+\begin{verbatim}
+worker(t, i):
+  application_work()
+  store(a[t], 0)
+  repeat:
+    v := load(g[t])
+  until v = i mod 2
+\end{verbatim}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}\small
+\begin{verbatim}
+coordinator(i):
+  application_work()
+  for each worker t:
+    repeat load(a[t]) until 0
+  for each worker t:
+    store(a[t], 1)
+  for each worker t:
+    store(g[t], i mod 2)
+\end{verbatim}
+\end{minipage}
+\end{center}
+
+\begin{lemma}[重置驱动的来源前进与反馈对齐]\label{lem:barrier}
+所有已存在的成功读都满足
+\[
+ \rf(A_{t,i},R_{t,i}),\qquad \rf(G_{t,i},S_{t,i}).
+\]
+协调者调用 $i$ 的每个失败读来自 $Z_{t,i-1}$，工作者调用 $i$ 的每个失败读来自 $G_{t,i-1}$，其中下标 $0$ 表示初始化。
+\end{lemma}
+\begin{proof}
+先给来源下界。设 $R_{t,i}$ 来自 $A_{t,q_i}$。相邻成功等待之间有真实重置
+$R_{t,j}\mathrel{\SB}Z_{t,j}\mathrel{\SB}R_{t,j+1}$。
+RW 和 WR 一致性分别要求
+\[
+ A_{t,q_j}<_{\co}Z_{t,j}<_{\co}A_{t,q_{j+1}}.
+\]
+工作者的 $A$ 写按线程顺序排列，所以 $q_{j+1}>q_j$，从而 $q_i\ge i$。到达成功读始终读值 $0$；这里使来源前进的是两写者地址上的重置操作。再设 $S_{t,i}$ 来自 $G_{t,s_i}$。唤醒地址单写，RR 一致性使编号非降，相邻成功读值交替使其严格增加，初次值 $1$ 排除初始化，故 $s_i\ge i$。
+
+若 $R_{t,i}$ 读取 $A_{t,q}$ 且 $q>i$，后者的前缀要求 $S_{t,q-1}$ 存在。其来源 $G_{t,s}$ 满足 $s\ge q-1\ge i$，于是
+\[
+ R_{t,i}\mathrel{\SB^+}G_{t,s}\mathrel{\rf}S_{t,q-1}
+ \mathrel{\SB^+}A_{t,q}\mathrel{\rf}R_{t,i}
+\]
+为 $\hb$ 环。若 $S_{t,i}$ 读取 $G_{t,s}$ 且 $s>i$，前缀包含 $R_{t,s}$，其来源 $A_{t,q}$ 满足 $q\ge s>i$，故
+\[
+ S_{t,i}\mathrel{\SB^+}A_{t,q}\mathrel{\rf}R_{t,s}
+ \mathrel{\SB^+}G_{t,s}\mathrel{\rf}S_{t,i}
+\]
+同样成环。两个上界只引用已证下界，故没有循环使用屏障对齐结论。
+
+协调者的失败读值为 $1$，只能来自某个 $Z$。前次 $Z_{t,i-1}$ 已在线程前缀中，更早来源由 WR 排除；本次及以后 $Z$ 在线程后方，由 $\hb$ 无环排除。工作者的失败读有前次成功唤醒作为共同前序，更早 $G$ 由 WR 排除；如果选择未来 $G_{t,j}$、$j>i$，其必需的到达读及来源再形成上述反馈环。剩下的 $G_{t,i}$ 又因值不符而排除，只留下 $G_{t,i-1}$。这些论证都不要求本次等待在观测内成功结束。\qedhere
+\end{proof}
+
+该引理使到达地址上的写序固定为 $Z_{t,0}<A_{t,1}<Z_{t,1}<A_{t,2}<\cdots$，并认证任意应用区域 $i$ 到区域 $i+1$ 的共同因果关系。把协议事件也算入阶段时，相隔至少两阶段的事件具有 $H(e,f)$：从工作者阶段 $i$ 的末尾沿线程到下一次到达，经协调者读到全部到达，再经下一次唤醒进入任意线程阶段 $i+2$。目标事件的前缀保证链中的所有中间事件存在。
+
+为了控制任意多失败轮询，阶段 $i$ 的布局依次引入各工作者应用区和到达写，协调者应用区、全部到达等待、重置和唤醒写，最后引入各工作者唤醒等待。这保持每个线程的 $\SB$。在这个布局中，已引入失败读的同阶段相关写已先被引入；未来阶段的同地址写则经已证成功交接位于该失败读的 $H$ 后方。因此失败读从不属于 $U_t$。附录~\ref{app:barriertails} 展开截断等待的两种情况。
+
+每阶段除失败读外至多 $b_0=pB+5(p-1)$ 个事件：每工作者一个到达写和一个成功唤醒读，协调者为每工作者提供一个成功到达读、一个重置写、一个唤醒写。前沿中的骨架事件只可能位于当前及紧邻的上一阶段，因而
+\begin{equation}\label{eq:barrierbound}
+ c\le 2[pB+5(p-1)],\qquad
+ K\le 2[pB+5(p-1)]+ap+p+a+1.
+\end{equation}
+与缓冲的袋展开不同，这里直接控制的是完整原始输入的因果前沿。失败事件数量仍增加 $n$ 和原始输出规模。
+
+屏障只排序计算区域，区域内部可以保留实际的多写者关联。例如两个工作者分别执行
+\[
+ A:\ a_x=\W(x,1);\ a_y=\W(y,1);\ a_r=\R(x,1),\qquad
+ B:\ b_y=\W(y,1);\ b_x=\W(x,1);\ b_r=\R(y,1).
+\]
+令两个读都读取自身写，选择 $b_x<_{\co}a_x$ 与 $a_y<_{\co}b_y$，得到合法 RA 赋值，却有 $a_x\mathrel{\SB}a_y\mathrel{\co}b_y\mathrel{\SB}b_x\mathrel{\co}a_x$，不能作 SC 线性化。若改为 $a_r$ 读取 $b_x$，WR 一致性要求 $a_x<_{\co}b_x$。因此来源与写序确有条件关联。该性质发生在应用区域；屏障的到达地址虽然天然有两个写者，其 CO 本身已被协议固定。
+
+\subsection{组合与有限构造}\label{sec:construct}
+多个局部协议可以在明确的接口条件下组合。把地址集合划分为互不相交的块，每块包含这些地址的\emph{全部}访问；为每块给出局部证书、$\SB$ 相容布局 $\theta_i$ 和前沿界 $c_i$。若所有局部布局邻接关系与全局线程邻接的并无环，取其一个固定拓扑序作为全局布局，并令 $H$ 为全局 $\SB$ 与全部局部 $H_i$ 的传递闭包。每个全局未决相关对属于唯一地址块，该块在全局切口处也形成局部切口，所以 $c\le\sum_i c_i$。由此
+\[
+ K\le\sum_i c_i+ap+p+a+1.
+\]
+附录~\ref{app:composition} 证明局部合法投影及该包含关系。跨块线程边仍由全局 RA 监视器检查，组合不要求语义完成空间是直积。共享地址若被拆给不同模块，或局部布局彼此冲突，上述推论即不适用。
+
+上述证书可以通过有限构造得到。解析器检查地址所有者、调用位置、每线程无缺口前缀及观测守卫；根据引理~\ref{lem:bufferwindow} 或~\ref{lem:barrier} 生成窗口、下界和反馈证明，再对 R1--R3、$R_\forall$ 与传递闭包迭代，构造稀疏候选边和固定计划。推导只涉及显式事件和候选对。任何时刻都不需要枚举合法完成，也不需要寻找最优宽度布局。
+
+语法或布局不匹配时返回 \texttt{OUTSIDE}。可靠规则推出空来源域或关系自环时，返回带理由的不可满足结果 \texttt{PROVED\_UNSAT}。证书通过表示结构条件成立，余下的一致性由后端判断。对输入二进制长度 $L_{\rm in}$，令 $\ell=L_{\rm in}+|X|+1$。附录~\ref{app:complexity} 给出一个保守的多项式位复杂度构造；容量即使以二进制表示，也只检查已经出现的尝试和候选，不遍历容量的全部数值。实现包含两个协议前端和一般袋计划接口；地址封闭组合目前是理论构造。

@@ -1,5 +1,20 @@
 # Bounded-interface weak-memory solver
 
+**2026-10-28 Chinese paper for PLDI readers:** the complete
+[29-page manuscript](pldi_chinese_paper/output/pdf/causal_frontier_pldi_zh.pdf)
+rewrites the paper around the general causal-frontier theorem, protocol-derived
+certificates, and exact original RF/CO support. It includes nine main sections,
+self-contained proof appendices, 13 references, four experimental figures and five
+result tables generated from frozen data. The capacity-6 failure, component-SAT
+wins, diagnosis tradeoffs, and correctness-check scope remain explicit.
+[Editable LaTeX and build instructions](pldi_chinese_paper/README.zh.txt) and the
+[self-contained source archive](artifacts/pldi_chinese_paper_20261028.zip) include
+an offline snapshot of all 52 plotting inputs. This is a writing-only delivery
+based on commit `2a70e4d46ef76e0cdd742d57017cb508cf7834f8`; the solver, theory scope,
+frozen experiments, and earlier manuscripts are unchanged. Internal claim indices
+and the separate technical/reading reviews are kept outside the paper.
+
+
 **2026-10-28 parameter range, on-demand diagnosis, and negative-support audit:**
 the [latest Chinese report](CAUSAL_EVIDENCE_RESULTS.zh.txt) completes the three
 requested evidence additions. Branch-buffer scans separate history length from

@@ -1,0 +1,76 @@
+写作前主张索引（内部文件，不收入论文正文）
+材料基准：ChenKaichen-SCUT/Work @ 2a70e4d46ef76e0cdd742d57017cb508cf7834f8。
+本轮只写作、重新绘图和复核；不运行新实验，不修改求解器或协议识别器。
+
+T01 输入、原始注册表、同一证书/候选图/布局在所有完成和查询之前固定：
+ docs/CAUSAL_FRONTIER_MAIN_CONTRACT.zh.txt；CAUSAL_FRONTIER_QUANTIFIER_AUDIT.zh.txt。
+ 注意：精确 guard 约束须实际落实；may 来源超集的可靠性本身不保证反向投影。
+T02 一般前沿与稳定极大写：
+ docs/CAUSAL_FRONTIER_STRUCTURE.zh.txt，F⊆U∪M∪T，|M|≤ap，K≤c+ap+p+a+1。
+ 使用真实候选边界实现连续生存期；不以动态 U/M 集合直接当袋。
+T03 单执行与候选并图量词差异、原子 RF 反例：
+ docs/CAUSAL_FRONTIER_QUANTIFIER_AUDIT.zh.txt；STRUCTURE。
+ 二元候选组为主；原子组需要来源域 d，不能偷用相同 K。
+T04 反馈缓冲：docs/CAUSAL_FRONTIER_FEEDBACK.zh.txt；CONSTRUCTION。
+ 先分别证明生产者/消费者来源下界，再用真实前缀 HB 环排除上界。
+ 原始 GPS Figure 6 来源，RA 原子载荷为显式改造；V 与 B 观测分开。
+ 无界纯失败链使用连续袋展开（K 界），不是未经改变的原始 c 界。
+T05 MCS 来源星形屏障：docs/CAUSAL_FRONTIER_BARRIER.zh.txt。
+ 原 MCS 树形拓扑改成星形；重置、反馈和阶段布局均须保留。
+ 工作区多写者 RF/CO 耦合；与缓冲单写者跨阶段 RF 不混称同一实例性质。
+T06 地址封闭且布局相容组合：docs/CAUSAL_FRONTIER_COMPOSITION.zh.txt。
+ 全地址分区、局部全序与全局 sb 的并须无环；不宣称模型直积。
+T07 可执行构造及费用：docs/CAUSAL_FRONTIER_CONSTRUCTION.zh.txt。
+ 有限规则及固定拓扑序，无模型枚举、语义 oracle 或最优布局搜索。
+ 保守 O(ell^8) 位费用在附录；输入二进制容量不逐值展开。
+T08 联合普通/一标记端口摘要与同后缀等价：
+ docs/FUTURE_PORT_THEOREMS.zh.txt；FUTURE_PORT_CERTIFICATE_BRIDGE.zh.txt；
+ RELATIONAL_FORGETTING_THEOREMS.zh.txt；CAUSAL_FRONTIER_BACKEND_AUDIT.zh.txt。
+ 所有摘要必须属于同一历史；未来端口由全部候选而非已选完成确定。
+T09 原始全赋值投影、支持和撤销：MAIN_CONTRACT；BACKEND_AUDIT；
+ RELATIONAL_FORGETTING_THEOREMS 第 E 部分。常量变量也保留。
+ 理论 S_bd=2^(33K^2+K)，实测 S_max 是可达状态统计，不能互换。
+T10 同值发布示例：docs/PUBLICATION_CORE_THEOREM.zh.txt 第4节。
+ 使用 d,e,l,q 以及原始 P(2,2) 的完整正反见证；正文只列相关事件，明确省略项见附录。
+T11 删除极小冲突和单字段修复：docs/CAUSAL_DIAGNOSTIC_TASK.zh.txt。
+ 这是服务使用者，不是独立理论创新；修复观测日志而非修复程序。
+
+E01 最新主扫描、容量、任务、负支持、稳健性：CAUSAL_EVIDENCE_RESULTS.zh.txt；
+ results/causal_evidence_20261028/tables.json 及 summary.json/raw 子目录。
+ 每张图由 generate_results.py 读取冻结数据；成功点三进程重复，额外池两重复。
+ 未完成点标明 TIMEOUT / STATE_LIMIT，不插值，不把局部状态当完成 S_max。
+E02 查询新颖度、CNF 组件和布局：CAUSAL_FOLLOWUP_RESULTS.zh.txt；
+ results/causal_followup_20261028/tables.json 和同目录结构数据。
+ 与最新批次分别标注；不拼最优时间。不将所有屏障推广为语义 9^r 定理。
+E03 早期边界：CAUSAL_EXPERIMENT_RESULTS.zh.txt 以及 README 指向的历史实验；
+ 保留恒定载荷六轮失败、四轮 SAT 更快、版本值缩域、单文字 SAT 更快。
+E04 正确性范围：494 个选定负支持，323 次正对照，非大实例全部负支持穷尽；
+ 32轮 B2 全部答案不能冒称被原始 SAT 全量独立验证。
+
+L01 Haas et al. OOPSLA 2023，Static Analysis of Memory Models for SMT Encodings：
+ 作者 PDF https://hernanponcedeleon.github.io/pdfs/oopsla2023.pdf；§3.1 Theorem3.1、§4。
+ 具体过滤语义完整性与抽象 may/must 可靠性区分；R_forall 是具体推理规则，不是新抽象解释框架。
+L02 Conrado/Pavlogiannis CONCUR2026，DOI 10.4230/LIPIcs.CONCUR.2026.25：
+ 官方 PDF §3.1 rf-graph；Lemma1/4、Theorem9、Lemma10、Theorem17 已核。
+ Lemma4 的对象是选定 rf 图和 sb∪rf 拓扑序中的写距离，不是未知 RF/CO 候选并图。
+ 他们明确指出长边不推出大树宽；不能把这个观察单独当本文创新。
+L03 Tunç et al. PLDI2023 DOI10.1145/3591251，作者 PDF §2–4：给定 RF，搜索 MO。
+ 不声称已有方法要求 CO 已知。
+L04 Chakraborty et al. POPL2024 How Hard Is Weak-Memory Testing?：作者 PDF Theorem1.1，
+ 即使线程/地址/值域有界，RA 等无 RMW 片段仍有 NP 完全性；不套成本文协议子类下界。
+L05 Govind et al. Complexity of Consistency Testing for the Release-Acquire Semantics：
+ arXiv2604.09589 原文：单写者多项式、两写者困难；缓冲不声称使已有困难判定变易。
+L06 GPS OOPSLA2014 DOI10.1145/2660193.2660243：Figure6 单生产者/消费者循环缓冲；
+ iGPS ECOOP2017 DOI10.4230/LIPIcs.ECOOP.2017.17：Definition3、iGPS-Read、§4.2。
+ 单地址协议状态下界/知识不可逆已有；本文用来控制全候选结构，而非声称新发现同步知识。
+L07 MCS1991 DOI10.1145/103727.103729：§3.5/Figure12；原协议与星形 RA 抽取逐项说明。
+L08 Kater POPL2023 DOI10.1145/3571212：关系自动机和一致性检查已有。
+L09 CAAT OOPSLA2022 DOI10.1145/3563292：§4.1 明确 offline SMT 与删除固定点困难。
+ 对比固定输入的条件查询撤销，不能推广为解决任意动态事件删除。
+L10 Kučera/Savický arXiv1909.06673v3：§1–2 区分原始变量域一致性与包括辅助变量的 PC。
+ 本文支持 CNF 只声明前者；通用知识编译步骤不独立包装为创新。
+L11 d4 IJCAI2017 DOI10.24963/ijcai.2017/93：动态分解/组件缓存已有；BD 是静态基线。
+
+写作安排：9节正文；2节仅3个小节；4节为中心完整证明；5节具体协议证明；
+6节投影四义务；附录承担长链、组合、自动机、CNF、复杂度及完整见证。
+两次复核分别记录 technical_review.zh.txt、reading_review.zh.txt。

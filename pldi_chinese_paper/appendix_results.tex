@@ -1,0 +1,26 @@
+\section{补充结果与复现说明}\label{app:results}
+表~\ref{tab:service} 补充主缓冲扫描的服务分项。冷启动包括证书生成及检查、编码或计划和编译。缺失计算为未命中完整答案缓存时的计算，输出列为形成完整支持列表的记录成本；各分项独立取中位数，且存在额外管理开销，所以不能将列相加作为总计。$C=2$ 有三次全局缓存命中，其余主点均无命中。
+
+\begin{table}[p]
+\centering\small
+\caption{主缓冲扫描的服务成本细项，单位秒。$r/C$ 为轮数／容量，$U$ 为不同假设数，答案为不同完整支持答案数。成功点三次中位数；未完成不填最终请求统计。}\label{tab:service}
+\input{generated/service_costs}
+\end{table}
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{$16$ 轮机制对照。时间为秒，查询部分为 $100$ 次完整支持请求。前三行来自冻结的机制批次，最后两行来自匹配的长写间隔对照，各行均三次中位数；只在对应组内比较。}\label{tab:mechanism}
+\resizebox{\linewidth}{!}{\input{generated/mechanism}}
+\end{table}
+
+输入、实现与原始测量保存在仓库 \url{https://github.com/ChenKaichen-SCUT/Work}。论文源包附有冻结数据快照；\texttt{generate\_results.py} 只读取这些 JSON，自动生成四张实验图及所有结果表。材料版本、输入摘要和分批环境记录见源包中的独立复现说明。
+
+用 Python、Matplotlib 和 NumPy 重建图表，然后用 XeLaTeX、BibTeX 编译：
+\begin{verbatim}
+python generate_results.py --snapshot
+xelatex -interaction=nonstopmode -halt-on-error main.tex
+bibtex main
+xelatex -interaction=nonstopmode -halt-on-error main.tex
+xelatex -interaction=nonstopmode -halt-on-error main.tex
+\end{verbatim}
+源文件使用 TeX Live 所带 Fandol 中文字体，图中使用 DejaVu Sans。各实验批次保留各自的输入、源码摘要和测量口径；重绘图表不改变实验版本。完整源码已包含生成的矢量图和表，直接编译论文无须安装实验求解器。
